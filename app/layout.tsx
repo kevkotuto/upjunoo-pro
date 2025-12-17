@@ -56,6 +56,14 @@ export const metadata: Metadata = {
     siteName: "UPJUNOO PRO",
     type: "website",
     locale: "fr_FR",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "UPJUNOO PRO - Taxi, Livraison & Location en Afrique",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -63,6 +71,7 @@ export const metadata: Metadata = {
     description:
       "Reservez un taxi, envoyez des colis ou louez un vehicule en quelques clics.",
     creator: "@upjunoo",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
