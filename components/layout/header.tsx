@@ -28,7 +28,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -73,12 +72,12 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -88,7 +87,7 @@ export function Header() {
                 alt="UPJUNOO PRO"
                 width={400}
                 height={150}
-                className="h-16 lg:h-40 w-auto"
+                className="h-24 sm:h-28 lg:h-32 w-auto"
                 priority
                 unoptimized
               />
@@ -163,12 +162,16 @@ export function Header() {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="h-10 w-10">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-[400px] p-0">
+            <SheetContent
+              side="right"
+              className="w-full sm:w-[320px] p-0"
+              hideCloseButton
+            >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                   <SheetTitle>
@@ -182,8 +185,9 @@ export function Header() {
                     />
                   </SheetTitle>
                   <SheetClose asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-5 w-5" />
+                    <Button variant="ghost" size="icon" className="h-10 w-10">
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Fermer</span>
                     </Button>
                   </SheetClose>
                 </div>
@@ -226,12 +230,12 @@ export function Header() {
                             href={service.href}
                             className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors"
                           >
-                            <service.icon className="h-5 w-5 text-primary" />
-                            <div>
+                            <service.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                            <div className="min-w-0">
                               <div className="text-base font-medium">
                                 {service.title}
                               </div>
-                              <div className="text-sm text-muted-foreground">
+                              <div className="text-sm text-muted-foreground truncate">
                                 {service.description}
                               </div>
                             </div>
@@ -242,13 +246,15 @@ export function Header() {
                   </div>
                 </nav>
 
-                <div className="p-4 border-t">
-                  <Button asChild className="w-full gap-2">
-                    <Link href="/#download">
-                      <Download className="h-4 w-4" />
-                      Telecharger l'application
-                    </Link>
-                  </Button>
+                <div className="p-4 border-t mt-auto">
+                  <SheetClose asChild>
+                    <Button asChild className="w-full gap-2">
+                      <Link href="/#download">
+                        <Download className="h-4 w-4" />
+                        Telecharger l'application
+                      </Link>
+                    </Button>
+                  </SheetClose>
                 </div>
               </div>
             </SheetContent>

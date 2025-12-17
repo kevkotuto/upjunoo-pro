@@ -3,6 +3,7 @@ import {
   ServicesSection,
   StatsSection,
   FeaturesSection,
+  DriveSection,
   DownloadSection,
   CountriesSection,
   CTASection,
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <FeaturesSection />
+      <DriveSection />
       <StatsSection />
       <DownloadSection />
       <CountriesSection />

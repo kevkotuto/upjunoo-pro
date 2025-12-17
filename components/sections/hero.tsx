@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/30 via-background to-background" />
 
@@ -145,42 +145,42 @@ export function HeroSection() {
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -left-40 lg:-left-60 top-1/4"
+                className="absolute -left-16 lg:-left-60 top-1/4"
               >
                 <Image
                   src="/images/voiture.png"
                   alt="Voiture UPJUNOO"
                   width={240}
                   height={160}
-                  className="w-52 lg:w-56 h-auto drop-shadow-xl"
+                  className="w-32 lg:w-56 h-auto drop-shadow-xl"
                 />
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -right-40 lg:-right-64 top-1/3"
+                className="absolute -right-16 lg:-right-64 top-1/3"
               >
                 <Image
                   src="/images/tricycle.png"
                   alt="Tricycle UPJUNOO Delivery"
                   width={280}
                   height={200}
-                  className="w-56 lg:w-64 h-auto drop-shadow-xl"
+                  className="w-36 lg:w-64 h-auto drop-shadow-xl"
                 />
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute -left-36 lg:-left-56 bottom-1/4"
+                className="absolute -left-12 lg:-left-56 bottom-1/4"
               >
                 <Image
                   src="/images/moto.png"
                   alt="Moto UPJUNOO"
                   width={200}
                   height={140}
-                  className="w-44 lg:w-48 h-auto drop-shadow-xl"
+                  className="w-28 lg:w-48 h-auto drop-shadow-xl"
                 />
               </motion.div>
             </div>

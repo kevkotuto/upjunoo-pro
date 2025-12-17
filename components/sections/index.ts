@@ -2,6 +2,7 @@ export { HeroSection } from "./hero";
 export { ServicesSection } from "./services";
 export { StatsSection } from "./stats";
 export { FeaturesSection } from "./features";
+export { DriveSection } from "./drive";
 export { DownloadSection } from "./download";
 export { CountriesSection } from "./countries";
 export { CTASection } from "./cta";
