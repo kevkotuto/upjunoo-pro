@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Car, Package, CarFront, Users, ArrowRight } from "lucide-react";
+import { Car, Package, CarFront, Users, Truck, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const services = [
   {
-    title: "Trajets",
+    title: "Taxi",
     description:
       "Commandez un taxi en quelques clics et deplacez-vous en toute serenite a travers la ville.",
     icon: Car,
@@ -30,6 +29,14 @@ const services = [
     icon: CarFront,
     href: "/location",
     color: "from-violet-500/10 to-violet-500/5",
+  },
+  {
+    title: "Fret",
+    description:
+      "Fret urbain & peri-urbain. Organisez vos envois volumineux avec pick-up, camionnettes ou camions legers. Planification, suivi et SLA garantis.",
+    icon: Truck,
+    href: "/livraison",
+    color: "from-amber-500/10 to-amber-500/5",
   },
   {
     title: "Chauffeurs & Livreurs",
@@ -66,7 +73,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -77,25 +84,25 @@ export function ServicesSection() {
             >
               <Link href={service.href} className="block h-full">
                 <Card className="h-full group hover:shadow-lg transition-all duration-300 border-border/50 overflow-hidden">
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-4 sm:p-5 flex flex-col h-full">
                     {/* Icon */}
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5`}
+                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-3`}
                     >
-                      <service.icon className="h-7 w-7 text-primary" />
+                      <service.icon className="h-5 w-5 text-primary" />
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-base font-semibold mb-1.5 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                    <p className="text-muted-foreground text-xs leading-relaxed flex-1">
                       {service.description}
                     </p>
 
                     {/* CTA */}
-                    <div className="mt-5 flex items-center text-primary font-medium text-sm">
+                    <div className="mt-3 flex items-center text-primary font-medium text-xs">
                       <span>Explorer</span>
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
