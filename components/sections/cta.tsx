@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Users, TrendingUp, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export function CTASection() {
   return (
@@ -27,9 +28,14 @@ export function CTASection() {
                 <motion.div
                   animate={{ rotate: [0, 10, 0] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="text-4xl"
                 >
-                  🚗
+                  <Image
+                    src="/images/voiture.png"
+                    alt="Voiture"
+                    width={80}
+                    height={50}
+                    className="w-16 h-auto"
+                  />
                 </motion.div>
               </div>
 

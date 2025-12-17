@@ -15,6 +15,7 @@ import {
   FileText,
   UserCheck,
 } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
@@ -265,9 +266,15 @@ export default function ChauffeurPage() {
                     <motion.div
                       animate={{ rotate: [0, 5, -5, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-6xl mb-4"
+                      className="mb-4"
                     >
-                      🚗
+                      <Image
+                        src="/images/voiture.png"
+                        alt="Voiture UPJUNOO"
+                        width={120}
+                        height={80}
+                        className="w-24 h-auto mx-auto"
+                      />
                     </motion.div>
                     <h3 className="font-bold text-xl mb-2">
                       +500 chauffeurs actifs

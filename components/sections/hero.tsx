@@ -141,46 +141,46 @@ export function HeroSection() {
                 </div>
               </motion.div>
 
-              {/* Floating vehicles */}
+              {/* Floating vehicles - positioned around the phone on desktop */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -left-20 top-1/4"
+                className="absolute -left-40 lg:-left-60 top-1/4"
               >
                 <Image
                   src="/images/voiture.png"
                   alt="Voiture UPJUNOO"
-                  width={180}
-                  height={120}
-                  className="w-40 h-auto drop-shadow-xl"
+                  width={240}
+                  height={160}
+                  className="w-52 lg:w-56 h-auto drop-shadow-xl"
                 />
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -right-24 top-1/4"
+                className="absolute -right-40 lg:-right-64 top-1/3"
               >
                 <Image
                   src="/images/tricycle.png"
                   alt="Tricycle UPJUNOO Delivery"
-                  width={220}
-                  height={160}
-                  className="w-48 h-auto drop-shadow-xl"
+                  width={280}
+                  height={200}
+                  className="w-56 lg:w-64 h-auto drop-shadow-xl"
                 />
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute -left-16 bottom-1/4"
+                className="absolute -left-36 lg:-left-56 bottom-1/4"
               >
                 <Image
                   src="/images/moto.png"
                   alt="Moto UPJUNOO"
-                  width={160}
-                  height={110}
-                  className="w-36 h-auto drop-shadow-xl"
+                  width={200}
+                  height={140}
+                  className="w-44 lg:w-48 h-auto drop-shadow-xl"
                 />
               </motion.div>
             </div>
