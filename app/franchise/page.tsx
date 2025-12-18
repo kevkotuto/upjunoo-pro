@@ -10,98 +10,155 @@ import {
   Rocket,
   CheckCircle,
   ArrowRight,
-  Phone,
   Mail,
+  BarChart3,
+  Target,
+  Award,
+  Settings,
+  Globe,
+  Briefcase,
+  UserCheck,
+  Network,
+  FileCheck,
+  Quote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 
-const benefits = [
+const marketPotential = [
   {
-    icon: Building2,
-    title: "Marque etablie",
-    description:
-      "Beneficiez de la notoriete d'une marque reconnue dans 15 pays africains.",
-  },
-  {
-    icon: Rocket,
-    title: "Technologie cle en main",
-    description:
-      "Acces a notre plateforme technologique complete : applications, back-office, outils de gestion.",
+    icon: TrendingUp,
+    text: "Croissance rapide du besoin en mobilité urbaine dans les capitales africaines",
   },
   {
     icon: Users,
-    title: "Formation complete",
-    description:
-      "Formation initiale et continue pour vous et vos equipes sur tous les aspects du business.",
+    text: "Demande croissante de services fiables et digitalisés",
   },
   {
+    icon: Target,
+    text: "Opportunité unique de se positionner en pionnier",
+  },
+];
+
+const franchiseeProfile = [
+  {
+    icon: Briefcase,
+    text: "Un entrepreneur ou investisseur avec une capacité à mobiliser un apport personnel",
+  },
+  {
+    icon: Building2,
+    text: "Propriétaire d'une flotte de véhicule, motos ou engins logistique",
+  },
+  {
+    icon: UserCheck,
+    text: "Un bon gestionnaire, rigoureux et organisé",
+  },
+  {
+    icon: Users,
+    text: "À l'aise avec la gestion d'équipes (agents terrain, commerciaux)",
+  },
+  {
+    icon: Network,
+    text: "Doté d'un bon réseau relationnel dans votre pays",
+  },
+  {
+    icon: Award,
+    text: "Sensible à la qualité de service et à la satisfaction client",
+  },
+];
+
+const upjunooOffers = [
+  {
+    title: "Un modèle clé en main",
+    icon: Rocket,
+    items: [
+      "Application mobile complète (passager, chauffeur, partenaire et gestionnaire de flotte)",
+      "Interface d'administration locale avec outils de reporting",
+      "Structure tarifaire dynamique adaptée à votre marché",
+    ],
+  },
+  {
+    title: "Une marque forte et structurée",
+    icon: Award,
+    items: [
+      "Identité visuelle professionnelle et cohérente",
+      "Notoriété croissante sur les réseaux sociaux et médias",
+      "Réseau de partenaires techniques et institutionnels",
+    ],
+  },
+  {
+    title: "Un accompagnement opérationnel continu",
     icon: Headphones,
-    title: "Support permanent",
-    description:
-      "Une equipe dediee pour vous accompagner au quotidien dans le developpement de votre activite.",
+    items: [
+      "Formation initiale (outils, méthodes, gestion)",
+      "Coaching mensuel et revue de performance",
+      "Support 24/7 (technique, communication, administratif)",
+      "Accès à un réseau de franchisés pour partager les bonnes pratiques",
+    ],
   },
   {
-    icon: TrendingUp,
-    title: "Modele rentable",
-    description:
-      "Un business model eprouve avec des marges attractives et un ROI rapide.",
-  },
-  {
+    title: "Un cadre contractuel sécurisé",
     icon: Shield,
-    title: "Exclusivite territoriale",
-    description:
-      "Beneficiez d'une zone d'exclusivite pour developper votre activite sereinement.",
+    items: [
+      "Exclusivité géographique sur votre ville ou région",
+      "Contrat renouvelable avec indicateurs de performance clairs",
+      "Partage de revenus motivant : commission sur toutes les courses, livraisons et locations générées",
+    ],
   },
 ];
 
-const steps = [
+const responsibilities = [
+  "Recruter et former les chauffeurs",
+  "Assurer la conformité des véhicules (entretien, branding, assurance)",
+  "Gérer les opérations (activation des services, SAV, ponctualité)",
+  "Déployer localement les campagnes de communication et de promotion",
+  "Développer des partenariats avec les entreprises, institutions et événements",
+];
+
+const accessConditions = [
   {
-    number: "01",
-    title: "Candidature",
-    description: "Remplissez le formulaire de candidature en ligne.",
+    icon: FileCheck,
+    text: "Signature d'un contrat de 3 ans renouvelable",
   },
   {
-    number: "02",
-    title: "Entretien",
-    description: "Echange avec notre equipe pour evaluer votre projet.",
+    icon: Award,
+    text: "Engagement de respect de la charte UPJUNOO (qualité, image, gestion)",
   },
   {
-    number: "03",
-    title: "Validation",
-    description: "Signature du contrat de franchise et des accords.",
+    icon: Settings,
+    text: "Formation obligatoire et validation du business plan local",
   },
   {
-    number: "04",
-    title: "Formation",
-    description: "Formation intensive de 2 semaines au siege.",
-  },
-  {
-    number: "05",
-    title: "Lancement",
-    description: "Demarrage de votre activite avec notre accompagnement.",
+    icon: BarChart3,
+    text: "Reporting régulier (revenus, incidents, performances)",
   },
 ];
 
-const requirements = [
-  "Capacite d'investissement initial",
-  "Experience en gestion d'entreprise",
-  "Connaissance du marche local",
-  "Esprit entrepreneurial",
-  "Engagement sur le long terme",
-  "Local commercial (optionnel)",
+const testimonials = [
+  {
+    quote:
+      "Mon activité UPJUNOO à Yamoussoukro m'a permis de créer 40 emplois directs et d'offrir un service fiable dans ma ville. L'accompagnement est constant, les outils sont puissants.",
+    author: "Soumahoro Idrissa",
+    role: "Franchisé depuis 2023",
+  },
+  {
+    quote:
+      "UPJUNOO m'a offert l'opportunité de diriger un vrai business tech local, avec un impact social fort.",
+    author: "Awa Traoré",
+    role: "Franchisée à Lomé",
+  },
 ];
 
 export default function FranchisePage() {
   return (
     <>
       <PageHero
-        badge="Opportunite"
-        title="Devenez franchisé"
-        highlight="UPJUNOO"
-        description="Lancez votre propre activite de transport et livraison avec une marque leader en Afrique. Nous vous fournissons tout ce dont vous avez besoin pour reussir."
+        badge="Opportunité exclusive"
+        title="Devenez franchisé de la"
+        highlight="mobilité urbaine de demain"
+        description="Une opportunité exclusive d'investir dans un secteur en pleine croissance en Afrique."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">
@@ -119,34 +176,129 @@ export default function FranchisePage() {
         </div>
       </PageHero>
 
-      {/* Stats */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      {/* Why become a franchisee */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "15", label: "Pays" },
-              { value: "20+", label: "Franchises actives" },
-              { value: "95%", label: "Taux de satisfaction" },
-              { value: "18 mois", label: "ROI moyen" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="text-3xl sm:text-4xl font-bold mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-primary-foreground/70">{stat.label}</div>
-              </motion.div>
-            ))}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              La franchise UPJUNOO
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-6">
+              Pourquoi devenir franchisé UPJUNOO ?
+            </h2>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-card rounded-2xl p-8 border border-border/50 mb-12"
+            >
+              <p className="text-lg text-center mb-6">
+                <span className="font-semibold text-primary">UPJUNOO</span> est
+                une plateforme panafricaine de transport intelligent qui
+                transforme la mobilité urbaine grâce à une application mobile
+                intégrant les services de{" "}
+                <span className="font-semibold">taxi, livraison</span>, et{" "}
+                <span className="font-semibold">location de véhicules</span>.
+              </p>
+              <p className="text-muted-foreground text-center">
+                Le modèle de franchise vous permet d'exploiter la marque
+                UPJUNOO dans votre ville, tout en bénéficiant d'un{" "}
+                <span className="font-semibold">
+                  soutien stratégique, technique et opérationnel
+                </span>{" "}
+                pour garantir votre succès.
+              </p>
+            </motion.div>
+
+            {/* Market Potential */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <BarChart3 className="h-6 w-6 text-primary" />
+                Marché à fort potentiel
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {marketPotential.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="h-full border-border/50">
+                      <CardContent className="p-6">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
+                          <item.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <p className="text-sm">{item.text}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Franchisee Profile */}
+      <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Profil recherché
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Profil du franchisé
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Nous recherchons des{" "}
+              <span className="font-semibold">acteurs locaux engagés</span> et
+              orientés résultat.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-lg font-medium mb-8">Vous êtes :</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {franchiseeProfile.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-start gap-3 bg-card p-4 rounded-xl border border-border/50"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <p className="text-sm pt-2">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What UPJUNOO offers */}
       <section id="benefits" className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -156,35 +308,38 @@ export default function FranchisePage() {
             className="text-center mb-16"
           >
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              Avantages
+              Nos engagements
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Pourquoi choisir la franchise UPJUNOO ?
+              Ce que vous apporte UPJUNOO
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Rejoignez un reseau solide et beneficiez d'un accompagnement complet
-              pour lancer et developper votre activite.
-            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
+          <div className="grid sm:grid-cols-2 gap-8">
+            {upjunooOffers.map((offer, index) => (
               <motion.div
-                key={benefit.title}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border-border/50">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                      <benefit.icon className="h-6 w-6 text-primary" />
+                <Card className="h-full border-border/50">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                        <offer.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="font-bold text-xl">{offer.title}</h3>
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {benefit.description}
-                    </p>
+                    <ul className="space-y-3">
+                      {offer.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -193,133 +348,211 @@ export default function FranchisePage() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Local Responsibilities */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              Processus
+              Vos missions
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Comment devenir franchisé ?
+              Vos responsabilités locales
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              En tant que franchisé, vous êtes le relais officiel UPJUNOO dans
+              votre territoire.
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto">
+            <Card className="border-primary/20">
+              <CardContent className="p-8">
+                <p className="text-center mb-6 font-medium">
+                  Vos principales missions :
+                </p>
+                <ul className="space-y-4">
+                  {responsibilities.map((resp, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span>{resp}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Investment & Profitability */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Investissement
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Investissement & rentabilité
             </h2>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
-            {steps.map((step, index) => (
+            <Card className="border-primary/20">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left p-6 font-semibold">Poste</th>
+                        <th className="text-left p-6 font-semibold">Détail</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border">
+                        <td className="p-6 font-medium">
+                          Apport personnel recommandé
+                        </td>
+                        <td className="p-6">À partir de 20 millions FCFA</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-6 font-medium">
+                          Frais de licence initiale
+                        </td>
+                        <td className="p-6">
+                          Variable selon la taille du territoire
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-6 font-medium">Pack de démarrage</td>
+                        <td className="p-6">
+                          Outils, formation, branding véhicule
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-6 font-medium">Rentabilité moyenne</td>
+                        <td className="p-6 text-primary font-semibold">
+                          Entre 12 et 18 mois
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-6 font-medium">
+                          Revenu mensuel potentiel
+                        </td>
+                        <td className="p-6 text-primary font-semibold">
+                          Jusqu&apos;à plusieurs millions FCFA/mois (en
+                          croisière)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Access Conditions */}
+      <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Conditions
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Conditions d&apos;accès à la franchise
+            </h2>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-4">
+            {accessConditions.map((condition, index) => (
               <motion.div
-                key={step.number}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex gap-6 mb-8 last:mb-0"
               >
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    {step.number}
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="w-0.5 h-full bg-border mt-2" />
-                  )}
-                </div>
-                <div className="flex-1 pb-8">
-                  <h3 className="font-semibold text-lg mb-1">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
+                <Card className="h-full border-border/50">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <condition.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <p className="text-sm pt-2">{condition.text}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Requirements */}
+      {/* Testimonials */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">
-                Profil recherche
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-6">
-                Etes-vous le bon candidat ?
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Nous recherchons des entrepreneurs motives, prets a s'investir
-                dans le developpement d'une activite prometteuse.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Témoignages
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Témoignages de franchisés
+            </h2>
+          </motion.div>
 
-              <ul className="space-y-4">
-                {requirements.map((req, index) => (
-                  <motion.li
-                    key={req}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span>{req}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-primary/20">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Building2 className="h-8 w-8 text-primary" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full border-border/50">
+                  <CardContent className="p-8">
+                    <Quote className="h-10 w-10 text-primary/20 mb-4" />
+                    <p className="text-muted-foreground mb-6 italic">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <div className="border-t border-border pt-4">
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
                     </div>
-                    <h3 className="font-bold text-xl">Pack Franchise</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Investissement initial
-                    </p>
-                  </div>
-
-                  <div className="text-center mb-6">
-                    <span className="text-4xl font-bold">Sur devis</span>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Selon la zone et le package choisi
-                    </p>
-                  </div>
-
-                  <ul className="space-y-3 mb-6">
-                    {[
-                      "Droit d'entree a la marque",
-                      "Formation initiale (2 semaines)",
-                      "Applications et back-office",
-                      "Support marketing au lancement",
-                      "Accompagnement pendant 12 mois",
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button asChild className="w-full">
-                    <Link href="#contact">Demander un devis</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -331,36 +564,43 @@ export default function FranchisePage() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl bg-gradient-to-br from-foreground to-foreground/90 p-8 lg:p-16 text-center overflow-hidden"
+            className="relative rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-8 lg:p-16 text-center overflow-hidden"
           >
-            <div className="relative text-background">
+            <div className="relative text-primary-foreground">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Interesse par la franchise ?
+                Prêt à franchir le cap ?
               </h2>
-              <p className="text-background/70 text-lg mb-8 max-w-xl mx-auto">
-                Contactez notre equipe developpement franchise pour discuter de
+              <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
+                Contactez notre équipe développement franchise pour discuter de
                 votre projet et obtenir toutes les informations.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
-                  href="mailto:franchise@upjunoo.pro"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                  href="mailto:franchise@upjunoo.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background text-foreground font-medium hover:bg-background/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  franchise@upjunoo.pro
+                  franchise@upjunoo.com
                 </a>
                 <a
-                  href="tel:+22500000000"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background/10 text-background font-medium hover:bg-background/20 transition-colors"
+                  href="https://www.upjunoo.com/franchise"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground/10 text-primary-foreground font-medium hover:bg-primary-foreground/20 transition-colors"
                 >
-                  <Phone className="h-5 w-5" />
-                  +225 00 00 00 00 00
+                  <Globe className="h-5 w-5" />
+                  www.upjunoo.com/franchise
                 </a>
               </div>
 
-              <p className="text-sm text-background/50">
-                Reponse sous 48h ouvrées
+              <p className="text-sm text-primary-foreground/60 mb-4">
+                📍 Franchise disponible dans plusieurs capitales africaines
+                (hors zones déjà sous contrat)
+              </p>
+              <p className="text-sm font-medium italic">
+                &ldquo;Ensemble, construisons un réseau de mobilité africain,
+                fiable, rentable et durable.&rdquo;
               </p>
             </div>
           </motion.div>
