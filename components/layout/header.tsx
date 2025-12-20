@@ -12,6 +12,9 @@ import {
   Package,
   CarFront,
   Users,
+  Store,
+  Handshake,
+  UserCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -56,11 +59,31 @@ const services = [
   },
 ];
 
+const offresPartenaires = [
+  {
+    title: "Franchises",
+    href: "/offres-partenaires/franchises",
+    description: "Lancez UPJUNOO PRO dans votre region",
+    icon: Store,
+  },
+  {
+    title: "Partenaires",
+    href: "/offres-partenaires/partenaires",
+    description: "Devenez partenaire commercial",
+    icon: Handshake,
+  },
+  {
+    title: "Chauffeurs",
+    href: "/offres-partenaires/chauffeurs",
+    description: "Rejoignez notre equipe de chauffeurs",
+    icon: UserCheck,
+  },
+];
+
 const navLinks = [
   { title: "Accueil", href: "/" },
   { title: "Nos Implantations", href: "/nos-implantations" },
   { title: "Actualites", href: "/actualites" },
-  { title: "Franchise", href: "/franchise" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -75,7 +98,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <motion.div
@@ -87,7 +110,7 @@ export function Header() {
                 alt="UPJUNOO PRO"
                 width={400}
                 height={150}
-                className="h-24 sm:h-28 lg:h-32 w-auto"
+                className="h-14 sm:h-20 lg:h-24 w-auto"
                 priority
                 unoptimized
               />
@@ -145,6 +168,34 @@ export function Header() {
                     </Link>
                   </NavigationMenuItem>
                 ))}
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent">
+                    Offres Partenaires
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {offresPartenaires.map((offre) => (
+                        <li key={offre.title}>
+                          <Link
+                            href={offre.href}
+                            className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="flex items-center gap-2">
+                              <offre.icon className="h-4 w-4 text-primary" />
+                              <div className="text-sm font-medium leading-none">
+                                {offre.title}
+                              </div>
+                            </div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                              {offre.description}
+                            </p>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
@@ -237,6 +288,38 @@ export function Header() {
                               </div>
                               <div className="text-sm text-muted-foreground truncate">
                                 {service.description}
+                              </div>
+                            </div>
+                          </Link>
+                        </SheetClose>
+                      </motion.div>
+                    ))}
+
+                    <div className="pt-4 pb-2">
+                      <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        Offres Partenaires
+                      </p>
+                    </div>
+
+                    {offresPartenaires.map((offre, index) => (
+                      <motion.div
+                        key={offre.title}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: (navLinks.length + services.length + index) * 0.05 }}
+                      >
+                        <SheetClose asChild>
+                          <Link
+                            href={offre.href}
+                            className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors"
+                          >
+                            <offre.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                            <div className="min-w-0">
+                              <div className="text-base font-medium">
+                                {offre.title}
+                              </div>
+                              <div className="text-sm text-muted-foreground truncate">
+                                {offre.description}
                               </div>
                             </div>
                           </Link>

@@ -9,6 +9,7 @@ import {
   CountriesSection,
   CTASection,
   NewsletterSection,
+  FAQSection,
 } from "@/components/sections";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <StatsSection />
       <DownloadSection />
       <CountriesSection />
+      <FAQSection />
       <CTASection />
       <NewsletterSection />
     </>

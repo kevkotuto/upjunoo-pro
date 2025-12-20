@@ -19,7 +19,7 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/40 via-accent/20 to-background" />
       <div
@@ -52,7 +52,7 @@ export function PageHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6"
           >
             {title}{" "}
             {highlight && <span className="text-primary">{highlight}</span>}
@@ -62,7 +62,7 @@ export function PageHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-2"
           >
             {description}
           </motion.p>

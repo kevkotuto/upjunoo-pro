@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,11 +21,9 @@ export const metadata: Metadata = {
     template: "%s | UPJUNOO PRO",
   },
   description:
-    "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location de vehicules et fret urbain reunis sur une plateforme unique. Disponible dans 15 pays africains.",
+    "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location de vehicules et fret urbain reunis sur une plateforme unique. Solution internationale disponible dans plusieurs pays.",
   keywords: [
     "taxi",
-    "taxi Abidjan",
-    "taxi Afrique",
     "VTC",
     "livraison",
     "livraison colis",
@@ -33,28 +32,25 @@ export const metadata: Metadata = {
     "fret peri-urbain",
     "location voiture",
     "location vehicule",
-    "Afrique",
-    "Cote d'Ivoire",
-    "Senegal",
-    "Cameroun",
     "transport",
     "chauffeur",
-    "UPJUNOO",
+    "UPJUNOO PRO",
     "mobilite",
     "logistique",
+    "international",
   ],
-  authors: [{ name: "UPJUNOO", url: "https://upjunoo.pro" }],
-  creator: "UPJUNOO",
-  publisher: "UPJUNOO",
+  authors: [{ name: "UPJUNOO PRO", url: "https://upjunoo.pro" }],
+  creator: "UPJUNOO PRO",
+  publisher: "UPJUNOO PRO",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "UPJUNOO PRO | Mobilite & Logistique intelligente en Afrique",
+    title: "UPJUNOO PRO | Mobilite & Logistique intelligente internationale",
     description:
-      "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location et fret urbain sur une plateforme unique. 15 pays africains.",
+      "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location et fret urbain sur une plateforme unique. Solution internationale.",
     url: "https://upjunoo.pro",
     siteName: "UPJUNOO PRO",
     type: "website",
@@ -64,7 +60,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UPJUNOO PRO - Mobilite & Logistique en Afrique",
+        alt: "UPJUNOO PRO - Mobilite & Logistique internationale",
       },
     ],
   },
@@ -72,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UPJUNOO PRO | Mobilite & Logistique intelligente",
     description:
-      "VTC/Taxi, livraison express, location et fret urbain reunis sur une plateforme unique. Disponible dans 15 pays africains.",
+      "VTC/Taxi, livraison express, location et fret urbain reunis sur une plateforme unique. Solution internationale.",
     creator: "@upjunoo",
     images: ["/og-image.png"],
   },
@@ -105,6 +101,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );

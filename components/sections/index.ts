@@ -9,3 +9,4 @@ export { CountriesSection } from "./countries";
 export { CTASection } from "./cta";
 export { NewsletterSection } from "./newsletter";
 export { PageHero } from "./page-hero";
+export { FAQSection } from "./faq";

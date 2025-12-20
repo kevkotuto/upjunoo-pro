@@ -107,16 +107,16 @@ export function CTASection() {
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold text-background mb-4">
-                Devenez franchisé UPJUNOO
+                Devenez franchise UPJUNOO PRO
               </h3>
               <p className="text-background/70 mb-6 max-w-md">
-                Lancez votre propre activite avec la marque UPJUNOO. Beneficiez
+                Lancez votre propre activite avec la marque UPJUNOO PRO. Beneficiez
                 de notre expertise et de notre technologie eprouvee.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  "Marque reconnue en Afrique",
+                  "Marque reconnue internationalement",
                   "Formation et accompagnement",
                   "Technologie cle en main",
                 ].map((item, index) => (
@@ -141,8 +141,8 @@ export function CTASection() {
                 size="lg"
                 className="gap-2"
               >
-                <Link href="/franchise">
-                  Devenir franchisé
+                <Link href="/offres-partenaires/franchises">
+                  Devenir franchise
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

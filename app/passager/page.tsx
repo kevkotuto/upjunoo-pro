@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -104,6 +105,36 @@ export default function PassagerPage() {
         </div>
       </PageHero>
 
+      {/* Hero Image */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80"
+              alt="Service passager UPJUNOO PRO - Taxi moderne en ville"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
+              <div className="text-white max-w-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                  Voyagez en toute serenite
+                </h2>
+                <p className="text-white/80">
+                  Nos chauffeurs professionnels vous conduisent en toute securite vers votre destination.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +145,7 @@ export default function PassagerPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Pourquoi choisir UPJUNOO ?
+              Pourquoi choisir UPJUNOO PRO ?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Une experience de transport pensee pour votre confort et votre securite.

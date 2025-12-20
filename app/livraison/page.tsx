@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -105,6 +106,36 @@ export default function LivraisonPage() {
           </Button>
         </div>
       </PageHero>
+
+      {/* Hero Image */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&q=80"
+              alt="Service livraison UPJUNOO PRO - Livreur professionnel"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
+              <div className="text-white max-w-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                  Livraison rapide et securisee
+                </h2>
+                <p className="text-white/80">
+                  Vos colis livres en temps record par nos livreurs professionnels.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Delivery Types */}
       <section id="types" className="py-20 lg:py-28">

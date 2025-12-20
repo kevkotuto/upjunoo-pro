@@ -3,27 +3,27 @@
 import { motion } from "motion/react";
 import { Download, Smartphone, Apple, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const platforms = [
-  {
-    name: "App Store",
-    icon: Apple,
-    href: "#",
-    subtitle: "Telecharger sur",
-  },
-  {
-    name: "Google Play",
-    icon: Play,
-    href: "#",
-    subtitle: "Disponible sur",
-  },
-  {
-    name: "APK Direct",
-    icon: Download,
-    href: "#",
-    subtitle: "Telecharger",
-  },
-];
+const handleAppStoreClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  toast.info("Bientôt disponible", {
+    description: "L'application sera bientôt disponible sur l'App Store",
+  });
+};
+
+const handlePlayStoreClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  toast.info("Bientôt disponible", {
+    description: "L'application sera bientôt disponible sur Google Play",
+  });
+};
 
 export function DownloadSection() {
   return (
@@ -154,25 +154,94 @@ export function DownloadSection() {
 
             {/* Download buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {platforms.map((platform, index) => (
-                <motion.a
-                  key={platform.name}
-                  href={platform.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
-                >
-                  <platform.icon className="h-7 w-7" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-80">{platform.subtitle}</div>
-                    <div className="font-semibold">{platform.name}</div>
-                  </div>
-                </motion.a>
-              ))}
+              {/* App Store Button */}
+              <motion.button
+                onClick={handleAppStoreClick}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+              >
+                <Apple className="h-7 w-7" />
+                <div className="text-left">
+                  <div className="text-xs opacity-80">Telecharger sur</div>
+                  <div className="font-semibold">App Store</div>
+                </div>
+              </motion.button>
+
+              {/* Google Play Button */}
+              <motion.button
+                onClick={handlePlayStoreClick}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+              >
+                <Play className="h-7 w-7" />
+                <div className="text-left">
+                  <div className="text-xs opacity-80">Disponible sur</div>
+                  <div className="font-semibold">Google Play</div>
+                </div>
+              </motion.button>
+
+              {/* APK Direct Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+                  >
+                    <Download className="h-7 w-7" />
+                    <div className="text-left">
+                      <div className="text-xs opacity-80">Telecharger</div>
+                      <div className="font-semibold">APK Direct</div>
+                    </div>
+                  </motion.button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="/apk/app-client.apk"
+                      download="upjunoo-pro-client.apk"
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">Application Passager</div>
+                        <div className="text-xs text-muted-foreground">
+                          Pour les utilisateurs
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="/apk/app-driver.apk"
+                      download="upjunoo-pro-driver.apk"
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">Application Chauffeur</div>
+                        <div className="text-xs text-muted-foreground">
+                          Pour les conducteurs
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
 
             {/* Trust badges */}

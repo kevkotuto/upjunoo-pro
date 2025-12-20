@@ -25,7 +25,7 @@ const footerLinks = {
     { title: "Accueil", href: "/" },
     { title: "Nos Implantations", href: "/nos-implantations" },
     { title: "Actualites", href: "/actualites" },
-    { title: "Franchise", href: "/franchise" },
+    { title: "Offres Partenaires", href: "/offres-partenaires" },
   ],
   legal: [
     { title: "Conditions d'utilisation", href: "/cgu" },
@@ -150,7 +150,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/60">
-            &copy; {new Date().getFullYear()} UPJUNOO. Tous droits reserves.
+            &copy; {new Date().getFullYear()} UPJUNOO PRO. Tous droits reserves.
           </p>
 
           {/* Social Links */}
