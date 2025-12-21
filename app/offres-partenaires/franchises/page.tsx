@@ -608,20 +608,20 @@ export default function FranchisesPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
-                  href="mailto:franchise@upjunoo.pro"
+                  href="mailto:contact@upjunoo.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background text-foreground font-medium hover:bg-background/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  franchise@upjunoo.pro
+                  contact@upjunoo.com
                 </a>
                 <a
-                  href="https://www.upjunoo.pro"
+                  href="https://www.upjunoo.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground/10 text-primary-foreground font-medium hover:bg-primary-foreground/20 transition-colors"
                 >
                   <Globe className="h-5 w-5" />
-                  www.upjunoo.pro
+                  www.upjunoo.com
                 </a>
               </div>
 

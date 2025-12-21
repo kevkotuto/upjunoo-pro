@@ -537,20 +537,20 @@ export default function ChauffeurPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
-                  href="mailto:chauffeurs@upjunoo.com"
+                  href="mailto:contact@upjunoo.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  chauffeurs@upjunoo.com
+                  contact@upjunoo.com
                 </a>
                 <a
-                  href="https://www.upjunoo.com/chauffeur"
+                  href="https://www.upjunoo.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background/10 text-background font-medium hover:bg-background/20 transition-colors"
                 >
                   <Globe className="h-5 w-5" />
-                  www.upjunoo.com/chauffeur
+                  www.upjunoo.com
                 </a>
               </div>
 

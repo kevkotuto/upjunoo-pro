@@ -370,11 +370,11 @@ export default function PartenairesPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:partenaires@upjunoo.pro"
+                  href="mailto:contact@upjunoo.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background text-foreground font-medium hover:bg-background/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  partenaires@upjunoo.pro
+                  contact@upjunoo.com
                 </a>
                 <Button
                   variant="secondary"

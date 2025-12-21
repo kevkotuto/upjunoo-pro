@@ -21,15 +21,16 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@upjunoo.pro",
-    href: "mailto:info@upjunoo.pro",
+    value: "contact@upjunoo.com",
+    href: "mailto:contact@upjunoo.com",
   },
-  {
-    icon: Phone,
-    title: "Telephone",
-    value: "+225 00 00 00 00 00",
-    href: "tel:+22500000000",
-  },
+  // TODO: Decommenter quand le numero sera disponible
+  // {
+  //   icon: Phone,
+  //   title: "Telephone",
+  //   value: "+225 00 00 00 00 00",
+  //   href: "tel:+22500000000",
+  // },
   {
     icon: MapPin,
     title: "Adresse",

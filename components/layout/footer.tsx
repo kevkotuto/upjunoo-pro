@@ -70,12 +70,13 @@ export function Footer() {
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:info@upjunoo.pro"
+                  href="mailto:contact@upjunoo.com"
                   className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  info@upjunoo.pro
+                  contact@upjunoo.com
                 </a>
+                {/* TODO: Decommenter quand le numero sera disponible
                 <a
                   href="tel:+22500000000"
                   className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-colors"
@@ -83,6 +84,7 @@ export function Footer() {
                   <Phone className="h-4 w-4" />
                   +225 00 00 00 00 00
                 </a>
+                */}
               </div>
             </div>
 

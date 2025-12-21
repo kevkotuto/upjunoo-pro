@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "Comment contacter le support client ?",
     answer:
-      "Notre equipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email a support@upjunoo.pro, ou via notre page Contact. Nous nous engageons a repondre dans les plus brefs delais.",
+      "Notre equipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email a contact@upjunoo.com, ou via notre page Contact. Nous nous engageons a repondre dans les plus brefs delais.",
   },
   {
     question: "Comment devenir franchise UPJUNOO PRO ?",
