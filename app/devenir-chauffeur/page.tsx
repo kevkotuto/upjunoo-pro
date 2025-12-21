@@ -117,7 +117,7 @@ const testimonials = [
   },
   {
     quote:
-      "Je n'avais pas de voiture, mais le gestionnaire m'a intégré dans sa flotte. Aujourd'hui je gagne plus de 300 000 FCFA/mois.",
+      "Je n'avais pas de voiture, mais le gestionnaire m'a intégré dans sa flotte. Aujourd'hui mes revenus sont stables et satisfaisants.",
     author: "Sery",
     role: "Chauffeur à Abidjan",
   },

@@ -46,9 +46,9 @@ const faqs = [
       "Pour devenir franchise, rendez-vous sur la page 'Offres Partenaires > Franchises'. Vous y trouverez toutes les informations sur le profil recherche, les avantages et les conditions. Contactez notre equipe pour discuter de votre projet.",
   },
   {
-    question: "Les tarifs sont-ils fixes ou variables ?",
+    question: "Comment sont calculees les courses ?",
     answer:
-      "Les tarifs UPJUNOO PRO sont calcules en fonction de la distance, du temps de trajet et de la demande. Vous voyez toujours le prix estime avant de confirmer votre course. Aucune surprise, tout est transparent.",
+      "Les courses UPJUNOO PRO sont calculees en fonction de la distance et du temps de trajet. Vous voyez toujours une estimation avant de confirmer votre course. Aucune surprise, tout est transparent.",
   },
 ];
 

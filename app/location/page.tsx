@@ -12,7 +12,6 @@ import {
   ArrowRight,
   Download,
   Key,
-  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,6 +23,7 @@ import {
 } from "@/components/ui/accordion";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -68,19 +68,19 @@ const vehicleCategories = [
   {
     name: "Economique",
     description: "Parfait pour les trajets urbains",
-    price: "A partir de 15 000 FCFA/jour",
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
     features: ["Climatisation", "5 places", "Faible consommation"],
   },
   {
     name: "Confort",
     description: "Pour vos deplacements professionnels",
-    price: "A partir de 35 000 FCFA/jour",
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
     features: ["Climatisation", "5 places", "GPS integre", "Bluetooth"],
   },
   {
     name: "SUV / 4x4",
     description: "Ideal pour les longues distances",
-    price: "A partir de 55 000 FCFA/jour",
+    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
     features: ["Climatisation", "7 places", "4x4", "Grand coffre"],
   },
 ];
@@ -163,21 +163,18 @@ export default function LocationPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full hover:shadow-xl transition-shadow border-border/50 overflow-hidden group">
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <CarFront className="h-20 w-20 text-primary" />
-                    </motion.div>
+                  <div className="h-48 relative overflow-hidden">
+                    <Image
+                      src={category.image}
+                      alt={`Vehicule ${category.name}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-xl mb-1">{category.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-3">
+                    <p className="text-muted-foreground text-sm mb-4">
                       {category.description}
-                    </p>
-                    <p className="text-primary font-semibold mb-4">
-                      {category.price}
                     </p>
                     <ul className="space-y-2">
                       {category.features.map((feature) => (

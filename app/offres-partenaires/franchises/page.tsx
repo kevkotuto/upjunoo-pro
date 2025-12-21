@@ -461,7 +461,7 @@ export default function FranchisesPage() {
                         <td className="p-4 sm:p-6 font-medium">
                           Apport personnel recommande
                         </td>
-                        <td className="p-4 sm:p-6">A partir de 25 000 EUR</td>
+                        <td className="p-4 sm:p-6">Nous consulter</td>
                       </tr>
                       <tr className="border-b border-border">
                         <td className="p-4 sm:p-6 font-medium">
@@ -480,7 +480,7 @@ export default function FranchisesPage() {
                       <tr className="border-b border-border">
                         <td className="p-4 sm:p-6 font-medium">Rentabilite moyenne</td>
                         <td className="p-4 sm:p-6 text-primary font-semibold">
-                          Entre 12 et 18 mois
+                          Nous consulter
                         </td>
                       </tr>
                       <tr>

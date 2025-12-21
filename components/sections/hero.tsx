@@ -47,7 +47,7 @@ export function HeroSection() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-4 sm:mb-6"
             >
               Reservez un taxi{" "}
-              <span className="text-primary">a petit prix</span>, ou que vous
+              <span className="text-primary">en toute simplicite</span>, ou que vous
               soyez
             </motion.h1>
 
