@@ -35,7 +35,7 @@ const offres = [
       "Integrations API",
       "Programmes de fidelite",
     ],
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+    image: "/images/banniere/personne sourriante format -16-9.jpg",
   },
   {
     title: "Chauffeurs",
@@ -49,7 +49,7 @@ const offres = [
       "Application intuitive",
       "Support continu",
     ],
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    image: "/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg",
   },
 ];
 

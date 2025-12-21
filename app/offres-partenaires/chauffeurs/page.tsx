@@ -159,10 +159,10 @@ export default function ChauffeursPartenairesPage() {
             className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80"
-              alt="Chauffeur professionnel UPJUNOO PRO"
+              src="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
+              alt="Chauffeur professionnel UPJUNOO PRO - Main sur volant"
               fill
-              className="object-cover"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
             <div className="absolute inset-0 flex items-center p-8 sm:p-12">

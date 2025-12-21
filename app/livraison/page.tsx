@@ -117,8 +117,8 @@ export default function LivraisonPage() {
             className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
-              alt="Service livraison UPJUNOO PRO - Livreur professionnel"
+              src="/images/banniere/coursier a moto avec colis format 16-9.jpg"
+              alt="Service livraison UPJUNOO PRO - Coursier a moto"
               fill
               className="object-cover"
             />

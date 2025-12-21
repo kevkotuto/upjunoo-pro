@@ -115,8 +115,8 @@ export default function PassagerPage() {
             className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80"
-              alt="Service passager UPJUNOO PRO - Taxi moderne en ville"
+              src="/images/banniere/couple qui range leur affaire dans le coffre d un vtc format 16-9.jpg"
+              alt="Service passager UPJUNOO PRO - Couple avec VTC"
               fill
               className="object-cover"
             />

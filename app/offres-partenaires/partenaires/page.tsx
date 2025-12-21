@@ -163,7 +163,7 @@ export default function PartenairesPage() {
             className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80"
+              src="/images/banniere/personne sourriante format -16-9.jpg"
               alt="Collaboration et partenariat UPJUNOO PRO"
               fill
               className="object-cover"

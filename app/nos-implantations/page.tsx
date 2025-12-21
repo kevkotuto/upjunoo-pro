@@ -74,8 +74,8 @@ export default function ImplantationsPage() {
             className="relative h-[250px] sm:h-[350px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80"
-              alt="Carte du monde - Presence internationale UPJUNOO PRO"
+              src="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+              alt="Presence internationale UPJUNOO PRO - Voiture brandee"
               fill
               className="object-cover"
             />
