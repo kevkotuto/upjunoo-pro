@@ -68,19 +68,19 @@ const vehicleCategories = [
   {
     name: "Economique",
     description: "Parfait pour les trajets urbains",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+    image: "/images/vehicule/normal.jpg",
     features: ["Climatisation", "5 places", "Faible consommation"],
   },
   {
     name: "Confort",
     description: "Pour vos deplacements professionnels",
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    image: "/images/vehicule/confor.jpg",
     features: ["Climatisation", "5 places", "GPS integre", "Bluetooth"],
   },
   {
     name: "SUV / 4x4",
     description: "Ideal pour les longues distances",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
+    image: "/images/vehicule/suv.jpg",
     features: ["Climatisation", "7 places", "4x4", "Grand coffre"],
   },
 ];
