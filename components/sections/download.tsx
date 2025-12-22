@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react";
 import { Download, Smartphone, Apple, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import Image from "next/image";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -75,38 +75,19 @@ export function DownloadSection() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="relative"
               >
-                <div className="w-[260px] h-[520px] bg-foreground rounded-[2.5rem] p-2.5 mx-auto shadow-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-primary via-primary to-primary/90 rounded-[2rem] relative overflow-hidden">
+                <div className="w-[260px] h-[520px] bg-gray-900 rounded-[2.5rem] p-2 mx-auto shadow-2xl ring-1 ring-white/10">
+                  <div className="w-full h-full rounded-[2rem] relative overflow-hidden bg-white">
                     {/* Notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-foreground rounded-b-xl" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-gray-900 rounded-b-xl z-10" />
 
-                    {/* App UI mockup */}
-                    <div className="absolute inset-0 p-6 pt-10 flex flex-col">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="w-10 h-10 rounded-full bg-white/20" />
-                        <div className="w-8 h-8 rounded-lg bg-white/20" />
-                      </div>
-
-                      <div className="space-y-3 mb-6">
-                        <div className="h-3 w-3/4 bg-white/30 rounded-full" />
-                        <div className="h-3 w-1/2 bg-white/20 rounded-full" />
-                      </div>
-
-                      <div className="flex-1 grid grid-cols-2 gap-3">
-                        {[...Array(4)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.5 + i * 0.1 }}
-                            className="bg-white/15 rounded-2xl backdrop-blur-sm"
-                          />
-                        ))}
-                      </div>
-
-                      <div className="mt-6 h-14 bg-white/20 rounded-2xl" />
-                    </div>
+                    {/* App screenshot */}
+                    <Image
+                      src="/images/captureHome.jpeg"
+                      alt="UPJUNOO PRO App"
+                      fill
+                      className="object-cover"
+                      style={{ objectPosition: "center -8px" }}
+                    />
                   </div>
                 </div>
 

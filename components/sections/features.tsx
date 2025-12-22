@@ -173,8 +173,8 @@ export function FeaturesSection() {
                   <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-white">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-gray-900 rounded-b-xl z-10" />
                     <Image
-                      src="/images/center.jpg"
-                      alt="UPJUNOO App Interface"
+                      src="/images/captureHome.jpeg"
+                      alt="UPJUNOO PRO App"
                       fill
                       className="object-cover"
                     />
