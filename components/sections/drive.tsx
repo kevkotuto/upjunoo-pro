@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Clock, Wallet, Shield, MapPin } from "lucide-react";
+import { Clock, Wallet, Shield, MapPin, ArrowRight, CheckCircle, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -10,36 +12,62 @@ import motoAnimation from "@/public/annimation/Navy blue delivery motorbike.json
 const benefits = [
   {
     icon: Clock,
-    title: "Horaires de travail flexibles",
+    title: "Horaires flexibles",
     description:
-      "Vous êtes libre de choisir vos horaires de travail en fonction de vos préférences, ce qui vous permet de concilier vie professionnelle et personnelle.",
+      "Choisissez vos horaires de travail en fonction de vos preferences. Conciliez vie professionnelle et personnelle.",
+    color: "from-blue-500 to-blue-600",
+    iconColor: "text-blue-500",
+    bgColor: "bg-blue-500/10",
   },
   {
     icon: Wallet,
     title: "Revenus attractifs",
     description:
-      "Chez UPJUNOO PRO, vous êtes payé à la course ou à la livraison, ce qui vous permet de maximiser vos revenus en fonction de vos horaires et de votre zone de travail.",
+      "Paye a la course ou a la livraison. Maximisez vos revenus selon vos horaires et votre zone.",
+    color: "from-green-500 to-green-600",
+    iconColor: "text-green-500",
+    bgColor: "bg-green-500/10",
   },
   {
     icon: Shield,
     title: "Assurance incluse",
     description:
-      "Bénéficiez d'une couverture d'assurance pendant vos courses pour conduire et livrer en toute sérénité.",
+      "Couverture d'assurance complete pendant vos courses. Conduisez et livrez en toute serenite.",
+    color: "from-purple-500 to-purple-600",
+    iconColor: "text-purple-500",
+    bgColor: "bg-purple-500/10",
   },
   {
     icon: MapPin,
-    title: "Choisissez votre zone",
+    title: "Votre zone",
     description:
-      "Travaillez dans les zones qui vous conviennent le mieux et optimisez vos trajets pour gagner plus.",
+      "Travaillez dans les zones qui vous conviennent. Optimisez vos trajets pour gagner plus.",
+    color: "from-orange-500 to-orange-600",
+    iconColor: "text-orange-500",
+    bgColor: "bg-orange-500/10",
   },
 ];
 
 export function DriveSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-32 bg-muted/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Animation - Mobile first */}
+    <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] border border-primary/5 rounded-full"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] border border-primary/5 rounded-full"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -47,51 +75,42 @@ export function DriveSection() {
             transition={{ duration: 0.6 }}
             className="relative flex justify-center order-first lg:order-last"
           >
-            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-lg">
+            <div className="relative w-full max-w-md lg:max-w-lg">
               {/* Background glow */}
-              <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl scale-75" />
+              <motion.div
+                animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.3, 0.2] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 bg-gradient-to-br from-primary/20 to-yellow-400/20 rounded-full blur-3xl"
+              />
 
-              {/* Map background decoration */}
-              <div className="absolute inset-0 opacity-20">
-                <svg
-                  viewBox="0 0 400 400"
-                  className="w-full h-full"
-                  fill="none"
-                >
-                  <circle
-                    cx="200"
-                    cy="200"
-                    r="150"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeDasharray="8 8"
-                    className="text-primary"
+              {/* Map circles */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {[1, 2, 3].map((i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+                    transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                    className="absolute rounded-full border border-dashed border-primary/20"
+                    style={{ width: `${50 + i * 25}%`, height: `${50 + i * 25}%` }}
                   />
-                  <circle
-                    cx="200"
-                    cy="200"
-                    r="100"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeDasharray="4 4"
-                    className="text-primary"
-                  />
-                  <circle
-                    cx="200"
-                    cy="200"
-                    r="50"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    className="text-primary"
-                  />
-                  {/* Location pins */}
-                  <circle cx="120" cy="150" r="6" className="fill-primary/50" />
-                  <circle cx="280" cy="180" r="6" className="fill-primary/50" />
-                  <circle cx="200" cy="280" r="6" className="fill-primary/50" />
-                  <circle cx="150" cy="250" r="4" className="fill-primary/30" />
-                  <circle cx="260" cy="130" r="4" className="fill-primary/30" />
-                </svg>
+                ))}
               </div>
+
+              {/* Location dots */}
+              {[
+                { top: "20%", left: "25%", delay: 0 },
+                { top: "35%", right: "20%", delay: 0.5 },
+                { bottom: "25%", left: "30%", delay: 1 },
+                { bottom: "40%", right: "25%", delay: 1.5 },
+              ].map((pos, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: pos.delay }}
+                  className="absolute w-3 h-3 bg-primary rounded-full"
+                  style={pos}
+                />
+              ))}
 
               {/* Lottie Animation */}
               <div className="relative z-10">
@@ -102,6 +121,55 @@ export function DriveSection() {
                   className="w-full h-auto"
                 />
               </div>
+
+              {/* Floating stats cards */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="absolute -left-4 lg:-left-8 top-1/4 z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-white rounded-2xl shadow-xl p-4"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+                      <Wallet className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Revenu moyen</p>
+                      <p className="text-sm font-bold">+25% vs avant</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+                className="absolute -right-4 lg:-right-8 bottom-1/3 z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="bg-white rounded-2xl shadow-xl p-4"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Flexibilite</p>
+                      <p className="text-sm font-bold">100% libre</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -113,24 +181,35 @@ export function DriveSection() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-primary font-medium text-sm uppercase tracking-wider mb-4"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
-              Devenez partenaire
-            </motion.span>
+              <Sparkles className="h-4 w-4" />
+              Devenez Partenaire
+            </motion.div>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Conduisez et Livrez avec{" "}
-              <span className="text-primary">confiance</span>, gagnez avec{" "}
+              Conduisez avec{" "}
+              <span className="text-primary relative">
+                confiance
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                  className="absolute -bottom-1 left-0 right-0 h-3 bg-yellow-400/30 -z-10 origin-left"
+                />
+              </span>
+              , gagnez avec{" "}
               <span className="text-primary">assurance</span>
             </motion.h2>
 
@@ -139,13 +218,13 @@ export function DriveSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0"
+              className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              Rejoignez notre réseau de chauffeurs et livreurs partenaires et
-              profitez d'une flexibilité totale dans votre activité.
+              Rejoignez notre reseau de chauffeurs et livreurs partenaires.
+              Profitez d'une flexibilite totale et de revenus attractifs.
             </motion.p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
@@ -153,17 +232,21 @@ export function DriveSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
+                  whileHover={{ x: 5 }}
                   className="group"
                 >
-                  <div className="flex items-start gap-3 sm:gap-4 text-left">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <benefit.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
+                  <div className="flex items-start gap-4 text-left">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className={`w-12 h-12 rounded-2xl ${benefit.bgColor} flex items-center justify-center flex-shrink-0`}
+                    >
+                      <benefit.icon className={`h-6 w-6 ${benefit.iconColor}`} />
+                    </motion.div>
                     <div className="min-w-0">
-                      <h3 className="font-semibold text-sm sm:text-base mb-1">
+                      <h3 className="font-bold text-base mb-1 group-hover:text-primary transition-colors">
                         {benefit.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
@@ -171,6 +254,25 @@ export function DriveSection() {
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="gap-2 h-14 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/25 hover:scale-105 transition-all"
+              >
+                <Link href="/devenir-chauffeur">
+                  Rejoindre l'equipe
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </div>

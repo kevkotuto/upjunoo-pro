@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -89,13 +89,26 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-primary shadow-lg"
+          : "bg-primary"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
@@ -108,9 +121,9 @@ export function Header() {
               <Image
                 src="/images/logo/logo_fond_transparent.png"
                 alt="UPJUNOO PRO"
-                width={400}
-                height={150}
-                className="h-14 sm:h-20 lg:h-24 w-auto"
+                width={1000}
+                height={400}
+                className="h-[168px] sm:h-64 lg:h-56 w-auto brightness-0 invert drop-shadow-md"
                 priority
                 unoptimized
               />
@@ -124,14 +137,14 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
                   >
                     Accueil
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
                     Nos Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -162,7 +175,7 @@ export function Header() {
                   <NavigationMenuItem key={link.title}>
                     <Link
                       href={link.href}
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
                     >
                       {link.title}
                     </Link>
@@ -170,7 +183,7 @@ export function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
                     Offres Partenaires
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -202,7 +215,7 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button asChild>
+            <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-semibold">
               <Link href="/#download" className="gap-2">
                 <Download className="h-4 w-4" />
                 Telecharger
@@ -213,7 +226,7 @@ export function Header() {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="h-10 w-10">
+              <Button variant="ghost" size="icon" className="h-10 w-10 text-primary-foreground hover:bg-primary-foreground/10">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Menu</span>
               </Button>
