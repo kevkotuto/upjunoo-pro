@@ -181,7 +181,11 @@ export function Header() {
                     </Link>
                   </NavigationMenuItem>
                 ))}
+              </NavigationMenuList>
+            </NavigationMenu>
 
+            <NavigationMenu>
+              <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
                     Offres Partenaires

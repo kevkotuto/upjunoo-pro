@@ -8,7 +8,6 @@ import {
   Shield,
   CreditCard,
   Star,
-  CheckCircle,
   ArrowRight,
   Download,
 } from "lucide-react";
@@ -90,13 +89,22 @@ export default function PassagerPage() {
         description="Reservez votre course en quelques clics et deplacez-vous sereinement a travers la ville avec nos chauffeurs professionnels."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="gap-2">
-            <Link href="#download">
+          <Button
+            size="lg"
+            asChild
+            className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
+          >
+            <Link href="/#download">
               <Download className="h-5 w-5" />
               Telecharger l'app
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="gap-2">
+          <Button
+            size="lg"
+            variant="outline"
+            asChild
+            className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
+          >
             <Link href="#how-it-works">
               Comment ca marche
               <ArrowRight className="h-4 w-4" />
@@ -106,13 +114,13 @@ export default function PassagerPage() {
       </PageHero>
 
       {/* Hero Image */}
-      <section className="py-12">
+      <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
+            className="relative h-[300px] sm:h-[450px] rounded-3xl overflow-hidden"
           >
             <Image
               src="/images/banniere/couple qui range leur affaire dans le coffre d un vtc format 16-9.jpg"
@@ -120,23 +128,34 @@ export default function PassagerPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
             <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <div className="text-white max-w-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="text-white max-w-lg"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                   Voyagez en toute serenite
                 </h2>
-                <p className="text-white/80">
+                <p className="text-white/90 text-lg mb-6">
                   Nos chauffeurs professionnels vous conduisent en toute securite vers votre destination.
                 </p>
-              </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    <span className="font-medium">4.8/5 note moyenne</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,8 +163,11 @@ export default function PassagerPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Pourquoi choisir UPJUNOO PRO ?
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              Nos avantages
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Pourquoi choisir <span className="text-primary">UPJUNOO PRO</span> ?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Une experience de transport pensee pour votre confort et votre securite.
@@ -161,10 +183,10 @@ export default function PassagerPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border-border/50">
+                <Card className="h-full hover:border-primary/30 transition-all duration-300 border-border/50 group">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                      <feature.icon className="h-6 w-6 text-primary" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <feature.icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
                     <p className="text-muted-foreground text-sm">
@@ -179,7 +201,7 @@ export default function PassagerPage() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-20 lg:py-28 bg-muted/30">
+      <section id="how-it-works" className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -187,11 +209,11 @@ export default function PassagerPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               Comment ca marche
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Reservez en 4 etapes simples
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Reservez en <span className="text-primary">4 etapes</span> simples
             </h2>
           </motion.div>
 
@@ -206,13 +228,16 @@ export default function PassagerPage() {
                 className="relative"
               >
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-border" />
+                  <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/20" />
                 )}
-                <div className="relative bg-card rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div className="relative bg-card rounded-2xl p-6 text-center border border-border/50 hover:border-primary/30 transition-colors">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                  >
                     {step.number}
-                  </div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
+                  </motion.div>
+                  <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground">
                     {step.description}
                   </p>
@@ -230,19 +255,33 @@ export default function PassagerPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl bg-primary p-8 lg:p-16 text-center overflow-hidden"
+            className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-[#046d7a] p-8 lg:p-16 text-center overflow-hidden"
           >
-            <div className="absolute inset-0 opacity-10">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-                  backgroundSize: "24px 24px",
-                }}
+            {/* Background decorations */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-1/2 -right-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute -bottom-1/2 -left-1/2 w-full h-full border border-white/10 rounded-full"
               />
             </div>
+
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, type: "spring" }}
+                className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-6"
+              >
+                <Download className="h-10 w-10 text-gray-900" />
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
                 Pret a voyager ?
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
@@ -251,9 +290,8 @@ export default function PassagerPage() {
               </p>
               <Button
                 size="lg"
-                variant="secondary"
                 asChild
-                className="gap-2 bg-white text-primary hover:bg-white/90"
+                className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8 py-6"
               >
                 <Link href="/#download">
                   <Download className="h-5 w-5" />

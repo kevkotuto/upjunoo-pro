@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { MapPin, Globe, Users, Building2 } from "lucide-react";
+import { MapPin, Globe, Users, Building2, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
@@ -65,13 +66,13 @@ export default function ImplantationsPage() {
       />
 
       {/* Hero Image */}
-      <section className="py-12">
+      <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative h-[250px] sm:h-[350px] rounded-3xl overflow-hidden"
+            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
           >
             <Image
               src="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
@@ -79,24 +80,34 @@ export default function ImplantationsPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white">
-                <Globe className="h-16 w-16 sm:h-24 sm:w-24 mx-auto mb-4 opacity-80" />
-                <h2 className="text-xl sm:text-2xl font-bold mb-2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="text-center text-white"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Globe className="h-20 w-20 sm:h-28 sm:w-28 mx-auto mb-4 opacity-90" />
+                </motion.div>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                   Une presence internationale
                 </h2>
-                <p className="text-white/80 text-sm sm:text-base">
+                <p className="text-white/80 text-base sm:text-lg">
                   UPJUNOO PRO vous accompagne partout dans le monde
                 </p>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-gradient-to-br from-primary via-primary to-[#046d7a] text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -108,8 +119,13 @@ export default function ImplantationsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="h-8 w-8 mx-auto mb-3 opacity-80" />
-                <div className="text-3xl sm:text-4xl font-bold mb-1">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3"
+                >
+                  <stat.icon className="h-7 w-7" />
+                </motion.div>
+                <div className="text-4xl sm:text-5xl font-bold mb-1">
                   {stat.value}
                 </div>
                 <div className="text-primary-foreground/70">{stat.label}</div>
@@ -128,8 +144,11 @@ export default function ImplantationsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Nos regions d'implantation
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              Nos regions
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Nos regions <span className="text-primary">d'implantation</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Decouvrez les villes ou UPJUNOO PRO est disponible et profitez de
@@ -147,30 +166,36 @@ export default function ImplantationsPage() {
                 transition={{ delay: regionIndex * 0.1 }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-4xl">{region.flag}</span>
+                  <motion.span
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    className="text-5xl"
+                  >
+                    {region.flag}
+                  </motion.span>
                   <h3 className="text-2xl font-bold">{region.name}</h3>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {region.countries.map((country, index) => (
+                  {region.countries.map((country) => (
                     <Card
                       key={country.name}
-                      className="hover:shadow-lg transition-all border-border/50 group hover:border-primary/30"
+                      className="hover:border-primary/30 transition-all duration-300 border-border/50 group"
                     >
-                      <CardContent className="p-4 sm:p-6">
+                      <CardContent className="p-5">
                         <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
                           {country.name}
-                          <span className="w-2 h-2 rounded-full bg-green-500 relative">
-                            <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75" />
+                          <span className="relative flex h-2.5 w-2.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                           </span>
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {country.cities.map((city) => (
                             <span
                               key={city}
-                              className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground"
+                              className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-primary/5 text-muted-foreground group-hover:from-primary/20 group-hover:to-primary/10 transition-colors"
                             >
-                              <MapPin className="h-3 w-3" />
+                              <MapPin className="h-3 w-3 text-primary" />
                               {city}
                             </span>
                           ))}
@@ -186,30 +211,56 @@ export default function ImplantationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-[#046d7a] p-8 lg:p-16 text-center overflow-hidden"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Votre region n'est pas encore couverte ?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              Devenez franchise UPJUNOO PRO et lancez le service dans votre
-              region. Nous vous accompagnons a chaque etape.
-            </p>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href="/offres-partenaires/franchises"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+            {/* Background decorations */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-1/2 -right-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute -bottom-1/2 -left-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, type: "spring" }}
+                className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-6"
               >
-                Devenir franchise
-                <span>→</span>
-              </Link>
-            </motion.div>
+                <Building2 className="h-10 w-10 text-gray-900" />
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Votre region n'est pas encore couverte ?
+              </h2>
+              <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+                Devenez franchise UPJUNOO PRO et lancez le service dans votre
+                region. Nous vous accompagnons a chaque etape.
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8 py-6"
+              >
+                <Link href="/offres-partenaires/franchises">
+                  Devenir franchise
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

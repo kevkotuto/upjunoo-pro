@@ -85,19 +85,20 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] sm:leading-[1.1] mb-6 text-white"
             >
               La mobilite
               <br />
-              <span className="relative">
+              <span className="relative inline-block pb-2 sm:pb-3">
                 <span className="text-yellow-400">reinventee</span>
                 <motion.svg
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ delay: 0.8, duration: 0.8 }}
-                  className="absolute -bottom-2 left-0 w-full"
+                  className="absolute bottom-0 left-0 w-full h-2 sm:h-3"
                   viewBox="0 0 200 12"
                   fill="none"
+                  preserveAspectRatio="none"
                 >
                   <path
                     d="M2 8 Q 50 2, 100 8 T 198 6"

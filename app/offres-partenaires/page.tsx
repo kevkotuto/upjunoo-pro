@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Store, Handshake, UserCheck, ArrowRight } from "lucide-react";
+import { Store, Handshake, UserCheck, ArrowRight, CheckCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
@@ -22,6 +22,7 @@ const offres = [
       "Outils de gestion avances",
     ],
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    color: "from-primary to-primary/80",
   },
   {
     title: "Partenaires",
@@ -36,6 +37,7 @@ const offres = [
       "Programmes de fidelite",
     ],
     image: "/images/banniere/personne sourriante format -16-9.jpg",
+    color: "from-[#046d7a] to-primary",
   },
   {
     title: "Chauffeurs",
@@ -50,6 +52,7 @@ const offres = [
       "Support continu",
     ],
     image: "/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg",
+    color: "from-yellow-500 to-yellow-400",
   },
 ];
 
@@ -74,20 +77,21 @@ export default function OffresPartenairesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full border-border/50 overflow-hidden group hover:border-primary/30 transition-colors">
-                  <div className="relative h-48 overflow-hidden">
+                <Card className="h-full border-border/50 overflow-hidden group hover:border-primary/30 transition-all duration-300">
+                  <div className="relative h-52 overflow-hidden">
                     <Image
                       src={offre.image}
                       alt={offre.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center">
-                        <offre.icon className="h-6 w-6 text-primary-foreground" />
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className={`absolute bottom-4 left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${offre.color} flex items-center justify-center`}
+                    >
+                      <offre.icon className="h-7 w-7 text-white" />
+                    </motion.div>
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-2">{offre.title}</h3>
@@ -100,12 +104,14 @@ export default function OffresPartenairesPage() {
                           key={i}
                           className="flex items-center gap-2 text-sm"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center">
+                            <CheckCircle className="h-3 w-3 text-green-500" />
+                          </div>
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button asChild className="w-full gap-2">
+                    <Button asChild className={`w-full gap-2 bg-gradient-to-r ${offre.color}`}>
                       <Link href={offre.href}>
                         En savoir plus
                         <ArrowRight className="h-4 w-4" />
@@ -119,25 +125,88 @@ export default function OffresPartenairesPage() {
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="py-16 bg-gradient-to-br from-primary via-primary to-[#046d7a] text-primary-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { value: "50+", label: "Franchises actives" },
+              { value: "1200+", label: "Chauffeurs partenaires" },
+              { value: "15", label: "Pays couverts" },
+              { value: "98%", label: "Satisfaction partenaires" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="text-4xl sm:text-5xl font-bold mb-2"
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-primary-foreground/70">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-[#046d7a] p-8 lg:p-16 text-center overflow-hidden"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Vous avez des questions ?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Notre equipe est disponible pour repondre a toutes vos questions
-              et vous accompagner dans votre projet.
-            </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">Nous contacter</Link>
-            </Button>
+            {/* Background decorations */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-1/2 -right-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute -bottom-1/2 -left-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, type: "spring" }}
+                className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-6"
+              >
+                <MessageSquare className="h-10 w-10 text-gray-900" />
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Vous avez des questions ?
+              </h2>
+              <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+                Notre equipe est disponible pour repondre a toutes vos questions
+                et vous accompagner dans votre projet.
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8 py-6"
+              >
+                <Link href="/contact">
+                  Nous contacter
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

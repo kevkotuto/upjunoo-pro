@@ -92,13 +92,22 @@ export default function LivraisonPage() {
         description="Un service de livraison rapide, fiable et securise pour tous vos envois, des documents aux colis volumineux."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="gap-2">
+          <Button
+            size="lg"
+            asChild
+            className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
+          >
             <Link href="/#download">
               <Download className="h-5 w-5" />
               Envoyer un colis
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="gap-2">
+          <Button
+            size="lg"
+            variant="outline"
+            asChild
+            className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
+          >
             <Link href="#types">
               Voir les options
               <ArrowRight className="h-4 w-4" />
@@ -108,13 +117,13 @@ export default function LivraisonPage() {
       </PageHero>
 
       {/* Hero Image */}
-      <section className="py-12">
+      <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
+            className="relative h-[300px] sm:h-[450px] rounded-3xl overflow-hidden"
           >
             <Image
               src="/images/banniere/coursier a moto avec colis format 16-9.jpg"
@@ -122,23 +131,38 @@ export default function LivraisonPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
             <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <div className="text-white max-w-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="text-white max-w-lg"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                   Livraison rapide et securisee
                 </h2>
-                <p className="text-white/80">
+                <p className="text-white/90 text-lg mb-6">
                   Vos colis livres en temps record par nos livreurs professionnels.
                 </p>
-              </div>
+                <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Zap className="h-5 w-5 text-yellow-400" />
+                    <span className="font-medium">Livraison express</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Shield className="h-5 w-5 text-green-400" />
+                    <span className="font-medium">100% securise</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Delivery Types */}
-      <section id="types" className="py-20 lg:py-28">
+      <section id="types" className="py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,11 +170,11 @@ export default function LivraisonPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               Options de livraison
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Choisissez votre mode de livraison
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Choisissez votre <span className="text-primary">mode de livraison</span>
             </h2>
           </motion.div>
 
@@ -164,27 +188,30 @@ export default function LivraisonPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
-                  className={`h-full relative overflow-hidden ${
-                    type.popular ? "border-primary shadow-lg" : "border-border/50"
+                  className={`h-full relative overflow-hidden transition-all duration-300 hover:scale-105 ${
+                    type.popular ? "border-primary border-2" : "border-border/50"
                   }`}
                 >
                   {type.popular && (
-                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-bl-lg">
+                    <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-xl">
                       Populaire
                     </div>
                   )}
                   <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 ${
-                        type.popular ? "bg-primary text-primary-foreground" : "bg-primary/10"
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${
+                        type.popular
+                          ? "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground"
+                          : "bg-gradient-to-br from-primary/20 to-primary/10"
                       }`}
                     >
                       <type.icon
-                        className={`h-7 w-7 ${type.popular ? "" : "text-primary"}`}
+                        className={`h-8 w-8 ${type.popular ? "" : "text-primary"}`}
                       />
-                    </div>
-                    <h3 className="font-semibold text-xl mb-1">{type.title}</h3>
-                    <p className="text-primary font-medium mb-3">{type.time}</p>
+                    </motion.div>
+                    <h3 className="font-bold text-xl mb-1">{type.title}</h3>
+                    <p className="text-primary font-semibold text-lg mb-3">{type.time}</p>
                     <p className="text-muted-foreground text-sm">
                       {type.description}
                     </p>
@@ -197,7 +224,7 @@ export default function LivraisonPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,8 +232,11 @@ export default function LivraisonPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Un service de livraison complet
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              Nos avantages
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Un service de livraison <span className="text-primary">complet</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Tout ce dont vous avez besoin pour envoyer et recevoir vos colis en
@@ -223,10 +253,10 @@ export default function LivraisonPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border-border/50">
+                <Card className="h-full hover:border-primary/30 transition-all duration-300 border-border/50 group">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                      <feature.icon className="h-6 w-6 text-primary" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <feature.icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
                     <p className="text-muted-foreground text-sm">
@@ -241,7 +271,7 @@ export default function LivraisonPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -249,11 +279,11 @@ export default function LivraisonPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                 Simple et rapide
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-6">
-                Comment envoyer un colis ?
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                Comment envoyer <span className="text-primary">un colis</span> ?
               </h2>
 
               <div className="space-y-6">
@@ -287,12 +317,15 @@ export default function LivraisonPage() {
                     transition={{ delay: index * 0.1 }}
                     className="flex gap-4"
                   >
-                    <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground flex items-center justify-center font-bold flex-shrink-0"
+                    >
                       {item.step}
-                    </div>
+                    </motion.div>
                     <div>
-                      <h3 className="font-semibold mb-1">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                      <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -307,7 +340,7 @@ export default function LivraisonPage() {
             >
               <div className="aspect-square max-w-md mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl" />
-                <div className="absolute inset-8 bg-card rounded-2xl shadow-xl flex items-center justify-center">
+                <div className="absolute inset-8 bg-card rounded-2xl flex items-center justify-center border border-border/50">
                   <motion.div
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -320,7 +353,7 @@ export default function LivraisonPage() {
                 <motion.div
                   animate={{ y: [0, -15, 0], rotate: [-5, 5, -5] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-4 right-4 w-16 h-16 bg-card rounded-2xl shadow-lg flex items-center justify-center"
+                  className="absolute top-4 right-4 w-16 h-16 bg-card rounded-2xl flex items-center justify-center border border-border/50"
                 >
                   <Zap className="h-8 w-8 text-yellow-500" />
                 </motion.div>
@@ -328,9 +361,17 @@ export default function LivraisonPage() {
                 <motion.div
                   animate={{ y: [0, 10, 0], rotate: [5, -5, 5] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-4 left-4 w-16 h-16 bg-card rounded-2xl shadow-lg flex items-center justify-center"
+                  className="absolute bottom-4 left-4 w-16 h-16 bg-card rounded-2xl flex items-center justify-center border border-border/50"
                 >
                   <CheckCircle className="h-8 w-8 text-green-500" />
+                </motion.div>
+
+                <motion.div
+                  animate={{ x: [-10, 10, -10], y: [5, -5, 5] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute top-1/2 right-0 w-12 h-12 bg-card rounded-xl flex items-center justify-center border border-border/50"
+                >
+                  <MapPin className="h-6 w-6 text-primary" />
                 </motion.div>
               </div>
             </motion.div>
@@ -339,27 +380,56 @@ export default function LivraisonPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-[#046d7a] p-8 lg:p-16 text-center overflow-hidden"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Pret a envoyer votre premier colis ?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              Telechargez l'application et beneficiez d'une premiere livraison a
-              tarif reduit.
-            </p>
-            <Button size="lg" asChild className="gap-2">
-              <Link href="/#download">
-                <Download className="h-5 w-5" />
-                Commencer maintenant
-              </Link>
-            </Button>
+            {/* Background decorations */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-1/2 -right-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute -bottom-1/2 -left-1/2 w-full h-full border border-white/10 rounded-full"
+              />
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, type: "spring" }}
+                className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-6"
+              >
+                <Package className="h-10 w-10 text-gray-900" />
+              </motion.div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
+                Pret a envoyer votre premier colis ?
+              </h2>
+              <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
+                Telechargez l'application et beneficiez d'une premiere livraison a
+                tarif reduit.
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8 py-6"
+              >
+                <Link href="/#download">
+                  <Download className="h-5 w-5" />
+                  Commencer maintenant
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
