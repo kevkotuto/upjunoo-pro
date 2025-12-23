@@ -168,7 +168,7 @@ export default function PartenairesPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
             <div className="absolute inset-0 flex items-center p-8 sm:p-12">
               <div className="text-white max-w-lg">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4">
