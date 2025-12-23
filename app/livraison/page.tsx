@@ -131,7 +131,7 @@ export default function LivraisonPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
             <div className="absolute inset-0 flex items-center p-8 sm:p-12">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}

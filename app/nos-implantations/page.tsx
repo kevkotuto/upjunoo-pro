@@ -80,7 +80,7 @@ export default function ImplantationsPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
