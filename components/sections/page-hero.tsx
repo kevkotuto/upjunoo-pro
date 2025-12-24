@@ -25,8 +25,8 @@ export function PageHero({
   if (backgroundImage) {
     return (
       <section className="relative pt-16 sm:pt-20 bg-[#0a1628]">
-        {/* Image de fond - pleine largeur avec ratio 16:9 */}
-        <div className="relative w-full aspect-video">
+        {/* Image de fond - hauteur min sur mobile, ratio 16:9 sur desktop */}
+        <div className="relative w-full min-h-[60vh] sm:min-h-0 sm:aspect-video">
           <Image
             src={backgroundImage}
             alt=""
@@ -35,18 +35,18 @@ export function PageHero({
             priority
           />
           {/* Overlay sombre pour la lisibilite */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/80 to-[#0a1628]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70 sm:from-[#0a1628]/95 sm:via-[#0a1628]/80 sm:to-[#0a1628]/60" />
 
           {/* Contenu positionne sur l'image */}
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0">
               <div className="max-w-2xl">
                 {badge && (
                   <motion.span
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1, duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary text-sm font-medium mb-6 border border-primary/30"
+                    className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-primary/30"
                   >
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
@@ -60,7 +60,7 @@ export function PageHero({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-white leading-tight"
                 >
                   {title}{" "}
                   {highlight && (
@@ -72,7 +72,7 @@ export function PageHero({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
                 >
                   {description}
                 </motion.p>

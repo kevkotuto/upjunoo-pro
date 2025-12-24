@@ -370,7 +370,7 @@ export default function FranchisesPage() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 src: "/images/screenshots/partenaire-dashboard.jpeg",

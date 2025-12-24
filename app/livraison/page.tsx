@@ -134,7 +134,7 @@ export default function LivraisonPage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {deliveryTypes.map((type, index) => (
               <motion.div
                 key={type.title}

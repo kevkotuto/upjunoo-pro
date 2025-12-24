@@ -69,7 +69,7 @@ export default function OffresPartenairesPage() {
 
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {offres.map((offre, index) => (
               <motion.div
                 key={offre.title}
