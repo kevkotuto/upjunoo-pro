@@ -202,7 +202,7 @@ export function ServiceFretSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <Link href="/livraison">
+              <Link href="/fret-urbain">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/25">
                   Demander un devis
                   <ArrowRight className="h-5 w-5" />

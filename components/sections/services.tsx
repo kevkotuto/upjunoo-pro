@@ -41,7 +41,7 @@ const services = [
     description:
       "Organisez vos envois volumineux avec pick-up, camionnettes ou camions legers. Planification et suivi garantis.",
     icon: Truck,
-    href: "/livraison",
+    href: "/fret-urbain",
     color: "bg-amber-500",
     gradient: "from-amber-500 to-amber-600",
     iconBg: "bg-amber-500/10",

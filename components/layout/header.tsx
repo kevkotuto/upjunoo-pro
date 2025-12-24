@@ -15,6 +15,7 @@ import {
   Store,
   Handshake,
   UserCheck,
+  Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,6 +45,12 @@ const services = [
     href: "/livraison",
     description: "Envoyez et recevez vos colis",
     icon: Package,
+  },
+  {
+    title: "Fret Urbain",
+    href: "/fret-urbain",
+    description: "Transport de marchandises volumineuses",
+    icon: Truck,
   },
   {
     title: "Location",
@@ -134,6 +141,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <NavigationMenu>
               <NavigationMenuList>
+                {/* Accueil */}
                 <NavigationMenuItem>
                   <Link
                     href="/"
@@ -143,9 +151,10 @@ export function Header() {
                   </Link>
                 </NavigationMenuItem>
 
+                {/* Services */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
-                    Nos Services
+                    Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
@@ -171,21 +180,7 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {navLinks.slice(1).map((link) => (
-                  <NavigationMenuItem key={link.title}>
-                    <Link
-                      href={link.href}
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
-                    >
-                      {link.title}
-                    </Link>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-
-            <NavigationMenu>
-              <NavigationMenuList>
+                {/* Offres Partenaires */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
                     Offres Partenaires
@@ -212,6 +207,36 @@ export function Header() {
                       ))}
                     </ul>
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Nos Implantations */}
+                <NavigationMenuItem>
+                  <Link
+                    href="/nos-implantations"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                  >
+                    Nos Implantations
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* Actualites */}
+                <NavigationMenuItem>
+                  <Link
+                    href="/actualites"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                  >
+                    Actualites
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* Contact */}
+                <NavigationMenuItem>
+                  <Link
+                    href="/contact"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                  >
+                    Contact
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -262,24 +287,23 @@ export function Header() {
 
                 <nav className="flex-1 overflow-auto py-4">
                   <div className="px-4 space-y-1">
-                    {navLinks.map((link, index) => (
-                      <motion.div
-                        key={link.title}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <SheetClose asChild>
-                          <Link
-                            href={link.href}
-                            className="flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors"
-                          >
-                            {link.title}
-                          </Link>
-                        </SheetClose>
-                      </motion.div>
-                    ))}
+                    {/* Accueil */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0 }}
+                    >
+                      <SheetClose asChild>
+                        <Link
+                          href="/"
+                          className="flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors"
+                        >
+                          Accueil
+                        </Link>
+                      </SheetClose>
+                    </motion.div>
 
+                    {/* Services */}
                     <div className="pt-4 pb-2">
                       <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                         Services
@@ -291,7 +315,7 @@ export function Header() {
                         key={service.title}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: (navLinks.length + index) * 0.05 }}
+                        transition={{ delay: (1 + index) * 0.05 }}
                       >
                         <SheetClose asChild>
                           <Link
@@ -312,6 +336,7 @@ export function Header() {
                       </motion.div>
                     ))}
 
+                    {/* Offres Partenaires */}
                     <div className="pt-4 pb-2">
                       <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                         Offres Partenaires
@@ -323,7 +348,7 @@ export function Header() {
                         key={offre.title}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: (navLinks.length + services.length + index) * 0.05 }}
+                        transition={{ delay: (1 + services.length + index) * 0.05 }}
                       >
                         <SheetClose asChild>
                           <Link
@@ -339,6 +364,35 @@ export function Header() {
                                 {offre.description}
                               </div>
                             </div>
+                          </Link>
+                        </SheetClose>
+                      </motion.div>
+                    ))}
+
+                    {/* Autres liens */}
+                    <div className="pt-4 pb-2">
+                      <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        Navigation
+                      </p>
+                    </div>
+
+                    {[
+                      { title: "Nos Implantations", href: "/nos-implantations" },
+                      { title: "Actualites", href: "/actualites" },
+                      { title: "Contact", href: "/contact" },
+                    ].map((link, index) => (
+                      <motion.div
+                        key={link.title}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: (1 + services.length + offresPartenaires.length + index) * 0.05 }}
+                      >
+                        <SheetClose asChild>
+                          <Link
+                            href={link.href}
+                            className="flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors"
+                          >
+                            {link.title}
                           </Link>
                         </SheetClose>
                       </motion.div>
