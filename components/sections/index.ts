@@ -1,5 +1,10 @@
 export { HeroSection } from "./hero";
 export { ServicesSection } from "./services";
+export { ServiceTaxiSection } from "./service-taxi";
+export { ServiceLivraisonSection } from "./service-livraison";
+export { ServiceLocationSection } from "./service-location";
+export { ServiceFretSection } from "./service-fret";
+export { ServicePartenaireSection } from "./service-partenaire";
 export { StatsSection } from "./stats";
 export { FeaturesSection } from "./features";
 export { WhyUpjunooSection } from "./why-upjunoo";

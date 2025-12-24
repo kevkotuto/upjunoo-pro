@@ -1,6 +1,11 @@
 import {
   HeroSection,
   ServicesSection,
+  ServiceTaxiSection,
+  ServiceLivraisonSection,
+  ServiceLocationSection,
+  ServiceFretSection,
+  ServicePartenaireSection,
   StatsSection,
   FeaturesSection,
   WhyUpjunooSection,
@@ -17,6 +22,11 @@ export default function Home() {
     <>
       <HeroSection />
       <ServicesSection />
+      <ServiceTaxiSection />
+      <ServiceLivraisonSection />
+      <ServiceLocationSection />
+      <ServiceFretSection />
+      <ServicePartenaireSection />
       <WhyUpjunooSection />
       <FeaturesSection />
       <DriveSection />
