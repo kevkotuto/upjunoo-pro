@@ -31,7 +31,7 @@ export function CTASection() {
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Rejoignez l'aventure{" "}
-            <span className="text-primary">UPJUNOO</span>
+            <span className="text-primary">UPJUNOO PRO</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Que vous soyez chauffeur, livreur ou entrepreneur, nous avons une opportunite pour vous.

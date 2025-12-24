@@ -111,6 +111,7 @@ export default function SupportPage() {
         title="Centre de"
         highlight="support"
         description="Notre equipe est disponible 24/7 pour vous aider. Choisissez le canal qui vous convient le mieux."
+        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
       />
 
       {/* Support Features */}

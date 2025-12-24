@@ -63,48 +63,9 @@ export default function ImplantationsPage() {
         title="UPJUNOO PRO dans"
         highlight="le monde entier"
         description="Notre reseau s'etend sur plusieurs continents, vous accompagnant ou que vous alliez."
+        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+        imagePosition="bottom"
       />
-
-      {/* Hero Image */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
-              alt="Presence internationale UPJUNOO PRO - Voiture brandee"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="text-center text-white"
-              >
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <Globe className="h-20 w-20 sm:h-28 sm:w-28 mx-auto mb-4 opacity-90" />
-                </motion.div>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-                  Une presence internationale
-                </h2>
-                <p className="text-white/80 text-base sm:text-lg">
-                  UPJUNOO PRO vous accompagne partout dans le monde
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Stats */}
       <section className="py-16 bg-gradient-to-br from-primary via-primary to-[#046d7a] text-primary-foreground">

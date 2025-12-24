@@ -82,11 +82,10 @@ export function DownloadSection() {
 
                     {/* App screenshot */}
                     <Image
-                      src="/images/captureHome.jpeg"
+                      src="/images/screenshots/client-app.jpeg"
                       alt="UPJUNOO PRO App"
                       fill
-                      className="object-cover"
-                      style={{ objectPosition: "center -8px" }}
+                      className="object-contain"
                     />
                   </div>
                 </div>

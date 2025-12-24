@@ -90,6 +90,7 @@ export default function LivraisonPage() {
         title="Envoyez vos colis"
         highlight="en temps record"
         description="Un service de livraison rapide, fiable et securise pour tous vos envois, des documents aux colis volumineux."
+        backgroundImage="/images/banniere/coursier a moto avec colis format 16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -115,51 +116,6 @@ export default function LivraisonPage() {
           </Button>
         </div>
       </PageHero>
-
-      {/* Hero Image */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[450px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/banniere/coursier a moto avec colis format 16-9.jpg"
-              alt="Service livraison UPJUNOO PRO - Coursier a moto"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-white max-w-lg"
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Livraison rapide et securisee
-                </h2>
-                <p className="text-white/90 text-lg mb-6">
-                  Vos colis livres en temps record par nos livreurs professionnels.
-                </p>
-                <div className="flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Zap className="h-5 w-5 text-yellow-400" />
-                    <span className="font-medium">Livraison express</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Shield className="h-5 w-5 text-green-400" />
-                    <span className="font-medium">100% securise</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Delivery Types */}
       <section id="types" className="py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">

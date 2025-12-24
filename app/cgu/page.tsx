@@ -185,7 +185,7 @@ export default function CGUPage() {
                   {[
                     "Mobile Money (Orange Money, MTN Money, Wave, etc.)",
                     "Especes (selon les regions)",
-                    "Portefeuille electronique UPJUNOO",
+                    "Portefeuille electronique UPJUNOO PRO",
                   ].map((item, index) => (
                     <li
                       key={index}

@@ -136,6 +136,7 @@ export default function PartenairesPage() {
         title="Devenez partenaire"
         highlight="UPJUNOO PRO"
         description="Integrez nos solutions de mobilite et logistique a votre activite et offrez plus de valeur a vos clients."
+        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">
@@ -152,36 +153,6 @@ export default function PartenairesPage() {
           </Button>
         </div>
       </PageHero>
-
-      {/* Hero Image */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/banniere/personne sourriante format -16-9.jpg"
-              alt="Collaboration et partenariat UPJUNOO PRO"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
-            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <div className="text-white max-w-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Collaborons ensemble
-                </h2>
-                <p className="text-white/80">
-                  Des solutions sur mesure pour developper votre activite avec UPJUNOO PRO.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Partner Types */}
       <section id="types" className="py-20 lg:py-28">
@@ -238,8 +209,76 @@ export default function PartenairesPage() {
         </div>
       </section>
 
-      {/* Advantages */}
+      {/* Dashboard Screenshots */}
       <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Interface de gestion
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Votre <span className="text-primary">tableau de bord</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Gerez votre flotte, vos chauffeurs et vos performances depuis une interface intuitive.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {[
+              {
+                src: "/images/screenshots/partenaire-dashboard.jpeg",
+                title: "Tableau de bord",
+                description: "Vue d'ensemble de votre activite",
+              },
+              {
+                src: "/images/screenshots/partenaire-gestion-vehicules.jpeg",
+                title: "Gestion des vehicules",
+                description: "Gerez votre flotte en temps reel",
+              },
+              {
+                src: "/images/screenshots/partenaire-affectation.jpeg",
+                title: "Affectation chauffeurs",
+                description: "Assignez les vehicules facilement",
+              },
+            ].map((screenshot, index) => (
+              <motion.div
+                key={screenshot.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-2 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
+                  <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="mt-4 text-center pb-2">
+                    <h3 className="font-semibold text-base text-white">{screenshot.title}</h3>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {screenshot.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

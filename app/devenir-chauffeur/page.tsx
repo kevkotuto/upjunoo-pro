@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import Image from "next/image";
 
 const structuredProcess = [
   {
@@ -105,7 +106,7 @@ const trainingTopics = [
 ];
 
 const howItWorks = [
-  "Contactez un partenaire gestionnaire de flotte agree UPJUNOO",
+  "Contactez un partenaire gestionnaire de flotte agree UPJUNOO PRO",
   "Preparez vos documents",
   "Passez un court entretien avec le partenaire",
   "Accedez a l'application apres inscription",
@@ -116,7 +117,7 @@ const howItWorks = [
 const testimonials = [
   {
     quote:
-      "Grace a mon partenaire UPJUNOO, j'ai repris une activite stable, je suis accompagne et mes revenus sont reguliers.",
+      "Grace a mon partenaire UPJUNOO PRO, j'ai repris une activite stable, je suis accompagne et mes revenus sont reguliers.",
     author: "Moussa",
     role: "Chauffeur a Yamoussoukro",
   },
@@ -136,6 +137,7 @@ export default function ChauffeurPage() {
         title="Devenez chauffeur"
         highlight="partenaire"
         description="Roulez librement. Gagnez dignement. Integrez un reseau structure et securise."
+        backgroundImage="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -162,7 +164,7 @@ export default function ChauffeurPage() {
         </div>
       </PageHero>
 
-      {/* Why join UPJUNOO */}
+      {/* Why join UPJUNOO PRO */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -172,10 +174,10 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Rejoindre UPJUNOO
+              Rejoindre UPJUNOO PRO
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Pourquoi rejoindre <span className="text-primary">UPJUNOO</span> ?
+              Pourquoi rejoindre <span className="text-primary">UPJUNOO PRO</span> ?
             </h2>
           </motion.div>
 
@@ -188,13 +190,13 @@ export default function ChauffeurPage() {
             >
               <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-300 rounded-full opacity-20 blur-2xl" />
               <p className="text-lg text-center mb-6">
-                <span className="font-semibold text-primary">UPJUNOO</span> est
+                <span className="font-semibold text-primary">UPJUNOO PRO</span> est
                 une plateforme VTC panafricaine qui vous permet de devenir
                 chauffeur professionnel agree, avec l'appui d'un
                 partenaire gestionnaire de flotte reconnu.
               </p>
               <p className="text-muted-foreground text-center mb-6">
-                En tant que chauffeur UPJUNOO, vous integrez une equipe
+                En tant que chauffeur UPJUNOO PRO, vous integrez une equipe
                 serieuse, structuree, et appuyee par une technologie moderne.
                 Vous travaillez dans un cadre clair, formel et equitable, avec
                 des revenus garantis et une progression possible.
@@ -227,7 +229,7 @@ export default function ChauffeurPage() {
               Un processus <span className="text-primary">structure</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Chez UPJUNOO, vous ne travaillez pas seul. Vous etes encadre par
+              Chez UPJUNOO PRO, vous ne travaillez pas seul. Vous etes encadre par
               un partenaire local agree, qui :
             </p>
           </motion.div>
@@ -273,7 +275,7 @@ export default function ChauffeurPage() {
               Vos avantages
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Pourquoi devenir chauffeur <span className="text-primary">UPJUNOO</span> ?
+              Pourquoi devenir chauffeur <span className="text-primary">UPJUNOO PRO</span> ?
             </h2>
           </motion.div>
 
@@ -364,7 +366,7 @@ export default function ChauffeurPage() {
               Formation & <span className="text-primary">Suivi</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              UPJUNOO et ses partenaires forment chaque nouveau chauffeur sur :
+              UPJUNOO PRO et ses partenaires forment chaque nouveau chauffeur sur :
             </p>
           </motion.div>
 
@@ -415,8 +417,71 @@ export default function ChauffeurPage() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* Driver App Screenshots */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-muted/30 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              Votre outil de travail
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              L'application <span className="text-primary">chauffeur</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Une application intuitive pour gerer vos courses et maximiser vos revenus.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+            {[
+              {
+                src: "/images/screenshots/chauffeur-app.jpeg",
+                title: "Interface chauffeur",
+                description: "Acceptez les courses en un clic",
+              },
+              {
+                src: "/images/screenshots/chauffeur-finalisation.jpeg",
+                title: "Finalisation",
+                description: "Terminez vos courses facilement",
+              },
+            ].map((screenshot, index) => (
+              <motion.div
+                key={screenshot.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="group max-w-xs"
+              >
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-2 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
+                  <div className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="mt-4 text-center pb-2">
+                    <h3 className="font-semibold text-base text-white">{screenshot.title}</h3>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {screenshot.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -523,7 +588,7 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              UPJUNOO en chiffres
+              UPJUNOO PRO en chiffres
             </h2>
           </motion.div>
 

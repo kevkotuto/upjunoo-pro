@@ -236,7 +236,7 @@ export function HeroSection() {
                   <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl scale-150" />
                   <Image
                     src="/images/voiture.png"
-                    alt="Voiture UPJUNOO"
+                    alt="Voiture UPJUNOO PRO"
                     width={220}
                     height={150}
                     className="w-28 lg:w-52 h-auto drop-shadow-2xl relative"
@@ -257,7 +257,7 @@ export function HeroSection() {
                   <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-2xl scale-150" />
                   <Image
                     src="/images/tricycle.png"
-                    alt="Tricycle UPJUNOO Delivery"
+                    alt="Tricycle UPJUNOO PRO Delivery"
                     width={260}
                     height={180}
                     className="w-32 lg:w-56 h-auto drop-shadow-2xl relative"
@@ -278,7 +278,7 @@ export function HeroSection() {
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-150" />
                   <Image
                     src="/images/moto.png"
-                    alt="Moto UPJUNOO"
+                    alt="Moto UPJUNOO PRO"
                     width={180}
                     height={120}
                     className="w-24 lg:w-44 h-auto drop-shadow-2xl relative"

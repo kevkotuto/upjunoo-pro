@@ -33,7 +33,7 @@ const articles = [
   },
   {
     id: 3,
-    title: "UPJUNOO au Salon de l'Innovation Urbaine",
+    title: "UPJUNOO PRO au Salon de l'Innovation Urbaine",
     excerpt:
       "Notre participation au Salon de l'Innovation Urbaine Africaine a Abidjan nous a permis d'echanger avec les acteurs majeurs de la smart city.",
     category: "Evenement",
@@ -57,7 +57,7 @@ const articles = [
     id: 5,
     title: "Partenariat avec Orange Money",
     excerpt:
-      "UPJUNOO s'associe a Orange Money pour faciliter les paiements mobiles dans toute la region.",
+      "UPJUNOO PRO s'associe a Orange Money pour faciliter les paiements mobiles dans toute la region.",
     category: "Partenariat",
     date: "20 Nov 2024",
     readTime: "3 min",
@@ -95,8 +95,9 @@ export default function ActualitesPage() {
       <PageHero
         badge="Blog"
         title="Actualites"
-        highlight="UPJUNOO"
+        highlight="UPJUNOO PRO"
         description="Suivez notre actualite, nos nouveautes produit et notre expansion a travers l'Afrique."
+        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
       />
 
       {/* Featured Articles */}

@@ -87,6 +87,7 @@ export default function PassagerPage() {
         title="Commandez un taxi"
         highlight="en toute simplicite"
         description="Reservez votre course en quelques clics et deplacez-vous sereinement a travers la ville avec nos chauffeurs professionnels."
+        backgroundImage="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -112,47 +113,6 @@ export default function PassagerPage() {
           </Button>
         </div>
       </PageHero>
-
-      {/* Hero Image */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[450px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/banniere/couple qui range leur affaire dans le coffre d un vtc format 16-9.jpg"
-              alt="Service passager UPJUNOO PRO - Couple avec VTC"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-white max-w-lg"
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Voyagez en toute serenite
-                </h2>
-                <p className="text-white/90 text-lg mb-6">
-                  Nos chauffeurs professionnels vous conduisent en toute securite vers votre destination.
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                    <span className="font-medium">4.8/5 note moyenne</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Features */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">
@@ -194,6 +154,79 @@ export default function PassagerPage() {
                     </p>
                   </CardContent>
                 </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* App Screenshots */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-muted/30 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              L'application en action
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Decouvrez l'experience <span className="text-primary">UPJUNOO PRO</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Une interface intuitive pour une experience de transport sans friction.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                src: "/images/screenshots/client-app.jpeg",
+                title: "Accueil",
+                description: "Interface principale de l'application",
+              },
+              {
+                src: "/images/screenshots/client-suivi-trajet.jpeg",
+                title: "Suivi en temps reel",
+                description: "Suivez votre trajet sur la carte",
+              },
+              {
+                src: "/images/screenshots/client-info-chauffeur.jpeg",
+                title: "Infos chauffeur",
+                description: "Consultez le profil de votre chauffeur",
+              },
+              {
+                src: "/images/screenshots/client-historique.jpeg",
+                title: "Historique",
+                description: "Retrouvez tous vos trajets",
+              },
+            ].map((screenshot, index) => (
+              <motion.div
+                key={screenshot.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-2 border border-border/50 hover:border-primary/30 transition-all duration-300">
+                  <div className="relative aspect-[9/19] rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="mt-4 text-center pb-2">
+                    <h3 className="font-semibold text-base text-white">{screenshot.title}</h3>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {screenshot.description}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

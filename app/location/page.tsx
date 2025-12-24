@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "Quels documents sont necessaires pour louer un vehicule ?",
     answer:
-      "Pour louer un vehicule chez UPJUNOO, vous devez presenter une piece d'identite valide (CNI ou passeport) et un permis de conduire en cours de validite. Une caution peut etre demandee selon le type de vehicule.",
+      "Pour louer un vehicule chez UPJUNOO PRO, vous devez presenter une piece d'identite valide (CNI ou passeport) et un permis de conduire en cours de validite. Une caution peut etre demandee selon le type de vehicule.",
   },
   {
     question: "Comment fonctionne le processus de reservation ?",
@@ -117,6 +117,7 @@ export default function LocationPage() {
         title="Louez en toute confiance,"
         highlight="partez l'esprit leger"
         description="Une large gamme de vehicules disponibles pour tous vos besoins. Reservation simple, rapide et securisee."
+        backgroundImage="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -230,7 +231,7 @@ export default function LocationPage() {
               Nos avantages
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Pourquoi louer avec <span className="text-primary">UPJUNOO</span> ?
+              Pourquoi louer avec <span className="text-primary">UPJUNOO PRO</span> ?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Un service de location pense pour votre confort et votre tranquillite.

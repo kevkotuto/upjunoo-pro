@@ -160,6 +160,7 @@ export default function FranchisesPage() {
         title="Devenez franchise de la"
         highlight="mobilite urbaine de demain"
         description="Une opportunite exclusive d'investir dans un secteur en pleine croissance internationale."
+        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">
@@ -176,37 +177,6 @@ export default function FranchisesPage() {
           </Button>
         </div>
       </PageHero>
-
-      {/* Hero Image */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80"
-              alt="Partenariat UPJUNOO PRO - Poignee de main professionnelle"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
-            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <div className="text-white max-w-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Rejoignez le reseau UPJUNOO PRO
-                </h2>
-                <p className="text-white/80">
-                  Developpez votre activite avec une marque reconnue
-                  internationalement.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Why become a franchisee */}
       <section className="py-20 lg:py-28">
@@ -380,8 +350,76 @@ export default function FranchisesPage() {
         </div>
       </section>
 
-      {/* Local Responsibilities */}
+      {/* Dashboard Screenshots */}
       <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Outils de gestion
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+              Votre interface <span className="text-primary">d'administration</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Pilotez votre franchise avec des outils professionnels et intuitifs.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {[
+              {
+                src: "/images/screenshots/partenaire-dashboard.jpeg",
+                title: "Tableau de bord",
+                description: "Supervisez l'ensemble de votre activite",
+              },
+              {
+                src: "/images/screenshots/partenaire-gestion-vehicules.jpeg",
+                title: "Gestion de flotte",
+                description: "Controlez tous vos vehicules",
+              },
+              {
+                src: "/images/screenshots/partenaire-affectation.jpeg",
+                title: "Gestion des chauffeurs",
+                description: "Affectez et suivez vos equipes",
+              },
+            ].map((screenshot, index) => (
+              <motion.div
+                key={screenshot.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-2 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
+                  <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.title}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="mt-4 text-center pb-2">
+                    <h3 className="font-semibold text-base text-white">{screenshot.title}</h3>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {screenshot.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local Responsibilities */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

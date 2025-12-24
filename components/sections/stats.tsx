@@ -11,7 +11,7 @@ const stats = [
     label: "Utilisateurs actifs",
     icon: Users,
     color: "from-blue-400 to-blue-600",
-    description: "Font confiance a UPJUNOO",
+    description: "Font confiance a UPJUNOO PRO",
   },
   {
     value: 15,
@@ -175,7 +175,7 @@ export function StatsSection() {
             Nos Chiffres
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            UPJUNOO en{" "}
+            UPJUNOO PRO en{" "}
             <span className="text-yellow-400 relative">
               chiffres
               <motion.div

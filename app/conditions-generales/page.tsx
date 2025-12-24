@@ -175,7 +175,7 @@ const sections = [
     content: (
       <p className="text-muted-foreground">
         Les paiements peuvent etre effectues via Mobile Money, especes ou
-        portefeuille electronique UPJUNOO. Les montants sont affiches de maniere
+        portefeuille electronique UPJUNOO PRO. Les montants sont affiches de maniere
         transparente avant validation.
       </p>
     ),

@@ -64,6 +64,7 @@ export default function OffresPartenairesPage() {
         title="Nos offres"
         highlight="partenaires"
         description="Decouvrez les differentes facons de collaborer avec UPJUNOO PRO et de participer a la revolution de la mobilite."
+        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
       />
 
       <section className="py-20 lg:py-28">

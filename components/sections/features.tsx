@@ -173,10 +173,10 @@ export function FeaturesSection() {
                   <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-white">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-gray-900 rounded-b-xl z-10" />
                     <Image
-                      src="/images/captureHome.jpeg"
-                      alt="UPJUNOO PRO App"
+                      src="/images/screenshots/client-suivi-trajet.jpeg"
+                      alt="UPJUNOO PRO App - Suivi en temps reel"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </motion.div>

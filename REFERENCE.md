@@ -52,7 +52,7 @@
 - **Description**: "Rejoins notre equipe et profite de revenus flexibles"
 
 #### Section Telechargement
-- **Visuel**: Badge UPJUNOO
+- **Visuel**: Badge UPJUNOO PRO
 - **Boutons**: APK direct, Google Play, Apple App Store
 
 #### Section Franchise
@@ -102,7 +102,7 @@
 
 #### Section Franchise 2
 - "Des vehicules qui captent chaque detail"
-- **CTA**: "Exploitez la marque UPJUNOO"
+- **CTA**: "Exploitez la marque UPJUNOO PRO"
 
 #### Section Newsletter
 - **Titre**: "Inscrivez vous a notre newsletter"
@@ -157,7 +157,7 @@
 ### PAGE: DEVENIR CHAUFFEUR (/devenir-chauffeur ou /driver)
 
 #### Hero
-- **Titre**: "Rejoignez UPJUNOO et boostez votre succes en tant que chauffeur !"
+- **Titre**: "Rejoignez UPJUNOO PRO et boostez votre succes en tant que chauffeur !"
 
 #### Avantages
 - Horaires flexibles: "choisissez vos propres horaires"
@@ -219,7 +219,7 @@
 - YouTube
 
 ### Legal
-- Copyright 2025 UPJUNOO
+- Copyright 2025 UPJUNOO PRO
 - "UPJUNOO PRO est une plateforme d'information"
 
 ---

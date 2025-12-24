@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface PageHeroProps {
   badge?: string;
@@ -9,6 +10,7 @@ interface PageHeroProps {
   highlight?: string;
   description: string;
   children?: ReactNode;
+  backgroundImage?: string;
 }
 
 export function PageHero({
@@ -17,7 +19,82 @@ export function PageHero({
   highlight,
   description,
   children,
+  backgroundImage,
 }: PageHeroProps) {
+  // Si une image de fond est fournie, utiliser le style Kayako
+  if (backgroundImage) {
+    return (
+      <section className="relative pt-16 sm:pt-20 bg-[#0a1628]">
+        {/* Image de fond - pleine largeur avec ratio 16:9 */}
+        <div className="relative w-full aspect-video">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Overlay sombre pour la lisibilite */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/80 to-[#0a1628]/60" />
+
+          {/* Contenu positionne sur l'image */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="max-w-2xl">
+                {badge && (
+                  <motion.span
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1, duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary text-sm font-medium mb-6 border border-primary/30"
+                  >
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+                    </span>
+                    {badge}
+                  </motion.span>
+                )}
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white"
+                >
+                  {title}{" "}
+                  {highlight && (
+                    <span className="text-primary">{highlight}</span>
+                  )}
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+                >
+                  {description}
+                </motion.p>
+
+                {children && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    {children}
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Style par defaut (sans image)
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 pb-16 sm:pb-20 bg-gradient-to-br from-primary via-primary to-[#046d7a]">
       {/* Animated background shapes */}

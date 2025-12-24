@@ -132,6 +132,7 @@ export default function ChauffeursPartenairesPage() {
         title="Devenez chauffeur partenaire"
         highlight="UPJUNOO PRO"
         description="Roulez librement. Gagnez dignement. Integrez un reseau structure et securise."
+        backgroundImage="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">
@@ -148,36 +149,6 @@ export default function ChauffeursPartenairesPage() {
           </Button>
         </div>
       </PageHero>
-
-      {/* Hero Image */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative h-[300px] sm:h-[400px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
-              alt="Chauffeur professionnel UPJUNOO PRO - Main sur volant"
-              fill
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
-            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
-              <div className="text-white max-w-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Prenez le volant de votre carriere
-                </h2>
-                <p className="text-white/80">
-                  Rejoignez une equipe de professionnels et beneficiez d'un accompagnement complet.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Why join UPJUNOO PRO */}
       <section className="py-20 lg:py-28">

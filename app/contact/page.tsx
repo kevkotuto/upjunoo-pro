@@ -87,6 +87,7 @@ export default function ContactPage() {
         title="Contactez"
         highlight="nous"
         description="Une question, une suggestion ou besoin d'aide ? Notre equipe est la pour vous repondre."
+        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
       />
 
       <section className="py-20 lg:py-28">

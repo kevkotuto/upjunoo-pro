@@ -54,7 +54,7 @@ const faqCategories = [
       {
         question: "Quels sont les modes de paiement acceptes ?",
         answer:
-          "Nous acceptons plusieurs modes de paiement : Mobile Money (Orange Money, MTN Money, Wave, etc.), paiement en especes selon les regions, et le portefeuille electronique UPJUNOO. Vous pouvez configurer votre mode de paiement prefere dans l'application.",
+          "Nous acceptons plusieurs modes de paiement : Mobile Money (Orange Money, MTN Money, Wave, etc.), paiement en especes selon les regions, et le portefeuille electronique UPJUNOO PRO. Vous pouvez configurer votre mode de paiement prefere dans l'application.",
       },
       {
         question: "Comment sont calculees les courses ?",
@@ -189,6 +189,7 @@ export default function FAQPage() {
         title="Questions"
         highlight="frequentes"
         description="Trouvez rapidement les reponses a vos questions les plus courantes sur UPJUNOO PRO."
+        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
       />
 
       {/* Quick Links */}
