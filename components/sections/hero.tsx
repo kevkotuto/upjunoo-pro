@@ -139,6 +139,7 @@ export function HeroSection() {
                   Telecharger gratuitement
                 </Link>
               </Button>
+              {/* Bouton demo - a reactiver quand la demo sera prete
               <Button
                 size="lg"
                 variant="outline"
@@ -150,6 +151,7 @@ export function HeroSection() {
                   Voir la demo
                 </Link>
               </Button>
+              */}
             </motion.div>
 
             {/* Trust indicators */}
