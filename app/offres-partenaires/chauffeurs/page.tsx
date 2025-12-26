@@ -132,7 +132,7 @@ export default function ChauffeursPartenairesPage() {
         title="Devenez chauffeur partenaire"
         highlight="UPJUNOO PRO"
         description="Roulez librement. Gagnez dignement. Integrez un reseau structure et securise."
-        backgroundImage="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
+        backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">

@@ -189,7 +189,7 @@ export default function FAQPage() {
         title="Questions"
         highlight="frequentes"
         description="Trouvez rapidement les reponses a vos questions les plus courantes sur UPJUNOO PRO."
-        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
+        backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
       {/* Quick Links */}

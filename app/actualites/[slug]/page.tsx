@@ -40,7 +40,7 @@ export default function ArticlePage() {
         title={article.title}
         highlight=""
         description={article.excerpt}
-        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+        backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 
       <article className="py-16 lg:py-24">

@@ -20,7 +20,7 @@ export default function ActualitesPage() {
         title="Actualites"
         highlight="UPJUNOO PRO"
         description="Suivez notre actualite, nos nouveautes produit et notre expansion a travers l'Afrique."
-        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+        backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 
       {/* Featured Articles */}

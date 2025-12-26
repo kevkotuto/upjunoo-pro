@@ -237,11 +237,11 @@ export function HeroSection() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl scale-150" />
                   <Image
-                    src="/images/voiture.png"
-                    alt="Voiture UPJUNOO PRO"
-                    width={220}
-                    height={150}
-                    className="w-28 lg:w-52 h-auto drop-shadow-2xl relative"
+                    src="/images/vehicule/voiture-noel-2025-03.png"
+                    alt="Voiture UPJUNOO PRO - Edition Noel"
+                    width={400}
+                    height={225}
+                    className="w-36 lg:w-64 h-auto drop-shadow-2xl relative"
                   />
                 </div>
               </motion.div>

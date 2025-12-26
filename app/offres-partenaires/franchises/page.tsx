@@ -160,7 +160,7 @@ export default function FranchisesPage() {
         title="Devenez franchise de la"
         highlight="mobilite urbaine de demain"
         description="Une opportunite exclusive d'investir dans un secteur en pleine croissance internationale."
-        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+        backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">

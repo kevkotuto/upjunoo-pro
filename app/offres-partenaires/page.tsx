@@ -36,7 +36,7 @@ const offres = [
       "Integrations API",
       "Programmes de fidelite",
     ],
-    image: "/images/banniere/personne sourriante format -16-9.jpg",
+    image: "/images/banniere/personne-sourriante-16-9.jpg",
     color: "from-[#046d7a] to-primary",
   },
   {
@@ -51,7 +51,7 @@ const offres = [
       "Application intuitive",
       "Support continu",
     ],
-    image: "/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg",
+    image: "/images/banniere/main-volant-upjunoo-1-1.jpg",
     color: "from-yellow-500 to-yellow-400",
   },
 ];
@@ -64,7 +64,7 @@ export default function OffresPartenairesPage() {
         title="Nos offres"
         highlight="partenaires"
         description="Decouvrez les differentes facons de collaborer avec UPJUNOO PRO et de participer a la revolution de la mobilite."
-        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
+        backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
       <section className="py-20 lg:py-28">

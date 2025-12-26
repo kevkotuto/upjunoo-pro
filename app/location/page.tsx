@@ -117,7 +117,7 @@ export default function LocationPage() {
         title="Louez en toute confiance,"
         highlight="partez l'esprit leger"
         description="Une large gamme de vehicules disponibles pour tous vos besoins. Reservation simple, rapide et securisee."
-        backgroundImage="/images/banniere/une main sur un volant avec logo upjunoo pro format 1-1 carre.jpg"
+        backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button

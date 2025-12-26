@@ -63,7 +63,7 @@ export default function ImplantationsPage() {
         title="UPJUNOO PRO dans"
         highlight="le monde entier"
         description="Notre reseau s'etend sur plusieurs continents, vous accompagnant ou que vous alliez."
-        backgroundImage="/images/banniere/voiture brander upjunoo avec icon map en haut format 16-9.png"
+        backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 
       {/* Stats */}

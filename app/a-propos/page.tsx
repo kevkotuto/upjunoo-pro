@@ -97,7 +97,7 @@ export default function AProposPage() {
         title="Decouvrez"
         highlight="UPJUNOO PRO"
         description="La plateforme numerique de mobilite et de logistique intelligente qui transforme vos deplacements."
-        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
+        backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
       {/* Introduction */}

@@ -136,7 +136,7 @@ export default function PartenairesPage() {
         title="Devenez partenaire"
         highlight="UPJUNOO PRO"
         description="Integrez nos solutions de mobilite et logistique a votre activite et offrez plus de valeur a vos clients."
-        backgroundImage="/images/banniere/personne sourriante format -16-9.jpg"
+        backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="gap-2">

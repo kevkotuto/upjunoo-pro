@@ -90,7 +90,7 @@ export default function LivraisonPage() {
         title="Envoyez vos colis"
         highlight="en temps record"
         description="Un service de livraison rapide, fiable et securise pour tous vos envois, des documents aux colis volumineux."
-        backgroundImage="/images/banniere/coursier a moto avec colis format 16-9.jpg"
+        backgroundImage="/images/banniere/coursier-moto-colis-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button

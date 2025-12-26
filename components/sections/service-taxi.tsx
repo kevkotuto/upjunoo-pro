@@ -167,7 +167,7 @@ export function ServiceTaxiSection() {
               className="relative"
             >
               <Image
-                src="/images/vehicule/Voiture Noël 2025_Plan de travail 1 copie.png"
+                src="/images/vehicule/voiture-noel-2025-taxi.png"
                 alt="Voiture UPJUNOO PRO - Edition Noel"
                 width={600}
                 height={338}
