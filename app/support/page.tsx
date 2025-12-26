@@ -51,37 +51,37 @@ const commonIssues = [
     title: "Probleme avec une course",
     description:
       "Chauffeur en retard, itineraire incorrect, comportement inapproprie...",
-    href: "/contact",
+    href: "/contact?motif=course",
   },
   {
     icon: CreditCard,
     title: "Probleme de paiement",
     description: "Paiement refuse, double facturation, remboursement...",
-    href: "/contact",
+    href: "/contact?motif=paiement",
   },
   {
     icon: Package,
     title: "Probleme de livraison",
     description: "Colis non livre, colis endommage, retard de livraison...",
-    href: "/contact",
+    href: "/contact?motif=livraison",
   },
   {
     icon: Key,
     title: "Probleme de location",
     description: "Reservation, vehicule, documents...",
-    href: "/contact",
+    href: "/contact?motif=location",
   },
   {
     icon: AlertTriangle,
     title: "Signaler un incident",
     description: "Securite, accident, perte d'objet...",
-    href: "/contact",
+    href: "/contact?motif=incident",
   },
   {
     icon: FileText,
     title: "Demande de facture",
     description: "Facture, recu, justificatif de paiement...",
-    href: "/contact",
+    href: "/contact?motif=facture",
   },
 ];
 

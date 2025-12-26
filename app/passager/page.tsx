@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -82,37 +81,128 @@ const steps = [
 export default function PassagerPage() {
   return (
     <>
-      <PageHero
-        badge="Service Passager"
-        title="Commandez un taxi"
-        highlight="en toute simplicite"
-        description="Reservez votre course en quelques clics et deplacez-vous sereinement a travers la ville avec nos chauffeurs professionnels."
-        backgroundImage="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80"
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            size="lg"
-            asChild
-            className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
-          >
-            <Link href="/#download">
-              <Download className="h-5 w-5" />
-              Telecharger l'app
-            </Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
-          >
-            <Link href="#how-it-works">
-              Comment ca marche
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+      {/* Custom Hero with Christmas Car */}
+      <section className="relative pt-20 sm:pt-24 pb-16 sm:pb-20 bg-gradient-to-br from-primary via-primary to-[#046d7a] overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-white/10"
+          />
+          <motion.div
+            animate={{ scale: [1.2, 1, 1.2], opacity: [0.08, 0.12, 0.08] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full bg-white/10"
+          />
         </div>
-      </PageHero>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
+            >
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400" />
+                </span>
+                Service Passager
+              </motion.span>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-white"
+              >
+                Commandez un taxi{" "}
+                <span className="text-yellow-400">en toute simplicite</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-base sm:text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-8"
+              >
+                Reservez votre course en quelques clics et deplacez-vous sereinement a travers la ville avec nos chauffeurs professionnels.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Button
+                  size="lg"
+                  asChild
+                  className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
+                >
+                  <Link href="/#download">
+                    <Download className="h-5 w-5" />
+                    Telecharger l'app
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
+                >
+                  <Link href="#how-it-works">
+                    Comment ca marche
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Christmas Car Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/images/vehicule/Voiture Noël 2025-04.png"
+                  alt="Voiture UPJUNOO PRO - Edition Noel"
+                  width={600}
+                  height={338}
+                  className="w-full h-auto drop-shadow-2xl"
+                  priority
+                />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path
+              d="M0 80L60 73.3C120 66.7 240 53.3 360 46.7C480 40 600 40 720 43.3C840 46.7 960 53.3 1080 56.7C1200 60 1320 60 1380 60L1440 60V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z"
+              fill="white"
+              className="dark:fill-background"
+            />
+          </svg>
+        </div>
+      </section>
 
       {/* Features */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-background to-muted/30">

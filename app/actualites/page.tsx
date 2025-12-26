@@ -7,84 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
-
-const articles = [
-  {
-    id: 1,
-    title: "Nouvelle franchise a Bouake",
-    excerpt:
-      "Une nouvelle agence vient d'ouvrir ses portes a Bouake, renforcant notre presence nationale en Cote d'Ivoire.",
-    category: "Expansion",
-    date: "15 Dec 2024",
-    readTime: "3 min",
-    image: "🏢",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Application amelioree pour les franchises",
-    excerpt:
-      "Decouvrez le nouveau dashboard avec suivi des performances en temps reel, concu grace aux retours de nos partenaires.",
-    category: "Produit",
-    date: "10 Dec 2024",
-    readTime: "4 min",
-    image: "📱",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "UPJUNOO PRO au Salon de l'Innovation Urbaine",
-    excerpt:
-      "Notre participation au Salon de l'Innovation Urbaine Africaine a Abidjan nous a permis d'echanger avec les acteurs majeurs de la smart city.",
-    category: "Evenement",
-    date: "5 Dec 2024",
-    readTime: "5 min",
-    image: "🎪",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Repenser la mobilite urbaine en Afrique",
-    excerpt:
-      "Les grandes villes africaines font face a une urbanisation rapide. Comment les nouvelles technologies transforment les transports.",
-    category: "Analyse",
-    date: "28 Nov 2024",
-    readTime: "7 min",
-    image: "🌍",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Partenariat avec Orange Money",
-    excerpt:
-      "UPJUNOO PRO s'associe a Orange Money pour faciliter les paiements mobiles dans toute la region.",
-    category: "Partenariat",
-    date: "20 Nov 2024",
-    readTime: "3 min",
-    image: "🤝",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Lancement du service livraison express",
-    excerpt:
-      "Notre nouveau service de livraison express permet d'envoyer vos colis en moins d'une heure dans les grandes villes.",
-    category: "Produit",
-    date: "15 Nov 2024",
-    readTime: "4 min",
-    image: "📦",
-    featured: false,
-  },
-];
-
-const categories = [
-  "Tous",
-  "Expansion",
-  "Produit",
-  "Evenement",
-  "Partenariat",
-  "Analyse",
-];
+import { articles, categories } from "@/data/articles";
 
 export default function ActualitesPage() {
   const featuredArticles = articles.filter((a) => a.featured);
@@ -124,7 +47,7 @@ export default function ActualitesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link href={`/actualites/${article.id}`} className="block group">
+                <Link href={`/actualites/${article.slug}`} className="block group">
                   <Card className="h-full overflow-hidden hover:border-primary/30 transition-all duration-300 border-border/50">
                     <div className="h-56 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative overflow-hidden">
                       <motion.div
@@ -206,7 +129,7 @@ export default function ActualitesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link href={`/actualites/${article.id}`} className="block group">
+                <Link href={`/actualites/${article.slug}`} className="block group">
                   <Card className="h-full overflow-hidden hover:border-primary/30 transition-all duration-300 border-border/50">
                     <div className="h-40 bg-gradient-to-br from-muted via-muted/50 to-muted/30 flex items-center justify-center">
                       <motion.span

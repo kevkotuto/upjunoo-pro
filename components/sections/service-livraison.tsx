@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Package, Zap, MapPin, Clock, Bell, CheckCircle, ArrowRight, Timer } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const features = [
   {
@@ -59,15 +60,35 @@ export function ServiceLivraisonSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* Features Grid - Left side this time */}
+          {/* Delivery Car Image with Christmas Theme - Left side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 relative"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-orange-500/10 rounded-full blur-3xl scale-75" />
+
+            {/* Car image */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <Image
+                src="/images/vehicule/Voiture Noël 2025_Plan de travail 1.png"
+                alt="Voiture Livraison UPJUNOO PRO - Edition Noel"
+                width={600}
+                height={338}
+                className="w-full h-auto drop-shadow-2xl"
+                priority
+              />
+            </motion.div>
+
+            {/* Features Grid below the car */}
+            <div className="grid grid-cols-2 gap-4 mt-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -75,30 +96,18 @@ export function ServiceLivraisonSection() {
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
-                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
                   className="group"
                 >
-                  <div className="bg-white rounded-3xl p-6 h-full border border-border/50 hover:border-orange-500/30 transition-all duration-300 relative overflow-hidden">
-                    {/* Hover gradient overlay */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
-                    />
-
-                    <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-5 relative">
-                      <motion.div
-                        whileHover={{ rotate: 10, scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      >
-                        <feature.icon className="h-7 w-7 text-orange-500" />
-                      </motion.div>
+                  <div className="bg-white rounded-2xl p-4 h-full border border-border/50 hover:border-orange-500/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                        <feature.icon className="h-5 w-5 text-orange-500" />
+                      </div>
+                      <h3 className="font-bold text-sm">{feature.title}</h3>
                     </div>
-                    <h3 className="font-bold text-lg mb-2 relative">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed relative">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
-
-                    {/* Decorative corner */}
-                    <div className="absolute -bottom-12 -right-12 w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 opacity-5 group-hover:opacity-10 transition-opacity" />
                   </div>
                 </motion.div>
               ))}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -41,13 +42,42 @@ const contactInfo = [
 const subjects = [
   "Question generale",
   "Support technique",
+  "Probleme avec une course",
+  "Probleme de paiement",
+  "Probleme de livraison",
+  "Probleme de location",
+  "Signaler un incident",
+  "Demande de facture",
   "Partenariat",
   "Franchise",
   "Presse",
   "Autre",
 ];
 
-export default function ContactPage() {
+// Mapping des motifs de support vers les sujets du formulaire
+const motifToSubject: Record<string, string> = {
+  course: "Probleme avec une course",
+  paiement: "Probleme de paiement",
+  livraison: "Probleme de livraison",
+  location: "Probleme de location",
+  incident: "Signaler un incident",
+  facture: "Demande de facture",
+};
+
+// Messages pre-remplis selon le motif
+const motifToMessage: Record<string, string> = {
+  course: "Bonjour,\n\nJe rencontre un probleme avec une course.\n\nDetails du probleme :\n- Date de la course : \n- Numero de course (si disponible) : \n- Description du probleme : \n\nMerci de votre aide.",
+  paiement: "Bonjour,\n\nJe rencontre un probleme de paiement.\n\nDetails :\n- Type de probleme : \n- Montant concerne : \n- Date de la transaction : \n\nMerci de votre aide.",
+  livraison: "Bonjour,\n\nJe rencontre un probleme avec une livraison.\n\nDetails :\n- Numero de livraison (si disponible) : \n- Date de la livraison : \n- Description du probleme : \n\nMerci de votre aide.",
+  location: "Bonjour,\n\nJe rencontre un probleme avec une location de vehicule.\n\nDetails :\n- Numero de reservation : \n- Date de location : \n- Description du probleme : \n\nMerci de votre aide.",
+  incident: "Bonjour,\n\nJe souhaite signaler un incident.\n\nDetails :\n- Date de l'incident : \n- Lieu : \n- Description : \n\nMerci de traiter cette demande en priorite.",
+  facture: "Bonjour,\n\nJe souhaite obtenir une facture.\n\nDetails :\n- Date de la course/livraison : \n- Numero de reference : \n- Informations de facturation : \n\nMerci.",
+};
+
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const motif = searchParams.get("motif");
+
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
@@ -58,6 +88,17 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
+
+  // Pre-remplir le formulaire si un motif est passe en parametre
+  useEffect(() => {
+    if (motif && motifToSubject[motif]) {
+      setFormState((prev) => ({
+        ...prev,
+        subject: motifToSubject[motif],
+        message: motifToMessage[motif] || "",
+      }));
+    }
+  }, [motif]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -374,5 +415,13 @@ export default function ContactPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <ContactForm />
+    </Suspense>
   );
 }

@@ -15,7 +15,7 @@ async function getDownloadData(): Promise<DownloadData> {
     const data = await fs.readFile(dataFilePath, "utf-8");
     return JSON.parse(data);
   } catch {
-    return { total: 3000, client: 1800, driver: 1200 };
+    return { total: 0, client: 0, driver: 0 };
   }
 }
 

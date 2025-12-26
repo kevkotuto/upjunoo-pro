@@ -18,6 +18,7 @@ const footerLinks = {
   services: [
     { title: "Passager", href: "/passager" },
     { title: "Livraison", href: "/livraison" },
+    { title: "Fret Urbain", href: "/fret-urbain" },
     { title: "Location", href: "/location" },
     { title: "Chauffeurs", href: "/devenir-chauffeur" },
   ],
