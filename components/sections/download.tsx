@@ -290,38 +290,34 @@ export function DownloadSection() {
 
             {/* Download buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {/* App Store Button */}
+              {/* App Store Button - Disabled */}
               <motion.button
                 onClick={handleAppStoreClick}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+                className="flex items-center gap-3 px-5 py-3 bg-muted text-muted-foreground rounded-xl cursor-not-allowed opacity-60"
               >
                 <Apple className="h-7 w-7" />
                 <div className="text-left">
-                  <div className="text-xs opacity-80">Telecharger sur</div>
+                  <div className="text-xs opacity-80">Bientot sur</div>
                   <div className="font-semibold">App Store</div>
                 </div>
               </motion.button>
 
-              {/* Google Play Button */}
+              {/* Google Play Button - Disabled */}
               <motion.button
                 onClick={handlePlayStoreClick}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+                className="flex items-center gap-3 px-5 py-3 bg-muted text-muted-foreground rounded-xl cursor-not-allowed opacity-60"
               >
                 <Play className="h-7 w-7" />
                 <div className="text-left">
-                  <div className="text-xs opacity-80">Disponible sur</div>
+                  <div className="text-xs opacity-80">Bientot sur</div>
                   <div className="font-semibold">Google Play</div>
                 </div>
               </motion.button>
@@ -433,37 +429,33 @@ export function DownloadSection() {
                   Scannez pour telecharger
                 </h3>
                 <div className="flex gap-6 justify-center lg:justify-start flex-wrap">
-                  {/* iOS QR Code */}
-                  <motion.button
-                    onClick={() => setSelectedQR("ios")}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center gap-3 cursor-pointer"
-                  >
-                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                      <QRCodeSVG value={QR_URLS.ios} size={80} level="M" includeMargin={false} />
+                  {/* iOS QR Code - Disabled */}
+                  <div className="flex flex-col items-center gap-3 opacity-40 cursor-not-allowed">
+                    <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
+                      <QRCodeSVG value={QR_URLS.ios} size={80} level="M" includeMargin={false} className="opacity-50" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
+                        <span className="text-xs font-medium text-muted-foreground">Bientot</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-muted-foreground">
                       <Apple className="h-4 w-4" />
                       <span className="text-sm font-medium">iOS</span>
                     </div>
-                  </motion.button>
+                  </div>
 
-                  {/* Android QR Code */}
-                  <motion.button
-                    onClick={() => setSelectedQR("android")}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center gap-3 cursor-pointer"
-                  >
-                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                      <QRCodeSVG value={QR_URLS.android} size={80} level="M" includeMargin={false} />
+                  {/* Android QR Code - Disabled */}
+                  <div className="flex flex-col items-center gap-3 opacity-40 cursor-not-allowed">
+                    <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
+                      <QRCodeSVG value={QR_URLS.android} size={80} level="M" includeMargin={false} className="opacity-50" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
+                        <span className="text-xs font-medium text-muted-foreground">Bientot</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-muted-foreground">
                       <Play className="h-4 w-4" />
                       <span className="text-sm font-medium">Android</span>
                     </div>
-                  </motion.button>
+                  </div>
 
                   {/* APK Direct QR Code */}
                   <motion.button
