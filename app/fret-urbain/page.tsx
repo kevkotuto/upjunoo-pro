@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -302,13 +303,13 @@ export default function FretUrbainPage() {
             >
               <div className="aspect-square max-w-md mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl" />
-                <div className="absolute inset-8 bg-card rounded-2xl flex items-center justify-center border border-border/50">
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <Truck className="h-24 w-24 text-primary" />
-                  </motion.div>
+                <div className="absolute inset-4 rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/tricycle.png"
+                    alt="Tricycle de fret urbain Upjunoo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
 
                 {/* Floating elements */}
