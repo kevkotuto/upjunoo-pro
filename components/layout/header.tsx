@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import {
   Menu,
@@ -87,16 +88,23 @@ const offresPartenaires = [
   },
 ];
 
-const navLinks = [
-  { title: "Accueil", href: "/" },
-  { title: "Nos Implantations", href: "/nos-implantations" },
-  { title: "Actualites", href: "/actualites" },
-  { title: "Contact", href: "/contact" },
-];
-
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Vérifie si un lien est actif (page courante)
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
+  // Vérifie si on est dans une section (pour les menus déroulants)
+  const isInSection = (items: { href: string }[]) => {
+    return items.some((item) => pathname.startsWith(item.href));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,7 +153,9 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                    className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10 ${
+                      isActive("/") ? "bg-primary-foreground/10" : ""
+                    }`}
                   >
                     Accueil
                   </Link>
@@ -153,7 +163,11 @@ export function Header() {
 
                 {/* Services */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
+                  <NavigationMenuTrigger
+                    className={`bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10 ${
+                      isInSection(services) ? "bg-primary-foreground/10" : ""
+                    }`}
+                  >
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -182,7 +196,11 @@ export function Header() {
 
                 {/* Offres Partenaires */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10">
+                  <NavigationMenuTrigger
+                    className={`bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground data-[state=open]:bg-primary-foreground/10 ${
+                      isInSection(offresPartenaires) ? "bg-primary-foreground/10" : ""
+                    }`}
+                  >
                     Offres Partenaires
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -213,7 +231,9 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     href="/nos-implantations"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                    className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10 ${
+                      isActive("/nos-implantations") ? "bg-primary-foreground/10" : ""
+                    }`}
                   >
                     Nos Implantations
                   </Link>
@@ -223,7 +243,9 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     href="/actualites"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                    className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10 ${
+                      isActive("/actualites") ? "bg-primary-foreground/10" : ""
+                    }`}
                   >
                     Actualites
                   </Link>
@@ -233,7 +255,9 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     href="/contact"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                    className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10 ${
+                      isActive("/contact") ? "bg-primary-foreground/10" : ""
+                    }`}
                   >
                     Contact
                   </Link>
@@ -296,7 +320,9 @@ export function Header() {
                       <SheetClose asChild>
                         <Link
                           href="/"
-                          className="flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors"
+                          className={`flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors ${
+                            isActive("/") ? "bg-accent" : ""
+                          }`}
                         >
                           Accueil
                         </Link>
@@ -320,7 +346,9 @@ export function Header() {
                         <SheetClose asChild>
                           <Link
                             href={service.href}
-                            className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors"
+                            className={`flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors ${
+                              isActive(service.href) ? "bg-accent" : ""
+                            }`}
                           >
                             <service.icon className="h-5 w-5 text-primary flex-shrink-0" />
                             <div className="min-w-0">
@@ -353,7 +381,9 @@ export function Header() {
                         <SheetClose asChild>
                           <Link
                             href={offre.href}
-                            className="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors"
+                            className={`flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-accent transition-colors ${
+                              isActive(offre.href) ? "bg-accent" : ""
+                            }`}
                           >
                             <offre.icon className="h-5 w-5 text-primary flex-shrink-0" />
                             <div className="min-w-0">
@@ -390,7 +420,9 @@ export function Header() {
                         <SheetClose asChild>
                           <Link
                             href={link.href}
-                            className="flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors"
+                            className={`flex items-center py-3 px-3 rounded-lg text-base font-medium hover:bg-accent transition-colors ${
+                              isActive(link.href) ? "bg-accent" : ""
+                            }`}
                           >
                             {link.title}
                           </Link>
