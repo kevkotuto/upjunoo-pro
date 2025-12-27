@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
+import { formattedKpis } from "@/data/kpis";
 
 const partnerTypes = [
   {
@@ -367,9 +368,9 @@ export default function PartenairesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-3 gap-8">
             {[
-              { value: "500+", label: "Partenaires actifs" },
-              { value: "98%", label: "Satisfaction client" },
-              { value: "24/7", label: "Support disponible" },
+              { value: formattedKpis.partenaires, label: "Partenaires actifs" },
+              { value: formattedKpis.satisfactionPourcentage, label: "Satisfaction client" },
+              { value: formattedKpis.support, label: "Support disponible" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

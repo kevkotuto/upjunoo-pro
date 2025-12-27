@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Eye, Shield, Users, TrendingUp, CheckCircle, Zap } from "lucide-react";
 import Image from "next/image";
+import { formattedKpis } from "@/data/kpis";
 
 const reasons = [
   {
@@ -45,7 +46,7 @@ const reasons = [
 
 const benefits = [
   "Application intuitive et rapide",
-  "Disponible 24/7 dans 50+ villes",
+  `Disponible 24/7 dans ${formattedKpis.villes} villes`,
   "Support client reactif",
   "Paiement flexible (mobile money, carte)",
 ];
@@ -167,9 +168,9 @@ export function WhyUpjunooSection() {
               className="flex flex-wrap gap-8 pt-6 border-t border-border/50"
             >
               {[
-                { value: "15", label: "Pays" },
-                { value: "50+", label: "Villes" },
-                { value: "100k+", label: "Utilisateurs" },
+                { value: formattedKpis.pays, label: "Pays" },
+                { value: formattedKpis.villes, label: "Villes" },
+                { value: formattedKpis.utilisateurs, label: "Utilisateurs" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl font-bold text-primary">{stat.value}</div>

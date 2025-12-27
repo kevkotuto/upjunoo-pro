@@ -27,6 +27,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
+import { trackFranchiseLead, trackExternalLink } from "@/lib/analytics";
 
 const marketPotential = [
   {
@@ -140,19 +142,24 @@ const accessConditions = [
 const testimonials = [
   {
     quote:
-      "Mon activite UPJUNOO PRO m'a permis de creer 40 emplois directs et d'offrir un service fiable dans ma ville. L'accompagnement est constant, les outils sont puissants.",
-    author: "Marc Dupont",
-    role: "Franchise depuis 2023",
+      "Depuis que j'ai lance UPJUNOO PRO a Abidjan, nous avons cree plus de 30 emplois et offrons un service de qualite a des milliers de clients. L'accompagnement technique et commercial est remarquable.",
+    author: "Kouame A.",
+    role: "Franchise Abidjan, Cote d'Ivoire",
   },
   {
     quote:
-      "UPJUNOO PRO m'a offert l'opportunite de diriger un vrai business tech local, avec un impact social fort.",
-    author: "Sophie Martin",
-    role: "Franchisee a Lyon",
+      "UPJUNOO PRO m'a permis de structurer mon activite de transport et de passer a l'echelle. Les outils de gestion sont intuitifs et le support est toujours reactif.",
+    author: "Amadou D.",
+    role: "Franchise Dakar, Senegal",
   },
 ];
 
 export default function FranchisesPage() {
+  // Track page view for franchise lead
+  useEffect(() => {
+    trackFranchiseLead('page_view');
+  }, []);
+
   return (
     <>
       <PageHero
@@ -163,7 +170,7 @@ export default function FranchisesPage() {
         backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="gap-2">
+          <Button size="lg" asChild className="gap-2" onClick={() => trackFranchiseLead('cta_click')}>
             <Link href="#contact">
               <Building2 className="h-5 w-5" />
               Devenir franchise
@@ -647,6 +654,10 @@ export default function FranchisesPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
                   href="mailto:contact@upjunoo.com"
+                  onClick={() => {
+                    trackFranchiseLead('email_click');
+                    trackExternalLink('mailto:contact@upjunoo.com', 'email');
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background text-foreground font-medium hover:bg-background/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
@@ -656,6 +667,10 @@ export default function FranchisesPage() {
                   href="https://www.upjunoo.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackFranchiseLead('website_click');
+                    trackExternalLink('https://www.upjunoo.com', 'website');
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground/10 text-primary-foreground font-medium hover:bg-primary-foreground/20 transition-colors"
                 >
                   <Globe className="h-5 w-5" />

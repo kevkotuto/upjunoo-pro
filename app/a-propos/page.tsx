@@ -21,6 +21,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
+import { formattedKpis } from "@/data/kpis";
 
 const services = [
   {
@@ -358,10 +359,10 @@ export default function AProposPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "15+", label: "Pays actifs" },
-                  { value: "1M+", label: "Utilisateurs" },
-                  { value: "50K+", label: "Courses/jour" },
-                  { value: "98%", label: "Satisfaction" },
+                  { value: formattedKpis.pays, label: "Pays actifs" },
+                  { value: formattedKpis.utilisateurs, label: "Utilisateurs" },
+                  { value: formattedKpis.coursesParJour, label: "Courses/jour" },
+                  { value: formattedKpis.satisfactionPourcentage, label: "Satisfaction" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}

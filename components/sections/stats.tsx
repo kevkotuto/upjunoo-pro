@@ -3,39 +3,40 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { Users, Globe, MapPin, Download, TrendingUp, Star } from "lucide-react";
+import { kpis, formattedKpis } from "@/data/kpis";
 
 const stats = [
   {
-    value: 100000,
-    suffix: "+",
-    label: "Utilisateurs actifs",
+    value: kpis.utilisateurs.value,
+    suffix: kpis.utilisateurs.suffix,
+    label: kpis.utilisateurs.label,
     icon: Users,
     color: "from-blue-400 to-blue-600",
-    description: "Font confiance a UPJUNOO PRO",
+    description: kpis.utilisateurs.description,
   },
   {
-    value: 15,
-    suffix: "",
-    label: "Pays",
+    value: kpis.pays.value,
+    suffix: kpis.pays.suffix,
+    label: kpis.pays.label,
     icon: Globe,
     color: "from-green-400 to-green-600",
-    description: "En Afrique et au-dela",
+    description: kpis.pays.description,
   },
   {
-    value: 50,
-    suffix: "+",
-    label: "Villes couvertes",
+    value: kpis.villes.value,
+    suffix: kpis.villes.suffix,
+    label: kpis.villes.label,
     icon: MapPin,
     color: "from-purple-400 to-purple-600",
-    description: "Et ca continue",
+    description: kpis.villes.description,
   },
   {
-    value: 250000,
-    suffix: "+",
-    label: "Telechargements",
+    value: kpis.telechargements.value,
+    suffix: kpis.telechargements.suffix,
+    label: kpis.telechargements.label,
     icon: Download,
     color: "from-orange-400 to-orange-600",
-    description: "Sur les stores",
+    description: kpis.telechargements.description,
   },
 ];
 
@@ -245,12 +246,12 @@ export function StatsSection() {
                 <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <span className="font-semibold">4.8/5</span>
+            <span className="font-semibold">{formattedKpis.satisfaction}</span>
             <span className="text-white/60">sur les stores</span>
           </div>
           <div className="h-6 w-px bg-white/20 hidden sm:block" />
           <div className="text-white/80">
-            <span className="font-semibold">+500</span>
+            <span className="font-semibold">{formattedKpis.chauffeurs}</span>
             <span className="text-white/60 ml-1">chauffeurs partenaires</span>
           </div>
           <div className="h-6 w-px bg-white/20 hidden sm:block" />

@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { trackNewsletterSignup } from "@/lib/analytics";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -15,9 +16,12 @@ export function NewsletterSection() {
     if (!email) return;
 
     setStatus("loading");
+    trackNewsletterSignup('submit');
+
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setStatus("success");
+    trackNewsletterSignup('success');
     setEmail("");
 
     // Reset after 3 seconds

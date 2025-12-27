@@ -25,6 +25,7 @@ import {
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
+import { formattedKpis } from "@/data/kpis";
 
 const features = [
   {
@@ -269,10 +270,10 @@ export default function LocationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: "500+", label: "Vehicules disponibles", icon: CarFront },
-              { value: "50+", label: "Points de retrait", icon: MapPin },
-              { value: "4.9/5", label: "Satisfaction client", icon: Star },
-              { value: "24/7", label: "Support disponible", icon: Clock },
+              { value: formattedKpis.vehiculesLocation, label: "Vehicules disponibles", icon: CarFront },
+              { value: formattedKpis.pointsRetrait, label: "Points de retrait", icon: MapPin },
+              { value: formattedKpis.satisfaction, label: "Satisfaction client", icon: Star },
+              { value: formattedKpis.support, label: "Support disponible", icon: Clock },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

@@ -12,6 +12,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { trackDownloadClick, trackQRCodeView } from "@/lib/analytics";
+import { formattedKpis } from "@/data/kpis";
 
 interface DownloadData {
   total: number;
@@ -29,6 +31,7 @@ const QR_URLS = {
 
 const handleAppStoreClick = (e: React.MouseEvent) => {
   e.preventDefault();
+  trackDownloadClick('client', 'appstore');
   toast.info("Bientot disponible", {
     description: "L'application sera bientot disponible sur l'App Store",
   });
@@ -36,6 +39,7 @@ const handleAppStoreClick = (e: React.MouseEvent) => {
 
 const handlePlayStoreClick = (e: React.MouseEvent) => {
   e.preventDefault();
+  trackDownloadClick('client', 'playstore');
   toast.info("Bientot disponible", {
     description: "L'application sera bientot disponible sur Google Play",
   });
@@ -63,6 +67,7 @@ export function DownloadSection() {
   }, []);
 
   const handleApkDownload = async (type: "client" | "driver") => {
+    trackDownloadClick(type, 'apk');
     try {
       await fetch("/api/downloads", {
         method: "POST",
@@ -259,7 +264,7 @@ export function DownloadSection() {
                     <div>
                       <div className="text-xs text-muted-foreground">App Rating</div>
                       <div className="font-semibold flex items-center gap-1">
-                        4.8 <span className="text-yellow-500">★</span>
+                        {formattedKpis.satisfaction} <span className="text-yellow-500">★</span>
                       </div>
                     </div>
                   </div>
@@ -459,7 +464,10 @@ export function DownloadSection() {
 
                   {/* APK Direct QR Code */}
                   <motion.button
-                    onClick={() => setSelectedQR("apk")}
+                    onClick={() => {
+                      trackQRCodeView('client');
+                      setSelectedQR("apk");
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex flex-col items-center gap-3 cursor-pointer"

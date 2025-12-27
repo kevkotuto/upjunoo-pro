@@ -25,6 +25,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
+import { trackDriverApplication, trackExternalLink } from "@/lib/analytics";
 
 const structuredProcess = [
   {
@@ -130,6 +132,11 @@ const testimonials = [
 ];
 
 export default function ChauffeurPage() {
+  // Track page view for driver application
+  useEffect(() => {
+    trackDriverApplication('page_view');
+  }, []);
+
   return (
     <>
       <PageHero
@@ -144,6 +151,7 @@ export default function ChauffeurPage() {
             size="lg"
             asChild
             className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
+            onClick={() => trackDriverApplication('cta_click')}
           >
             <Link href="#contact">
               <UserCheck className="h-5 w-5" />
@@ -665,6 +673,7 @@ export default function ChauffeurPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
                   href="mailto:contact@upjunoo.com"
+                  onClick={() => trackExternalLink('mailto:contact@upjunoo.com', 'email')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold transition-colors"
                 >
                   <Mail className="h-5 w-5" />
@@ -674,6 +683,7 @@ export default function ChauffeurPage() {
                   href="https://www.upjunoo.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackExternalLink('https://www.upjunoo.com', 'website')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/20"
                 >
                   <Globe className="h-5 w-5" />

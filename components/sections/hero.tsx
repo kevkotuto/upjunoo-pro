@@ -5,6 +5,7 @@ import { Download, ArrowRight, Play, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { formattedKpis, kpis } from "@/data/kpis";
 
 export function HeroSection() {
   return (
@@ -73,7 +74,7 @@ export function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400" />
               </span>
-              <span>Disponible dans 15 pays</span>
+              <span>Disponible dans {kpis.pays.value} pays</span>
               <div className="flex -space-x-1">
                 <span className="text-lg">🇨🇮</span>
                 <span className="text-lg">🇸🇳</span>
@@ -167,17 +168,17 @@ export function HeroSection() {
                     <Star key={star} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm font-medium">4.8/5</span>
+                <span className="text-sm font-medium">{formattedKpis.satisfaction}</span>
               </div>
               <div className="h-5 w-px bg-white/30" />
               <div className="flex items-center gap-2 text-white/90">
                 <Download className="h-4 w-4" />
-                <span className="text-sm font-medium">250k+ telechargements</span>
+                <span className="text-sm font-medium">{formattedKpis.telechargements} telechargements</span>
               </div>
               <div className="h-5 w-px bg-white/30 hidden sm:block" />
               <div className="flex items-center gap-2 text-white/90">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm font-medium">50+ villes</span>
+                <span className="text-sm font-medium">{formattedKpis.villes} villes</span>
               </div>
             </motion.div>
           </motion.div>

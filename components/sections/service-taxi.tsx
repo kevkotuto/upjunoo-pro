@@ -5,6 +5,7 @@ import { Car, Clock, MapPin, Shield, CreditCard, Star, ArrowRight, CheckCircle }
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { formattedKpis, kpis } from "@/data/kpis";
 
 const features = [
   {
@@ -216,7 +217,7 @@ export function ServiceTaxiSection() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm font-medium">4.8/5 - Plus de 50 000 courses</span>
+                <span className="text-sm font-medium">{formattedKpis.satisfaction} - Plus de {kpis.coursesParJour.value.toLocaleString('fr-FR')} courses/jour</span>
               </div>
             </motion.div>
           </motion.div>
