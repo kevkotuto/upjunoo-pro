@@ -26,7 +26,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect } from "react";
 import { trackFranchiseLead, trackExternalLink } from "@/lib/analytics";
 
@@ -351,74 +350,6 @@ export default function FranchisesPage() {
                     </ul>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Dashboard Screenshots */}
-      <section className="py-20 lg:py-28 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              Outils de gestion
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Votre interface <span className="text-primary">d'administration</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Pilotez votre franchise avec des outils professionnels et intuitifs.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[
-              {
-                src: "/images/screenshots/partenaire-dashboard.jpeg",
-                title: "Tableau de bord",
-                description: "Supervisez l'ensemble de votre activite",
-              },
-              {
-                src: "/images/screenshots/partenaire-gestion-vehicules.jpeg",
-                title: "Gestion de flotte",
-                description: "Controlez tous vos vehicules",
-              },
-              {
-                src: "/images/screenshots/partenaire-affectation.jpeg",
-                title: "Gestion des chauffeurs",
-                description: "Affectez et suivez vos equipes",
-              },
-            ].map((screenshot, index) => (
-              <motion.div
-                key={screenshot.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-2 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
-                  <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg bg-gray-900">
-                    <Image
-                      src={screenshot.src}
-                      alt={screenshot.title}
-                      fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="mt-4 text-center pb-2">
-                    <h3 className="font-semibold text-base text-white">{screenshot.title}</h3>
-                    <p className="text-sm text-gray-400 mt-1">
-                      {screenshot.description}
-                    </p>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>
