@@ -23,9 +23,9 @@ export default function CGUPage() {
     <>
       <PageHero
         badge="Legal"
-        title="Conditions generales"
+        title="Conditions générales"
         highlight="d'utilisation"
-        description="L'utilisation de la plateforme UPJUNOO PRO implique l'acceptation pleine et entiere des presentes conditions."
+        description="L'utilisation de la plateforme UPJUNOO PRO implique l'acceptation pleine et entière des présentes conditions."
       />
 
       {/* Introduction */}
@@ -38,10 +38,10 @@ export default function CGUPage() {
             className="bg-muted/50 rounded-2xl p-6 lg:p-8"
           >
             <p className="text-muted-foreground">
-              Les presentes conditions generales d'utilisation (CGU) regissent
-              l'acces et l'utilisation de la plateforme UPJUNOO PRO, accessible
+              Les présentes conditions générales d'utilisation (CGU) régissent
+              l'accès et l'utilisation de la plateforme UPJUNOO PRO, accessible
               via l'application mobile et le site web. En utilisant nos
-              services, vous acceptez ces conditions dans leur integralite.
+              services, vous acceptez ces conditions dans leur intégralité.
             </p>
           </motion.div>
         </div>
@@ -61,20 +61,20 @@ export default function CGUPage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <FileText className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Acces aux services</h2>
+                  <h2 className="font-bold text-xl">Accès aux services</h2>
                 </div>
                 <p className="text-muted-foreground mb-6">
                   UPJUNOO PRO permet :
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { icon: Car, text: "La reservation de trajets VTC / Taxi" },
+                    { icon: Car, text: "La réservation de trajets VTC / Taxi" },
                     {
                       icon: Package,
                       text: "La livraison de colis et marchandises",
                     },
-                    { icon: Key, text: "La location de vehicules" },
-                    { icon: Truck, text: "Le fret urbain et periurbain" },
+                    { icon: Key, text: "La location de véhicules" },
+                    { icon: Truck, text: "Le fret urbain et périurbain" },
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -86,9 +86,9 @@ export default function CGUPage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mt-6 text-sm">
-                  Certains services peuvent necessiter une inscription, une
-                  verification d'identite ou le respect de conditions
-                  specifiques selon le pays.
+                  Certains services peuvent nécessiter une inscription, une
+                  vérification d'identité ou le respect de conditions
+                  spécifiques selon le pays.
                 </p>
               </CardContent>
             </Card>
@@ -106,13 +106,13 @@ export default function CGUPage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Scale className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Responsabilites</h2>
+                  <h2 className="font-bold text-xl">Responsabilités</h2>
                 </div>
                 <ul className="space-y-4">
                   {[
-                    "UPJUNOO PRO agit en tant que plateforme technologique d'intermediation.",
-                    "Les chauffeurs, livreurs et partenaires sont responsables de l'execution des prestations.",
-                    "L'utilisateur s'engage a fournir des informations exactes et a utiliser la plateforme de maniere conforme aux lois en vigueur.",
+                    "UPJUNOO PRO agit en tant que plateforme technologique d'intermédiation.",
+                    "Les chauffeurs, livreurs et partenaires sont responsables de l'exécution des prestations.",
+                    "L'utilisateur s'engage à fournir des informations exactes et à utiliser la plateforme de manière conforme aux lois en vigueur.",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -146,10 +146,10 @@ export default function CGUPage() {
                 <ul className="space-y-4">
                   {[
                     "Fournir des informations exactes lors de l'inscription",
-                    "Ne pas utiliser la plateforme a des fins illegales",
+                    "Ne pas utiliser la plateforme à des fins illégales",
                     "Respecter les chauffeurs, livreurs et autres utilisateurs",
-                    "Signaler tout comportement inapproprie ou incident",
-                    "Ne pas tenter de contourner les systemes de securite",
+                    "Signaler tout comportement inapproprié ou incident",
+                    "Ne pas tenter de contourner les systèmes de sécurité",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -179,13 +179,13 @@ export default function CGUPage() {
                   <h2 className="font-bold text-xl">Paiements</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  Les paiements peuvent etre effectues via :
+                  Les paiements peuvent être effectués via :
                 </p>
                 <ul className="space-y-2 mb-4">
                   {[
                     "Mobile Money (Orange Money, MTN Money, Wave, etc.)",
-                    "Especes (selon les regions)",
-                    "Portefeuille electronique UPJUNOO PRO",
+                    "Espèces (selon les régions)",
+                    "Portefeuille électronique UPJUNOO PRO",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -197,7 +197,7 @@ export default function CGUPage() {
                   ))}
                 </ul>
                 <p className="text-muted-foreground text-sm">
-                  Les montants sont affiches de maniere transparente avant
+                  Les montants sont affichés de manière transparente avant
                   validation de la commande.
                 </p>
               </CardContent>
@@ -216,18 +216,18 @@ export default function CGUPage() {
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
                     <AlertTriangle className="h-6 w-6 text-orange-500" />
                   </div>
-                  <h2 className="font-bold text-xl">Suspension et resiliation</h2>
+                  <h2 className="font-bold text-xl">Suspension et résiliation</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  UPJUNOO PRO se reserve le droit de suspendre ou de resilier un
+                  UPJUNOO PRO se réserve le droit de suspendre ou de résilier un
                   compte en cas de :
                 </p>
                 <ul className="space-y-2">
                   {[
                     "Fraude ou tentative de fraude",
-                    "Non-respect des presentes conditions",
+                    "Non-respect des présentes conditions",
                     "Usage abusif de la plateforme",
-                    "Comportement inapproprie envers les partenaires ou utilisateurs",
+                    "Comportement inapproprié envers les partenaires ou utilisateurs",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -257,9 +257,9 @@ export default function CGUPage() {
                   <h2 className="font-bold text-xl">Evolution des services</h2>
                 </div>
                 <p className="text-muted-foreground">
-                  Les services, fonctionnalites et conditions peuvent evoluer
-                  afin d'ameliorer la qualite, la securite et la conformite
-                  reglementaire. Les utilisateurs seront informes des
+                  Les services, fonctionnalités et conditions peuvent évoluer
+                  afin d'améliorer la qualité, la sécurité et la conformité
+                  réglementaire. Les utilisateurs seront informés des
                   modifications importantes.
                 </p>
               </CardContent>
@@ -277,9 +277,9 @@ export default function CGUPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-2xl font-bold mb-4">Documents associes</h2>
+            <h2 className="text-2xl font-bold mb-4">Documents associés</h2>
             <p className="text-muted-foreground mb-8">
-              Consultez egalement nos autres documents legaux.
+              Consultez également nos autres documents légaux.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

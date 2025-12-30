@@ -27,7 +27,7 @@ const services = [
   {
     icon: Car,
     title: "VTC / Taxi",
-    description: "Reservez un chauffeur prive pour tous vos deplacements.",
+    description: "Réservez un chauffeur privé pour tous vos déplacements.",
   },
   {
     icon: Package,
@@ -36,8 +36,8 @@ const services = [
   },
   {
     icon: Key,
-    title: "Location de vehicules",
-    description: "Louez le vehicule adapte a vos besoins.",
+    title: "Location de véhicules",
+    description: "Louez le véhicule adapté à vos besoins.",
   },
   {
     icon: Truck,
@@ -49,44 +49,44 @@ const services = [
 const features = [
   {
     icon: MapPin,
-    title: "Suivi GPS en temps reel",
+    title: "Suivi GPS en temps réel",
     description: "Suivez vos trajets et livraisons en direct.",
   },
   {
     icon: Shield,
     title: "Preuve de service",
-    description: "Documentation complete de chaque prestation.",
+    description: "Documentation complète de chaque prestation.",
   },
   {
     icon: CreditCard,
     title: "Paiement flexible",
-    description: "Mobile Money, especes, portefeuille electronique.",
+    description: "Mobile Money, espèces, portefeuille électronique.",
   },
   {
     icon: BarChart3,
     title: "Outils de pilotage",
-    description: "Tableaux de bord dedies aux entreprises.",
+    description: "Tableaux de bord dédiés aux entreprises.",
   },
 ];
 
 const values = [
   {
     icon: Users,
-    title: "Modele inclusif",
+    title: "Modèle inclusif",
     description:
-      "Creation de valeur partagee entre chauffeurs, gestionnaires de flotte, franchises et utilisateurs.",
+      "Création de valeur partagée entre chauffeurs, gestionnaires de flotte, franchises et utilisateurs.",
   },
   {
     icon: Globe,
-    title: "Presence internationale",
+    title: "Présence internationale",
     description:
-      "Modernisation de la mobilite urbaine dans plusieurs pays d'Afrique et au-dela.",
+      "Modernisation de la mobilité urbaine dans plusieurs pays d'Afrique et au-delà.",
   },
   {
     icon: Smartphone,
-    title: "Experience fluide",
+    title: "Expérience fluide",
     description:
-      "Une application unique regroupant tous les services de mobilite et logistique.",
+      "Une application unique regroupant tous les services de mobilité et logistique.",
   },
 ];
 
@@ -94,10 +94,10 @@ export default function AProposPage() {
   return (
     <>
       <PageHero
-        badge="A propos"
-        title="Decouvrez"
+        badge="À propos"
+        title="Découvrez"
         highlight="UPJUNOO PRO"
-        description="La plateforme numerique de mobilite et de logistique intelligente qui transforme vos deplacements."
+        description="La plateforme numérique de mobilité et de logistique intelligente qui transforme vos déplacements."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -124,9 +124,9 @@ export default function AProposPage() {
               className="text-lg text-muted-foreground mb-6"
             >
               <span className="font-semibold text-foreground">UPJUNOO PRO</span>{" "}
-              est une plateforme numerique de mobilite et de logistique
-              intelligente, reunissant au sein d'une application unique les
-              services de VTC / Taxi, livraison express, location de vehicules
+              est une plateforme numérique de mobilité et de logistique
+              intelligente, réunissant au sein d'une application unique les
+              services de VTC / Taxi, livraison express, location de véhicules
               et fret urbain.
             </motion.p>
             <motion.p
@@ -136,8 +136,8 @@ export default function AProposPage() {
               transition={{ delay: 0.2 }}
               className="text-lg text-muted-foreground mb-6"
             >
-              Concue pour simplifier les deplacements et les echanges
-              logistiques, UPJUNOO PRO offre une experience fluide, securisee et
+              Conçue pour simplifier les déplacements et les échanges
+              logistiques, UPJUNOO PRO offre une expérience fluide, sécurisée et
               transparente pour les particuliers, les entreprises et les
               professionnels du transport.
             </motion.p>
@@ -148,8 +148,8 @@ export default function AProposPage() {
               transition={{ delay: 0.3 }}
               className="text-lg text-muted-foreground"
             >
-              La plateforme favorise un modele economique inclusif, creant de la
-              valeur partagee entre chauffeurs, gestionnaires de flotte,
+              La plateforme favorise un modèle économique inclusif, créant de la
+              valeur partagée entre chauffeurs, gestionnaires de flotte,
               franchises locales et utilisateurs finaux.
             </motion.p>
           </motion.div>
@@ -172,7 +172,7 @@ export default function AProposPage() {
               Une application, <span className="text-primary">quatre services</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tous vos besoins de mobilite et logistique reunis en un seul
+              Tous vos besoins de mobilité et logistique réunis en un seul
               endroit.
             </p>
           </motion.div>
@@ -218,13 +218,13 @@ export default function AProposPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Fonctionnalites
+              Fonctionnalités
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Des outils <span className="text-primary">avances</span>
+              Des outils <span className="text-primary">avancés</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des fonctionnalites pensees pour une experience optimale.
+              Des fonctionnalités pensées pour une expérience optimale.
             </p>
           </motion.div>
 
@@ -336,14 +336,14 @@ export default function AProposPage() {
                   Notre mission
                 </h2>
                 <p className="text-white/80 text-lg mb-8">
-                  Grace a des fonctionnalites avancees telles que le suivi GPS
-                  en temps reel, la preuve de service, des moyens de paiement
-                  flexibles et des outils de pilotage dedies aux entreprises,{" "}
+                  Grâce à des fonctionnalités avancées telles que le suivi GPS
+                  en temps réel, la preuve de service, des moyens de paiement
+                  flexibles et des outils de pilotage dédiés aux entreprises,{" "}
                   <span className="font-semibold text-yellow-400">
                     UPJUNOO PRO
                   </span>{" "}
-                  contribue a moderniser la mobilite urbaine et a soutenir
-                  l'economie locale dans plusieurs pays d'Afrique et au-dela.
+                  contribue à moderniser la mobilité urbaine et à soutenir
+                  l'économie locale dans plusieurs pays d'Afrique et au-delà.
                 </p>
                 <Button
                   size="lg"
@@ -352,7 +352,7 @@ export default function AProposPage() {
                 >
                   <Link href="/#download">
                     <Download className="h-5 w-5" />
-                    Telecharger l'app
+                    Télécharger l'app
                   </Link>
                 </Button>
               </div>

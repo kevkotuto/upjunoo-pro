@@ -45,15 +45,15 @@ export default function NotFound() {
             Page introuvable
           </h1>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Cette page n'existe pas ou a ete deplacee.
-            Pas de panique, UPJUNOO PRO vous ramene a bon port !
+            Cette page n'existe pas ou a été déplacée.
+            Pas de panique, UPJUNOO PRO vous ramène à bon port !
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="gap-2">
               <Link href="/">
                 <Home className="h-5 w-5" />
-                Retour a l'accueil
+                Retour à l'accueil
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">

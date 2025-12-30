@@ -10,28 +10,28 @@ const features = [
   {
     icon: Zap,
     title: "Livraison express",
-    description: "Vos colis livres en moins de 2 heures en ville.",
+    description: "Vos colis livrés en moins de 2 heures en ville.",
   },
   {
     icon: MapPin,
-    title: "Suivi en temps reel",
-    description: "Localisez votre colis a chaque etape de la livraison.",
+    title: "Suivi en temps réel",
+    description: "Localisez votre colis à chaque étape de la livraison.",
   },
   {
     icon: Bell,
     title: "Notifications",
-    description: "Soyez informe de l'avancement de votre livraison.",
+    description: "Soyez informé de l'avancement de votre livraison.",
   },
   {
     icon: Clock,
-    title: "Livraison planifiee",
-    description: "Programmez vos envois a l'heure qui vous convient.",
+    title: "Livraison planifiée",
+    description: "Programmez vos envois à l'heure qui vous convient.",
   },
 ];
 
 const benefits = [
-  "Livraison le jour meme",
-  "Photo de preuve a la livraison",
+  "Livraison le jour même",
+  "Photo de preuve à la livraison",
   "Assurance colis incluse",
   "Livreurs professionnels",
 ];
@@ -153,10 +153,10 @@ export function ServiceLivraisonSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Vos colis livres{" "}
+              Vos colis livrés{" "}
               <span className="text-orange-500">rapidement</span><br />
               <span className="relative inline-block">
-                et en securite
+                et en sécurité
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -174,8 +174,8 @@ export function ServiceLivraisonSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Envoyez et recevez vos colis en un temps record. Notre reseau de livreurs
-              professionnels assure une prise en charge rapide et une livraison soignee
+              Envoyez et recevez vos colis en un temps record. Notre réseau de livreurs
+              professionnels assure une prise en charge rapide et une livraison soignée
               de tous vos envois.
             </motion.p>
 

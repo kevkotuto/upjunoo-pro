@@ -25,12 +25,12 @@ const footerLinks = {
   company: [
     { title: "Accueil", href: "/" },
     { title: "Nos Implantations", href: "/nos-implantations" },
-    { title: "Actualites", href: "/actualites" },
+    { title: "Actualités", href: "/actualites" },
     { title: "Offres Partenaires", href: "/offres-partenaires" },
   ],
   legal: [
     { title: "Conditions d'utilisation", href: "/cgu" },
-    { title: "Politique de confidentialite", href: "/confidentialite" },
+    { title: "Politique de confidentialité", href: "/confidentialite" },
     { title: "FAQ", href: "/faq" },
     { title: "Support", href: "/support" },
   ],
@@ -64,20 +64,20 @@ export function Footer() {
               </Link>
               <p className="text-background/70 text-sm leading-relaxed mb-6 max-w-sm">
                 UPJUNOO PRO est une plateforme qui vous permet de commander des
-                taxis, envoyer des colis et louer des vehicules en toute
-                simplicite.
+                taxis, envoyer des colis et louer des véhicules en toute
+                simplicité.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:contact@upjunoo.com"
+                  href="mailto:contact@upjunoopro.com"
                   className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  contact@upjunoo.com
+                  contact@upjunoopro.com
                 </a>
-                {/* TODO: Decommenter quand le numero sera disponible
+                {/* TODO: Décommenter quand le numéro sera disponible
                 <a
                   href="tel:+22500000000"
                   className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-colors"
@@ -153,7 +153,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/60">
-            &copy; {new Date().getFullYear()} UPJUNOO PRO. Tous droits reserves.
+            &copy; {new Date().getFullYear()} UPJUNOO PRO. Tous droits réservés.
           </p>
 
           {/* Social Links */}

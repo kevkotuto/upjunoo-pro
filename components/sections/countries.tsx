@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { MapPin, Globe, Rocket, Clock } from "lucide-react";
+import { MapPin, Globe, Clock } from "lucide-react";
 import { regionsData, formattedKpis, deploymentStatusLabels, deploymentStatusColors, type DeploymentStatus } from "@/data/kpis";
 
 function StatusBadge({ status }: { status: DeploymentStatus }) {
@@ -29,14 +29,14 @@ export function CountriesSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Deploiement progressif
+            Déploiement progressif
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Notre presence <span className="text-primary">internationale</span>
+            Notre présence <span className="text-primary">internationale</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            UPJUNOO PRO se deploie progressivement a travers le monde,
-            en commencant par l'Afrique avant de s'etendre vers d'autres continents.
+            UPJUNOO PRO est présent dans 15 pays d'Afrique,
+            couvrant l'Afrique de l'Ouest et l'Afrique Centrale.
           </p>
         </motion.div>
 
@@ -49,15 +49,7 @@ export function CountriesSection() {
         >
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-green-500" />
-            <span className="text-sm text-muted-foreground">Disponible</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-amber-500" />
-            <span className="text-sm text-muted-foreground">En lancement</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-blue-400" />
-            <span className="text-sm text-muted-foreground">Bientot</span>
+            <span className="text-sm text-muted-foreground">Service disponible</span>
           </div>
         </motion.div>
 
@@ -144,7 +136,7 @@ export function CountriesSection() {
           ))}
         </motion.div>
 
-        {/* Progressive deployment note */}
+        {/* Coverage note */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,9 +145,9 @@ export function CountriesSection() {
           className="mt-10 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10">
-            <Rocket className="h-4 w-4 text-primary" />
+            <Globe className="h-4 w-4 text-primary" />
             <span className="text-sm text-muted-foreground">
-              Deploiement progressif en cours - Nouvelles regions a venir
+              15 pays - 50+ villes - 2 régions africaines
             </span>
           </div>
         </motion.div>
@@ -169,7 +161,7 @@ export function CountriesSection() {
           className="mt-8 text-center"
         >
           <p className="text-muted-foreground mb-4">
-            Votre region n'est pas encore couverte ?
+            Votre région n'est pas encore couverte ?
           </p>
           <motion.a
             href="/offres-partenaires/franchises"
@@ -178,7 +170,7 @@ export function CountriesSection() {
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
           >
             <Globe className="h-4 w-4" />
-            Devenez franchise et lancez UPJUNOO PRO dans votre region
+            Devenez franchise et lancez UPJUNOO PRO dans votre région
             <span>→</span>
           </motion.a>
         </motion.div>

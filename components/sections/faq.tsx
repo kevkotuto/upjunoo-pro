@@ -11,44 +11,44 @@ import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "Comment telecharger l'application UPJUNOO PRO ?",
+    question: "Comment télécharger l'application UPJUNOO PRO ?",
     answer:
-      "L'application UPJUNOO PRO est disponible gratuitement sur l'App Store pour iOS et sur Google Play pour Android. Recherchez 'UPJUNOO PRO' et telechargez l'application en quelques secondes.",
+      "L'application UPJUNOO PRO est disponible gratuitement sur l'App Store pour iOS et sur Google Play pour Android. Recherchez 'UPJUNOO PRO' et téléchargez l'application en quelques secondes.",
   },
   {
-    question: "Quels sont les modes de paiement acceptes ?",
+    question: "Quels sont les modes de paiement acceptés ?",
     answer:
-      "Nous acceptons plusieurs modes de paiement : carte bancaire, paiement mobile, portefeuille electronique et paiement en especes selon les regions. Vous pouvez configurer votre mode de paiement prefere dans l'application.",
+      "Nous acceptons plusieurs modes de paiement : carte bancaire, paiement mobile, portefeuille électronique et paiement en espèces selon les régions. Vous pouvez configurer votre mode de paiement préféré dans l'application.",
   },
   {
     question: "Comment devenir chauffeur partenaire ?",
     answer:
-      "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Offres Partenaires > Chauffeurs' et remplissez le formulaire d'inscription. Vous serez contacte par un gestionnaire de flotte agree qui vous accompagnera dans les demarches.",
+      "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Offres Partenaires > Chauffeurs' et remplissez le formulaire d'inscription. Vous serez contacté par un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
   },
   {
     question: "UPJUNOO PRO est-il disponible dans ma ville ?",
     answer:
-      "UPJUNOO PRO est present dans plus de 100 villes a travers le monde. Consultez notre page 'Nos Implantations' pour verifier la disponibilite dans votre region. Si nous ne sommes pas encore presents, vous pouvez devenir franchise !",
+      "UPJUNOO PRO est présent dans plus de 100 villes à travers le monde. Consultez notre page 'Nos Implantations' pour vérifier la disponibilité dans votre région. Si nous ne sommes pas encore présents, vous pouvez devenir franchise !",
   },
   {
     question: "Comment fonctionne le service de livraison ?",
     answer:
-      "Le service de livraison UPJUNOO PRO vous permet d'envoyer et recevoir des colis en temps reel. Indiquez simplement les adresses de collecte et de livraison, et un livreur se charge du reste. Vous pouvez suivre votre colis en direct.",
+      "Le service de livraison UPJUNOO PRO vous permet d'envoyer et recevoir des colis en temps réel. Indiquez simplement les adresses de collecte et de livraison, et un livreur se charge du reste. Vous pouvez suivre votre colis en direct.",
   },
   {
     question: "Comment contacter le support client ?",
     answer:
-      "Notre equipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email a contact@upjunoo.com, ou via notre page Contact. Nous nous engageons a repondre dans les plus brefs delais.",
+      "Notre équipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email à contact@upjunoopro.com, ou via notre page Contact. Nous nous engageons à répondre dans les plus brefs délais.",
   },
   {
     question: "Comment devenir franchise UPJUNOO PRO ?",
     answer:
-      "Pour devenir franchise, rendez-vous sur la page 'Offres Partenaires > Franchises'. Vous y trouverez toutes les informations sur le profil recherche, les avantages et les conditions. Contactez notre equipe pour discuter de votre projet.",
+      "Pour devenir franchise, rendez-vous sur la page 'Offres Partenaires > Franchises'. Vous y trouverez toutes les informations sur le profil recherché, les avantages et les conditions. Contactez notre équipe pour discuter de votre projet.",
   },
   {
-    question: "Comment sont calculees les courses ?",
+    question: "Comment sont calculées les courses ?",
     answer:
-      "Les courses UPJUNOO PRO sont calculees en fonction de la distance et du temps de trajet. Vous voyez toujours une estimation avant de confirmer votre course. Aucune surprise, tout est transparent.",
+      "Les courses UPJUNOO PRO sont calculées en fonction de la distance et du temps de trajet. Vous voyez toujours une estimation avant de confirmer votre course. Aucune surprise, tout est transparent.",
   },
 ];
 
@@ -71,10 +71,10 @@ export function FAQSection() {
             FAQ
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Questions <span className="text-primary">frequentes</span>
+            Questions <span className="text-primary">fréquentes</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Trouvez rapidement les reponses a vos questions les plus courantes
+            Trouvez rapidement les réponses à vos questions les plus courantes
             sur UPJUNOO PRO.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export function FAQSection() {
           className="mt-12 text-center"
         >
           <p className="text-muted-foreground mb-4">
-            Vous n'avez pas trouve la reponse a votre question ?
+            Vous n'avez pas trouvé la réponse à votre question ?
           </p>
           <motion.a
             href="/contact"
@@ -128,7 +128,7 @@ export function FAQSection() {
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
           >
-            Contactez notre equipe support
+            Contactez notre équipe support
             <span>→</span>
           </motion.a>
         </motion.div>

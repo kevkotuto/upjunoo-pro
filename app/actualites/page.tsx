@@ -17,9 +17,9 @@ export default function ActualitesPage() {
     <>
       <PageHero
         badge="Blog"
-        title="Actualites"
+        title="Actualités"
         highlight="UPJUNOO PRO"
-        description="Suivez notre actualite, nos nouveautes produit et notre expansion a travers l'Afrique."
+        description="Suivez notre actualité, nos nouveautés produit et notre expansion à travers l'Afrique."
         backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 
@@ -33,7 +33,7 @@ export default function ActualitesPage() {
             className="mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              A la une
+              À la une
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold">Articles en vedette</h2>
           </motion.div>
@@ -197,11 +197,11 @@ export default function ActualitesPage() {
                 <Newspaper className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Ne manquez aucune actualite
+                Ne manquez aucune actualité
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-                Inscrivez-vous a notre newsletter pour recevoir les dernieres
-                nouvelles directement dans votre boite mail.
+                Inscrivez-vous à notre newsletter pour recevoir les dernières
+                nouvelles directement dans votre boîte mail.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input

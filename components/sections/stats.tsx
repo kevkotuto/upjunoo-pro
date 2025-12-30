@@ -189,7 +189,7 @@ export function StatsSection() {
             </span>
           </h2>
           <p className="text-white/70 max-w-xl mx-auto text-lg">
-            Une croissance continue grace a la confiance de nos utilisateurs
+            Une croissance continue grâce à la confiance de nos utilisateurs
           </p>
         </motion.div>
 

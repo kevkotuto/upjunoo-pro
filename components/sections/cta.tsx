@@ -27,14 +27,14 @@ export function CTASection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
           >
             <Sparkles className="h-4 w-4" />
-            Opportunites
+            Opportunités
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Rejoignez l'aventure{" "}
             <span className="text-primary">UPJUNOO PRO</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Que vous soyez chauffeur, livreur ou entrepreneur, nous avons une opportunite pour vous.
+            Que vous soyez chauffeur, livreur ou entrepreneur, nous avons une opportunité pour vous.
           </p>
         </motion.div>
 
@@ -91,14 +91,14 @@ export function CTASection() {
                 Devenez chauffeur ou livreur
               </h3>
               <p className="text-white/80 mb-8 max-w-md text-lg">
-                Rejoignez notre equipe et profitez d'horaires flexibles, de
-                revenus attractifs et d'une liberte totale.
+                Rejoignez notre équipe et profitez d'horaires flexibles, de
+                revenus attractifs et d'une liberté totale.
               </p>
 
               <ul className="space-y-4 mb-8">
                 {[
                   "Horaires de travail 100% flexibles",
-                  "Revenus attractifs a la commission",
+                  "Revenus attractifs à la commission",
                   "Support et assistance 24/7",
                   "Assurance incluse",
                 ].map((item, index) => (
@@ -124,7 +124,7 @@ export function CTASection() {
                 className="gap-2 h-14 px-8 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold shadow-xl hover:scale-105 transition-all"
               >
                 <Link href="/devenir-chauffeur">
-                  Rejoindre l'equipe
+                  Rejoindre l'équipe
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
@@ -173,18 +173,18 @@ export function CTASection() {
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                Devenez franchise UPJUNOO PRO
+                Devenez franchisé UPJUNOO PRO
               </h3>
               <p className="text-gray-400 mb-8 max-w-md text-lg">
-                Lancez votre propre activite avec la marque UPJUNOO PRO. Beneficiez
+                Lancez votre propre activité avec la marque UPJUNOO PRO. Bénéficiez
                 de notre expertise et de notre technologie.
               </p>
 
               <ul className="space-y-4 mb-8">
                 {[
-                  "Marque reconnue internationalement",
+                  "Marque reconnue à l'international",
                   "Formation et accompagnement complet",
-                  "Technologie cle en main",
+                  "Technologie clé en main",
                   "Support marketing inclus",
                 ].map((item, index) => (
                   <motion.li

@@ -24,31 +24,31 @@ const features = [
     icon: Zap,
     title: "Livraison express",
     description:
-      "Vos colis livres en un temps record grace a notre reseau de livreurs reactifs.",
+      "Vos colis livrés en un temps record grâce à notre réseau de livreurs réactifs.",
   },
   {
     icon: MapPin,
-    title: "Suivi en temps reel",
+    title: "Suivi en temps réel",
     description:
-      "Suivez votre colis a chaque etape de la livraison directement sur l'app.",
+      "Suivez votre colis à chaque étape de la livraison directement sur l'app.",
   },
   {
     icon: Shield,
-    title: "Colis securises",
+    title: "Colis sécurisés",
     description:
-      "Vos envois sont proteges et manipules avec soin par nos livreurs professionnels.",
+      "Vos envois sont protégés et manipulés avec soin par nos livreurs professionnels.",
   },
   {
     icon: Clock,
     title: "Disponible 24/7",
     description:
-      "Envoyez vos colis a tout moment, notre service est disponible jour et nuit.",
+      "Envoyez vos colis à tout moment, notre service est disponible jour et nuit.",
   },
   {
     icon: Headphones,
-    title: "Support dedie",
+    title: "Support dédié",
     description:
-      "Une equipe a votre ecoute pour repondre a toutes vos questions.",
+      "Une équipe à votre écoute pour répondre à toutes vos questions.",
   },
   {
     icon: Truck,
@@ -69,14 +69,14 @@ const deliveryTypes = [
   {
     title: "Standard",
     time: "2h - 4h",
-    description: "Le meilleur rapport qualite-prix",
+    description: "Le meilleur rapport qualité-prix",
     icon: Package,
     popular: false,
   },
   {
-    title: "Programmee",
-    time: "A votre convenance",
-    description: "Planifiez votre livraison a l'avance",
+    title: "Programmée",
+    time: "À votre convenance",
+    description: "Planifiez votre livraison à l'avance",
     icon: Clock,
     popular: false,
   },
@@ -89,7 +89,7 @@ export default function LivraisonPage() {
         badge="Service Livraison"
         title="Envoyez vos colis"
         highlight="en temps record"
-        description="Un service de livraison rapide, fiable et securise pour tous vos envois, des documents aux colis volumineux."
+        description="Un service de livraison rapide, fiable et sécurisé pour tous vos envois, des documents aux colis volumineux."
         backgroundImage="/images/banniere/coursier-moto-colis-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -246,23 +246,23 @@ export default function LivraisonPage() {
                 {[
                   {
                     step: "1",
-                    title: "Decrivez votre colis",
+                    title: "Décrivez votre colis",
                     desc: "Indiquez le type, la taille et le poids de votre envoi.",
                   },
                   {
                     step: "2",
-                    title: "Definissez les adresses",
-                    desc: "Entrez les adresses d'enlevement et de livraison.",
+                    title: "Définissez les adresses",
+                    desc: "Entrez les adresses d'enlèvement et de livraison.",
                   },
                   {
                     step: "3",
                     title: "Choisissez le mode",
-                    desc: "Selectionnez entre express, standard ou programme.",
+                    desc: "Sélectionnez entre express, standard ou programmé.",
                   },
                   {
                     step: "4",
                     title: "Suivez votre colis",
-                    desc: "Recevez des notifications a chaque etape de la livraison.",
+                    desc: "Recevez des notifications à chaque étape de la livraison.",
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -369,11 +369,11 @@ export default function LivraisonPage() {
                 <Package className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-                Pret a envoyer votre premier colis ?
+                Prêt à envoyer votre premier colis ?
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Telechargez l'application et beneficiez d'une premiere livraison a
-                tarif reduit.
+                Téléchargez l'application et bénéficiez d'une première livraison à
+                tarif réduit.
               </p>
               <Button
                 size="lg"

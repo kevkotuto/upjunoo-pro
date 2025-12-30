@@ -9,28 +9,28 @@ const features = [
   {
     icon: Smartphone,
     title: "Commandez en quelques clics",
-    description: "Interface intuitive pour une reservation rapide et sans effort",
+    description: "Interface intuitive pour une réservation rapide et sans effort",
     color: "text-blue-500",
     bg: "bg-blue-500/10",
   },
   {
     icon: Clock,
-    title: "Suivi en temps reel",
+    title: "Suivi en temps réel",
     description: "Suivez votre chauffeur ou votre colis en direct sur la carte",
     color: "text-green-500",
     bg: "bg-green-500/10",
   },
   {
     icon: Shield,
-    title: "Securite garantie",
-    description: "Chauffeurs verifies et trajets securises pour votre tranquillite",
+    title: "Sécurité garantie",
+    description: "Chauffeurs vérifiés et trajets sécurisés pour votre tranquillité",
     color: "text-purple-500",
     bg: "bg-purple-500/10",
   },
   {
     icon: Headphones,
     title: "Support 24/7",
-    description: "Une equipe dediee disponible a tout moment pour vous assister",
+    description: "Une équipe dédiée disponible à tout moment pour vous assister",
     color: "text-orange-500",
     bg: "bg-orange-500/10",
   },
@@ -71,11 +71,11 @@ export function FeaturesSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
               <Zap className="h-4 w-4" />
-              Fonctionnalites
+              Fonctionnalités
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Une experience de mobilite{" "}
+              Une expérience de mobilité{" "}
               <span className="text-primary relative">
                 exceptionnelle
                 <motion.div
@@ -88,8 +88,8 @@ export function FeaturesSection() {
               </span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
-              UPJUNOO PRO reinvente vos deplacements avec une application pensee
-              pour votre confort et votre securite. Decouvrez nos fonctionnalites phares.
+              UPJUNOO PRO réinvente vos déplacements avec une application pensée
+              pour votre confort et votre sécurité. Découvrez nos fonctionnalités phares.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -131,7 +131,7 @@ export function FeaturesSection() {
                 href="#download"
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all"
               >
-                Telecharger maintenant
+                Télécharger maintenant
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </motion.div>

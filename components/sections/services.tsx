@@ -9,7 +9,7 @@ const services = [
   {
     title: "Taxi & VTC",
     description:
-      "Commandez un taxi en quelques clics et deplacez-vous en toute serenite a travers la ville.",
+      "Commandez un taxi en quelques clics et déplacez-vous en toute sérénité à travers la ville.",
     icon: Car,
     href: "/passager",
     color: "bg-primary",
@@ -19,7 +19,7 @@ const services = [
   {
     title: "Livraisons Express",
     description:
-      "Envoyez et recevez vos colis en temps record avec notre reseau de livreurs professionnels.",
+      "Envoyez et recevez vos colis en temps record avec notre réseau de livreurs professionnels.",
     icon: Package,
     href: "/livraison",
     color: "bg-orange-500",
@@ -27,9 +27,9 @@ const services = [
     iconBg: "bg-orange-500/10",
   },
   {
-    title: "Location Vehicules",
+    title: "Location Véhicules",
     description:
-      "Louez un vehicule adapte a vos besoins, quand vous le souhaitez, en toute liberte.",
+      "Louez un véhicule adapté à vos besoins, quand vous le souhaitez, en toute liberté.",
     icon: CarFront,
     href: "/location",
     color: "bg-violet-500",
@@ -39,7 +39,7 @@ const services = [
   {
     title: "Fret Urbain",
     description:
-      "Organisez vos envois volumineux avec pick-up, camionnettes ou camions legers. Planification et suivi garantis.",
+      "Organisez vos envois volumineux avec pick-up, camionnettes ou camions légers. Planification et suivi garantis.",
     icon: Truck,
     href: "/fret-urbain",
     color: "bg-amber-500",
@@ -49,7 +49,7 @@ const services = [
   {
     title: "Devenir Partenaire",
     description:
-      "Rejoignez notre equipe et beneficiez d'horaires flexibles et de revenus attractifs.",
+      "Rejoignez notre équipe et bénéficiez d'horaires flexibles et de revenus attractifs.",
     icon: Users,
     href: "/devenir-chauffeur",
     color: "bg-emerald-500",
@@ -103,7 +103,7 @@ export function ServicesSection() {
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Decouvrez notre gamme complete de services de mobilite, concus pour
+            Découvrez notre gamme complète de services de mobilité, conçus pour
             simplifier votre quotidien en Afrique.
           </p>
         </motion.div>
@@ -148,7 +148,7 @@ export function ServicesSection() {
 
                       {/* CTA */}
                       <div className="flex items-center text-primary font-semibold text-sm">
-                        <span>Decouvrir</span>
+                        <span>Découvrir</span>
                         <motion.div
                           className="ml-2"
                           animate={{ x: [0, 5, 0] }}
@@ -177,7 +177,7 @@ export function ServicesSection() {
             href="#download"
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
-            <span>Telecharger l'application</span>
+            <span>Télécharger l'application</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
         </motion.div>

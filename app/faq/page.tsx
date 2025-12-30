@@ -31,19 +31,19 @@ const faqCategories = [
     title: "Application",
     faqs: [
       {
-        question: "Comment telecharger l'application UPJUNOO PRO ?",
+        question: "Comment télécharger l'application UPJUNOO PRO ?",
         answer:
-          "L'application UPJUNOO PRO est disponible gratuitement sur l'App Store pour iOS et sur Google Play pour Android. Recherchez 'UPJUNOO PRO' et telechargez l'application en quelques secondes.",
+          "L'application UPJUNOO PRO est disponible gratuitement sur l'App Store pour iOS et sur Google Play pour Android. Recherchez 'UPJUNOO PRO' et téléchargez l'application en quelques secondes.",
       },
       {
         question: "L'application est-elle gratuite ?",
         answer:
-          "Oui, l'application UPJUNOO PRO est entierement gratuite a telecharger et a utiliser. Vous ne payez que pour les services que vous utilisez (courses, livraisons, locations).",
+          "Oui, l'application UPJUNOO PRO est entièrement gratuite à télécharger et à utiliser. Vous ne payez que pour les services que vous utilisez (courses, livraisons, locations).",
       },
       {
-        question: "Comment creer un compte ?",
+        question: "Comment créer un compte ?",
         answer:
-          "Telechargez l'application, puis suivez les etapes d'inscription en renseignant votre numero de telephone et vos informations personnelles. Une verification par SMS vous sera envoyee pour confirmer votre compte.",
+          "Téléchargez l'application, puis suivez les étapes d'inscription en renseignant votre numéro de téléphone et vos informations personnelles. Une vérification par SMS vous sera envoyée pour confirmer votre compte.",
       },
     ],
   },
@@ -52,19 +52,19 @@ const faqCategories = [
     title: "Paiement",
     faqs: [
       {
-        question: "Quels sont les modes de paiement acceptes ?",
+        question: "Quels sont les modes de paiement acceptés ?",
         answer:
-          "Nous acceptons plusieurs modes de paiement : Mobile Money (Orange Money, MTN Money, Wave, etc.), paiement en especes selon les regions, et le portefeuille electronique UPJUNOO PRO. Vous pouvez configurer votre mode de paiement prefere dans l'application.",
+          "Nous acceptons plusieurs modes de paiement : Mobile Money (Orange Money, MTN Money, Wave, etc.), paiement en espèces selon les régions, et le portefeuille électronique UPJUNOO PRO. Vous pouvez configurer votre mode de paiement préféré dans l'application.",
       },
       {
-        question: "Comment sont calculees les courses ?",
+        question: "Comment sont calculées les courses ?",
         answer:
-          "Les courses UPJUNOO PRO sont calculees en fonction de la distance et du temps de trajet. Vous voyez toujours une estimation avant de confirmer votre course. Aucune surprise, tout est transparent.",
+          "Les courses UPJUNOO PRO sont calculées en fonction de la distance et du temps de trajet. Vous voyez toujours une estimation avant de confirmer votre course. Aucune surprise, tout est transparent.",
       },
       {
         question: "Puis-je obtenir une facture ?",
         answer:
-          "Oui, un recu est automatiquement genere apres chaque course ou service. Vous pouvez le retrouver dans l'historique de vos trajets dans l'application.",
+          "Oui, un reçu est automatiquement généré après chaque course ou service. Vous pouvez le retrouver dans l'historique de vos trajets dans l'application.",
       },
     ],
   },
@@ -73,19 +73,19 @@ const faqCategories = [
     title: "Trajets VTC / Taxi",
     faqs: [
       {
-        question: "Comment reserver une course ?",
+        question: "Comment réserver une course ?",
         answer:
-          "Ouvrez l'application, entrez votre destination, choisissez le type de vehicule souhaite et confirmez. Un chauffeur vous sera attribue en quelques instants et vous pourrez suivre son arrivee en temps reel.",
+          "Ouvrez l'application, entrez votre destination, choisissez le type de véhicule souhaité et confirmez. Un chauffeur vous sera attribué en quelques instants et vous pourrez suivre son arrivée en temps réel.",
       },
       {
         question: "Puis-je annuler une course ?",
         answer:
-          "Oui, vous pouvez annuler une course a tout moment avant l'arrivee du chauffeur. Des frais d'annulation peuvent s'appliquer si le chauffeur est deja en route depuis un certain temps.",
+          "Oui, vous pouvez annuler une course à tout moment avant l'arrivée du chauffeur. Des frais d'annulation peuvent s'appliquer si le chauffeur est déjà en route depuis un certain temps.",
       },
       {
         question: "Comment noter mon chauffeur ?",
         answer:
-          "A la fin de chaque course, vous etes invite a noter votre chauffeur de 1 a 5 etoiles et a laisser un commentaire. Cela nous aide a maintenir la qualite du service.",
+          "À la fin de chaque course, vous êtes invité à noter votre chauffeur de 1 à 5 étoiles et à laisser un commentaire. Cela nous aide à maintenir la qualité du service.",
       },
     ],
   },
@@ -96,54 +96,54 @@ const faqCategories = [
       {
         question: "Comment fonctionne le service de livraison ?",
         answer:
-          "Le service de livraison UPJUNOO PRO vous permet d'envoyer et recevoir des colis en temps reel. Indiquez simplement les adresses de collecte et de livraison, et un livreur se charge du reste. Vous pouvez suivre votre colis en direct.",
+          "Le service de livraison UPJUNOO PRO vous permet d'envoyer et recevoir des colis en temps réel. Indiquez simplement les adresses de collecte et de livraison, et un livreur se charge du reste. Vous pouvez suivre votre colis en direct.",
       },
       {
         question: "Quels types de colis puis-je envoyer ?",
         answer:
-          "Vous pouvez envoyer des documents, des paquets de petite et moyenne taille, des courses, et bien plus. Les articles dangereux, illegaux ou perissables sont exclus du service.",
+          "Vous pouvez envoyer des documents, des paquets de petite et moyenne taille, des courses, et bien plus. Les articles dangereux, illégaux ou périssables sont exclus du service.",
       },
       {
         question: "Comment suivre ma livraison ?",
         answer:
-          "Une fois votre livraison confirmee, vous pouvez suivre en temps reel la position du livreur sur la carte dans l'application. Vous recevez egalement des notifications a chaque etape.",
+          "Une fois votre livraison confirmée, vous pouvez suivre en temps réel la position du livreur sur la carte dans l'application. Vous recevez également des notifications à chaque étape.",
       },
     ],
   },
   {
     icon: Key,
-    title: "Location de vehicules",
+    title: "Location de véhicules",
     faqs: [
       {
-        question: "Comment louer un vehicule ?",
+        question: "Comment louer un véhicule ?",
         answer:
-          "Telechargez l'application UPJUNOO PRO, selectionnez 'Location', choisissez votre vehicule, vos dates et votre point de retrait. Confirmez votre reservation et payez en ligne. C'est aussi simple que ca !",
+          "Téléchargez l'application UPJUNOO PRO, sélectionnez 'Location', choisissez votre véhicule, vos dates et votre point de retrait. Confirmez votre réservation et payez en ligne. C'est aussi simple que ça !",
       },
       {
-        question: "Quels documents sont necessaires pour louer ?",
+        question: "Quels documents sont nécessaires pour louer ?",
         answer:
-          "Pour louer un vehicule, vous devez presenter une piece d'identite valide (CNI ou passeport) et un permis de conduire en cours de validite. Une caution peut etre demandee selon le type de vehicule.",
+          "Pour louer un véhicule, vous devez présenter une pièce d'identité valide (CNI ou passeport) et un permis de conduire en cours de validité. Une caution peut être demandée selon le type de véhicule.",
       },
       {
-        question: "Puis-je modifier ou annuler ma reservation ?",
+        question: "Puis-je modifier ou annuler ma réservation ?",
         answer:
-          "Oui, vous pouvez modifier ou annuler votre reservation jusqu'a 24 heures avant la date de retrait sans frais. Au-dela, des frais d'annulation peuvent s'appliquer.",
+          "Oui, vous pouvez modifier ou annuler votre réservation jusqu'à 24 heures avant la date de retrait sans frais. Au-delà, des frais d'annulation peuvent s'appliquer.",
       },
     ],
   },
   {
     icon: MapPin,
-    title: "Disponibilite",
+    title: "Disponibilité",
     faqs: [
       {
         question: "UPJUNOO PRO est-il disponible dans ma ville ?",
         answer:
-          "UPJUNOO PRO est present dans plusieurs villes a travers l'Afrique et au-dela. Consultez notre page 'Nos Implantations' pour verifier la disponibilite dans votre region.",
+          "UPJUNOO PRO est présent dans plusieurs villes à travers l'Afrique et au-delà. Consultez notre page 'Nos Implantations' pour vérifier la disponibilité dans votre région.",
       },
       {
         question: "Comment savoir si le service est disponible chez moi ?",
         answer:
-          "Telechargez l'application et entrez votre adresse. Si des chauffeurs sont disponibles dans votre zone, vous pourrez commander un service immediatement.",
+          "Téléchargez l'application et entrez votre adresse. Si des chauffeurs sont disponibles dans votre zone, vous pourrez commander un service immédiatement.",
       },
     ],
   },
@@ -154,12 +154,12 @@ const faqCategories = [
       {
         question: "Comment devenir chauffeur partenaire ?",
         answer:
-          "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Devenir Chauffeur' et contactez un gestionnaire de flotte agree qui vous accompagnera dans les demarches.",
+          "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Devenir Chauffeur' et contactez un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
       },
       {
         question: "Comment devenir franchise UPJUNOO PRO ?",
         answer:
-          "Pour devenir franchise, rendez-vous sur la page 'Offres Partenaires > Franchises'. Vous y trouverez toutes les informations sur le profil recherche, les avantages et les conditions. Contactez notre equipe pour discuter de votre projet.",
+          "Pour devenir franchise, rendez-vous sur la page 'Offres Partenaires > Franchises'. Vous y trouverez toutes les informations sur le profil recherché, les avantages et les conditions. Contactez notre équipe pour discuter de votre projet.",
       },
     ],
   },
@@ -170,12 +170,12 @@ const faqCategories = [
       {
         question: "Comment contacter le support client ?",
         answer:
-          "Notre equipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email a contact@upjunoo.com, ou via notre page Contact. Nous nous engageons a repondre dans les plus brefs delais.",
+          "Notre équipe support est disponible 24/7. Vous pouvez nous contacter via l'application, par email à contact@upjunoopro.com, ou via notre page Contact. Nous nous engageons à répondre dans les plus brefs délais.",
       },
       {
-        question: "J'ai un probleme avec une course, que faire ?",
+        question: "J'ai un problème avec une course, que faire ?",
         answer:
-          "Rendez-vous dans l'historique de vos courses dans l'application, selectionnez la course concernee et cliquez sur 'Signaler un probleme'. Vous pouvez egalement nous contacter directement via le support.",
+          "Rendez-vous dans l'historique de vos courses dans l'application, sélectionnez la course concernée et cliquez sur 'Signaler un problème'. Vous pouvez également nous contacter directement via le support.",
       },
     ],
   },
@@ -187,8 +187,8 @@ export default function FAQPage() {
       <PageHero
         badge="Aide"
         title="Questions"
-        highlight="frequentes"
-        description="Trouvez rapidement les reponses a vos questions les plus courantes sur UPJUNOO PRO."
+        highlight="fréquentes"
+        description="Trouvez rapidement les réponses à vos questions les plus courantes sur UPJUNOO PRO."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -278,10 +278,10 @@ export default function FAQPage() {
           >
             <HelpCircle className="h-12 w-12 text-primary mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-4">
-              Vous n'avez pas trouve votre reponse ?
+              Vous n'avez pas trouvé votre réponse ?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Notre equipe support est disponible pour vous aider.
+              Notre équipe support est disponible pour vous aider.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -294,7 +294,7 @@ export default function FAQPage() {
                 href="/contact"
                 className="px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
               >
-                Nous ecrire
+                Nous écrire
               </Link>
             </div>
           </motion.div>

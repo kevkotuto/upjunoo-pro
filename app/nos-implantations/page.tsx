@@ -22,10 +22,15 @@ const regions: RegionData[] = [
     flag: "🇨🇮",
     status: "available",
     countries: [
-      { name: "Cote d'Ivoire", cities: ["Abidjan", "Bouake", "Yamoussoukro", "San-Pedro"] },
-      { name: "Senegal", cities: ["Dakar", "Thies", "Saint-Louis"] },
-      { name: "Mali", cities: ["Bamako", "Sikasso"] },
       { name: "Burkina Faso", cities: ["Ouagadougou", "Bobo-Dioulasso"] },
+      { name: "Bénin", cities: ["Cotonou", "Porto-Novo"] },
+      { name: "Côte d'Ivoire", cities: ["Abidjan", "Bouaké", "Yamoussoukro", "San-Pedro"] },
+      { name: "Ghana", cities: ["Accra", "Kumasi"] },
+      { name: "Guinée", cities: ["Conakry", "Nzérékoré"] },
+      { name: "Mali", cities: ["Bamako", "Sikasso"] },
+      { name: "Niger", cities: ["Niamey", "Zinder"] },
+      { name: "Sénégal", cities: ["Dakar", "Thiès", "Saint-Louis"] },
+      { name: "Togo", cities: ["Lomé", "Kara"] },
     ],
   },
   {
@@ -33,43 +38,12 @@ const regions: RegionData[] = [
     flag: "🇨🇲",
     status: "available",
     countries: [
-      { name: "Cameroun", cities: ["Douala", "Yaounde", "Bafoussam"] },
+      { name: "Cameroun", cities: ["Douala", "Yaoundé", "Bafoussam"] },
+      { name: "Congo-Brazzaville", cities: ["Brazzaville", "Pointe-Noire"] },
+      { name: "Congo RDC", cities: ["Kinshasa", "Lubumbashi"] },
       { name: "Gabon", cities: ["Libreville", "Port-Gentil"] },
-      { name: "Congo", cities: ["Brazzaville", "Pointe-Noire"] },
-    ],
-  },
-  {
-    name: "Maghreb",
-    flag: "🇲🇦",
-    status: "launching",
-    countries: [
-      { name: "Maroc", cities: ["Casablanca", "Rabat", "Marrakech"] },
-      { name: "Tunisie", cities: ["Tunis", "Sfax"] },
-    ],
-  },
-  {
-    name: "Europe",
-    flag: "🇫🇷",
-    status: "launching",
-    countries: [
-      { name: "France", cities: ["Paris", "Lyon", "Marseille"] },
-    ],
-  },
-  {
-    name: "Moyen-Orient",
-    flag: "🇦🇪",
-    status: "coming_soon",
-    countries: [
-      { name: "EAU", cities: ["Dubai", "Abu Dhabi"] },
-      { name: "Qatar", cities: ["Doha"] },
-    ],
-  },
-  {
-    name: "Amerique du Nord",
-    flag: "🇨🇦",
-    status: "coming_soon",
-    countries: [
-      { name: "Canada", cities: ["Montreal", "Toronto"] },
+      { name: "Guinée équatoriale", cities: ["Malabo", "Bata"] },
+      { name: "Tchad", cities: ["N'Djamena", "Moundou"] },
     ],
   },
 ];
@@ -97,10 +71,10 @@ export default function ImplantationsPage() {
   return (
     <>
       <PageHero
-        badge="Deploiement progressif"
-        title="UPJUNOO PRO a travers"
-        highlight="le monde"
-        description="Notre reseau se deploie progressivement, en commencant par l'Afrique avant de s'etendre vers d'autres continents."
+        badge="15 pays africains"
+        title="UPJUNOO PRO à travers"
+        highlight="l'Afrique"
+        description="Notre réseau couvre 15 pays d'Afrique de l'Ouest et d'Afrique Centrale, avec plus de 50 villes desservies."
         backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 
@@ -139,15 +113,7 @@ export default function ImplantationsPage() {
           <div className="flex flex-wrap justify-center gap-6">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-sm text-muted-foreground">Disponible</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-amber-500" />
-              <span className="text-sm text-muted-foreground">En lancement</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-blue-400" />
-              <span className="text-sm text-muted-foreground">Bientot</span>
+              <span className="text-sm text-muted-foreground">Service disponible</span>
             </div>
           </div>
         </div>
@@ -163,13 +129,13 @@ export default function ImplantationsPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos regions
+              Nos régions
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Nos regions <span className="text-primary">d'implantation</span>
+              Nos régions <span className="text-primary">d'implantation</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Decouvrez les villes ou UPJUNOO PRO est disponible et suivez notre deploiement progressif.
+              Découvrez les villes où UPJUNOO PRO est disponible et suivez notre déploiement progressif.
             </p>
           </motion.div>
 
@@ -247,7 +213,7 @@ export default function ImplantationsPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10">
               <Rocket className="h-4 w-4 text-primary" />
               <span className="text-sm text-muted-foreground">
-                Deploiement progressif en cours - Nouvelles regions a venir
+                Déploiement progressif en cours - Nouvelles régions à venir
               </span>
             </div>
           </motion.div>
@@ -288,11 +254,11 @@ export default function ImplantationsPage() {
                 <Building2 className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Votre region n'est pas encore couverte ?
+                Votre région n'est pas encore couverte ?
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
                 Devenez franchise UPJUNOO PRO et lancez le service dans votre
-                region. Nous vous accompagnons a chaque etape.
+                région. Nous vous accompagnons à chaque étape.
               </p>
               <Button
                 size="lg"

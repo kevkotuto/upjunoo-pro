@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { trackNewsletterSignup } from "@/lib/analytics";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,14 +18,34 @@ export function NewsletterSection() {
     setStatus("loading");
     trackNewsletterSignup('submit');
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setStatus("success");
-    trackNewsletterSignup('success');
-    setEmail("");
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "newsletter",
+          email,
+        }),
+      });
 
-    // Reset after 3 seconds
-    setTimeout(() => setStatus("idle"), 3000);
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
+
+      setStatus("success");
+      trackNewsletterSignup('success');
+      setEmail("");
+
+      // Reset after 3 seconds
+      setTimeout(() => setStatus("idle"), 3000);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setStatus("error");
+      // Reset après 3 secondes en cas d'erreur
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -45,8 +65,8 @@ export function NewsletterSection() {
             Restez informé
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Inscrivez-vous a notre newsletter pour recevoir nos actualites,
-            offres speciales et nouveautes.
+            Inscrivez-vous à notre newsletter pour recevoir nos actualités,
+            offres spéciales et nouveautés.
           </p>
 
           <motion.form
@@ -70,15 +90,16 @@ export function NewsletterSection() {
             <Button
               type="submit"
               size="lg"
-              disabled={status !== "idle" || !email}
-              className="h-12 px-6 gap-2"
+              disabled={(status !== "idle" && status !== "error") || !email}
+              className={`h-12 px-6 gap-2 ${status === "error" ? "bg-red-500 hover:bg-red-600" : ""}`}
             >
               {status === "loading" && (
                 <Loader2 className="h-4 w-4 animate-spin" />
               )}
               {status === "success" && <CheckCircle className="h-4 w-4" />}
+              {status === "error" && <AlertCircle className="h-4 w-4" />}
               {status === "idle" && <Send className="h-4 w-4" />}
-              {status === "success" ? "Inscrit!" : "S'inscrire"}
+              {status === "success" ? "Inscrit!" : status === "error" ? "Erreur" : "S'inscrire"}
             </Button>
           </motion.form>
 
@@ -91,7 +112,7 @@ export function NewsletterSection() {
           >
             En vous inscrivant, vous acceptez notre{" "}
             <a href="/confidentialite" className="text-primary hover:underline">
-              politique de confidentialite
+              politique de confidentialité
             </a>
           </motion.p>
         </motion.div>

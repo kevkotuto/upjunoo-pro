@@ -22,27 +22,27 @@ const sections = [
   {
     id: "confidentialite",
     icon: Shield,
-    title: "Politique de confidentialite",
+    title: "Politique de confidentialité",
     content: (
       <>
         <p className="text-muted-foreground mb-4">
-          UPJUNOO PRO accorde une importance majeure a la protection des donnees
+          UPJUNOO PRO accorde une importance majeure à la protection des données
           personnelles de ses utilisateurs, partenaires, chauffeurs et
           entreprises.
         </p>
 
-        <h4 className="font-semibold text-lg mt-6 mb-3">Donnees collectees</h4>
+        <h4 className="font-semibold text-lg mt-6 mb-3">Données collectées</h4>
         <p className="text-muted-foreground mb-3">
           Dans le cadre de l'utilisation de la plateforme, nous pouvons
           collecter :
         </p>
         <ul className="space-y-2 mb-6">
           {[
-            "Donnees d'identification (nom, telephone, email)",
-            "Donnees de localisation (trajets, livraisons)",
-            "Donnees professionnelles (chauffeurs, flottes, entreprises)",
-            "Donnees de paiement (via prestataires securises)",
-            "Donnees techniques (cookies, journaux de connexion)",
+            "Données d'identification (nom, téléphone, email)",
+            "Données de localisation (trajets, livraisons)",
+            "Données professionnelles (chauffeurs, flottes, entreprises)",
+            "Données de paiement (via prestataires sécurisés)",
+            "Données techniques (cookies, journaux de connexion)",
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-2 text-muted-foreground">
               <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -52,17 +52,17 @@ const sections = [
         </ul>
 
         <h4 className="font-semibold text-lg mt-6 mb-3">
-          Utilisation des donnees
+          Utilisation des données
         </h4>
         <p className="text-muted-foreground mb-3">
-          Les donnees sont utilisees pour :
+          Les données sont utilisées pour :
         </p>
         <ul className="space-y-2">
           {[
-            "Fournir et ameliorer les services de mobilite et logistique",
-            "Assurer la securite des utilisateurs et des transactions",
-            "Gerer les paiements, la facturation et le support client",
-            "Produire des statistiques anonymisees",
+            "Fournir et améliorer les services de mobilité et logistique",
+            "Assurer la sécurité des utilisateurs et des transactions",
+            "Gérer les paiements, la facturation et le support client",
+            "Produire des statistiques anonymisées",
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-2 text-muted-foreground">
               <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -84,9 +84,9 @@ const sections = [
         </p>
         <ul className="space-y-2 mb-6">
           {[
-            "Ameliorer l'experience utilisateur",
+            "Améliorer l'expérience utilisateur",
             "Mesurer l'audience et la performance",
-            "Securiser les sessions",
+            "Sécuriser les sessions",
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-2 text-muted-foreground">
               <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -95,7 +95,7 @@ const sections = [
           ))}
         </ul>
         <p className="text-muted-foreground">
-          L'utilisateur peut a tout moment configurer ou refuser les cookies via
+          L'utilisateur peut à tout moment configurer ou refuser les cookies via
           son navigateur.
         </p>
       </>
@@ -104,12 +104,12 @@ const sections = [
   {
     id: "securite",
     icon: Lock,
-    title: "Securite et confidentialite",
+    title: "Sécurité et confidentialité",
     content: (
       <p className="text-muted-foreground">
         UPJUNOO PRO applique des mesures techniques et organisationnelles
-        strictes (KYC/KYB, chiffrement, acces controles) afin de garantir la
-        confidentialite et l'integrite des donnees.
+        strictes (KYC/KYB, chiffrement, accès contrôlés) afin de garantir la
+        confidentialité et l'intégrité des données.
       </p>
     ),
   },
@@ -121,17 +121,17 @@ const sections = [
       <>
         <p className="text-muted-foreground mb-6">
           L'utilisation de la plateforme UPJUNOO PRO implique l'acceptation
-          pleine et entiere des presentes conditions.
+          pleine et entière des présentes conditions.
         </p>
 
-        <h4 className="font-semibold text-lg mb-3">Acces aux services</h4>
+        <h4 className="font-semibold text-lg mb-3">Accès aux services</h4>
         <p className="text-muted-foreground mb-3">UPJUNOO PRO permet :</p>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
           {[
-            { icon: Car, text: "La reservation de trajets VTC / Taxi" },
+            { icon: Car, text: "La réservation de trajets VTC / Taxi" },
             { icon: Package, text: "La livraison de colis et marchandises" },
-            { icon: Key, text: "La location de vehicules" },
-            { icon: Truck, text: "Le fret urbain et periurbain" },
+            { icon: Key, text: "La location de véhicules" },
+            { icon: Truck, text: "Le fret urbain et périurbain" },
           ].map((item, index) => (
             <div
               key={index}
@@ -143,8 +143,8 @@ const sections = [
           ))}
         </div>
         <p className="text-muted-foreground">
-          Certains services peuvent necessiter une inscription, une verification
-          d'identite ou le respect de conditions specifiques selon le pays.
+          Certains services peuvent nécessiter une inscription, une vérification
+          d'identité ou le respect de conditions spécifiques selon le pays.
         </p>
       </>
     ),
@@ -152,13 +152,13 @@ const sections = [
   {
     id: "responsabilites",
     icon: AlertTriangle,
-    title: "Responsabilites",
+    title: "Responsabilités",
     content: (
       <ul className="space-y-3">
         {[
-          "UPJUNOO PRO agit en tant que plateforme technologique d'intermediation.",
-          "Les chauffeurs, livreurs et partenaires sont responsables de l'execution des prestations.",
-          "L'utilisateur s'engage a fournir des informations exactes et a utiliser la plateforme de maniere conforme aux lois en vigueur.",
+          "UPJUNOO PRO agit en tant que plateforme technologique d'intermédiation.",
+          "Les chauffeurs, livreurs et partenaires sont responsables de l'exécution des prestations.",
+          "L'utilisateur s'engage à fournir des informations exactes et à utiliser la plateforme de manière conforme aux lois en vigueur.",
         ].map((item, index) => (
           <li key={index} className="flex items-start gap-2 text-muted-foreground">
             <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -174,8 +174,8 @@ const sections = [
     title: "Paiements",
     content: (
       <p className="text-muted-foreground">
-        Les paiements peuvent etre effectues via Mobile Money, especes ou
-        portefeuille electronique UPJUNOO PRO. Les montants sont affiches de maniere
+        Les paiements peuvent être effectués via Mobile Money, espèces ou
+        portefeuille électronique UPJUNOO PRO. Les montants sont affichés de manière
         transparente avant validation.
       </p>
     ),
@@ -183,11 +183,11 @@ const sections = [
   {
     id: "suspension",
     icon: AlertTriangle,
-    title: "Suspension et resiliation",
+    title: "Suspension et résiliation",
     content: (
       <p className="text-muted-foreground">
-        UPJUNOO PRO se reserve le droit de suspendre ou de resilier un compte en
-        cas de fraude, non-respect des regles ou usage abusif de la plateforme.
+        UPJUNOO PRO se réserve le droit de suspendre ou de résilier un compte en
+        cas de fraude, non-respect des règles ou usage abusif de la plateforme.
       </p>
     ),
   },
@@ -197,8 +197,8 @@ const sections = [
     title: "Evolution des services",
     content: (
       <p className="text-muted-foreground">
-        Les services, fonctionnalites et conditions peuvent evoluer afin
-        d'ameliorer la qualite, la securite et la conformite reglementaire.
+        Les services, fonctionnalités et conditions peuvent évoluer afin
+        d'améliorer la qualité, la sécurité et la conformité réglementaire.
       </p>
     ),
   },
@@ -209,9 +209,9 @@ export default function ConditionsPage() {
     <>
       <PageHero
         badge="Legal"
-        title="Conditions generales"
-        highlight="et confidentialite"
-        description="Consultez nos conditions d'utilisation, politique de confidentialite et informations sur les cookies."
+        title="Conditions générales"
+        highlight="et confidentialité"
+        description="Consultez nos conditions d'utilisation, politique de confidentialité et informations sur les cookies."
       />
 
       {/* Table of Contents */}
@@ -280,14 +280,14 @@ export default function ConditionsPage() {
           >
             <h2 className="text-2xl font-bold mb-4">Une question ?</h2>
             <p className="text-muted-foreground mb-6">
-              Pour toute question relative a nos conditions ou a la protection
-              de vos donnees, contactez-nous.
+              Pour toute question relative à nos conditions ou à la protection
+              de vos données, contactez-nous.
             </p>
             <a
-              href="mailto:contact@upjunoo.com"
+              href="mailto:contact@upjunoopro.com"
               className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
             >
-              contact@upjunoo.com
+              contact@upjunoopro.com
             </a>
           </motion.div>
         </div>

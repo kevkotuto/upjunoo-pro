@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://upjunoo.pro"),
   title: {
-    default: "UPJUNOO PRO | Mobilite & Logistique - Taxi, Livraison, Location, Fret",
+    default: "UPJUNOO PRO | Mobilité & Logistique - Taxi, Livraison, Location, Fret",
     template: "%s | UPJUNOO PRO",
   },
   description:
-    "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location de vehicules et fret urbain reunis sur une plateforme unique. Solution internationale disponible dans plusieurs pays.",
+    "La mobilité intelligente, simple et inclusive. VTC/Taxi, livraison express, location de véhicules et fret urbain réunis sur une plateforme unique. Solution internationale disponible dans plusieurs pays.",
   keywords: [
     "taxi",
     "VTC",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "fret urbain",
     "fret peri-urbain",
     "location voiture",
-    "location vehicule",
+    "location véhicule",
     "transport",
     "chauffeur",
     "UPJUNOO PRO",
-    "mobilite",
+    "mobilité",
     "logistique",
     "international",
   ],
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "UPJUNOO PRO | Mobilite & Logistique intelligente internationale",
+    title: "UPJUNOO PRO | Mobilité & Logistique intelligente internationale",
     description:
-      "La mobilite intelligente, simple et inclusive. VTC/Taxi, livraison express, location et fret urbain sur une plateforme unique. Solution internationale.",
+      "La mobilité intelligente, simple et inclusive. VTC/Taxi, livraison express, location et fret urbain sur une plateforme unique. Solution internationale.",
     url: "https://upjunoo.pro",
     siteName: "UPJUNOO PRO",
     type: "website",
@@ -61,15 +61,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UPJUNOO PRO - Mobilite & Logistique internationale",
+        alt: "UPJUNOO PRO - Mobilité & Logistique internationale",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UPJUNOO PRO | Mobilite & Logistique intelligente",
+    title: "UPJUNOO PRO | Mobilité & Logistique intelligente",
     description:
-      "VTC/Taxi, livraison express, location et fret urbain reunis sur une plateforme unique. Solution internationale.",
+      "VTC/Taxi, livraison express, location et fret urbain réunis sur une plateforme unique. Solution internationale.",
     creator: "@upjunoo",
     images: ["/og-image.png"],
   },

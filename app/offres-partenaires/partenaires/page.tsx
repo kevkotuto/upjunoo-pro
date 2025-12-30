@@ -25,49 +25,49 @@ const partnerTypes = [
   {
     title: "Entreprises",
     description:
-      "Solutions de mobilite et logistique pour vos collaborateurs et operations.",
+      "Solutions de mobilité et logistique pour vos collaborateurs et opérations.",
     icon: Building2,
     benefits: [
-      "Tarifs negocies",
-      "Facturation centralisee",
-      "Reporting detaille",
+      "Tarifs négociés",
+      "Facturation centralisée",
+      "Reporting détaillé",
       "Compte gestionnaire",
     ],
   },
   {
     title: "Commerces & Restaurants",
     description:
-      "Integrez notre service de livraison a votre activite.",
+      "Intégrez notre service de livraison à votre activité.",
     icon: Briefcase,
     benefits: [
-      "Integration facile",
-      "Livraison a la demande",
-      "Suivi en temps reel",
+      "Intégration facile",
+      "Livraison à la demande",
+      "Suivi en temps réel",
       "Commission competitive",
     ],
   },
   {
     title: "Hotels & Tourisme",
     description:
-      "Offrez a vos clients un service de transport premium.",
+      "Offrez à vos clients un service de transport premium.",
     icon: Globe,
     benefits: [
       "Service VIP",
-      "Reservation anticipee",
+      "Réservation anticipée",
       "Chauffeurs professionnels",
       "Multi-langues",
     ],
   },
   {
-    title: "Evenementiel",
+    title: "Événementiel",
     description:
-      "Gerez la mobilite de vos evenements en toute simplicite.",
+      "Gérez la mobilité de vos événements en toute simplicité.",
     icon: Users,
     benefits: [
       "Gestion de flotte",
-      "Coordination centralisee",
+      "Coordination centralisée",
       "Tarifs groupe",
-      "Support dedie",
+      "Support dédié",
     ],
   },
 ];
@@ -77,25 +77,25 @@ const advantages = [
     icon: TrendingUp,
     title: "Croissance mutuelle",
     description:
-      "Developpez votre activite grace a notre ecosysteme en pleine expansion.",
+      "Développez votre activité grâce à notre écosystème en pleine expansion.",
   },
   {
     icon: Shield,
-    title: "Fiabilite garantie",
+    title: "Fiabilité garantie",
     description:
-      "Des chauffeurs verifies et des vehicules controles pour un service de qualite.",
+      "Des chauffeurs vérifiés et des véhicules contrôlés pour un service de qualité.",
   },
   {
     icon: Zap,
-    title: "Integration simple",
+    title: "Intégration simple",
     description:
-      "API et outils d'integration pour une mise en place rapide et efficace.",
+      "API et outils d'intégration pour une mise en place rapide et efficace.",
   },
   {
     icon: HeartHandshake,
-    title: "Support dedie",
+    title: "Support dédié",
     description:
-      "Un account manager dedie pour vous accompagner au quotidien.",
+      "Un account manager dédié pour vous accompagner au quotidien.",
   },
 ];
 
@@ -104,11 +104,11 @@ const steps = [
     number: "01",
     title: "Prise de contact",
     description:
-      "Discutez de vos besoins avec notre equipe commerciale.",
+      "Discutez de vos besoins avec notre équipe commerciale.",
   },
   {
     number: "02",
-    title: "Etude personnalisee",
+    title: "Étude personnalisée",
     description:
       "Nous analysons vos besoins et proposons une solution sur mesure.",
   },
@@ -116,7 +116,7 @@ const steps = [
     number: "03",
     title: "Mise en place",
     description:
-      "Integration technique et formation de vos equipes.",
+      "Intégration technique et formation de vos équipes.",
   },
   {
     number: "04",
@@ -133,7 +133,7 @@ export default function PartenairesPage() {
         badge="Partenariat B2B"
         title="Devenez partenaire"
         highlight="UPJUNOO PRO"
-        description="Integrez nos solutions de mobilite et logistique a votre activite et offrez plus de valeur a vos clients."
+        description="Intégrez nos solutions de mobilité et logistique à votre activité et offrez plus de valeur à vos clients."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -165,11 +165,11 @@ export default function PartenairesPage() {
               Types de partenariat
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-              Des solutions adaptees a chaque secteur
+              Des solutions adaptées à chaque secteur
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Quel que soit votre domaine d'activite, nous avons une offre qui
-              correspond a vos besoins.
+              Quel que soit votre domaine d'activité, nous avons une offre qui
+              correspond à vos besoins.
             </p>
           </motion.div>
 
@@ -330,20 +330,20 @@ export default function PartenairesPage() {
           >
             <div className="relative text-primary-foreground">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Pret a collaborer ?
+                Prêt à collaborer ?
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Contactez notre equipe commerciale pour discuter de votre projet
-                et decouvrir comment nous pouvons travailler ensemble.
+                Contactez notre équipe commerciale pour discuter de votre projet
+                et découvrir comment nous pouvons travailler ensemble.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:contact@upjunoo.com"
+                  href="mailto:contact@upjunoopro.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-background text-foreground font-medium hover:bg-background/90 transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  contact@upjunoo.com
+                  contact@upjunoopro.com
                 </a>
                 <Button
                   variant="secondary"

@@ -56,13 +56,13 @@ const services = [
   {
     title: "Location",
     href: "/location",
-    description: "Louez un vehicule en toute liberte",
+    description: "Louez un véhicule en toute liberté",
     icon: CarFront,
   },
   {
     title: "Chauffeurs",
     href: "/devenir-chauffeur",
-    description: "Rejoignez notre equipe",
+    description: "Rejoignez notre équipe",
     icon: Users,
   },
 ];
@@ -71,7 +71,7 @@ const offresPartenaires = [
   {
     title: "Franchises",
     href: "/offres-partenaires/franchises",
-    description: "Lancez UPJUNOO PRO dans votre region",
+    description: "Lancez UPJUNOO PRO dans votre région",
     icon: Store,
   },
   {
@@ -83,7 +83,7 @@ const offresPartenaires = [
   {
     title: "Chauffeurs",
     href: "/offres-partenaires/chauffeurs",
-    description: "Rejoignez notre equipe de chauffeurs",
+    description: "Rejoignez notre équipe de chauffeurs",
     icon: UserCheck,
   },
 ];
@@ -239,7 +239,7 @@ export function Header() {
                   </Link>
                 </NavigationMenuItem>
 
-                {/* Actualites */}
+                {/* Actualités */}
                 <NavigationMenuItem>
                   <Link
                     href="/actualites"
@@ -247,7 +247,7 @@ export function Header() {
                       isActive("/actualites") ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Actualites
+                    Actualités
                   </Link>
                 </NavigationMenuItem>
 
@@ -271,7 +271,7 @@ export function Header() {
             <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-semibold">
               <Link href="/#download" className="gap-2">
                 <Download className="h-4 w-4" />
-                Telecharger
+                Télécharger
               </Link>
             </Button>
           </div>
@@ -408,7 +408,7 @@ export function Header() {
 
                     {[
                       { title: "Nos Implantations", href: "/nos-implantations" },
-                      { title: "Actualites", href: "/actualites" },
+                      { title: "Actualités", href: "/actualites" },
                       { title: "Contact", href: "/contact" },
                     ].map((link, index) => (
                       <motion.div
@@ -437,7 +437,7 @@ export function Header() {
                     <Button asChild className="w-full gap-2">
                       <Link href="/#download">
                         <Download className="h-4 w-4" />
-                        Telecharger l'application
+                        Télécharger l'application
                       </Link>
                     </Button>
                   </SheetClose>

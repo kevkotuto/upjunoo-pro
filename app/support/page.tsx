@@ -25,21 +25,21 @@ const supportChannels = [
   {
     icon: Mail,
     title: "Email",
-    description: "Envoyez-nous un email, nous repondons sous 24h.",
-    action: "contact@upjunoo.com",
-    href: "mailto:contact@upjunoo.com",
+    description: "Envoyez-nous un email, nous répondons sous 24h.",
+    action: "contact@upjunoopro.com",
+    href: "mailto:contact@upjunoopro.com",
   },
   {
     icon: MessageSquare,
     title: "Chat in-app",
-    description: "Discutez avec notre equipe directement dans l'application.",
+    description: "Discutez avec notre équipe directement dans l'application.",
     action: "Ouvrir l'application",
     href: "#",
   },
   {
     icon: HelpCircle,
     title: "FAQ",
-    description: "Consultez notre FAQ pour des reponses rapides.",
+    description: "Consultez notre FAQ pour des réponses rapides.",
     action: "Voir la FAQ",
     href: "/faq",
   },
@@ -48,39 +48,39 @@ const supportChannels = [
 const commonIssues = [
   {
     icon: Car,
-    title: "Probleme avec une course",
+    title: "Problème avec une course",
     description:
-      "Chauffeur en retard, itineraire incorrect, comportement inapproprie...",
+      "Chauffeur en retard, itinéraire incorrect, comportement inapproprié...",
     href: "/contact?motif=course",
   },
   {
     icon: CreditCard,
-    title: "Probleme de paiement",
-    description: "Paiement refuse, double facturation, remboursement...",
+    title: "Problème de paiement",
+    description: "Paiement refusé, double facturation, remboursement...",
     href: "/contact?motif=paiement",
   },
   {
     icon: Package,
-    title: "Probleme de livraison",
-    description: "Colis non livre, colis endommage, retard de livraison...",
+    title: "Problème de livraison",
+    description: "Colis non livré, colis endommagé, retard de livraison...",
     href: "/contact?motif=livraison",
   },
   {
     icon: Key,
-    title: "Probleme de location",
-    description: "Reservation, vehicule, documents...",
+    title: "Problème de location",
+    description: "Réservation, véhicule, documents...",
     href: "/contact?motif=location",
   },
   {
     icon: AlertTriangle,
     title: "Signaler un incident",
-    description: "Securite, accident, perte d'objet...",
+    description: "Sécurité, accident, perte d'objet...",
     href: "/contact?motif=incident",
   },
   {
     icon: FileText,
     title: "Demande de facture",
-    description: "Facture, recu, justificatif de paiement...",
+    description: "Facture, reçu, justificatif de paiement...",
     href: "/contact?motif=facture",
   },
 ];
@@ -89,17 +89,17 @@ const supportFeatures = [
   {
     icon: Clock,
     title: "Disponible 24/7",
-    description: "Notre equipe est la pour vous aider a tout moment.",
+    description: "Notre équipe est là pour vous aider à tout moment.",
   },
   {
     icon: CheckCircle,
-    title: "Reponse rapide",
-    description: "Nous nous engageons a repondre sous 24 heures maximum.",
+    title: "Réponse rapide",
+    description: "Nous nous engageons à répondre sous 24 heures maximum.",
   },
   {
     icon: Headphones,
     title: "Support multilingue",
-    description: "Assistance disponible en francais et en anglais.",
+    description: "Assistance disponible en français et en anglais.",
   },
 ];
 
@@ -110,7 +110,7 @@ export default function SupportPage() {
         badge="Aide"
         title="Centre de"
         highlight="support"
-        description="Notre equipe est disponible 24/7 pour vous aider. Choisissez le canal qui vous convient le mieux."
+        description="Notre équipe est disponible 24/7 pour vous aider. Choisissez le canal qui vous convient le mieux."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -199,10 +199,10 @@ export default function SupportPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Problemes courants</h2>
+            <h2 className="text-3xl font-bold mb-4">Problèmes courants</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Selectionnez le type de probleme que vous rencontrez pour obtenir
-              une aide adaptee.
+              Sélectionnez le type de problème que vous rencontrez pour obtenir
+              une aide adaptée.
             </p>
           </motion.div>
 
@@ -251,11 +251,11 @@ export default function SupportPage() {
             <div className="relative text-primary-foreground">
               <Headphones className="h-16 w-16 mx-auto mb-6 opacity-90" />
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                Besoin d'une aide personnalisee ?
+                Besoin d'une aide personnalisée ?
               </h2>
               <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">
-                Notre equipe est prete a vous aider. Envoyez-nous un message et
-                nous vous repondrons dans les plus brefs delais.
+                Notre équipe est prête à vous aider. Envoyez-nous un message et
+                nous vous répondrons dans les plus brefs délais.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
@@ -271,7 +271,7 @@ export default function SupportPage() {
                   variant="outline"
                   className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
                 >
-                  <a href="mailto:contact@upjunoo.com">Envoyer un email</a>
+                  <a href="mailto:contact@upjunoopro.com">Envoyer un email</a>
                 </Button>
               </div>
             </div>

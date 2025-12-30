@@ -19,34 +19,34 @@ import Link from "next/link";
 
 const dataCollected = [
   {
-    category: "Donnees d'identification",
-    items: ["Nom et prenom", "Numero de telephone", "Adresse email"],
+    category: "Données d'identification",
+    items: ["Nom et prénom", "Numéro de téléphone", "Adresse email"],
   },
   {
-    category: "Donnees de localisation",
+    category: "Données de localisation",
     items: [
-      "Trajets effectues",
+      "Trajets effectués",
       "Adresses de livraison",
-      "Historique des deplacements",
+      "Historique des déplacements",
     ],
   },
   {
-    category: "Donnees professionnelles",
+    category: "Données professionnelles",
     items: [
       "Informations chauffeurs",
-      "Donnees de flotte",
+      "Données de flotte",
       "Informations entreprises partenaires",
     ],
   },
   {
-    category: "Donnees de paiement",
+    category: "Données de paiement",
     items: [
-      "Transactions via prestataires securises",
+      "Transactions via prestataires sécurisés",
       "Historique des paiements",
     ],
   },
   {
-    category: "Donnees techniques",
+    category: "Données techniques",
     items: [
       "Cookies et traceurs",
       "Journaux de connexion",
@@ -56,34 +56,34 @@ const dataCollected = [
 ];
 
 const dataUsage = [
-  "Fournir et ameliorer les services de mobilite et logistique",
-  "Assurer la securite des utilisateurs et des transactions",
-  "Gerer les paiements, la facturation et le support client",
-  "Produire des statistiques anonymisees pour ameliorer nos services",
-  "Vous informer des mises a jour et nouveautes",
+  "Fournir et améliorer les services de mobilité et logistique",
+  "Assurer la sécurité des utilisateurs et des transactions",
+  "Gérer les paiements, la facturation et le support client",
+  "Produire des statistiques anonymisées pour améliorer nos services",
+  "Vous informer des mises à jour et nouveautés",
 ];
 
 const userRights = [
   {
     icon: Eye,
-    title: "Droit d'acces",
-    description: "Vous pouvez demander l'acces a vos donnees personnelles.",
+    title: "Droit d'accès",
+    description: "Vous pouvez demander l'accès à vos données personnelles.",
   },
   {
     icon: UserCheck,
     title: "Droit de rectification",
-    description: "Vous pouvez demander la correction de donnees inexactes.",
+    description: "Vous pouvez demander la correction de données inexactes.",
   },
   {
     icon: Trash2,
-    title: "Droit a l'effacement",
+    title: "Droit à l'effacement",
     description:
-      "Vous pouvez demander la suppression de vos donnees sous conditions.",
+      "Vous pouvez demander la suppression de vos données sous conditions.",
   },
   {
     icon: Bell,
     title: "Droit d'opposition",
-    description: "Vous pouvez vous opposer au traitement de vos donnees.",
+    description: "Vous pouvez vous opposer au traitement de vos données.",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function ConfidentialitePage() {
         badge="Legal"
         title="Politique de"
         highlight="confidentialite"
-        description="UPJUNOO PRO accorde une importance majeure a la protection des donnees personnelles de ses utilisateurs, partenaires, chauffeurs et entreprises."
+        description="UPJUNOO PRO accorde une importance majeure à la protection des données personnelles de ses utilisateurs, partenaires, chauffeurs et entreprises."
       />
 
       {/* Introduction */}
@@ -111,9 +111,9 @@ export default function ConfidentialitePage() {
               <h2 className="font-semibold text-lg">Notre engagement</h2>
             </div>
             <p className="text-muted-foreground">
-              La protection de vos donnees personnelles est au coeur de nos
-              preoccupations. Cette politique de confidentialite explique
-              comment nous collectons, utilisons et protegeons vos informations
+              La protection de vos données personnelles est au cœur de nos
+              préoccupations. Cette politique de confidentialité explique
+              comment nous collectons, utilisons et protégeons vos informations
               lorsque vous utilisez la plateforme UPJUNOO PRO.
             </p>
           </motion.div>
@@ -133,11 +133,11 @@ export default function ConfidentialitePage() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Database className="h-6 w-6 text-primary" />
               </div>
-              <h2 className="font-bold text-2xl">Donnees collectees</h2>
+              <h2 className="font-bold text-2xl">Données collectées</h2>
             </div>
             <p className="text-muted-foreground mb-8">
               Dans le cadre de l'utilisation de la plateforme, nous pouvons
-              collecter les donnees suivantes :
+              collecter les données suivantes :
             </p>
 
             <div className="space-y-6">
@@ -183,10 +183,10 @@ export default function ConfidentialitePage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Eye className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Utilisation des donnees</h2>
+                  <h2 className="font-bold text-xl">Utilisation des données</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  Les donnees sont utilisees pour :
+                  Les données sont utilisées pour :
                 </p>
                 <ul className="space-y-3">
                   {dataUsage.map((item, index) => (
@@ -223,10 +223,10 @@ export default function ConfidentialitePage() {
                 </p>
                 <ul className="space-y-3 mb-6">
                   {[
-                    "Ameliorer l'experience utilisateur",
+                    "Améliorer l'expérience utilisateur",
                     "Mesurer l'audience et la performance",
-                    "Securiser les sessions",
-                    "Memoriser vos preferences",
+                    "Sécuriser les sessions",
+                    "Mémoriser vos préférences",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -238,8 +238,8 @@ export default function ConfidentialitePage() {
                   ))}
                 </ul>
                 <p className="text-sm text-muted-foreground bg-muted/50 p-4 rounded-lg">
-                  L'utilisateur peut a tout moment configurer ou refuser les
-                  cookies via les parametres de son navigateur.
+                  L'utilisateur peut à tout moment configurer ou refuser les
+                  cookies via les paramètres de son navigateur.
                 </p>
               </CardContent>
             </Card>
@@ -258,20 +258,20 @@ export default function ConfidentialitePage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Lock className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Securite et confidentialite</h2>
+                  <h2 className="font-bold text-xl">Sécurité et confidentialité</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
                   UPJUNOO PRO applique des mesures techniques et
                   organisationnelles strictes afin de garantir la
-                  confidentialite et l'integrite des donnees :
+                  confidentialité et l'intégrité des données :
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Verification d'identite (KYC/KYB)",
-                    "Chiffrement des donnees sensibles",
-                    "Acces controles et authentification renforcee",
-                    "Surveillance continue des systemes",
-                    "Sauvegarde reguliere des donnees",
+                    "Vérification d'identité (KYC/KYB)",
+                    "Chiffrement des données sensibles",
+                    "Accès contrôlés et authentification renforcée",
+                    "Surveillance continue des systèmes",
+                    "Sauvegarde régulière des données",
                   ].map((item, index) => (
                     <li
                       key={index}
@@ -294,8 +294,8 @@ export default function ConfidentialitePage() {
           >
             <h2 className="font-bold text-2xl mb-6">Vos droits</h2>
             <p className="text-muted-foreground mb-8">
-              Conformement a la reglementation en vigueur, vous disposez des
-              droits suivants concernant vos donnees personnelles :
+              Conformément à la réglementation en vigueur, vous disposez des
+              droits suivants concernant vos données personnelles :
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {userRights.map((right, index) => (
@@ -336,15 +336,15 @@ export default function ConfidentialitePage() {
             <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-4">Une question ?</h2>
             <p className="text-muted-foreground mb-6">
-              Pour toute question relative a la protection de vos donnees ou
+              Pour toute question relative à la protection de vos données ou
               pour exercer vos droits, contactez-nous.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="mailto:contact@upjunoo.com"
+                href="mailto:contact@upjunoopro.com"
                 className="px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                contact@upjunoo.com
+                contact@upjunoopro.com
               </a>
               <Link
                 href="/cgu"

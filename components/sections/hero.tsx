@@ -88,10 +88,10 @@ export function HeroSection() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] sm:leading-[1.1] mb-6 text-white"
             >
-              La mobilite
+              La mobilité
               <br />
               <span className="relative inline-block pb-2 sm:pb-3">
-                <span className="text-yellow-400">reinventee</span>
+                <span className="text-yellow-400">réinventée</span>
                 <motion.svg
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -120,7 +120,7 @@ export function HeroSection() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-lg sm:text-xl text-white/80 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Taxi, livraison express, location de vehicules et fret - une seule application pour tous vos besoins de transport.
+              Taxi, livraison express, location de véhicules et fret - une seule application pour tous vos besoins de transport.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -137,10 +137,10 @@ export function HeroSection() {
               >
                 <Link href="#download">
                   <Download className="h-5 w-5" />
-                  Telecharger gratuitement
+                  Télécharger gratuitement
                 </Link>
               </Button>
-              {/* Bouton demo - a reactiver quand la demo sera prete
+              {/* Bouton demo - à réactiver quand la démo sera prête
               <Button
                 size="lg"
                 variant="outline"
@@ -149,7 +149,7 @@ export function HeroSection() {
               >
                 <Link href="#services">
                   <Play className="h-4 w-4" />
-                  Voir la demo
+                  Voir la démo
                 </Link>
               </Button>
               */}
@@ -173,7 +173,7 @@ export function HeroSection() {
               <div className="h-5 w-px bg-white/30" />
               <div className="flex items-center gap-2 text-white/90">
                 <Download className="h-4 w-4" />
-                <span className="text-sm font-medium">{formattedKpis.telechargements} telechargements</span>
+                <span className="text-sm font-medium">{formattedKpis.telechargements} téléchargements</span>
               </div>
               <div className="h-5 w-px bg-white/30 hidden sm:block" />
               <div className="flex items-center gap-2 text-white/90">
@@ -329,7 +329,7 @@ export function HeroSection() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">Chauffeur</p>
-                    <p className="text-sm font-semibold text-gray-900">A 2 min</p>
+                    <p className="text-sm font-semibold text-gray-900">À 2 min</p>
                   </div>
                 </motion.div>
               </motion.div>

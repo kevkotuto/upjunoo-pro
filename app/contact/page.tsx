@@ -34,19 +34,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "contact@upjunoo.com",
-    href: "mailto:contact@upjunoo.com",
+    value: "contact@upjunoopro.com",
+    href: "mailto:contact@upjunoopro.com",
   },
   {
     icon: WhatsAppIcon,
     title: "WhatsApp",
-    value: "Envoyez un message a Upjunoo",
-    href: "https://wa.me/message/4CAQQZXOS72PD1",
+    value: "Envoyez un message à Upjunoo",
+    href: "https://wa.me/message/JGZMG3P6H4U7G1",
   },
   {
     icon: MapPin,
     title: "Adresse",
-    value: "Abidjan, Cote d'Ivoire",
+    value: "Abidjan, Côte d'Ivoire",
     href: "#",
   },
   {
@@ -58,12 +58,12 @@ const contactInfo = [
 ];
 
 const subjects = [
-  "Question generale",
+  "Question générale",
   "Support technique",
-  "Probleme avec une course",
-  "Probleme de paiement",
-  "Probleme de livraison",
-  "Probleme de location",
+  "Problème avec une course",
+  "Problème de paiement",
+  "Problème de livraison",
+  "Problème de location",
   "Signaler un incident",
   "Demande de facture",
   "Partenariat",
@@ -74,22 +74,22 @@ const subjects = [
 
 // Mapping des motifs de support vers les sujets du formulaire
 const motifToSubject: Record<string, string> = {
-  course: "Probleme avec une course",
-  paiement: "Probleme de paiement",
-  livraison: "Probleme de livraison",
-  location: "Probleme de location",
+  course: "Problème avec une course",
+  paiement: "Problème de paiement",
+  livraison: "Problème de livraison",
+  location: "Problème de location",
   incident: "Signaler un incident",
   facture: "Demande de facture",
 };
 
-// Messages pre-remplis selon le motif
+// Messages pré-remplis selon le motif
 const motifToMessage: Record<string, string> = {
-  course: "Bonjour,\n\nJe rencontre un probleme avec une course.\n\nDetails du probleme :\n- Date de la course : \n- Numero de course (si disponible) : \n- Description du probleme : \n\nMerci de votre aide.",
-  paiement: "Bonjour,\n\nJe rencontre un probleme de paiement.\n\nDetails :\n- Type de probleme : \n- Montant concerne : \n- Date de la transaction : \n\nMerci de votre aide.",
-  livraison: "Bonjour,\n\nJe rencontre un probleme avec une livraison.\n\nDetails :\n- Numero de livraison (si disponible) : \n- Date de la livraison : \n- Description du probleme : \n\nMerci de votre aide.",
-  location: "Bonjour,\n\nJe rencontre un probleme avec une location de vehicule.\n\nDetails :\n- Numero de reservation : \n- Date de location : \n- Description du probleme : \n\nMerci de votre aide.",
-  incident: "Bonjour,\n\nJe souhaite signaler un incident.\n\nDetails :\n- Date de l'incident : \n- Lieu : \n- Description : \n\nMerci de traiter cette demande en priorite.",
-  facture: "Bonjour,\n\nJe souhaite obtenir une facture.\n\nDetails :\n- Date de la course/livraison : \n- Numero de reference : \n- Informations de facturation : \n\nMerci.",
+  course: "Bonjour,\n\nJe rencontre un problème avec une course.\n\nDétails du problème :\n- Date de la course : \n- Numéro de course (si disponible) : \n- Description du problème : \n\nMerci de votre aide.",
+  paiement: "Bonjour,\n\nJe rencontre un problème de paiement.\n\nDétails :\n- Type de problème : \n- Montant concerné : \n- Date de la transaction : \n\nMerci de votre aide.",
+  livraison: "Bonjour,\n\nJe rencontre un problème avec une livraison.\n\nDétails :\n- Numéro de livraison (si disponible) : \n- Date de la livraison : \n- Description du problème : \n\nMerci de votre aide.",
+  location: "Bonjour,\n\nJe rencontre un problème avec une location de véhicule.\n\nDétails :\n- Numéro de réservation : \n- Date de location : \n- Description du problème : \n\nMerci de votre aide.",
+  incident: "Bonjour,\n\nJe souhaite signaler un incident.\n\nDétails :\n- Date de l'incident : \n- Lieu : \n- Description : \n\nMerci de traiter cette demande en priorité.",
+  facture: "Bonjour,\n\nJe souhaite obtenir une facture.\n\nDétails :\n- Date de la course/livraison : \n- Numéro de référence : \n- Informations de facturation : \n\nMerci.",
 };
 
 function ContactForm() {
@@ -130,21 +130,41 @@ function ContactForm() {
     // Track form submission
     trackContactFormSubmit(formState.subject, motif || undefined);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setStatus("success");
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setStatus("idle");
-      setFormState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          ...formState,
+        }),
       });
-    }, 3000);
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
+
+      setStatus("success");
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setStatus("idle");
+        setFormState({
+          firstName: "",
+          lastName: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }, 3000);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setStatus("error");
+      // Reset après 3 secondes en cas d'erreur
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -153,7 +173,7 @@ function ContactForm() {
         badge="Contact"
         title="Contactez"
         highlight="nous"
-        description="Une question, une suggestion ou besoin d'aide ? Notre equipe est la pour vous repondre."
+        description="Une question, une suggestion ou besoin d'aide ? Notre équipe est là pour vous répondre."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -167,7 +187,7 @@ function ContactForm() {
               viewport={{ once: true }}
               className="lg:col-span-1"
             >
-              <h2 className="text-2xl font-bold mb-6">Nos coordonnees</h2>
+              <h2 className="text-2xl font-bold mb-6">Nos coordonnées</h2>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.a
@@ -220,11 +240,11 @@ function ContactForm() {
                 viewport={{ once: true }}
                 className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary to-[#046d7a] text-white"
               >
-                <h3 className="font-semibold mb-4">Reponse rapide</h3>
+                <h3 className="font-semibold mb-4">Réponse rapide</h3>
                 <div className="flex items-center gap-4">
                   <div className="text-center">
                     <div className="text-3xl font-bold">24h</div>
-                    <div className="text-xs text-white/70">Delai moyen</div>
+                    <div className="text-xs text-white/70">Délai moyen</div>
                   </div>
                   <div className="w-px h-12 bg-white/20" />
                   <div className="text-center">
@@ -251,7 +271,7 @@ function ContactForm() {
                     <div>
                       <h2 className="text-xl font-bold">Envoyez-nous un message</h2>
                       <p className="text-sm text-muted-foreground">
-                        Nous vous repondrons sous 24h
+                        Nous vous répondrons sous 24h
                       </p>
                     </div>
                   </div>
@@ -271,11 +291,32 @@ function ContactForm() {
                         <CheckCircle className="h-10 w-10 text-green-600" />
                       </motion.div>
                       <h3 className="font-semibold text-xl mb-2">
-                        Message envoye !
+                        Message envoyé !
                       </h3>
                       <p className="text-muted-foreground">
-                        Merci de nous avoir contactes. Nous vous repondrons tres
+                        Merci de nous avoir contactés. Nous vous répondrons très
                         rapidement.
+                      </p>
+                    </motion.div>
+                  ) : status === "error" ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-center py-12"
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", delay: 0.1 }}
+                        className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4"
+                      >
+                        <Mail className="h-10 w-10 text-red-600" />
+                      </motion.div>
+                      <h3 className="font-semibold text-xl mb-2">
+                        Erreur d&apos;envoi
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Une erreur est survenue lors de l&apos;envoi. Veuillez réessayer ou nous contacter directement à contact@upjunoopro.com
                       </p>
                     </motion.div>
                   ) : (
@@ -298,7 +339,7 @@ function ContactForm() {
                         </div>
                         <div>
                           <label className="block text-sm font-medium mb-2">
-                            Prenom(s)
+                            Prénom(s)
                           </label>
                           <Input
                             value={formState.firstName}
@@ -308,7 +349,7 @@ function ContactForm() {
                                 firstName: e.target.value,
                               })
                             }
-                            placeholder="Votre prenom"
+                            placeholder="Votre prénom"
                             required
                             disabled={status === "loading"}
                             className="h-12"
@@ -346,7 +387,7 @@ function ContactForm() {
                           required
                           disabled={status === "loading"}
                         >
-                          <option value="">Selectionnez un sujet</option>
+                          <option value="">Sélectionnez un sujet</option>
                           {subjects.map((subject) => (
                             <option key={subject} value={subject}>
                               {subject}
@@ -424,10 +465,10 @@ function ContactForm() {
 
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Vous avez une question frequente ?
+                Vous avez une question fréquente ?
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-                Consultez notre FAQ pour trouver rapidement une reponse a vos
+                Consultez notre FAQ pour trouver rapidement une réponse à vos
                 questions les plus courantes.
               </p>
               <Button

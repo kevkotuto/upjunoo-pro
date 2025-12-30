@@ -32,16 +32,16 @@ const QR_URLS = {
 const handleAppStoreClick = (e: React.MouseEvent) => {
   e.preventDefault();
   trackDownloadClick('client', 'appstore');
-  toast.info("Bientot disponible", {
-    description: "L'application sera bientot disponible sur l'App Store",
+  toast.info("Bientôt disponible", {
+    description: "L'application sera bientôt disponible sur l'App Store",
   });
 };
 
 const handlePlayStoreClick = (e: React.MouseEvent) => {
   e.preventDefault();
   trackDownloadClick('client', 'playstore');
-  toast.info("Bientot disponible", {
-    description: "L'application sera bientot disponible sur Google Play",
+  toast.info("Bientôt disponible", {
+    description: "L'application sera bientôt disponible sur Google Play",
   });
 };
 
@@ -175,7 +175,7 @@ export function DownloadSection() {
                     <span className="font-semibold text-lg">{qrLabels[selectedQR].label}</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">
-                    Scannez avec votre telephone
+                    Scannez avec votre téléphone
                   </p>
                 </motion.div>
 
@@ -243,7 +243,7 @@ export function DownloadSection() {
 
                     {/* App screenshot */}
                     <Image
-                      src="/images/screenshots/client-app.jpeg"
+                      src="/images/screenshots/client-app.png"
                       alt="UPJUNOO PRO App"
                       fill
                       className="object-contain"
@@ -285,12 +285,12 @@ export function DownloadSection() {
               Application Mobile
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-6">
-              Telechargez{" "}
+              Téléchargez{" "}
               <span className="text-primary">UPJUNOO PRO</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto lg:mx-0">
-              Disponible sur toutes les plateformes. Telechargez maintenant et
-              commencez a profiter de nos services de mobilite.
+              Disponible sur toutes les plateformes. Téléchargez maintenant et
+              commencez à profiter de nos services de mobilité.
             </p>
 
             {/* Download buttons */}
@@ -306,7 +306,7 @@ export function DownloadSection() {
               >
                 <Apple className="h-7 w-7" />
                 <div className="text-left">
-                  <div className="text-xs opacity-80">Bientot sur</div>
+                  <div className="text-xs opacity-80">Bientôt sur</div>
                   <div className="font-semibold">App Store</div>
                 </div>
               </motion.button>
@@ -322,7 +322,7 @@ export function DownloadSection() {
               >
                 <Play className="h-7 w-7" />
                 <div className="text-left">
-                  <div className="text-xs opacity-80">Bientot sur</div>
+                  <div className="text-xs opacity-80">Bientôt sur</div>
                   <div className="font-semibold">Google Play</div>
                 </div>
               </motion.button>
@@ -341,7 +341,7 @@ export function DownloadSection() {
                   >
                     <Download className="h-7 w-7" />
                     <div className="text-left">
-                      <div className="text-xs opacity-80">Telecharger</div>
+                      <div className="text-xs opacity-80">Télécharger</div>
                       <div className="font-semibold">APK Direct</div>
                     </div>
                   </motion.button>
@@ -397,7 +397,7 @@ export function DownloadSection() {
                   <span className="font-semibold text-foreground">
                     {formatNumber(downloadCount.total)}
                   </span>{" "}
-                  telechargements APK
+                  téléchargements APK
                 </span>
               </motion.div>
             )}
@@ -414,7 +414,7 @@ export function DownloadSection() {
                 <span className="text-green-500">✓</span> Gratuit
               </span>
               <span className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Securise
+                <span className="text-green-500">✓</span> Sécurisé
               </span>
               <span className="flex items-center gap-2">
                 <span className="text-green-500">✓</span> Sans pub
@@ -431,7 +431,7 @@ export function DownloadSection() {
                 className="mt-10 p-6 bg-card rounded-2xl border border-border"
               >
                 <h3 className="text-lg font-semibold mb-4 text-center lg:text-left">
-                  Scannez pour telecharger
+                  Scannez pour télécharger
                 </h3>
                 <div className="flex gap-6 justify-center lg:justify-start flex-wrap">
                   {/* iOS QR Code - Disabled */}
@@ -439,7 +439,7 @@ export function DownloadSection() {
                     <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
                       <QRCodeSVG value={QR_URLS.ios} size={80} level="M" includeMargin={false} className="opacity-50" />
                       <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
-                        <span className="text-xs font-medium text-muted-foreground">Bientot</span>
+                        <span className="text-xs font-medium text-muted-foreground">Bientôt</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
@@ -453,7 +453,7 @@ export function DownloadSection() {
                     <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
                       <QRCodeSVG value={QR_URLS.android} size={80} level="M" includeMargin={false} className="opacity-50" />
                       <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
-                        <span className="text-xs font-medium text-muted-foreground">Bientot</span>
+                        <span className="text-xs font-medium text-muted-foreground">Bientôt</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">

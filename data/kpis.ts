@@ -1,34 +1,34 @@
 /**
- * Source unique de verite pour tous les KPIs et statistiques UPJUNOO PRO
- * Modifier ce fichier pour mettre a jour les chiffres sur tout le site
+ * Source unique de vérité pour tous les KPIs et statistiques UPJUNOO PRO
+ * Modifier ce fichier pour mettre à jour les chiffres sur tout le site
  */
 
 export const kpis = {
-  // Couverture geographique
+  // Couverture géographique
   pays: {
     value: 15,
     suffix: "",
     label: "Pays",
-    description: "En Afrique et au-dela",
+    description: "En Afrique et au-delà",
   },
   villes: {
     value: 50,
     suffix: "+",
     label: "Villes couvertes",
-    description: "Et ca continue",
+    description: "Et ça continue",
   },
 
-  // Utilisateurs et activite
+  // Utilisateurs et activité
   utilisateurs: {
     value: 100000,
     suffix: "+",
     label: "Utilisateurs actifs",
-    description: "Font confiance a UPJUNOO PRO",
+    description: "Font confiance à UPJUNOO PRO",
   },
   telechargements: {
     value: 250000,
     suffix: "+",
-    label: "Telechargements",
+    label: "Téléchargements",
     description: "Sur les stores",
   },
   coursesParJour: {
@@ -43,7 +43,7 @@ export const kpis = {
     value: 500,
     suffix: "+",
     label: "Chauffeurs partenaires",
-    description: "Professionnels verifies",
+    description: "Professionnels vérifiés",
   },
   franchises: {
     value: 15,
@@ -58,7 +58,7 @@ export const kpis = {
     description: "Entreprises partenaires",
   },
 
-  // Qualite de service
+  // Qualité de service
   satisfaction: {
     value: 4.8,
     suffix: "/5",
@@ -76,8 +76,8 @@ export const kpis = {
   vehiculesLocation: {
     value: 100,
     suffix: "+",
-    label: "Vehicules disponibles",
-    description: "Prets a louer",
+    label: "Véhicules disponibles",
+    description: "Prêts à louer",
   },
   pointsRetrait: {
     value: 15,
@@ -91,7 +91,7 @@ export const kpis = {
     value: "24/7",
     suffix: "",
     label: "Support",
-    description: "Disponible a tout moment",
+    description: "Disponible à tout moment",
   },
 } as const;
 
@@ -101,7 +101,7 @@ export type DeploymentStatus = "available" | "launching" | "coming_soon";
 export const deploymentStatusLabels: Record<DeploymentStatus, string> = {
   available: "Disponible",
   launching: "En lancement",
-  coming_soon: "Bientot",
+  coming_soon: "Bientôt",
 };
 
 export const deploymentStatusColors: Record<DeploymentStatus, { bg: string; text: string; dot: string }> = {
@@ -111,14 +111,10 @@ export const deploymentStatusColors: Record<DeploymentStatus, { bg: string; text
 };
 
 // Donnees regionales pour la carte des implantations
-// Focus realiste: Afrique principalement, avec expansion progressive
+// Les 15 pays ou UPJUNOO PRO est present
 export const regionsData = [
-  { name: "Afrique de l'Ouest", flag: "🇨🇮", cities: 25, status: "available" as DeploymentStatus, countries: ["Cote d'Ivoire", "Senegal", "Mali", "Burkina Faso"] },
-  { name: "Afrique Centrale", flag: "🇨🇲", cities: 8, status: "available" as DeploymentStatus, countries: ["Cameroun", "Gabon", "Congo"] },
-  { name: "Maghreb", flag: "🇲🇦", cities: 5, status: "launching" as DeploymentStatus, countries: ["Maroc", "Tunisie"] },
-  { name: "Europe", flag: "🇫🇷", cities: 3, status: "launching" as DeploymentStatus, countries: ["France"] },
-  { name: "Moyen-Orient", flag: "🇦🇪", cities: 2, status: "coming_soon" as DeploymentStatus, countries: ["EAU", "Qatar"] },
-  { name: "Amerique du Nord", flag: "🇨🇦", cities: 0, status: "coming_soon" as DeploymentStatus, countries: ["Canada"] },
+  { name: "Afrique de l'Ouest", flag: "🇨🇮", cities: 35, status: "available" as DeploymentStatus, countries: ["Côte d'Ivoire", "Sénégal", "Mali", "Burkina Faso", "Bénin", "Ghana", "Guinée", "Niger", "Togo"] },
+  { name: "Afrique Centrale", flag: "🇨🇲", cities: 15, status: "available" as DeploymentStatus, countries: ["Cameroun", "Gabon", "Congo-Brazzaville", "Congo RDC", "Tchad", "Guinée équatoriale"] },
 ];
 
 // Fonction utilitaire pour formater les nombres

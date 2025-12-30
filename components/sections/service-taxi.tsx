@@ -11,22 +11,22 @@ const features = [
   {
     icon: Clock,
     title: "Disponible 24/7",
-    description: "Reservez a tout moment, de jour comme de nuit.",
+    description: "Réservez à tout moment, de jour comme de nuit.",
   },
   {
     icon: MapPin,
     title: "Suivi GPS en direct",
-    description: "Suivez votre chauffeur en temps reel sur la carte.",
+    description: "Suivez votre chauffeur en temps réel sur la carte.",
   },
   {
     icon: Shield,
-    title: "Chauffeurs verifies",
-    description: "Tous nos chauffeurs sont formes et certifies.",
+    title: "Chauffeurs vérifiés",
+    description: "Tous nos chauffeurs sont formés et certifiés.",
   },
   {
     icon: CreditCard,
     title: "Paiement flexible",
-    description: "Especes, mobile money ou carte bancaire.",
+    description: "Espèces, mobile money ou carte bancaire.",
   },
 ];
 
@@ -84,7 +84,7 @@ export function ServiceTaxiSection() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
               Vos trajets{" "}
-              <span className="text-primary">simplifies</span>,<br />
+              <span className="text-primary">simplifiés</span>,<br />
               <span className="relative inline-block">
                 partout
                 <motion.div
@@ -106,7 +106,7 @@ export function ServiceTaxiSection() {
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
               Commandez un taxi ou VTC en quelques secondes. Nos chauffeurs professionnels
-              vous conduisent en toute securite, avec un service de qualite et des tarifs transparents.
+              vous conduisent en toute sécurité, avec un service de qualité et des tarifs transparents.
             </motion.p>
 
             {/* Benefits list */}
@@ -143,7 +143,7 @@ export function ServiceTaxiSection() {
             >
               <Link href="/passager">
                 <Button size="lg" className="rounded-full px-8 gap-2 shadow-lg shadow-primary/25">
-                  Reserver un trajet
+                  Réserver un trajet
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
@@ -169,7 +169,7 @@ export function ServiceTaxiSection() {
             >
               <Image
                 src="/images/vehicule/voiture-noel-2025-taxi.png"
-                alt="Voiture UPJUNOO PRO - Edition Noel"
+                alt="Voiture UPJUNOO PRO - Édition Noël"
                 width={600}
                 height={338}
                 className="w-full h-auto drop-shadow-2xl"

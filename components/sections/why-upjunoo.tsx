@@ -8,18 +8,18 @@ import { formattedKpis } from "@/data/kpis";
 const reasons = [
   {
     icon: Eye,
-    title: "Clarte totale",
+    title: "Clarté totale",
     description:
-      "Tarifs transparents, suivi en temps reel, preuve de service. Aucune surprise.",
+      "Tarifs transparents, suivi en temps réel, preuve de service. Aucune surprise.",
     color: "from-blue-500 to-blue-600",
     iconColor: "text-blue-500",
     bgColor: "bg-blue-500/10",
   },
   {
     icon: Shield,
-    title: "Securite maximale",
+    title: "Sécurité maximale",
     description:
-      "KYC/KYB, assurance complete, bouton SOS, suivi GPS en direct.",
+      "KYC/KYB, assurance complète, bouton SOS, suivi GPS en direct.",
     color: "from-green-500 to-green-600",
     iconColor: "text-green-500",
     bgColor: "bg-green-500/10",
@@ -28,16 +28,16 @@ const reasons = [
     icon: Users,
     title: "Inclusion",
     description:
-      "Integration des cooperatives, GIE, artisans-taxis et gestionnaires de flotte.",
+      "Intégration des coopératives, GIE, artisans-taxis et gestionnaires de flotte.",
     color: "from-purple-500 to-purple-600",
     iconColor: "text-purple-500",
     bgColor: "bg-purple-500/10",
   },
   {
     icon: TrendingUp,
-    title: "Impact reel",
+    title: "Impact réel",
     description:
-      "Reduction des couts logistiques pour PME et particuliers, creation d'emplois locaux.",
+      "Réduction des coûts logistiques pour PME et particuliers, création d'emplois locaux.",
     color: "from-orange-500 to-orange-600",
     iconColor: "text-orange-500",
     bgColor: "bg-orange-500/10",
@@ -47,7 +47,7 @@ const reasons = [
 const benefits = [
   "Application intuitive et rapide",
   `Disponible 24/7 dans ${formattedKpis.villes} villes`,
-  "Support client reactif",
+  "Support client réactif",
   "Paiement flexible (mobile money, carte)",
 ];
 
@@ -97,7 +97,7 @@ export function WhyUpjunooSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              La mobilite{" "}
+              La mobilité{" "}
               <span className="text-primary">intelligente</span>,<br />
               <span className="relative inline-block">
                 simple
@@ -129,8 +129,8 @@ export function WhyUpjunooSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Avec UPJUNOO PRO, la mobilite devient un service integre : VTC/Taxi,
-              livraison express, location de vehicules et fret urbain, reunis au sein
+              Avec UPJUNOO PRO, la mobilité devient un service intégré : VTC/Taxi,
+              livraison express, location de véhicules et fret urbain, réunis au sein
               d'une plateforme unique conçue pour l'Afrique.
             </motion.p>
 

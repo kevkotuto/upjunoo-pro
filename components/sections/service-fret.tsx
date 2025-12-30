@@ -9,30 +9,30 @@ const features = [
   {
     icon: Scale,
     title: "Tous volumes",
-    description: "De 50kg a plusieurs tonnes, nous gerons tout.",
+    description: "De 50kg à plusieurs tonnes, nous gérons tout.",
   },
   {
     icon: Calendar,
     title: "Planification",
-    description: "Programmez vos envois a l'avance facilement.",
+    description: "Programmez vos envois à l'avance facilement.",
   },
   {
     icon: MapPin,
     title: "Suivi complet",
-    description: "Tracez vos marchandises en temps reel.",
+    description: "Tracez vos marchandises en temps réel.",
   },
   {
     icon: Building2,
     title: "B2B & B2C",
-    description: "Solutions adaptees aux pros et particuliers.",
+    description: "Solutions adaptées aux pros et particuliers.",
   },
 ];
 
 const vehicleOptions = [
   "Pick-up pour petits volumes",
-  "Camionnettes pour demenagements",
-  "Camions legers pour le fret",
-  "Vehicules frigorifiques disponibles",
+  "Camionnettes pour déménagements",
+  "Camions légers pour le fret",
+  "Véhicules frigorifiques disponibles",
 ];
 
 export function ServiceFretSection() {
@@ -165,9 +165,9 @@ export function ServiceFretSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Demenagements, livraisons de meubles, envois volumineux ou fret commercial :
-              nous mettons a votre disposition une flotte de vehicules adaptes a chaque
-              besoin avec des professionnels experimentes.
+              Déménagements, livraisons de meubles, envois volumineux ou fret commercial :
+              nous mettons à votre disposition une flotte de véhicules adaptés à chaque
+              besoin avec des professionnels expérimentés.
             </motion.p>
 
             {/* Vehicle options */}

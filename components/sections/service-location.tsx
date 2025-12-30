@@ -8,31 +8,31 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     icon: Calendar,
-    title: "Reservation flexible",
+    title: "Réservation flexible",
     description: "Louez pour quelques heures, jours ou semaines.",
   },
   {
     icon: Key,
     title: "Prise en main facile",
-    description: "Recuperez votre vehicule en quelques minutes.",
+    description: "Récupérez votre véhicule en quelques minutes.",
   },
   {
     icon: Shield,
-    title: "Assurance complete",
-    description: "Tous nos vehicules sont entierement assures.",
+    title: "Assurance complète",
+    description: "Tous nos véhicules sont entièrement assurés.",
   },
   {
     icon: Fuel,
-    title: "Vehicules entretenus",
-    description: "Flotte regulierement controlee et nettoyee.",
+    title: "Véhicules entretenus",
+    description: "Flotte régulièrement contrôlée et nettoyée.",
   },
 ];
 
 const vehicleTypes = [
-  "Citadines economiques",
+  "Citadines économiques",
   "Berlines confortables",
   "SUV familiaux",
-  "Utilitaires legers",
+  "Utilitaires légers",
 ];
 
 export function ServiceLocationSection() {
@@ -71,7 +71,7 @@ export function ServiceLocationSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 text-violet-500 text-sm font-semibold mb-6"
             >
               <CarFront className="h-4 w-4" />
-              Location de Vehicules
+              Location de Véhicules
             </motion.div>
 
             <motion.h2
@@ -81,10 +81,10 @@ export function ServiceLocationSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Louez le vehicule{" "}
-              <span className="text-violet-500">ideal</span><br />
+              Louez le véhicule{" "}
+              <span className="text-violet-500">idéal</span><br />
               <span className="relative inline-block">
-                en toute liberte
+                en toute liberté
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -102,9 +102,9 @@ export function ServiceLocationSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Besoin d'un vehicule pour un deplacement, un evenement ou vos vacances ?
-              Notre large gamme de vehicules s'adapte a tous vos besoins avec des tarifs
-              competitifs et transparents.
+              Besoin d'un véhicule pour un déplacement, un événement ou vos vacances ?
+              Notre large gamme de véhicules s'adapte à tous vos besoins avec des tarifs
+              compétitifs et transparents.
             </motion.p>
 
             {/* Vehicle types */}
@@ -141,7 +141,7 @@ export function ServiceLocationSection() {
             >
               <Link href="/location">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-violet-500 hover:bg-violet-600 shadow-lg shadow-violet-500/25">
-                  Voir les vehicules
+                  Voir les véhicules
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
@@ -202,7 +202,7 @@ export function ServiceLocationSection() {
             >
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-border/50 shadow-sm">
                 <Sparkles className="h-5 w-5 text-violet-500" />
-                <span className="text-sm font-medium">-15% sur votre premiere location</span>
+                <span className="text-sm font-medium">-15% sur votre première location</span>
               </div>
             </motion.div>
           </motion.div>

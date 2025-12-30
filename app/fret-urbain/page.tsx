@@ -24,39 +24,39 @@ import Image from "next/image";
 const features = [
   {
     icon: Truck,
-    title: "Vehicules adaptes",
+    title: "Véhicules adaptés",
     description:
-      "Pick-up, camionnettes et camions legers pour tous vos besoins de transport.",
+      "Pick-up, camionnettes et camions légers pour tous vos besoins de transport.",
   },
   {
     icon: MapPin,
     title: "Suivi GPS en direct",
     description:
-      "Suivez votre marchandise en temps reel tout au long du trajet.",
+      "Suivez votre marchandise en temps réel tout au long du trajet.",
   },
   {
     icon: Shield,
-    title: "Marchandises assurees",
+    title: "Marchandises assurées",
     description:
-      "Vos biens sont proteges par une assurance complete durant le transport.",
+      "Vos biens sont protégés par une assurance complète durant le transport.",
   },
   {
     icon: Scale,
     title: "Charges lourdes",
     description:
-      "Capacite de transport jusqu'a plusieurs tonnes selon le vehicule choisi.",
+      "Capacité de transport jusqu'à plusieurs tonnes selon le véhicule choisi.",
   },
   {
     icon: Headphones,
-    title: "Support dedie",
+    title: "Support dédié",
     description:
-      "Une equipe specialisee pour accompagner vos envois volumineux.",
+      "Une équipe spécialisée pour accompagner vos envois volumineux.",
   },
   {
     icon: Calendar,
     title: "Planification flexible",
     description:
-      "Programmez vos livraisons a l'avance selon vos disponibilites.",
+      "Programmez vos livraisons à l'avance selon vos disponibilités.",
   },
 ];
 
@@ -64,14 +64,14 @@ const vehicleTypes = [
   {
     title: "Pick-up",
     capacity: "500 kg",
-    description: "Ideal pour les petits demenagements et livraisons moyennes",
+    description: "Idéal pour les petits déménagements et livraisons moyennes",
     icon: Truck,
     popular: false,
   },
   {
     title: "Camionnette",
     capacity: "1.5 tonnes",
-    description: "Parfait pour les envois volumineux et equipements",
+    description: "Parfait pour les envois volumineux et équipements",
     icon: Truck,
     popular: true,
   },
@@ -90,8 +90,8 @@ export default function FretUrbainPage() {
       <PageHero
         badge="Service Fret Urbain"
         title="Transportez vos marchandises"
-        highlight="en toute securite"
-        description="Un service de fret urbain professionnel pour le transport de vos marchandises volumineuses avec pick-up, camionnettes et camions legers."
+        highlight="en toute sécurité"
+        description="Un service de fret urbain professionnel pour le transport de vos marchandises volumineuses avec pick-up, camionnettes et camions légers."
         backgroundImage="/images/banniere/camion-fret-urbain-format-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -112,7 +112,7 @@ export default function FretUrbainPage() {
             className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
           >
             <Link href="#vehicules">
-              Voir les vehicules
+              Voir les véhicules
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
@@ -132,10 +132,10 @@ export default function FretUrbainPage() {
               Notre flotte
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Choisissez votre <span className="text-primary">vehicule</span>
+              Choisissez votre <span className="text-primary">véhicule</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des vehicules adaptes a chaque type de marchandise et volume a transporter.
+              Des véhicules adaptés à chaque type de marchandise et volume à transporter.
             </p>
           </motion.div>
 
@@ -155,7 +155,7 @@ export default function FretUrbainPage() {
                 >
                   {vehicle.popular && (
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-xl">
-                      Recommande
+                      Recommandé
                     </div>
                   )}
                   <CardContent className="p-6 text-center">
@@ -173,7 +173,7 @@ export default function FretUrbainPage() {
                     </motion.div>
                     <h3 className="font-bold text-xl mb-1">{vehicle.title}</h3>
                     <p className="text-primary font-semibold text-lg mb-3">
-                      Jusqu'a {vehicle.capacity}
+                      Jusqu'à {vehicle.capacity}
                     </p>
                     <p className="text-muted-foreground text-sm">
                       {vehicle.description}
@@ -253,23 +253,23 @@ export default function FretUrbainPage() {
                 {[
                   {
                     step: "1",
-                    title: "Decrivez votre marchandise",
+                    title: "Décrivez votre marchandise",
                     desc: "Indiquez le type, les dimensions et le poids de vos biens.",
                   },
                   {
                     step: "2",
-                    title: "Choisissez le vehicule",
-                    desc: "Selectionnez le vehicule adapte a votre chargement.",
+                    title: "Choisissez le véhicule",
+                    desc: "Sélectionnez le véhicule adapté à votre chargement.",
                   },
                   {
                     step: "3",
-                    title: "Definissez les adresses",
-                    desc: "Entrez les lieux d'enlevement et de livraison.",
+                    title: "Définissez les adresses",
+                    desc: "Entrez les lieux d'enlèvement et de livraison.",
                   },
                   {
                     step: "4",
                     title: "Suivez votre transport",
-                    desc: "Recevez des notifications en temps reel sur votre livraison.",
+                    desc: "Recevez des notifications en temps réel sur votre livraison.",
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -379,7 +379,7 @@ export default function FretUrbainPage() {
                 Besoin de transporter des marchandises ?
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Demandez un devis gratuit et beneficiez de notre service de fret urbain
+                Demandez un devis gratuit et bénéficiez de notre service de fret urbain
                 professionnel.
               </p>
               <Button
@@ -389,7 +389,7 @@ export default function FretUrbainPage() {
               >
                 <Link href="/#download">
                   <Download className="h-5 w-5" />
-                  Telecharger l'application
+                  Télécharger l'application
                 </Link>
               </Button>
             </div>

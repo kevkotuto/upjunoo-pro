@@ -35,15 +35,15 @@ const structuredProcess = [
   },
   {
     icon: Car,
-    text: "Met a votre disposition un vehicule conforme",
+    text: "Met à votre disposition un véhicule conforme",
   },
   {
     icon: Shield,
-    text: "Vous inscrivez sur la plateforme via un acces securise",
+    text: "Vous inscrivez sur la plateforme via un accès sécurisé",
   },
   {
     icon: TrendingUp,
-    text: "Suit votre evolution et vous aide a progresser",
+    text: "Suit votre évolution et vous aide à progresser",
   },
 ];
 
@@ -56,12 +56,12 @@ const driverAdvantages = [
   {
     icon: Award,
     title: "Prime de performance",
-    description: "Qualite de service, ponctualite",
+    description: "Qualité de service, ponctualité",
   },
   {
     icon: Clock,
     title: "Horaires flexibles",
-    description: "Selon disponibilite de la flotte",
+    description: "Selon disponibilité de la flotte",
   },
   {
     icon: Smartphone,
@@ -75,17 +75,17 @@ const driverAdvantages = [
   },
   {
     icon: Shield,
-    title: "Protection et securite",
+    title: "Protection et sécurité",
     description: "Assurance et support en cas d'incident",
   },
 ];
 
 const validationConditions = [
-  "Permis de conduire (cat. B ou plus) en cours de validite",
-  "Piece d'identite nationale ou CEDEAO",
-  "Bonne presentation et sens du service",
-  "Maitrise de la conduite urbaine",
-  "Capacite a utiliser un smartphone Android/iOS",
+  "Permis de conduire (cat. B ou plus) en cours de validité",
+  "Pièce d'identité nationale ou CEDEAO",
+  "Bonne présentation et sens du service",
+  "Maîtrise de la conduite urbaine",
+  "Capacité à utiliser un smartphone Android/iOS",
 ];
 
 const trainingTopics = [
@@ -99,35 +99,35 @@ const trainingTopics = [
   },
   {
     icon: Shield,
-    text: "Les regles de securite et de conduite professionnelle",
+    text: "Les règles de sécurité et de conduite professionnelle",
   },
   {
     icon: Headphones,
-    text: "La gestion des imprevus et des conflits",
+    text: "La gestion des imprévus et des conflits",
   },
 ];
 
 const howItWorks = [
-  "Contactez un partenaire gestionnaire de flotte agree UPJUNOO PRO",
-  "Preparez vos documents",
+  "Contactez un partenaire gestionnaire de flotte agréé UPJUNOO PRO",
+  "Préparez vos documents",
   "Passez un court entretien avec le partenaire",
-  "Accedez a l'application apres inscription",
+  "Accédez à l'application après inscription",
   "Recevez une courte formation",
-  "Commencez a effectuer vos courses selon un planning defini ou libre",
+  "Commencez à effectuer vos courses selon un planning défini ou libre",
 ];
 
 const testimonials = [
   {
     quote:
-      "Grace a mon partenaire UPJUNOO PRO, j'ai repris une activite stable, je suis accompagne et mes revenus sont reguliers.",
+      "Grâce à mon partenaire UPJUNOO PRO, j'ai repris une activité stable, je suis accompagné et mes revenus sont réguliers.",
     author: "Moussa",
-    role: "Chauffeur a Yamoussoukro",
+    role: "Chauffeur à Yamoussoukro",
   },
   {
     quote:
-      "Je n'avais pas de voiture, mais le gestionnaire m'a integre dans sa flotte. Aujourd'hui mes revenus sont stables et satisfaisants.",
+      "Je n'avais pas de voiture, mais le gestionnaire m'a intégré dans sa flotte. Aujourd'hui mes revenus sont stables et satisfaisants.",
     author: "Sery",
-    role: "Chauffeur a Abidjan",
+    role: "Chauffeur à Abidjan",
   },
 ];
 
@@ -143,7 +143,7 @@ export default function ChauffeurPage() {
         badge="Rejoignez-nous"
         title="Devenez chauffeur"
         highlight="partenaire"
-        description="Roulez librement. Gagnez dignement. Integrez un reseau structure et securise."
+        description="Roulez librement. Gagnez dignement. Intégrez un réseau structuré et sécurisé."
         backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -200,19 +200,19 @@ export default function ChauffeurPage() {
               <p className="text-lg text-center mb-6">
                 <span className="font-semibold text-primary">UPJUNOO PRO</span> est
                 une plateforme VTC panafricaine qui vous permet de devenir
-                chauffeur professionnel agree, avec l'appui d'un
+                chauffeur professionnel agréé, avec l'appui d'un
                 partenaire gestionnaire de flotte reconnu.
               </p>
               <p className="text-muted-foreground text-center mb-6">
-                En tant que chauffeur UPJUNOO PRO, vous integrez une equipe
-                serieuse, structuree, et appuyee par une technologie moderne.
-                Vous travaillez dans un cadre clair, formel et equitable, avec
+                En tant que chauffeur UPJUNOO PRO, vous intégrez une équipe
+                sérieuse, structurée, et appuyée par une technologie moderne.
+                Vous travaillez dans un cadre clair, formel et équitable, avec
                 des revenus garantis et une progression possible.
               </p>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <p className="text-center font-semibold text-primary">
-                  Objectif : Vous accompagner vers une activite stable, respectee
+                  Objectif : Vous accompagner vers une activité stable, respectée
                   et rentable.
                 </p>
               </div>
@@ -234,11 +234,11 @@ export default function ChauffeurPage() {
               Accompagnement
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Un processus <span className="text-primary">structure</span>
+              Un processus <span className="text-primary">structuré</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Chez UPJUNOO PRO, vous ne travaillez pas seul. Vous etes encadre par
-              un partenaire local agree, qui :
+              Chez UPJUNOO PRO, vous ne travaillez pas seul. Vous êtes encadré par
+              un partenaire local agréé, qui :
             </p>
           </motion.div>
 
@@ -441,7 +441,7 @@ export default function ChauffeurPage() {
               L'application <span className="text-primary">chauffeur</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une application intuitive pour gerer vos courses et maximiser vos revenus.
+              Une application intuitive pour gérer vos courses et maximiser vos revenus.
             </p>
           </motion.div>
 
@@ -501,7 +501,7 @@ export default function ChauffeurPage() {
               Processus
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Comment ca <span className="text-primary">fonctionne</span> ?
+              Comment ça <span className="text-primary">fonctionne</span> ?
             </h2>
           </motion.div>
 
@@ -545,7 +545,7 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Temoignages
+              Témoignages
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               Ce que disent nos <span className="text-primary">chauffeurs</span>
@@ -666,18 +666,18 @@ export default function ChauffeurPage() {
                 Contact & Inscription
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-                Rejoignez notre equipe de chauffeurs professionnels des
+                Rejoignez notre équipe de chauffeurs professionnels dès
                 aujourd'hui.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
-                  href="mailto:contact@upjunoo.com"
-                  onClick={() => trackExternalLink('mailto:contact@upjunoo.com', 'email')}
+                  href="mailto:contact@upjunoopro.com"
+                  onClick={() => trackExternalLink('mailto:contact@upjunoopro.com', 'email')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  contact@upjunoo.com
+                  contact@upjunoopro.com
                 </a>
                 <a
                   href="https://www.upjunoo.com"
@@ -692,17 +692,17 @@ export default function ChauffeurPage() {
               </div>
 
               <p className="text-sm text-white/60 mb-4">
-                Ou passez directement par un partenaire agree proche de vous
+                Ou passez directement par un partenaire agréé proche de vous
               </p>
 
               <div className="mt-8 pt-8 border-t border-white/20">
                 <p className="text-lg font-semibold italic mb-2">
-                  &ldquo;Vous etes bien plus qu'un chauffeur, vous etes un
+                  &ldquo;Vous êtes bien plus qu'un chauffeur, vous êtes un
                   professionnel.&rdquo;
                 </p>
                 <p className="text-sm text-white/70">
-                  Votre serieux, notre technologie, et l'appui d'un
-                  partenaire solide : voila le trio gagnant.
+                  Votre sérieux, notre technologie, et l'appui d'un
+                  partenaire solide : voilà le trio gagnant.
                 </p>
               </div>
             </div>

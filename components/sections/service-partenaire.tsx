@@ -9,30 +9,30 @@ const features = [
   {
     icon: Wallet,
     title: "Revenus attractifs",
-    description: "Gagnez jusqu'a 80% de chaque course effectuee.",
+    description: "Gagnez jusqu'à 80% de chaque course effectuée.",
   },
   {
     icon: Clock,
     title: "Horaires flexibles",
-    description: "Travaillez quand vous voulez, a votre rythme.",
+    description: "Travaillez quand vous voulez, à votre rythme.",
   },
   {
     icon: Headphones,
     title: "Support 24/7",
-    description: "Une equipe dediee pour vous accompagner.",
+    description: "Une équipe dédiée pour vous accompagner.",
   },
   {
     icon: TrendingUp,
     title: "Formation gratuite",
-    description: "Apprenez a optimiser vos revenus avec nous.",
+    description: "Apprenez à optimiser vos revenus avec nous.",
   },
 ];
 
 const advantages = [
   "Paiements hebdomadaires garantis",
   "Application intuitive et fiable",
-  "Bonus et primes reguliers",
-  "Communaute de partenaires active",
+  "Bonus et primes réguliers",
+  "Communauté de partenaires active",
 ];
 
 export function ServicePartenaireSection() {
@@ -102,9 +102,9 @@ export function ServicePartenaireSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Devenez chauffeur ou livreur partenaire et profitez d'une opportunite
-              unique de revenus avec une flexibilite totale. Que vous soyez independant
-              ou membre d'une cooperative, nous avons une place pour vous.
+              Devenez chauffeur ou livreur partenaire et profitez d'une opportunité
+              unique de revenus avec une flexibilité totale. Que vous soyez indépendant
+              ou membre d'une coopérative, nous avons une place pour vous.
             </motion.p>
 
             {/* Advantages list */}

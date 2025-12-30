@@ -14,7 +14,7 @@ const benefits = [
     icon: Clock,
     title: "Horaires flexibles",
     description:
-      "Choisissez vos horaires de travail en fonction de vos preferences. Conciliez vie professionnelle et personnelle.",
+      "Choisissez vos horaires de travail en fonction de vos préférences. Conciliez vie professionnelle et personnelle.",
     color: "from-blue-500 to-blue-600",
     iconColor: "text-blue-500",
     bgColor: "bg-blue-500/10",
@@ -23,7 +23,7 @@ const benefits = [
     icon: Wallet,
     title: "Revenus attractifs",
     description:
-      "Paye a la course ou a la livraison. Maximisez vos revenus selon vos horaires et votre zone.",
+      "Payé à la course ou à la livraison. Maximisez vos revenus selon vos horaires et votre zone.",
     color: "from-green-500 to-green-600",
     iconColor: "text-green-500",
     bgColor: "bg-green-500/10",
@@ -32,7 +32,7 @@ const benefits = [
     icon: Shield,
     title: "Assurance incluse",
     description:
-      "Couverture d'assurance complete pendant vos courses. Conduisez et livrez en toute serenite.",
+      "Couverture d'assurance complète pendant vos courses. Conduisez et livrez en toute sérénité.",
     color: "from-purple-500 to-purple-600",
     iconColor: "text-purple-500",
     bgColor: "bg-purple-500/10",
@@ -164,7 +164,7 @@ export function DriveSection() {
                       <Clock className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">Flexibilite</p>
+                      <p className="text-xs text-gray-500">Flexibilité</p>
                       <p className="text-sm font-bold">100% libre</p>
                     </div>
                   </div>
@@ -220,8 +220,8 @@ export function DriveSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              Rejoignez notre reseau de chauffeurs et livreurs partenaires.
-              Profitez d'une flexibilite totale et de revenus attractifs.
+              Rejoignez notre réseau de chauffeurs et livreurs partenaires.
+              Profitez d'une flexibilité totale et de revenus attractifs.
             </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
@@ -268,7 +268,7 @@ export function DriveSection() {
                 className="gap-2 h-14 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/25 hover:scale-105 transition-all"
               >
                 <Link href="/devenir-chauffeur">
-                  Rejoindre l'equipe
+                  Rejoindre l'équipe
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>

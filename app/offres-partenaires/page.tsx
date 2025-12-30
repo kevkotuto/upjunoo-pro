@@ -12,14 +12,14 @@ const offres = [
   {
     title: "Franchises",
     description:
-      "Lancez UPJUNOO PRO dans votre region et developpez votre propre reseau de mobilite.",
+      "Lancez UPJUNOO PRO dans votre région et développez votre propre réseau de mobilité.",
     icon: Store,
     href: "/offres-partenaires/franchises",
     features: [
-      "Exclusivite geographique",
-      "Formation complete",
-      "Support operationnel 24/7",
-      "Outils de gestion avances",
+      "Exclusivité géographique",
+      "Formation complète",
+      "Support opérationnel 24/7",
+      "Outils de gestion avancés",
     ],
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
     color: "from-primary to-primary/80",
@@ -27,14 +27,14 @@ const offres = [
   {
     title: "Partenaires",
     description:
-      "Devenez partenaire commercial et beneficiez de notre ecosysteme en pleine croissance.",
+      "Devenez partenaire commercial et bénéficiez de notre écosystème en pleine croissance.",
     icon: Handshake,
     href: "/offres-partenaires/partenaires",
     features: [
       "Partenariats entreprises",
       "Solutions B2B",
-      "Integrations API",
-      "Programmes de fidelite",
+      "Intégrations API",
+      "Programmes de fidélité",
     ],
     image: "/images/banniere/personne-sourriante-16-9.jpg",
     color: "from-[#046d7a] to-primary",
@@ -42,7 +42,7 @@ const offres = [
   {
     title: "Chauffeurs",
     description:
-      "Rejoignez notre equipe de chauffeurs et profitez d'une flexibilite totale.",
+      "Rejoignez notre équipe de chauffeurs et profitez d'une flexibilité totale.",
     icon: UserCheck,
     href: "/offres-partenaires/chauffeurs",
     features: [
@@ -63,7 +63,7 @@ export default function OffresPartenairesPage() {
         badge="Rejoignez-nous"
         title="Nos offres"
         highlight="partenaires"
-        description="Decouvrez les differentes facons de collaborer avec UPJUNOO PRO et de participer a la revolution de la mobilite."
+        description="Découvrez les différentes façons de collaborer avec UPJUNOO PRO et de participer à la révolution de la mobilité."
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -194,7 +194,7 @@ export default function OffresPartenairesPage() {
                 Vous avez des questions ?
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-                Notre equipe est disponible pour repondre a toutes vos questions
+                Notre équipe est disponible pour répondre à toutes vos questions
                 et vous accompagner dans votre projet.
               </p>
               <Button
