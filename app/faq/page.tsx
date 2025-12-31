@@ -138,7 +138,7 @@ const faqCategories = [
       {
         question: "UPJUNOO PRO est-il disponible dans ma ville ?",
         answer:
-          "UPJUNOO PRO est présent dans plusieurs villes à travers l'Afrique et au-delà. Consultez notre page 'Nos Implantations' pour vérifier la disponibilité dans votre région.",
+          "UPJUNOO PRO est présent dans plusieurs villes à travers le monde. Consultez notre page 'Nos Implantations' pour vérifier la disponibilité dans votre région.",
       },
       {
         question: "Comment savoir si le service est disponible chez moi ?",
@@ -152,9 +152,9 @@ const faqCategories = [
     title: "Partenaires",
     faqs: [
       {
-        question: "Comment devenir chauffeur partenaire ?",
+        question: "Comment devenir chauffeur UPJUNOO PRO ?",
         answer:
-          "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Devenir Chauffeur' et contactez un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
+          "Pour devenir chauffeur UPJUNOO PRO, rendez-vous sur la page 'Devenir Chauffeur' et contactez un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
       },
       {
         question: "Comment devenir franchise UPJUNOO PRO ?",

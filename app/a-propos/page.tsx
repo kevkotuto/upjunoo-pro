@@ -80,7 +80,7 @@ const values = [
     icon: Globe,
     title: "Présence internationale",
     description:
-      "Modernisation de la mobilité urbaine dans plusieurs pays d'Afrique et au-delà.",
+      "Modernisation de la mobilité urbaine dans plusieurs pays à travers le monde.",
   },
   {
     icon: Smartphone,
@@ -343,7 +343,7 @@ export default function AProposPage() {
                     UPJUNOO PRO
                   </span>{" "}
                   contribue à moderniser la mobilité urbaine et à soutenir
-                  l'économie locale dans plusieurs pays d'Afrique et au-delà.
+                  l'économie locale dans plusieurs pays à travers le monde.
                 </p>
                 <Button
                   size="lg"

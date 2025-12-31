@@ -9,7 +9,7 @@ export const kpis = {
     value: 15,
     suffix: "",
     label: "Pays",
-    description: "En Afrique et au-delà",
+    description: "Dans le monde entier",
   },
   villes: {
     value: 50,
@@ -110,11 +110,29 @@ export const deploymentStatusColors: Record<DeploymentStatus, { bg: string; text
   coming_soon: { bg: "bg-blue-500/10", text: "text-blue-500", dot: "bg-blue-400" },
 };
 
-// Donnees regionales pour la carte des implantations
-// Les 15 pays ou UPJUNOO PRO est present
+// Donnees regionales pour la carte des implantations (legacy)
 export const regionsData = [
   { name: "Afrique de l'Ouest", flag: "🇨🇮", cities: 35, status: "available" as DeploymentStatus, countries: ["Côte d'Ivoire", "Sénégal", "Mali", "Burkina Faso", "Bénin", "Ghana", "Guinée", "Niger", "Togo"] },
   { name: "Afrique Centrale", flag: "🇨🇲", cities: 15, status: "available" as DeploymentStatus, countries: ["Cameroun", "Gabon", "Congo-Brazzaville", "Congo RDC", "Tchad", "Guinée équatoriale"] },
+];
+
+// Les 15 pays où UPJUNOO PRO est présent (affichage individuel)
+export const countriesData = [
+  { name: "Burkina Faso", flag: "🇧🇫", code: "BF" },
+  { name: "Bénin", flag: "🇧🇯", code: "BJ" },
+  { name: "Congo-Brazzaville", flag: "🇨🇬", code: "CG" },
+  { name: "Côte d'Ivoire", flag: "🇨🇮", code: "CI" },
+  { name: "Cameroun", flag: "🇨🇲", code: "CM" },
+  { name: "Gabon", flag: "🇬🇦", code: "GA" },
+  { name: "Ghana", flag: "🇬🇭", code: "GH" },
+  { name: "Guinée", flag: "🇬🇳", code: "GN" },
+  { name: "Mali", flag: "🇲🇱", code: "ML" },
+  { name: "Niger", flag: "🇳🇪", code: "NE" },
+  { name: "Congo RDC", flag: "🇨🇩", code: "CD" },
+  { name: "Sénégal", flag: "🇸🇳", code: "SN" },
+  { name: "Tchad", flag: "🇹🇩", code: "TD" },
+  { name: "Togo", flag: "🇹🇬", code: "TG" },
+  { name: "Guinée équatoriale", flag: "🇬🇶", code: "GQ" },
 ];
 
 // Fonction utilitaire pour formater les nombres

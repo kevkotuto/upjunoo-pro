@@ -104,7 +104,7 @@ export function ServicesSection() {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Découvrez notre gamme complète de services de mobilité, conçus pour
-            simplifier votre quotidien en Afrique.
+            simplifier votre quotidien partout dans le monde.
           </p>
         </motion.div>
 

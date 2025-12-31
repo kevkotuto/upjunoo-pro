@@ -19,7 +19,7 @@ export default function ActualitesPage() {
         badge="Blog"
         title="Actualités"
         highlight="UPJUNOO PRO"
-        description="Suivez notre actualité, nos nouveautés produit et notre expansion à travers l'Afrique."
+        description="Suivez notre actualité, nos nouveautés produit et notre expansion à travers le monde."
         backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 

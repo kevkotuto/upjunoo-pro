@@ -120,7 +120,7 @@ const testimonials = [
     quote:
       "Je n'avais pas de voiture, mais le gestionnaire m'a intégré dans sa flotte. Aujourd'hui j'ai des revenus stables.",
     author: "Laurent D.",
-    role: "Chauffeur partenaire",
+    role: "Chauffeur UPJUNOO PRO",
   },
 ];
 
@@ -129,7 +129,7 @@ export default function ChauffeursPartenairesPage() {
     <>
       <PageHero
         badge="Rejoignez-nous"
-        title="Devenez chauffeur partenaire"
+        title="Devenez chauffeur UPJUNOO PRO"
         highlight="UPJUNOO PRO"
         description="Roulez librement. Gagnez dignement. Intégrez un réseau structuré et sécurisé."
         backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"

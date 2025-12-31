@@ -21,12 +21,15 @@ interface DownloadData {
   driver: number;
 }
 
-type QRCodeType = "ios" | "android" | "apk" | null;
+type QRCodeType = "ios" | "android_driver" | "android_rider" | "apk" | "choice" | null;
 
 const QR_URLS = {
   ios: "https://apps.apple.com/app/upjunoo-pro/id123456789",
-  android: "https://play.google.com/store/apps/details?id=com.upjunoo.pro",
+  android_driver: "https://play.google.com/store/apps/details?id=com.upjunoo.driver",
+  android_rider: "https://play.google.com/store/apps/details?id=com.upjunoo.rider",
   apk: "https://upjunoo.pro/apk/app-client.apk",
+  // Page de choix pour le QR code unique
+  choice: "https://upjunoo.pro/download-app",
 };
 
 const handleAppStoreClick = (e: React.MouseEvent) => {
@@ -37,13 +40,6 @@ const handleAppStoreClick = (e: React.MouseEvent) => {
   });
 };
 
-const handlePlayStoreClick = (e: React.MouseEvent) => {
-  e.preventDefault();
-  trackDownloadClick('client', 'playstore');
-  toast.info("Bientôt disponible", {
-    description: "L'application sera bientôt disponible sur Google Play",
-  });
-};
 
 export function DownloadSection() {
   const [downloadCount, setDownloadCount] = useState<DownloadData | null>(null);
@@ -88,8 +84,10 @@ export function DownloadSection() {
 
   const qrLabels = {
     ios: { icon: Apple, label: "App Store" },
-    android: { icon: Play, label: "Google Play" },
+    android_driver: { icon: Play, label: "Chauffeur (Play Store)" },
+    android_rider: { icon: Play, label: "Passager (Play Store)" },
     apk: { icon: Download, label: "APK Direct" },
+    choice: { icon: Play, label: "Google Play" },
   };
 
   return (
@@ -311,21 +309,62 @@ export function DownloadSection() {
                 </div>
               </motion.button>
 
-              {/* Google Play Button - Disabled */}
-              <motion.button
-                onClick={handlePlayStoreClick}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="flex items-center gap-3 px-5 py-3 bg-muted text-muted-foreground rounded-xl cursor-not-allowed opacity-60"
-              >
-                <Play className="h-7 w-7" />
-                <div className="text-left">
-                  <div className="text-xs opacity-80">Bientôt sur</div>
-                  <div className="font-semibold">Google Play</div>
-                </div>
-              </motion.button>
+              {/* Google Play Button - Dropdown avec 2 apps */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+                  >
+                    <Play className="h-7 w-7" />
+                    <div className="text-left">
+                      <div className="text-xs opacity-80">Disponible sur</div>
+                      <div className="font-semibold">Google Play</div>
+                    </div>
+                  </motion.button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={QR_URLS.android_rider}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => trackDownloadClick('client', 'playstore')}
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">Upjunoo (Passager)</div>
+                        <div className="text-xs text-muted-foreground">
+                          Pour commander des courses
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={QR_URLS.android_driver}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => trackDownloadClick('driver', 'playstore')}
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">Upjunoo Pro (Chauffeur)</div>
+                        <div className="text-xs text-muted-foreground">
+                          Pour les conducteurs
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               {/* APK Direct Dropdown */}
               <DropdownMenu>
@@ -448,19 +487,24 @@ export function DownloadSection() {
                     </div>
                   </div>
 
-                  {/* Android QR Code - Disabled */}
-                  <div className="flex flex-col items-center gap-3 opacity-40 cursor-not-allowed">
-                    <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
-                      <QRCodeSVG value={QR_URLS.android} size={80} level="M" includeMargin={false} className="opacity-50" />
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
-                        <span className="text-xs font-medium text-muted-foreground">Bientôt</span>
-                      </div>
+                  {/* Android QR Code - Active (page de choix) */}
+                  <motion.button
+                    onClick={() => {
+                      trackQRCodeView('client');
+                      setSelectedQR("choice");
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex flex-col items-center gap-3 cursor-pointer"
+                  >
+                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                      <QRCodeSVG value={QR_URLS.choice} size={80} level="M" includeMargin={false} />
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-2">
                       <Play className="h-4 w-4" />
-                      <span className="text-sm font-medium">Android</span>
+                      <span className="text-sm font-medium">Google Play</span>
                     </div>
-                  </div>
+                  </motion.button>
 
                   {/* APK Direct QR Code */}
                   <motion.button

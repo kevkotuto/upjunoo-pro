@@ -142,7 +142,7 @@ export default function ChauffeurPage() {
       <PageHero
         badge="Rejoignez-nous"
         title="Devenez chauffeur"
-        highlight="partenaire"
+        highlight="UPJUNOO PRO"
         description="Roulez librement. Gagnez dignement. Intégrez un réseau structuré et sécurisé."
         backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"
       >
@@ -199,7 +199,7 @@ export default function ChauffeurPage() {
               <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-300 rounded-full opacity-20 blur-2xl" />
               <p className="text-lg text-center mb-6">
                 <span className="font-semibold text-primary">UPJUNOO PRO</span> est
-                une plateforme VTC panafricaine qui vous permet de devenir
+                une plateforme VTC internationale qui vous permet de devenir
                 chauffeur professionnel agréé, avec l'appui d'un
                 partenaire gestionnaire de flotte reconnu.
               </p>

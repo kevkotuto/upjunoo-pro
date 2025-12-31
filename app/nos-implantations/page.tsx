@@ -71,10 +71,10 @@ export default function ImplantationsPage() {
   return (
     <>
       <PageHero
-        badge="15 pays africains"
+        badge="15 pays et plus"
         title="UPJUNOO PRO à travers"
-        highlight="l'Afrique"
-        description="Notre réseau couvre 15 pays d'Afrique de l'Ouest et d'Afrique Centrale, avec plus de 50 villes desservies."
+        highlight="le monde"
+        description="Notre réseau couvre plus de 15 pays avec plus de 50 villes desservies à travers le monde."
         backgroundImage="/images/banniere/voiture-brander-upjunoo-16-9.png"
       />
 

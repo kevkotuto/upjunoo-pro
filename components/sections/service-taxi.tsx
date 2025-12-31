@@ -95,7 +95,7 @@ export function ServiceTaxiSection() {
                   className="absolute -bottom-1 left-0 right-0 h-3 bg-primary/20 -z-10 origin-left"
                 />
               </span>{" "}
-              en Afrique
+              dans le monde
             </motion.h2>
 
             <motion.p

@@ -131,7 +131,7 @@ export function WhyUpjunooSection() {
             >
               Avec UPJUNOO PRO, la mobilité devient un service intégré : VTC/Taxi,
               livraison express, location de véhicules et fret urbain, réunis au sein
-              d'une plateforme unique conçue pour l'Afrique.
+              d'une plateforme unique conçue pour le monde entier.
             </motion.p>
 
             {/* Benefits list */}

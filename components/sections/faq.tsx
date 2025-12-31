@@ -21,9 +21,9 @@ const faqs = [
       "Nous acceptons plusieurs modes de paiement : carte bancaire, paiement mobile, portefeuille électronique et paiement en espèces selon les régions. Vous pouvez configurer votre mode de paiement préféré dans l'application.",
   },
   {
-    question: "Comment devenir chauffeur partenaire ?",
+    question: "Comment devenir chauffeur UPJUNOO PRO ?",
     answer:
-      "Pour devenir chauffeur partenaire UPJUNOO PRO, rendez-vous sur la page 'Offres Partenaires > Chauffeurs' et remplissez le formulaire d'inscription. Vous serez contacté par un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
+      "Pour devenir chauffeur UPJUNOO PRO, rendez-vous sur la page 'Offres Partenaires > Chauffeurs' et remplissez le formulaire d'inscription. Vous serez contacté par un gestionnaire de flotte agréé qui vous accompagnera dans les démarches.",
   },
   {
     question: "UPJUNOO PRO est-il disponible dans ma ville ?",
