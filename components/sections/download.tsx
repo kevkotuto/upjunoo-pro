@@ -329,22 +329,16 @@ export function DownloadSection() {
                   </motion.button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
-                  <DropdownMenuItem asChild>
-                    <a
-                      href={QR_URLS.android_rider}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 cursor-pointer"
-                      onClick={() => trackDownloadClick('client', 'playstore')}
-                    >
+                  <DropdownMenuItem disabled className="opacity-50 cursor-not-allowed">
+                    <div className="flex items-center gap-2">
                       <Smartphone className="h-4 w-4" />
                       <div>
                         <div className="font-medium">Upjunoo (Passager)</div>
                         <div className="text-xs text-muted-foreground">
-                          Pour commander des courses
+                          Bientôt disponible
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <a
