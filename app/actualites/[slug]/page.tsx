@@ -114,7 +114,23 @@ export default function ArticlePage() {
                 Vous avez aime cet article ? Partagez-le !
               </p>
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: article.title,
+                        text: article.excerpt,
+                        url: window.location.href,
+                      });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                      alert("Lien copié dans le presse-papiers !");
+                    }
+                  }}
+                >
                   <Share2 className="h-4 w-4" />
                   Partager
                 </Button>

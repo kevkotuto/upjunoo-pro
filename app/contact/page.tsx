@@ -29,6 +29,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import { trackContactFormView, trackContactFormSubmit, trackSocialClick } from "@/lib/analytics";
 import { formattedKpis } from "@/data/kpis";
+import { socialLinks } from "@/data/social-links";
 
 const contactInfo = [
   {
@@ -47,13 +48,13 @@ const contactInfo = [
     icon: MapPin,
     title: "Adresse",
     value: "Abidjan, Côte d'Ivoire",
-    href: "#",
+    href: null,
   },
   {
     icon: Clock,
     title: "Horaires",
     value: "Lun - Ven : 8h - 18h",
-    href: "#",
+    href: null,
   },
 ];
 
@@ -189,47 +190,65 @@ function ContactForm() {
             >
               <h2 className="text-2xl font-bold mb-6">Nos coordonnées</h2>
               <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <motion.a
-                    key={info.title}
-                    href={info.href}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted transition-colors group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <info.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{info.title}</p>
-                      <p className="font-medium">{info.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
+                {contactInfo.map((info, index) => {
+                  const content = (
+                    <>
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <info.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">{info.title}</p>
+                        <p className="font-medium">{info.value}</p>
+                      </div>
+                    </>
+                  );
+
+                  return info.href ? (
+                    <motion.a
+                      key={info.title}
+                      href={info.href}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted transition-colors group"
+                    >
+                      {content}
+                    </motion.a>
+                  ) : (
+                    <motion.div
+                      key={info.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start gap-4 p-4 rounded-xl group"
+                    >
+                      {content}
+                    </motion.div>
+                  );
+                })}
               </div>
 
               {/* Social Links */}
               <div className="mt-8 pt-8 border-t">
                 <h3 className="font-semibold mb-4">Suivez-nous</h3>
                 <div className="flex gap-3">
-                  {["Facebook", "Instagram", "LinkedIn", "YouTube"].map(
-                    (social) => (
-                      <motion.a
-                        key={social}
-                        href="#"
-                        onClick={() => trackSocialClick(social.toLowerCase())}
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white hover:from-primary/90 hover:to-primary/70 transition-colors"
-                      >
-                        <span className="text-sm font-medium">
-                          {social.charAt(0)}
-                        </span>
-                      </motion.a>
-                    )
-                  )}
+                  {socialLinks.map((social) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackSocialClick(social.name.toLowerCase())}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white hover:from-primary/90 hover:to-primary/70 transition-colors"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </motion.a>
+                  ))}
                 </div>
               </div>
 

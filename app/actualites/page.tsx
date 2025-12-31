@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Calendar, ArrowRight, Clock, Mail, Newspaper } from "lucide-react";
+import { Calendar, ArrowRight, Clock, Mail, Newspaper, Loader2, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,8 +11,38 @@ import Link from "next/link";
 import { articles, categories } from "@/data/articles";
 
 export default function ActualitesPage() {
+  const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const featuredArticles = articles.filter((a) => a.featured);
   const otherArticles = articles.filter((a) => !a.featured);
+
+  const filteredArticles = selectedCategory === "Tous"
+    ? otherArticles
+    : otherArticles.filter((a) => a.category === selectedCategory);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setNewsletterStatus("loading");
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "newsletter", email: newsletterEmail }),
+      });
+
+      if (!response.ok) throw new Error("Erreur");
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+      setTimeout(() => setNewsletterStatus("idle"), 3000);
+    } catch {
+      setNewsletterStatus("error");
+      setTimeout(() => setNewsletterStatus("idle"), 3000);
+    }
+  };
 
   return (
     <>
@@ -106,10 +137,11 @@ export default function ActualitesPage() {
               {categories.map((cat) => (
                 <motion.button
                   key={cat}
+                  onClick={() => setSelectedCategory(cat)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    cat === "Tous"
+                    cat === selectedCategory
                       ? "bg-gradient-to-r from-primary to-primary/80 text-white"
                       : "bg-card hover:bg-primary/10 border border-border/50"
                   }`}
@@ -121,7 +153,7 @@ export default function ActualitesPage() {
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherArticles.map((article, index) => (
+            {filteredArticles.map((article, index) => (
               <motion.article
                 key={article.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -203,20 +235,43 @@ export default function ActualitesPage() {
                 Inscrivez-vous à notre newsletter pour recevoir les dernières
                 nouvelles directement dans votre boîte mail.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  className="flex-1 h-14 px-5 rounded-xl border-0 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <Button
-                  size="lg"
-                  className="h-14 px-8 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
+              {newsletterStatus === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex items-center justify-center gap-3 text-white"
                 >
-                  <Mail className="h-5 w-5 mr-2" />
-                  S'inscrire
-                </Button>
-              </div>
+                  <CheckCircle className="h-6 w-6 text-yellow-400" />
+                  <span className="font-medium">Merci pour votre inscription !</span>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Votre email"
+                    required
+                    disabled={newsletterStatus === "loading"}
+                    className="flex-1 h-14 px-5 rounded-xl border-0 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 disabled:opacity-50"
+                  />
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={newsletterStatus === "loading"}
+                    className="h-14 px-8 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold disabled:opacity-50"
+                  >
+                    {newsletterStatus === "loading" ? (
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                    ) : (
+                      <>
+                        <Mail className="h-5 w-5 mr-2" />
+                        S'inscrire
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
           </motion.div>
         </div>

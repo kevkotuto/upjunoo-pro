@@ -3,16 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { socialLinks } from "@/data/social-links";
 
 const footerLinks = {
   services: [
@@ -36,12 +29,6 @@ const footerLinks = {
   ],
 };
 
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-];
 
 export function Footer() {
   return (

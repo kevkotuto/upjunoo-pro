@@ -33,8 +33,8 @@ const supportChannels = [
     icon: MessageSquare,
     title: "Chat in-app",
     description: "Discutez avec notre équipe directement dans l'application.",
-    action: "Ouvrir l'application",
-    href: "#",
+    action: "Télécharger l'application",
+    href: "/download-app",
   },
   {
     icon: HelpCircle,
