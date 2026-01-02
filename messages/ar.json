@@ -118,6 +118,111 @@
       },
       "cta": "اطلب تاكسي",
       "ratingBadge": "{satisfaction} رضا • +{coursesPerDay} رحلة/يوم"
+    },
+    "serviceLivraison": {
+      "badge": "خدمة التوصيل السريع",
+      "title": {
+        "part1": "توصيل",
+        "highlight": "سريع وموثوق",
+        "part2": "في متناول يدك"
+      },
+      "description": "أرسل طرودك بثقة باستخدام خدمة التوصيل السريع. تتبع في الوقت الفعلي وإشعارات في كل خطوة.",
+      "features": {
+        "expressDelivery": {
+          "title": "توصيل سريع",
+          "description": "طرودك مُسلَّمة في وقت قياسي."
+        },
+        "realTimeTracking": {
+          "title": "تتبع في الوقت الفعلي",
+          "description": "تتبع طردك على الخريطة مباشرة."
+        },
+        "notifications": {
+          "title": "إشعارات",
+          "description": "احصل على تنبيهات في كل مرحلة."
+        },
+        "scheduledDelivery": {
+          "title": "توصيل مجدول",
+          "description": "خطط لتوصيلاتك مسبقاً."
+        }
+      },
+      "benefits": {
+        "sameDay": "توصيل في نفس اليوم",
+        "proofPhoto": "إثبات بالصورة",
+        "insurance": "تأمين الطرود",
+        "professionalDrivers": "مندوبون محترفون"
+      },
+      "cta": "إرسال طرد",
+      "speedBadge": "توصيل في 30 دقيقة • خدمة سريعة متاحة"
+    },
+    "serviceLocation": {
+      "badge": "خدمة التأجير",
+      "title": {
+        "part1": "تأجير سيارات",
+        "highlight": "مرن",
+        "part2": "وبدون قيود"
+      },
+      "description": "استأجر السيارة المناسبة لاحتياجاتك. حجز بسيط، خيار واسع من السيارات وأسعار شفافة.",
+      "features": {
+        "flexibleBooking": {
+          "title": "حجز مرن",
+          "description": "بالساعة أو باليوم أو بالأسبوع."
+        },
+        "easyPickup": {
+          "title": "استلام سهل",
+          "description": "نقاط استلام متعددة متاحة."
+        },
+        "fullInsurance": {
+          "title": "تأمين شامل",
+          "description": "جميع سياراتنا مؤمَّنة."
+        },
+        "maintainedVehicles": {
+          "title": "سيارات مُصانة",
+          "description": "أسطول يتم فحصه بانتظام."
+        }
+      },
+      "vehicleTypes": {
+        "compact": "مدمجة",
+        "sedan": "سيدان",
+        "suv": "SUV",
+        "utility": "نفعية"
+      },
+      "cta": "استئجار سيارة",
+      "promoBadge": "أول تأجير -20٪ • عرض خاص"
+    },
+    "serviceFret": {
+      "badge": "الشحن الحضري",
+      "title": {
+        "part1": "نقل البضائع",
+        "highlight": "الاحترافي",
+        "part2": "والآمن"
+      },
+      "description": "حلول نقل لبضائعك الضخمة. شاحنات صغيرة ومتوسطة وخفيفة متاحة.",
+      "features": {
+        "allVolumes": {
+          "title": "جميع الأحجام",
+          "description": "من الطرود الصغيرة إلى النقل الثقيل."
+        },
+        "planning": {
+          "title": "التخطيط",
+          "description": "جدول شحناتك مسبقاً."
+        },
+        "fullTracking": {
+          "title": "تتبع كامل",
+          "description": "تتبع بضائعك في الوقت الفعلي."
+        },
+        "b2bB2c": {
+          "title": "B2B و B2C",
+          "description": "حلول للأفراد والشركات."
+        }
+      },
+      "vehicleOptions": {
+        "pickup": "بيك أب",
+        "van": "شاحنة صغيرة",
+        "lightTruck": "شاحنة خفيفة",
+        "refrigerated": "سيارة مبردة"
+      },
+      "cta": "طلب عرض سعر",
+      "capacityBadge": "حتى 3.5 أطنان • سيارات مكيّفة"
     }
   },
   "partnerOffers": {

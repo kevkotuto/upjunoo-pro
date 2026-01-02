@@ -118,6 +118,111 @@
       },
       "cta": "Order a Taxi",
       "ratingBadge": "{satisfaction} satisfaction • +{coursesPerDay} rides/day"
+    },
+    "serviceLivraison": {
+      "badge": "Express Delivery Service",
+      "title": {
+        "part1": "Fast and reliable",
+        "highlight": "delivery",
+        "part2": "at your fingertips"
+      },
+      "description": "Send your packages with confidence using our express delivery service. Real-time tracking and notifications at every step.",
+      "features": {
+        "expressDelivery": {
+          "title": "Express Delivery",
+          "description": "Your packages delivered in record time."
+        },
+        "realTimeTracking": {
+          "title": "Real-time Tracking",
+          "description": "Track your package on the map live."
+        },
+        "notifications": {
+          "title": "Notifications",
+          "description": "Receive alerts at every step."
+        },
+        "scheduledDelivery": {
+          "title": "Scheduled Delivery",
+          "description": "Plan your deliveries in advance."
+        }
+      },
+      "benefits": {
+        "sameDay": "Same-day delivery",
+        "proofPhoto": "Photo proof",
+        "insurance": "Package insurance",
+        "professionalDrivers": "Professional couriers"
+      },
+      "cta": "Send a Package",
+      "speedBadge": "30 min delivery • Express service available"
+    },
+    "serviceLocation": {
+      "badge": "Rental Service",
+      "title": {
+        "part1": "Flexible vehicle",
+        "highlight": "rental",
+        "part2": "without constraints"
+      },
+      "description": "Rent the vehicle that suits your needs. Simple booking, wide choice of vehicles and transparent pricing.",
+      "features": {
+        "flexibleBooking": {
+          "title": "Flexible Booking",
+          "description": "By the hour, day, or week."
+        },
+        "easyPickup": {
+          "title": "Easy Pickup",
+          "description": "Multiple pickup points available."
+        },
+        "fullInsurance": {
+          "title": "Full Insurance",
+          "description": "All our vehicles are insured."
+        },
+        "maintainedVehicles": {
+          "title": "Maintained Vehicles",
+          "description": "Regularly inspected fleet."
+        }
+      },
+      "vehicleTypes": {
+        "compact": "Compact",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "utility": "Utility"
+      },
+      "cta": "Rent a Vehicle",
+      "promoBadge": "First rental -20% • Special offer"
+    },
+    "serviceFret": {
+      "badge": "Urban Freight",
+      "title": {
+        "part1": "Professional goods",
+        "highlight": "transport",
+        "part2": "and secure"
+      },
+      "description": "Transport solutions for your bulky goods. Pick-ups, vans and light trucks available.",
+      "features": {
+        "allVolumes": {
+          "title": "All Volumes",
+          "description": "From small packages to heavy transport."
+        },
+        "planning": {
+          "title": "Planning",
+          "description": "Schedule your shipments in advance."
+        },
+        "fullTracking": {
+          "title": "Full Tracking",
+          "description": "Track your goods in real-time."
+        },
+        "b2bB2c": {
+          "title": "B2B & B2C",
+          "description": "Solutions for individuals and businesses."
+        }
+      },
+      "vehicleOptions": {
+        "pickup": "Pick-up",
+        "van": "Van",
+        "lightTruck": "Light Truck",
+        "refrigerated": "Refrigerated Vehicle"
+      },
+      "cta": "Request a Quote",
+      "capacityBadge": "Up to 3.5 tons • Adapted vehicles"
     }
   },
   "partnerOffers": {

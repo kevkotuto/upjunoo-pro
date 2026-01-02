@@ -118,6 +118,111 @@
       },
       "cta": "Commander un taxi",
       "ratingBadge": "{satisfaction} de satisfaction • +{coursesPerDay} courses/jour"
+    },
+    "serviceLivraison": {
+      "badge": "Service Livraison Express",
+      "title": {
+        "part1": "Livraison",
+        "highlight": "rapide et fiable",
+        "part2": "à portée de main"
+      },
+      "description": "Envoyez vos colis en toute confiance avec notre service de livraison express. Suivi en temps réel et notifications à chaque étape.",
+      "features": {
+        "expressDelivery": {
+          "title": "Livraison express",
+          "description": "Vos colis livrés en un temps record."
+        },
+        "realTimeTracking": {
+          "title": "Suivi en temps réel",
+          "description": "Suivez votre colis sur la carte en direct."
+        },
+        "notifications": {
+          "title": "Notifications",
+          "description": "Recevez des alertes à chaque étape."
+        },
+        "scheduledDelivery": {
+          "title": "Livraison programmée",
+          "description": "Planifiez vos livraisons à l'avance."
+        }
+      },
+      "benefits": {
+        "sameDay": "Livraison le jour même",
+        "proofPhoto": "Preuve photo",
+        "insurance": "Assurance colis",
+        "professionalDrivers": "Livreurs professionnels"
+      },
+      "cta": "Envoyer un colis",
+      "speedBadge": "Livraison en 30 min • Service express disponible"
+    },
+    "serviceLocation": {
+      "badge": "Service Location",
+      "title": {
+        "part1": "Location de véhicules",
+        "highlight": "flexible",
+        "part2": "et sans contrainte"
+      },
+      "description": "Louez le véhicule adapté à vos besoins. Réservation simple, large choix de véhicules et tarifs transparents.",
+      "features": {
+        "flexibleBooking": {
+          "title": "Réservation flexible",
+          "description": "À l'heure, à la journée ou à la semaine."
+        },
+        "easyPickup": {
+          "title": "Retrait facile",
+          "description": "Plusieurs points de retrait disponibles."
+        },
+        "fullInsurance": {
+          "title": "Assurance complète",
+          "description": "Tous nos véhicules sont assurés."
+        },
+        "maintainedVehicles": {
+          "title": "Véhicules entretenus",
+          "description": "Flotte régulièrement contrôlée."
+        }
+      },
+      "vehicleTypes": {
+        "compact": "Citadine",
+        "sedan": "Berline",
+        "suv": "SUV",
+        "utility": "Utilitaire"
+      },
+      "cta": "Louer un véhicule",
+      "promoBadge": "Première location à -20% • Offre spéciale"
+    },
+    "serviceFret": {
+      "badge": "Fret Urbain",
+      "title": {
+        "part1": "Transport de marchandises",
+        "highlight": "professionnel",
+        "part2": "et sécurisé"
+      },
+      "description": "Solutions de transport pour vos marchandises volumineuses. Pick-up, camionnettes et camions légers disponibles.",
+      "features": {
+        "allVolumes": {
+          "title": "Tous volumes",
+          "description": "Du petit colis au transport lourd."
+        },
+        "planning": {
+          "title": "Planification",
+          "description": "Programmez vos envois à l'avance."
+        },
+        "fullTracking": {
+          "title": "Suivi complet",
+          "description": "Suivez votre marchandise en temps réel."
+        },
+        "b2bB2c": {
+          "title": "B2B & B2C",
+          "description": "Solutions pour particuliers et professionnels."
+        }
+      },
+      "vehicleOptions": {
+        "pickup": "Pick-up",
+        "van": "Camionnette",
+        "lightTruck": "Camion léger",
+        "refrigerated": "Véhicule frigorifique"
+      },
+      "cta": "Demander un devis",
+      "capacityBadge": "Jusqu'à 3.5 tonnes • Véhicules adaptés"
     }
   },
   "partnerOffers": {
