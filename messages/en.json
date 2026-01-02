@@ -223,6 +223,184 @@
       },
       "cta": "Request a Quote",
       "capacityBadge": "Up to 3.5 tons • Adapted vehicles"
+    },
+    "servicePartenaire": {
+      "badge": "Become a Partner",
+      "title": {
+        "part1": "Join",
+        "highlight": "the team",
+        "part2": "and earn more"
+      },
+      "description": "Become an UPJUNOO PRO partner driver and enjoy flexible hours, attractive income and personalized support.",
+      "features": {
+        "attractiveRevenue": {
+          "title": "Attractive Income",
+          "description": "Earn more with competitive rates."
+        },
+        "flexibleHours": {
+          "title": "Flexible Hours",
+          "description": "Work whenever you want."
+        },
+        "support247": {
+          "title": "24/7 Support",
+          "description": "A team available for you at all times."
+        },
+        "freeTraining": {
+          "title": "Free Training",
+          "description": "Support and training provided."
+        }
+      },
+      "advantages": {
+        "weeklyPayments": "Weekly payments",
+        "intuitiveApp": "Intuitive app",
+        "bonuses": "Bonuses & rewards",
+        "community": "Driver community"
+      },
+      "cta": "Become a driver",
+      "partnersBadge": "+{drivers} partner drivers • Join us"
+    }
+  },
+  "whyUpjunoo": {
+    "badge": "Why choose us",
+    "title": {
+      "start": "A",
+      "highlight1": "simple",
+      "highlight2": "powerful",
+      "connector": "and",
+      "highlight3": "innovative"
+    },
+    "description": "UPJUNOO PRO brings together all your mobility needs in a single app. Discover why thousands of users trust us.",
+    "reasons": {
+      "0": {
+        "title": "Intuitive Interface",
+        "description": "An app designed to be simple and efficient for daily use."
+      },
+      "1": {
+        "title": "Maximum Security",
+        "description": "Your data and trips are protected by the best standards."
+      },
+      "2": {
+        "title": "Active Community",
+        "description": "Join thousands of satisfied users around the world."
+      },
+      "3": {
+        "title": "Continuous Growth",
+        "description": "We constantly improve our services to satisfy you."
+      }
+    },
+    "benefits": {
+      "0": "Service available 24/7",
+      "1": "Present in {cities} cities",
+      "2": "Transparent pricing",
+      "3": "Secure payment"
+    },
+    "stats": {
+      "countries": "Countries",
+      "cities": "Cities",
+      "users": "Users"
+    }
+  },
+  "features": {
+    "badge": "Features",
+    "title": {
+      "start": "Everything you need,",
+      "highlight": "in one place"
+    },
+    "description": "A complete mobile app that simplifies all your travel and deliveries.",
+    "items": {
+      "0": {
+        "title": "Intuitive App",
+        "description": "Simple and easy-to-use interface for everyone."
+      },
+      "1": {
+        "title": "24/7 Availability",
+        "description": "Service accessible at any time, day and night."
+      },
+      "2": {
+        "title": "Enhanced Security",
+        "description": "Your data and payments are protected."
+      },
+      "3": {
+        "title": "Responsive Support",
+        "description": "A team available to help you."
+      }
+    },
+    "floating": {
+      "0": "Fast",
+      "1": "Secure",
+      "2": "24/7",
+      "3": "Payment"
+    },
+    "cta": "Discover the app"
+  },
+  "drive": {
+    "badge": "Become a Driver",
+    "title": {
+      "part1": "Earn",
+      "highlight1": "more",
+      "part2": "with",
+      "highlight2": "UPJUNOO PRO"
+    },
+    "description": "Join our network of partner drivers and enjoy flexible hours, attractive income and personalized support.",
+    "benefits": {
+      "flexible": {
+        "title": "Flexible Hours",
+        "description": "Work when you want, at your own pace."
+      },
+      "revenue": {
+        "title": "Attractive Income",
+        "description": "Competitive rates and regular bonuses."
+      },
+      "insurance": {
+        "title": "Insurance Coverage",
+        "description": "Complete protection during your rides."
+      },
+      "zone": {
+        "title": "Multiple Zones",
+        "description": "Work in multiple areas of your city."
+      }
+    },
+    "stats": {
+      "revenue": {
+        "label": "Average Income",
+        "value": "+$2500/mo"
+      },
+      "flexibility": {
+        "label": "Flexibility",
+        "value": "100%"
+      }
+    },
+    "button": "Become a driver now"
+  },
+  "stats": {
+    "badge": "By the numbers",
+    "title": {
+      "start": "Our",
+      "highlight": "impact"
+    },
+    "description": "Figures that demonstrate our growth and our users' trust.",
+    "items": {
+      "0": {
+        "label": "Users",
+        "description": "People trust us"
+      },
+      "1": {
+        "label": "Countries",
+        "description": "International presence"
+      },
+      "2": {
+        "label": "Cities",
+        "description": "Urban coverage"
+      },
+      "3": {
+        "label": "Downloads",
+        "description": "Apps downloaded"
+      }
+    },
+    "trustBadges": {
+      "onStores": "on stores",
+      "partnerDrivers": "partner drivers",
+      "supportAvailable": "Support available"
     }
   },
   "partnerOffers": {

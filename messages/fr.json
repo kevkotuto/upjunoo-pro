@@ -223,6 +223,184 @@
       },
       "cta": "Demander un devis",
       "capacityBadge": "Jusqu'à 3.5 tonnes • Véhicules adaptés"
+    },
+    "servicePartenaire": {
+      "badge": "Devenir Partenaire",
+      "title": {
+        "part1": "Rejoignez",
+        "highlight": "l'équipe",
+        "part2": "et gagnez plus"
+      },
+      "description": "Devenez chauffeur partenaire UPJUNOO PRO et profitez d'horaires flexibles, de revenus attractifs et d'un accompagnement personnalisé.",
+      "features": {
+        "attractiveRevenue": {
+          "title": "Revenus attractifs",
+          "description": "Gagnez plus avec des tarifs compétitifs."
+        },
+        "flexibleHours": {
+          "title": "Horaires flexibles",
+          "description": "Travaillez quand vous voulez."
+        },
+        "support247": {
+          "title": "Support 24/7",
+          "description": "Une équipe à votre écoute en permanence."
+        },
+        "freeTraining": {
+          "title": "Formation gratuite",
+          "description": "Accompagnement et formation offerts."
+        }
+      },
+      "advantages": {
+        "weeklyPayments": "Paiements hebdomadaires",
+        "intuitiveApp": "Application intuitive",
+        "bonuses": "Bonus et primes",
+        "community": "Communauté de chauffeurs"
+      },
+      "cta": "Devenir chauffeur",
+      "partnersBadge": "+{drivers} chauffeurs partenaires • Rejoignez-nous"
+    }
+  },
+  "whyUpjunoo": {
+    "badge": "Pourquoi nous choisir",
+    "title": {
+      "start": "Une application",
+      "highlight1": "simple",
+      "highlight2": "puissante",
+      "connector": "et",
+      "highlight3": "innovante"
+    },
+    "description": "UPJUNOO PRO réunit tous vos besoins de mobilité en une seule application. Découvrez pourquoi des milliers d'utilisateurs nous font confiance.",
+    "reasons": {
+      "0": {
+        "title": "Interface intuitive",
+        "description": "Une application pensée pour être simple et efficace au quotidien."
+      },
+      "1": {
+        "title": "Sécurité maximale",
+        "description": "Vos données et vos trajets sont protégés par les meilleurs standards."
+      },
+      "2": {
+        "title": "Communauté active",
+        "description": "Rejoignez des milliers d'utilisateurs satisfaits à travers le monde."
+      },
+      "3": {
+        "title": "Croissance continue",
+        "description": "Nous améliorons constamment nos services pour vous satisfaire."
+      }
+    },
+    "benefits": {
+      "0": "Service disponible 24/7",
+      "1": "Présent dans {cities} villes",
+      "2": "Tarifs transparents",
+      "3": "Paiement sécurisé"
+    },
+    "stats": {
+      "countries": "Pays",
+      "cities": "Villes",
+      "users": "Utilisateurs"
+    }
+  },
+  "features": {
+    "badge": "Fonctionnalités",
+    "title": {
+      "start": "Tout ce dont vous avez besoin,",
+      "highlight": "au même endroit"
+    },
+    "description": "Une application mobile complète qui simplifie tous vos déplacements et livraisons.",
+    "items": {
+      "0": {
+        "title": "Application intuitive",
+        "description": "Interface simple et facile à utiliser pour tous."
+      },
+      "1": {
+        "title": "Disponibilité 24/7",
+        "description": "Service accessible à toute heure, jour et nuit."
+      },
+      "2": {
+        "title": "Sécurité renforcée",
+        "description": "Vos données et paiements sont protégés."
+      },
+      "3": {
+        "title": "Support réactif",
+        "description": "Une équipe disponible pour vous aider."
+      }
+    },
+    "floating": {
+      "0": "Rapide",
+      "1": "Sécurisé",
+      "2": "24/7",
+      "3": "Paiement"
+    },
+    "cta": "Découvrir l'application"
+  },
+  "drive": {
+    "badge": "Devenir Chauffeur",
+    "title": {
+      "part1": "Gagnez",
+      "highlight1": "plus",
+      "part2": "avec",
+      "highlight2": "UPJUNOO PRO"
+    },
+    "description": "Rejoignez notre réseau de chauffeurs partenaires et profitez d'horaires flexibles, de revenus attractifs et d'un accompagnement personnalisé.",
+    "benefits": {
+      "flexible": {
+        "title": "Horaires flexibles",
+        "description": "Travaillez quand vous le souhaitez, à votre rythme."
+      },
+      "revenue": {
+        "title": "Revenus attractifs",
+        "description": "Des tarifs compétitifs et des bonus réguliers."
+      },
+      "insurance": {
+        "title": "Couverture assurance",
+        "description": "Protection complète pendant vos courses."
+      },
+      "zone": {
+        "title": "Zones multiples",
+        "description": "Travaillez dans plusieurs zones de votre ville."
+      }
+    },
+    "stats": {
+      "revenue": {
+        "label": "Revenus moyens",
+        "value": "+2000€/mois"
+      },
+      "flexibility": {
+        "label": "Flexibilité",
+        "value": "100%"
+      }
+    },
+    "button": "Devenir chauffeur maintenant"
+  },
+  "stats": {
+    "badge": "En chiffres",
+    "title": {
+      "start": "Notre",
+      "highlight": "impact"
+    },
+    "description": "Des chiffres qui témoignent de notre croissance et de la confiance de nos utilisateurs.",
+    "items": {
+      "0": {
+        "label": "Utilisateurs",
+        "description": "Personnes nous font confiance"
+      },
+      "1": {
+        "label": "Pays",
+        "description": "Présence internationale"
+      },
+      "2": {
+        "label": "Villes",
+        "description": "Couverture urbaine"
+      },
+      "3": {
+        "label": "Téléchargements",
+        "description": "Applications téléchargées"
+      }
+    },
+    "trustBadges": {
+      "onStores": "sur les stores",
+      "partnerDrivers": "chauffeurs partenaires",
+      "supportAvailable": "Support disponible"
     }
   },
   "partnerOffers": {
