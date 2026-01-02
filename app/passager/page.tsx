@@ -15,70 +15,90 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-
-const features = [
-  {
-    icon: Smartphone,
-    title: "Réservation en quelques clics",
-    description:
-      "Commandez votre taxi directement depuis l'application en moins de 30 secondes.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi GPS en temps réel",
-    description:
-      "Suivez l'arrivée de votre chauffeur et votre trajet en direct sur la carte.",
-  },
-  {
-    icon: Clock,
-    title: "Estimation du temps",
-    description:
-      "Connaissez à l'avance le temps d'arrivée et la durée estimée de votre trajet.",
-  },
-  {
-    icon: Shield,
-    title: "Chauffeurs vérifiés",
-    description:
-      "Tous nos chauffeurs sont rigoureusement sélectionnés et vérifiés.",
-  },
-  {
-    icon: CreditCard,
-    title: "Paiement flexible",
-    description:
-      "Payez en espèces, par mobile money ou carte bancaire selon vos préférences.",
-  },
-  {
-    icon: Star,
-    title: "Système de notation",
-    description:
-      "Évaluez votre course et aidez-nous à maintenir un service de qualité.",
-  },
-];
-
-const steps = [
-  {
-    number: "01",
-    title: "Téléchargez l'application",
-    description: "Disponible sur App Store, Google Play et en APK direct.",
-  },
-  {
-    number: "02",
-    title: "Entrez votre destination",
-    description: "Indiquez où vous souhaitez aller et obtenez une estimation.",
-  },
-  {
-    number: "03",
-    title: "Confirmez votre course",
-    description: "Un chauffeur proche de vous accepte votre demande.",
-  },
-  {
-    number: "04",
-    title: "Profitez du trajet",
-    description: "Voyagez en toute sérénité et payez à l'arrivée.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function PassagerPage() {
+  const t = useTranslations("passagerPage");
+
+  const features = [
+    {
+      icon: Smartphone,
+      title: t("features.booking.title"),
+      description: t("features.booking.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("features.gps.title"),
+      description: t("features.gps.description"),
+    },
+    {
+      icon: Clock,
+      title: t("features.time.title"),
+      description: t("features.time.description"),
+    },
+    {
+      icon: Shield,
+      title: t("features.verified.title"),
+      description: t("features.verified.description"),
+    },
+    {
+      icon: CreditCard,
+      title: t("features.payment.title"),
+      description: t("features.payment.description"),
+    },
+    {
+      icon: Star,
+      title: t("features.rating.title"),
+      description: t("features.rating.description"),
+    },
+  ];
+
+  const steps = [
+    {
+      number: "01",
+      title: t("steps.step1.title"),
+      description: t("steps.step1.description"),
+    },
+    {
+      number: "02",
+      title: t("steps.step2.title"),
+      description: t("steps.step2.description"),
+    },
+    {
+      number: "03",
+      title: t("steps.step3.title"),
+      description: t("steps.step3.description"),
+    },
+    {
+      number: "04",
+      title: t("steps.step4.title"),
+      description: t("steps.step4.description"),
+    },
+  ];
+
+  const screenshots = [
+    {
+      src: "/images/screenshots/client-app.png",
+      title: t("screenshots.home.title"),
+      description: t("screenshots.home.description"),
+    },
+    {
+      src: "/images/screenshots/client-suivi-trajet.jpeg",
+      title: t("screenshots.tracking.title"),
+      description: t("screenshots.tracking.description"),
+    },
+    {
+      src: "/images/screenshots/client-info-chauffeur.jpeg",
+      title: t("screenshots.driver.title"),
+      description: t("screenshots.driver.description"),
+    },
+    {
+      src: "/images/screenshots/client-historique.png",
+      title: t("screenshots.history.title"),
+      description: t("screenshots.history.description"),
+    },
+  ];
+
   return (
     <>
       {/* Custom Hero with Christmas Car */}
@@ -116,7 +136,7 @@ export default function PassagerPage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400" />
                 </span>
-                Service Passager
+                {t("badge")}
               </motion.span>
 
               <motion.h1
@@ -125,8 +145,8 @@ export default function PassagerPage() {
                 transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-white"
               >
-                Commandez un taxi{" "}
-                <span className="text-yellow-400">en toute simplicité</span>
+                {t("title")}{" "}
+                <span className="text-yellow-400">{t("highlight")}</span>
               </motion.h1>
 
               <motion.p
@@ -135,7 +155,7 @@ export default function PassagerPage() {
                 transition={{ delay: 0.3 }}
                 className="text-base sm:text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-8"
               >
-                Réservez votre course en quelques clics et déplacez-vous sereinement à travers la ville avec nos chauffeurs professionnels.
+                {t("description")}
               </motion.p>
 
               <motion.div
@@ -151,7 +171,7 @@ export default function PassagerPage() {
                 >
                   <Link href="/#download">
                     <Download className="h-5 w-5" />
-                    Télécharger l'app
+                    {t("downloadApp")}
                   </Link>
                 </Button>
                 <Button
@@ -161,7 +181,7 @@ export default function PassagerPage() {
                   className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
                 >
                   <Link href="#how-it-works">
-                    Comment ça marche
+                    {t("howItWorks")}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
@@ -181,7 +201,7 @@ export default function PassagerPage() {
               >
                 <Image
                   src="/images/vehicule/voiture-noel-2025-04.png"
-                  alt="Voiture UPJUNOO PRO - Édition Noël"
+                  alt="Voiture UPJUNOO PRO"
                   width={600}
                   height={338}
                   className="w-full h-auto drop-shadow-2xl"
@@ -214,13 +234,13 @@ export default function PassagerPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos avantages
+              {t("features.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Pourquoi choisir <span className="text-primary">UPJUNOO PRO</span> ?
+              {t("features.title")} <span className="text-primary">{t("features.highlight")}</span> ?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une expérience de transport pensée pour votre confort et votre sécurité.
+              {t("features.description")}
             </p>
           </motion.div>
 
@@ -260,39 +280,18 @@ export default function PassagerPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              L'application en action
+              {t("screenshots.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Découvrez l'expérience <span className="text-primary">UPJUNOO PRO</span>
+              {t("screenshots.title")} <span className="text-primary">{t("screenshots.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une interface intuitive pour une expérience de transport sans friction.
+              {t("screenshots.description")}
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                src: "/images/screenshots/client-app.png",
-                title: "Accueil",
-                description: "Interface principale de l'application",
-              },
-              {
-                src: "/images/screenshots/client-suivi-trajet.jpeg",
-                title: "Suivi en temps réel",
-                description: "Suivez votre trajet sur la carte",
-              },
-              {
-                src: "/images/screenshots/client-info-chauffeur.jpeg",
-                title: "Infos chauffeur",
-                description: "Consultez le profil de votre chauffeur",
-              },
-              {
-                src: "/images/screenshots/client-historique.png",
-                title: "Historique",
-                description: "Retrouvez tous vos trajets",
-              },
-            ].map((screenshot, index) => (
+            {screenshots.map((screenshot, index) => (
               <motion.div
                 key={screenshot.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -333,10 +332,10 @@ export default function PassagerPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Comment ça marche
+              {t("steps.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Réservez en <span className="text-primary">4 étapes</span> simples
+              {t("steps.title")} <span className="text-primary">{t("steps.highlight")}</span> {t("steps.simples")}
             </h2>
           </motion.div>
 
@@ -405,11 +404,10 @@ export default function PassagerPage() {
                 <Download className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-                Prêt à voyager ?
+                {t("cta.title")}
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Téléchargez l'application UPJUNOO PRO et commencez à vous déplacer
-                en toute sérénité dès maintenant.
+                {t("cta.description")}
               </p>
               <Button
                 size="lg"
@@ -418,7 +416,7 @@ export default function PassagerPage() {
               >
                 <Link href="/#download">
                   <Download className="h-5 w-5" />
-                  Télécharger maintenant
+                  {t("cta.button")}
                 </Link>
               </Button>
             </div>

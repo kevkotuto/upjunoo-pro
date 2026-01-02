@@ -4,38 +4,40 @@ import { motion } from "motion/react";
 import { CarFront, Calendar, Key, Shield, Fuel, CheckCircle, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-const features = [
-  {
-    icon: Calendar,
-    title: "Réservation flexible",
-    description: "Louez pour quelques heures, jours ou semaines.",
-  },
-  {
-    icon: Key,
-    title: "Prise en main facile",
-    description: "Récupérez votre véhicule en quelques minutes.",
-  },
-  {
-    icon: Shield,
-    title: "Assurance complète",
-    description: "Tous nos véhicules sont entièrement assurés.",
-  },
-  {
-    icon: Fuel,
-    title: "Véhicules entretenus",
-    description: "Flotte régulièrement contrôlée et nettoyée.",
-  },
-];
-
-const vehicleTypes = [
-  "Citadines économiques",
-  "Berlines confortables",
-  "SUV familiaux",
-  "Utilitaires légers",
-];
+import { useTranslations } from "next-intl";
 
 export function ServiceLocationSection() {
+  const t = useTranslations();
+
+  const features = [
+    {
+      icon: Calendar,
+      title: t("serviceLocation.features.flexibleBooking.title"),
+      description: t("serviceLocation.features.flexibleBooking.description"),
+    },
+    {
+      icon: Key,
+      title: t("serviceLocation.features.easyPickup.title"),
+      description: t("serviceLocation.features.easyPickup.description"),
+    },
+    {
+      icon: Shield,
+      title: t("serviceLocation.features.fullInsurance.title"),
+      description: t("serviceLocation.features.fullInsurance.description"),
+    },
+    {
+      icon: Fuel,
+      title: t("serviceLocation.features.maintainedVehicles.title"),
+      description: t("serviceLocation.features.maintainedVehicles.description"),
+    },
+  ];
+
+  const vehicleTypes = [
+    t("serviceLocation.vehicleTypes.compact"),
+    t("serviceLocation.vehicleTypes.sedan"),
+    t("serviceLocation.vehicleTypes.suv"),
+    t("serviceLocation.vehicleTypes.utility"),
+  ];
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -71,7 +73,7 @@ export function ServiceLocationSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 text-violet-500 text-sm font-semibold mb-6"
             >
               <CarFront className="h-4 w-4" />
-              Location de Véhicules
+              {t("serviceLocation.badge")}
             </motion.div>
 
             <motion.h2
@@ -81,10 +83,10 @@ export function ServiceLocationSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Louez le véhicule{" "}
-              <span className="text-violet-500">idéal</span><br />
+              {t("serviceLocation.title.part1")}{" "}
+              <span className="text-violet-500">{t("serviceLocation.title.highlight")}</span><br />
               <span className="relative inline-block">
-                en toute liberté
+                {t("serviceLocation.title.part2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -102,9 +104,7 @@ export function ServiceLocationSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Besoin d'un véhicule pour un déplacement, un événement ou vos vacances ?
-              Notre large gamme de véhicules s'adapte à tous vos besoins avec des tarifs
-              compétitifs et transparents.
+              {t("serviceLocation.description")}
             </motion.p>
 
             {/* Vehicle types */}
@@ -141,7 +141,7 @@ export function ServiceLocationSection() {
             >
               <Link href="/location">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-violet-500 hover:bg-violet-600 shadow-lg shadow-violet-500/25">
-                  Voir les véhicules
+                  {t("serviceLocation.cta")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
@@ -202,7 +202,7 @@ export function ServiceLocationSection() {
             >
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-border/50 shadow-sm">
                 <Sparkles className="h-5 w-5 text-violet-500" />
-                <span className="text-sm font-medium">-15% sur votre première location</span>
+                <span className="text-sm font-medium">{t("serviceLocation.promoBadge")}</span>
               </div>
             </motion.div>
           </motion.div>

@@ -4,54 +4,51 @@ import { motion } from "motion/react";
 import { Eye, Shield, Users, TrendingUp, CheckCircle, Zap } from "lucide-react";
 import Image from "next/image";
 import { formattedKpis } from "@/data/kpis";
+import { useTranslations } from "next-intl";
 
-const reasons = [
+const reasonIcons = [
   {
     icon: Eye,
-    title: "Clarté totale",
-    description:
-      "Tarifs transparents, suivi en temps réel, preuve de service. Aucune surprise.",
     color: "from-blue-500 to-blue-600",
     iconColor: "text-blue-500",
     bgColor: "bg-blue-500/10",
   },
   {
     icon: Shield,
-    title: "Sécurité maximale",
-    description:
-      "KYC/KYB, assurance complète, bouton SOS, suivi GPS en direct.",
     color: "from-green-500 to-green-600",
     iconColor: "text-green-500",
     bgColor: "bg-green-500/10",
   },
   {
     icon: Users,
-    title: "Inclusion",
-    description:
-      "Intégration des coopératives, GIE, artisans-taxis et gestionnaires de flotte.",
     color: "from-purple-500 to-purple-600",
     iconColor: "text-purple-500",
     bgColor: "bg-purple-500/10",
   },
   {
     icon: TrendingUp,
-    title: "Impact réel",
-    description:
-      "Réduction des coûts logistiques pour PME et particuliers, création d'emplois locaux.",
     color: "from-orange-500 to-orange-600",
     iconColor: "text-orange-500",
     bgColor: "bg-orange-500/10",
   },
 ];
 
-const benefits = [
-  "Application intuitive et rapide",
-  `Disponible 24/7 dans ${formattedKpis.villes} villes`,
-  "Support client réactif",
-  "Paiement flexible (mobile money, carte)",
-];
-
 export function WhyUpjunooSection() {
+  const t = useTranslations("whyUpjunoo");
+
+  const reasons = reasonIcons.map((item, index) => ({
+    ...item,
+    title: t(`reasons.${index}.title`),
+    description: t(`reasons.${index}.description`),
+  }));
+
+  const benefits = [
+    t("benefits.0"),
+    t("benefits.1", { cities: formattedKpis.villes }),
+    t("benefits.2"),
+    t("benefits.3"),
+  ];
+
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -87,7 +84,7 @@ export function WhyUpjunooSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
               <Zap className="h-4 w-4" />
-              Pourquoi UPJUNOO PRO
+              {t("badge")}
             </motion.div>
 
             <motion.h2
@@ -97,10 +94,10 @@ export function WhyUpjunooSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              La mobilité{" "}
-              <span className="text-primary">intelligente</span>,<br />
+              {t("title.start")}{" "}
+              <span className="text-primary">{t("title.highlight1")}</span>,<br />
               <span className="relative inline-block">
-                simple
+                {t("title.highlight2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -109,9 +106,9 @@ export function WhyUpjunooSection() {
                   className="absolute -bottom-1 left-0 right-0 h-3 bg-yellow-400/30 -z-10 origin-left"
                 />
               </span>{" "}
-              et{" "}
+              {t("title.connector")}{" "}
               <span className="relative inline-block">
-                inclusive
+                {t("title.highlight3")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -129,9 +126,7 @@ export function WhyUpjunooSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Avec UPJUNOO PRO, la mobilité devient un service intégré : VTC/Taxi,
-              livraison express, location de véhicules et fret urbain, réunis au sein
-              d'une plateforme unique conçue pour le monde entier.
+              {t("description")}
             </motion.p>
 
             {/* Benefits list */}
@@ -168,9 +163,9 @@ export function WhyUpjunooSection() {
               className="flex flex-wrap gap-8 pt-6 border-t border-border/50"
             >
               {[
-                { value: formattedKpis.pays, label: "Pays" },
-                { value: formattedKpis.villes, label: "Villes" },
-                { value: formattedKpis.utilisateurs, label: "Utilisateurs" },
+                { value: formattedKpis.pays, label: t("stats.countries") },
+                { value: formattedKpis.villes, label: t("stats.cities") },
+                { value: formattedKpis.utilisateurs, label: t("stats.users") },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl font-bold text-primary">{stat.value}</div>

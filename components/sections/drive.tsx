@@ -5,50 +5,48 @@ import { Clock, Wallet, Shield, MapPin, ArrowRight, CheckCircle, Sparkles } from
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import motoAnimation from "@/public/annimation/Navy blue delivery motorbike.json";
 
-const benefits = [
-  {
-    icon: Clock,
-    title: "Horaires flexibles",
-    description:
-      "Choisissez vos horaires de travail en fonction de vos préférences. Conciliez vie professionnelle et personnelle.",
-    color: "from-blue-500 to-blue-600",
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-  {
-    icon: Wallet,
-    title: "Revenus attractifs",
-    description:
-      "Payé à la course ou à la livraison. Maximisez vos revenus selon vos horaires et votre zone.",
-    color: "from-green-500 to-green-600",
-    iconColor: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    icon: Shield,
-    title: "Assurance incluse",
-    description:
-      "Couverture d'assurance complète pendant vos courses. Conduisez et livrez en toute sérénité.",
-    color: "from-purple-500 to-purple-600",
-    iconColor: "text-purple-500",
-    bgColor: "bg-purple-500/10",
-  },
-  {
-    icon: MapPin,
-    title: "Votre zone",
-    description:
-      "Travaillez dans les zones qui vous conviennent. Optimisez vos trajets pour gagner plus.",
-    color: "from-orange-500 to-orange-600",
-    iconColor: "text-orange-500",
-    bgColor: "bg-orange-500/10",
-  },
-];
-
 export function DriveSection() {
+  const t = useTranslations();
+
+  const benefits = [
+    {
+      icon: Clock,
+      title: t("drive.benefits.flexible.title"),
+      description: t("drive.benefits.flexible.description"),
+      color: "from-blue-500 to-blue-600",
+      iconColor: "text-blue-500",
+      bgColor: "bg-blue-500/10",
+    },
+    {
+      icon: Wallet,
+      title: t("drive.benefits.revenue.title"),
+      description: t("drive.benefits.revenue.description"),
+      color: "from-green-500 to-green-600",
+      iconColor: "text-green-500",
+      bgColor: "bg-green-500/10",
+    },
+    {
+      icon: Shield,
+      title: t("drive.benefits.insurance.title"),
+      description: t("drive.benefits.insurance.description"),
+      color: "from-purple-500 to-purple-600",
+      iconColor: "text-purple-500",
+      bgColor: "bg-purple-500/10",
+    },
+    {
+      icon: MapPin,
+      title: t("drive.benefits.zone.title"),
+      description: t("drive.benefits.zone.description"),
+      color: "from-orange-500 to-orange-600",
+      iconColor: "text-orange-500",
+      bgColor: "bg-orange-500/10",
+    },
+  ];
   return (
     <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       {/* Background decorations */}
@@ -140,8 +138,8 @@ export function DriveSection() {
                       <Wallet className="w-5 h-5 text-green-500" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">Revenu moyen</p>
-                      <p className="text-sm font-bold">+25% vs avant</p>
+                      <p className="text-xs text-gray-500">{t("drive.stats.revenue.label")}</p>
+                      <p className="text-sm font-bold">{t("drive.stats.revenue.value")}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -164,8 +162,8 @@ export function DriveSection() {
                       <Clock className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">Flexibilité</p>
-                      <p className="text-sm font-bold">100% libre</p>
+                      <p className="text-xs text-gray-500">{t("drive.stats.flexibility.label")}</p>
+                      <p className="text-sm font-bold">{t("drive.stats.flexibility.value")}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -188,7 +186,7 @@ export function DriveSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
               <Sparkles className="h-4 w-4" />
-              Devenez Partenaire
+              {t("drive.badge")}
             </motion.div>
 
             <motion.h2
@@ -198,9 +196,9 @@ export function DriveSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Conduisez avec{" "}
+              {t("drive.title.part1")}{" "}
               <span className="text-primary relative">
-                confiance
+                {t("drive.title.highlight1")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -209,8 +207,8 @@ export function DriveSection() {
                   className="absolute -bottom-1 left-0 right-0 h-3 bg-yellow-400/30 -z-10 origin-left"
                 />
               </span>
-              , gagnez avec{" "}
-              <span className="text-primary">assurance</span>
+              {t("drive.title.part2")}{" "}
+              <span className="text-primary">{t("drive.title.highlight2")}</span>
             </motion.h2>
 
             <motion.p
@@ -220,8 +218,7 @@ export function DriveSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              Rejoignez notre réseau de chauffeurs et livreurs partenaires.
-              Profitez d'une flexibilité totale et de revenus attractifs.
+              {t("drive.description")}
             </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
@@ -268,7 +265,7 @@ export function DriveSection() {
                 className="gap-2 h-14 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/25 hover:scale-105 transition-all"
               >
                 <Link href="/devenir-chauffeur">
-                  Rejoindre l'équipe
+                  {t("drive.button")}
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>

@@ -4,46 +4,36 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { Smartphone, Clock, Shield, Headphones, Zap, CreditCard, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const features = [
-  {
-    icon: Smartphone,
-    title: "Commandez en quelques clics",
-    description: "Interface intuitive pour une réservation rapide et sans effort",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
-  },
-  {
-    icon: Clock,
-    title: "Suivi en temps réel",
-    description: "Suivez votre chauffeur ou votre colis en direct sur la carte",
-    color: "text-green-500",
-    bg: "bg-green-500/10",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité garantie",
-    description: "Chauffeurs vérifiés et trajets sécurisés pour votre tranquillité",
-    color: "text-purple-500",
-    bg: "bg-purple-500/10",
-  },
-  {
-    icon: Headphones,
-    title: "Support 24/7",
-    description: "Une équipe dédiée disponible à tout moment pour vous assister",
-    color: "text-orange-500",
-    bg: "bg-orange-500/10",
-  },
+const featureIcons = [
+  { icon: Smartphone, color: "text-blue-500", bg: "bg-blue-500/10" },
+  { icon: Clock, color: "text-green-500", bg: "bg-green-500/10" },
+  { icon: Shield, color: "text-purple-500", bg: "bg-purple-500/10" },
+  { icon: Headphones, color: "text-orange-500", bg: "bg-orange-500/10" },
 ];
 
-const floatingFeatures = [
-  { icon: Zap, label: "Rapide", color: "bg-yellow-500" },
-  { icon: Shield, label: "Secure", color: "bg-green-500" },
-  { icon: Clock, label: "24/7", color: "bg-blue-500" },
-  { icon: CreditCard, label: "Flexible", color: "bg-purple-500" },
+const floatingFeatureIcons = [
+  { icon: Zap, color: "bg-yellow-500" },
+  { icon: Shield, color: "bg-green-500" },
+  { icon: Clock, color: "bg-blue-500" },
+  { icon: CreditCard, color: "bg-purple-500" },
 ];
 
 export function FeaturesSection() {
+  const t = useTranslations("features");
+
+  const features = featureIcons.map((item, index) => ({
+    ...item,
+    title: t(`items.${index}.title`),
+    description: t(`items.${index}.description`),
+  }));
+
+  const floatingFeatures = floatingFeatureIcons.map((item, index) => ({
+    ...item,
+    label: t(`floating.${index}`),
+  }));
+
   return (
     <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background decorations */}
@@ -71,13 +61,13 @@ export function FeaturesSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
               <Zap className="h-4 w-4" />
-              Fonctionnalités
+              {t("badge")}
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Une expérience de mobilité{" "}
+              {t("title.start")}{" "}
               <span className="text-primary relative">
-                exceptionnelle
+                {t("title.highlight")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -88,8 +78,7 @@ export function FeaturesSection() {
               </span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
-              UPJUNOO PRO réinvente vos déplacements avec une application pensée
-              pour votre confort et votre sécurité. Découvrez nos fonctionnalités phares.
+              {t("description")}
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -131,7 +120,7 @@ export function FeaturesSection() {
                 href="#download"
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all"
               >
-                Télécharger maintenant
+                {t("cta")}
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </motion.div>

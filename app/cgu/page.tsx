@@ -1,6 +1,5 @@
-"use client";
-
-import { motion } from "motion/react";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import {
   FileText,
   Car,
@@ -18,290 +17,259 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 
-export default function CGUPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("cguPage");
+  return {
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+  };
+}
+
+export default async function CGUPage() {
+  const t = await getTranslations("cguPage");
+
+  const services = [
+    { icon: Car, textKey: "access.services.vtc" },
+    { icon: Package, textKey: "access.services.delivery" },
+    { icon: Key, textKey: "access.services.rental" },
+    { icon: Truck, textKey: "access.services.freight" },
+  ];
+
+  const responsibilities = [
+    "responsibilities.items.platform",
+    "responsibilities.items.partners",
+    "responsibilities.items.user",
+  ];
+
+  const obligations = [
+    "obligations.items.accurate",
+    "obligations.items.legal",
+    "obligations.items.respect",
+    "obligations.items.report",
+    "obligations.items.security",
+  ];
+
+  const paymentMethods = [
+    "payments.methods.mobileMoney",
+    "payments.methods.cash",
+    "payments.methods.wallet",
+  ];
+
+  const suspensionReasons = [
+    "suspension.reasons.fraud",
+    "suspension.reasons.violation",
+    "suspension.reasons.abuse",
+    "suspension.reasons.behavior",
+  ];
+
   return (
     <>
       <PageHero
-        badge="Legal"
-        title="Conditions générales"
-        highlight="d'utilisation"
-        description="L'utilisation de la plateforme UPJUNOO PRO implique l'acceptation pleine et entière des présentes conditions."
+        badge={t("hero.badge")}
+        title={t("hero.title")}
+        highlight={t("hero.highlight")}
+        description={t("hero.description")}
       />
 
       {/* Introduction */}
       <section className="py-12 border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-muted/50 rounded-2xl p-6 lg:p-8"
-          >
-            <p className="text-muted-foreground">
-              Les présentes conditions générales d'utilisation (CGU) régissent
-              l'accès et l'utilisation de la plateforme UPJUNOO PRO, accessible
-              via l'application mobile et le site web. En utilisant nos
-              services, vous acceptez ces conditions dans leur intégralité.
-            </p>
-          </motion.div>
+          <div className="bg-muted/50 rounded-2xl p-6 lg:p-8">
+            <p className="text-muted-foreground">{t("intro.text")}</p>
+          </div>
         </div>
       </section>
 
       {/* Access to Services */}
       <section className="py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50 mb-8">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <FileText className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Accès aux services</h2>
+                  <h2 className="font-bold text-xl">{t("access.title")}</h2>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  UPJUNOO PRO permet :
+                  {t("access.description")}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { icon: Car, text: "La réservation de trajets VTC / Taxi" },
-                    {
-                      icon: Package,
-                      text: "La livraison de colis et marchandises",
-                    },
-                    { icon: Key, text: "La location de véhicules" },
-                    { icon: Truck, text: "Le fret urbain et périurbain" },
-                  ].map((item, index) => (
+                  {services.map((item, index) => (
                     <div
                       key={index}
                       className="flex items-center gap-3 p-4 rounded-xl bg-muted/50"
                     >
                       <item.icon className="h-5 w-5 text-primary" />
-                      <span className="text-sm">{item.text}</span>
+                      <span className="text-sm">{t(item.textKey)}</span>
                     </div>
                   ))}
                 </div>
                 <p className="text-muted-foreground mt-6 text-sm">
-                  Certains services peuvent nécessiter une inscription, une
-                  vérification d'identité ou le respect de conditions
-                  spécifiques selon le pays.
+                  {t("access.note")}
                 </p>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* Responsibilities */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50 mb-8">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Scale className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Responsabilités</h2>
+                  <h2 className="font-bold text-xl">
+                    {t("responsibilities.title")}
+                  </h2>
                 </div>
                 <ul className="space-y-4">
-                  {[
-                    "UPJUNOO PRO agit en tant que plateforme technologique d'intermédiation.",
-                    "Les chauffeurs, livreurs et partenaires sont responsables de l'exécution des prestations.",
-                    "L'utilisateur s'engage à fournir des informations exactes et à utiliser la plateforme de manière conforme aux lois en vigueur.",
-                  ].map((item, index) => (
+                  {responsibilities.map((item, index) => (
                     <li
                       key={index}
                       className="flex items-start gap-3 text-muted-foreground"
                     >
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      {item}
+                      {t(item)}
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* User Obligations */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50 mb-8">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <UserCheck className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">
-                    Obligations de l'utilisateur
-                  </h2>
+                  <h2 className="font-bold text-xl">{t("obligations.title")}</h2>
                 </div>
                 <ul className="space-y-4">
-                  {[
-                    "Fournir des informations exactes lors de l'inscription",
-                    "Ne pas utiliser la plateforme à des fins illégales",
-                    "Respecter les chauffeurs, livreurs et autres utilisateurs",
-                    "Signaler tout comportement inapproprié ou incident",
-                    "Ne pas tenter de contourner les systèmes de sécurité",
-                  ].map((item, index) => (
+                  {obligations.map((item, index) => (
                     <li
                       key={index}
                       className="flex items-start gap-3 text-muted-foreground"
                     >
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      {item}
+                      {t(item)}
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* Payments */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50 mb-8">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <CreditCard className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Paiements</h2>
+                  <h2 className="font-bold text-xl">{t("payments.title")}</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  Les paiements peuvent être effectués via :
+                  {t("payments.description")}
                 </p>
                 <ul className="space-y-2 mb-4">
-                  {[
-                    "Mobile Money (Orange Money, MTN Money, Wave, etc.)",
-                    "Espèces (selon les régions)",
-                    "Portefeuille électronique UPJUNOO PRO",
-                  ].map((item, index) => (
+                  {paymentMethods.map((item, index) => (
                     <li
                       key={index}
                       className="flex items-start gap-3 text-muted-foreground"
                     >
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      {item}
+                      {t(item)}
                     </li>
                   ))}
                 </ul>
                 <p className="text-muted-foreground text-sm">
-                  Les montants sont affichés de manière transparente avant
-                  validation de la commande.
+                  {t("payments.note")}
                 </p>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* Suspension */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50 mb-8">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
                     <AlertTriangle className="h-6 w-6 text-orange-500" />
                   </div>
-                  <h2 className="font-bold text-xl">Suspension et résiliation</h2>
+                  <h2 className="font-bold text-xl">{t("suspension.title")}</h2>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  UPJUNOO PRO se réserve le droit de suspendre ou de résilier un
-                  compte en cas de :
+                  {t("suspension.description")}
                 </p>
                 <ul className="space-y-2">
-                  {[
-                    "Fraude ou tentative de fraude",
-                    "Non-respect des présentes conditions",
-                    "Usage abusif de la plateforme",
-                    "Comportement inapproprié envers les partenaires ou utilisateurs",
-                  ].map((item, index) => (
+                  {suspensionReasons.map((item, index) => (
                     <li
                       key={index}
                       className="flex items-start gap-3 text-muted-foreground"
                     >
                       <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      {item}
+                      {t(item)}
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* Evolution */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="border-border/50">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <RefreshCw className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="font-bold text-xl">Evolution des services</h2>
+                  <h2 className="font-bold text-xl">{t("evolution.title")}</h2>
                 </div>
-                <p className="text-muted-foreground">
-                  Les services, fonctionnalités et conditions peuvent évoluer
-                  afin d'améliorer la qualité, la sécurité et la conformité
-                  réglementaire. Les utilisateurs seront informés des
-                  modifications importantes.
-                </p>
+                <p className="text-muted-foreground">{t("evolution.text")}</p>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Related Links */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-2xl font-bold mb-4">Documents associés</h2>
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">{t("related.title")}</h2>
             <p className="text-muted-foreground mb-8">
-              Consultez également nos autres documents légaux.
+              {t("related.description")}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/confidentialite"
                 className="px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
               >
-                Politique de confidentialite
+                {t("related.links.privacy")}
               </Link>
               <Link
                 href="/faq"
                 className="px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
               >
-                FAQ
+                {t("related.links.faq")}
               </Link>
               <Link
                 href="/contact"
                 className="px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                Nous contacter
+                {t("related.links.contact")}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

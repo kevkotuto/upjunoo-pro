@@ -4,38 +4,40 @@ import { motion } from "motion/react";
 import { Truck, Package, Calendar, MapPin, Scale, CheckCircle, ArrowRight, Building2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-const features = [
-  {
-    icon: Scale,
-    title: "Tous volumes",
-    description: "De 50kg à plusieurs tonnes, nous gérons tout.",
-  },
-  {
-    icon: Calendar,
-    title: "Planification",
-    description: "Programmez vos envois à l'avance facilement.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi complet",
-    description: "Tracez vos marchandises en temps réel.",
-  },
-  {
-    icon: Building2,
-    title: "B2B & B2C",
-    description: "Solutions adaptées aux pros et particuliers.",
-  },
-];
-
-const vehicleOptions = [
-  "Pick-up pour petits volumes",
-  "Camionnettes pour déménagements",
-  "Camions légers pour le fret",
-  "Véhicules frigorifiques disponibles",
-];
+import { useTranslations } from "next-intl";
 
 export function ServiceFretSection() {
+  const t = useTranslations();
+
+  const features = [
+    {
+      icon: Scale,
+      title: t("serviceFret.features.allVolumes.title"),
+      description: t("serviceFret.features.allVolumes.description"),
+    },
+    {
+      icon: Calendar,
+      title: t("serviceFret.features.planning.title"),
+      description: t("serviceFret.features.planning.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("serviceFret.features.fullTracking.title"),
+      description: t("serviceFret.features.fullTracking.description"),
+    },
+    {
+      icon: Building2,
+      title: t("serviceFret.features.b2bB2c.title"),
+      description: t("serviceFret.features.b2bB2c.description"),
+    },
+  ];
+
+  const vehicleOptions = [
+    t("serviceFret.vehicleOptions.pickup"),
+    t("serviceFret.vehicleOptions.van"),
+    t("serviceFret.vehicleOptions.lightTruck"),
+    t("serviceFret.vehicleOptions.refrigerated"),
+  ];
   return (
     <section className="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
       {/* Background decorations */}
@@ -114,7 +116,7 @@ export function ServiceFretSection() {
             >
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-border/50 shadow-sm">
                 <Package className="h-5 w-5 text-amber-500" />
-                <span className="text-sm font-medium">Plus de 10 000 livraisons par mois</span>
+                <span className="text-sm font-medium">{t("serviceFret.capacityBadge")}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -134,7 +136,7 @@ export function ServiceFretSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-500 text-sm font-semibold mb-6"
             >
               <Truck className="h-4 w-4" />
-              Fret Urbain
+              {t("serviceFret.badge")}
             </motion.div>
 
             <motion.h2
@@ -144,10 +146,10 @@ export function ServiceFretSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Transport de{" "}
-              <span className="text-amber-500">marchandises</span><br />
+              {t("serviceFret.title.part1")}{" "}
+              <span className="text-amber-500">{t("serviceFret.title.highlight")}</span><br />
               <span className="relative inline-block">
-                sur mesure
+                {t("serviceFret.title.part2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -165,9 +167,7 @@ export function ServiceFretSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Déménagements, livraisons de meubles, envois volumineux ou fret commercial :
-              nous mettons à votre disposition une flotte de véhicules adaptés à chaque
-              besoin avec des professionnels expérimentés.
+              {t("serviceFret.description")}
             </motion.p>
 
             {/* Vehicle options */}
@@ -204,7 +204,7 @@ export function ServiceFretSection() {
             >
               <Link href="/fret-urbain">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/25">
-                  Demander un devis
+                  {t("serviceFret.cta")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>

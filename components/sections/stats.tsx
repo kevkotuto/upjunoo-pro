@@ -4,39 +4,32 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { Users, Globe, MapPin, Download, TrendingUp, Star } from "lucide-react";
 import { kpis, formattedKpis } from "@/data/kpis";
+import { useTranslations } from "next-intl";
 
-const stats = [
+const statIcons = [
   {
     value: kpis.utilisateurs.value,
     suffix: kpis.utilisateurs.suffix,
-    label: kpis.utilisateurs.label,
     icon: Users,
     color: "from-blue-400 to-blue-600",
-    description: kpis.utilisateurs.description,
   },
   {
     value: kpis.pays.value,
     suffix: kpis.pays.suffix,
-    label: kpis.pays.label,
     icon: Globe,
     color: "from-green-400 to-green-600",
-    description: kpis.pays.description,
   },
   {
     value: kpis.villes.value,
     suffix: kpis.villes.suffix,
-    label: kpis.villes.label,
     icon: MapPin,
     color: "from-purple-400 to-purple-600",
-    description: kpis.villes.description,
   },
   {
     value: kpis.telechargements.value,
     suffix: kpis.telechargements.suffix,
-    label: kpis.telechargements.label,
     icon: Download,
     color: "from-orange-400 to-orange-600",
-    description: kpis.telechargements.description,
   },
 ];
 
@@ -85,6 +78,14 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 }
 
 export function StatsSection() {
+  const t = useTranslations("stats");
+
+  const stats = statIcons.map((item, index) => ({
+    ...item,
+    label: t(`items.${index}.label`),
+    description: t(`items.${index}.description`),
+  }));
+
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Dynamic gradient background */}
@@ -173,12 +174,12 @@ export function StatsSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold mb-6 backdrop-blur-sm"
           >
             <TrendingUp className="h-4 w-4" />
-            Nos Chiffres
+            {t("badge")}
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            UPJUNOO PRO en{" "}
+            {t("title.start")}{" "}
             <span className="text-yellow-400 relative">
-              chiffres
+              {t("title.highlight")}
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -189,7 +190,7 @@ export function StatsSection() {
             </span>
           </h2>
           <p className="text-white/70 max-w-xl mx-auto text-lg">
-            Une croissance continue grâce à la confiance de nos utilisateurs
+            {t("description")}
           </p>
         </motion.div>
 
@@ -247,17 +248,17 @@ export function StatsSection() {
               ))}
             </div>
             <span className="font-semibold">{formattedKpis.satisfaction}</span>
-            <span className="text-white/60">sur les stores</span>
+            <span className="text-white/60">{t("trustBadges.onStores")}</span>
           </div>
           <div className="h-6 w-px bg-white/20 hidden sm:block" />
           <div className="text-white/80">
             <span className="font-semibold">{formattedKpis.chauffeurs}</span>
-            <span className="text-white/60 ml-1">chauffeurs partenaires</span>
+            <span className="text-white/60 ml-1">{t("trustBadges.partnerDrivers")}</span>
           </div>
           <div className="h-6 w-px bg-white/20 hidden sm:block" />
           <div className="text-white/80">
             <span className="font-semibold">24/7</span>
-            <span className="text-white/60 ml-1">support disponible</span>
+            <span className="text-white/60 ml-1">{t("trustBadges.supportAvailable")}</span>
           </div>
         </motion.div>
       </div>

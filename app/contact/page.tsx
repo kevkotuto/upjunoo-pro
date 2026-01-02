@@ -12,8 +12,9 @@ import {
   MessageSquare,
   Clock,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-// Icône WhatsApp personnalisée
+// Icone WhatsApp personnalisee
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -31,71 +32,72 @@ import { trackContactFormView, trackContactFormSubmit, trackSocialClick } from "
 import { formattedKpis } from "@/data/kpis";
 import { socialLinks } from "@/data/social-links";
 
-const contactInfo = [
-  {
-    icon: Mail,
-    title: "Email",
-    value: "contact@upjunoopro.com",
-    href: "mailto:contact@upjunoopro.com",
-  },
-  {
-    icon: WhatsAppIcon,
-    title: "WhatsApp",
-    value: "Envoyez un message à Upjunoo",
-    href: "https://wa.me/message/JGZMG3P6H4U7G1",
-  },
-  {
-    icon: MapPin,
-    title: "Adresse",
-    value: "Abidjan, Côte d'Ivoire",
-    href: null,
-  },
-  {
-    icon: Clock,
-    title: "Horaires",
-    value: "Lun - Ven : 8h - 18h",
-    href: null,
-  },
-];
-
-const subjects = [
-  "Question générale",
-  "Support technique",
-  "Problème avec une course",
-  "Problème de paiement",
-  "Problème de livraison",
-  "Problème de location",
-  "Signaler un incident",
-  "Demande de facture",
-  "Partenariat",
-  "Franchise",
-  "Presse",
-  "Autre",
-];
-
-// Mapping des motifs de support vers les sujets du formulaire
-const motifToSubject: Record<string, string> = {
-  course: "Problème avec une course",
-  paiement: "Problème de paiement",
-  livraison: "Problème de livraison",
-  location: "Problème de location",
-  incident: "Signaler un incident",
-  facture: "Demande de facture",
+// Mapping des motifs de support vers les cles de sujet
+const motifToSubjectKey: Record<string, string> = {
+  course: "course",
+  paiement: "payment",
+  livraison: "delivery",
+  location: "rental",
+  incident: "incident",
+  facture: "invoice",
 };
 
-// Messages pré-remplis selon le motif
-const motifToMessage: Record<string, string> = {
-  course: "Bonjour,\n\nJe rencontre un problème avec une course.\n\nDétails du problème :\n- Date de la course : \n- Numéro de course (si disponible) : \n- Description du problème : \n\nMerci de votre aide.",
-  paiement: "Bonjour,\n\nJe rencontre un problème de paiement.\n\nDétails :\n- Type de problème : \n- Montant concerné : \n- Date de la transaction : \n\nMerci de votre aide.",
-  livraison: "Bonjour,\n\nJe rencontre un problème avec une livraison.\n\nDétails :\n- Numéro de livraison (si disponible) : \n- Date de la livraison : \n- Description du problème : \n\nMerci de votre aide.",
-  location: "Bonjour,\n\nJe rencontre un problème avec une location de véhicule.\n\nDétails :\n- Numéro de réservation : \n- Date de location : \n- Description du problème : \n\nMerci de votre aide.",
-  incident: "Bonjour,\n\nJe souhaite signaler un incident.\n\nDétails :\n- Date de l'incident : \n- Lieu : \n- Description : \n\nMerci de traiter cette demande en priorité.",
-  facture: "Bonjour,\n\nJe souhaite obtenir une facture.\n\nDétails :\n- Date de la course/livraison : \n- Numéro de référence : \n- Informations de facturation : \n\nMerci.",
+// Mapping des motifs vers les cles de messages pre-remplis
+const motifToMessageKey: Record<string, string> = {
+  course: "course",
+  paiement: "payment",
+  livraison: "delivery",
+  location: "rental",
+  incident: "incident",
+  facture: "invoice",
 };
 
 function ContactForm() {
   const searchParams = useSearchParams();
   const motif = searchParams.get("motif");
+  const t = useTranslations("contactPage");
+
+  const subjects = [
+    { key: "general", label: t("subjects.general") },
+    { key: "support", label: t("subjects.support") },
+    { key: "course", label: t("subjects.course") },
+    { key: "payment", label: t("subjects.payment") },
+    { key: "delivery", label: t("subjects.delivery") },
+    { key: "rental", label: t("subjects.rental") },
+    { key: "incident", label: t("subjects.incident") },
+    { key: "invoice", label: t("subjects.invoice") },
+    { key: "partnership", label: t("subjects.partnership") },
+    { key: "franchise", label: t("subjects.franchise") },
+    { key: "press", label: t("subjects.press") },
+    { key: "other", label: t("subjects.other") },
+  ];
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: t("email"),
+      value: "contact@upjunoopro.com",
+      href: "mailto:contact@upjunoopro.com",
+    },
+    {
+      icon: WhatsAppIcon,
+      title: t("whatsapp"),
+      value: t("whatsappValue"),
+      href: "https://wa.me/message/JGZMG3P6H4U7G1",
+    },
+    {
+      icon: MapPin,
+      title: t("address"),
+      value: t("addressValue"),
+      href: null,
+    },
+    {
+      icon: Clock,
+      title: t("hours"),
+      value: t("hoursValue"),
+      href: null,
+    },
+  ];
 
   const [formState, setFormState] = useState({
     firstName: "",
@@ -110,14 +112,18 @@ function ContactForm() {
 
   // Pre-remplir le formulaire si un motif est passe en parametre
   useEffect(() => {
-    if (motif && motifToSubject[motif]) {
+    if (motif && motifToSubjectKey[motif]) {
+      const subjectKey = motifToSubjectKey[motif];
+      const subject = subjects.find(s => s.key === subjectKey);
+      const messageKey = motifToMessageKey[motif];
+
       setFormState((prev) => ({
         ...prev,
-        subject: motifToSubject[motif],
-        message: motifToMessage[motif] || "",
+        subject: subject?.label || "",
+        message: messageKey ? t(`motifMessages.${messageKey}`) : "",
       }));
     }
-  }, [motif]);
+  }, [motif, t]);
 
   // Track form view
   useEffect(() => {
@@ -163,7 +169,7 @@ function ContactForm() {
     } catch (error) {
       console.error("Erreur:", error);
       setStatus("error");
-      // Reset après 3 secondes en cas d'erreur
+      // Reset apres 3 secondes en cas d'erreur
       setTimeout(() => setStatus("idle"), 3000);
     }
   };
@@ -171,10 +177,10 @@ function ContactForm() {
   return (
     <>
       <PageHero
-        badge="Contact"
-        title="Contactez"
-        highlight="nous"
-        description="Une question, une suggestion ou besoin d'aide ? Notre équipe est là pour vous répondre."
+        badge={t("badge")}
+        title={t("title")}
+        highlight={t("highlight")}
+        description={t("description")}
         backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
       />
 
@@ -188,7 +194,7 @@ function ContactForm() {
               viewport={{ once: true }}
               className="lg:col-span-1"
             >
-              <h2 className="text-2xl font-bold mb-6">Nos coordonnées</h2>
+              <h2 className="text-2xl font-bold mb-6">{t("coordinates")}</h2>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => {
                   const content = (
@@ -232,7 +238,7 @@ function ContactForm() {
 
               {/* Social Links */}
               <div className="mt-8 pt-8 border-t">
-                <h3 className="font-semibold mb-4">Suivez-nous</h3>
+                <h3 className="font-semibold mb-4">{t("followUs")}</h3>
                 <div className="flex gap-3">
                   {socialLinks.map((social) => (
                     <motion.a
@@ -259,16 +265,16 @@ function ContactForm() {
                 viewport={{ once: true }}
                 className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary to-[#046d7a] text-white"
               >
-                <h3 className="font-semibold mb-4">Réponse rapide</h3>
+                <h3 className="font-semibold mb-4">{t("fastResponse")}</h3>
                 <div className="flex items-center gap-4">
                   <div className="text-center">
                     <div className="text-3xl font-bold">24h</div>
-                    <div className="text-xs text-white/70">Délai moyen</div>
+                    <div className="text-xs text-white/70">{t("averageDelay")}</div>
                   </div>
                   <div className="w-px h-12 bg-white/20" />
                   <div className="text-center">
                     <div className="text-3xl font-bold">{formattedKpis.satisfactionPourcentage}</div>
-                    <div className="text-xs text-white/70">Satisfaction</div>
+                    <div className="text-xs text-white/70">{t("satisfaction")}</div>
                   </div>
                 </div>
               </motion.div>
@@ -288,9 +294,9 @@ function ContactForm() {
                       <MessageSquare className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold">Envoyez-nous un message</h2>
+                      <h2 className="text-xl font-bold">{t("sendMessage")}</h2>
                       <p className="text-sm text-muted-foreground">
-                        Nous vous répondrons sous 24h
+                        {t("responseTime")}
                       </p>
                     </div>
                   </div>
@@ -310,11 +316,10 @@ function ContactForm() {
                         <CheckCircle className="h-10 w-10 text-green-600" />
                       </motion.div>
                       <h3 className="font-semibold text-xl mb-2">
-                        Message envoyé !
+                        {t("messageSent")}
                       </h3>
                       <p className="text-muted-foreground">
-                        Merci de nous avoir contactés. Nous vous répondrons très
-                        rapidement.
+                        {t("thankYou")}
                       </p>
                     </motion.div>
                   ) : status === "error" ? (
@@ -332,10 +337,10 @@ function ContactForm() {
                         <Mail className="h-10 w-10 text-red-600" />
                       </motion.div>
                       <h3 className="font-semibold text-xl mb-2">
-                        Erreur d&apos;envoi
+                        {t("sendError")}
                       </h3>
                       <p className="text-muted-foreground">
-                        Une erreur est survenue lors de l&apos;envoi. Veuillez réessayer ou nous contacter directement à contact@upjunoopro.com
+                        {t("errorMessage")}
                       </p>
                     </motion.div>
                   ) : (
@@ -343,14 +348,14 @@ function ContactForm() {
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium mb-2">
-                            Nom
+                            {t("lastName")}
                           </label>
                           <Input
                             value={formState.lastName}
                             onChange={(e) =>
                               setFormState({ ...formState, lastName: e.target.value })
                             }
-                            placeholder="Votre nom"
+                            placeholder={t("lastNamePlaceholder")}
                             required
                             disabled={status === "loading"}
                             className="h-12"
@@ -358,7 +363,7 @@ function ContactForm() {
                         </div>
                         <div>
                           <label className="block text-sm font-medium mb-2">
-                            Prénom(s)
+                            {t("firstName")}
                           </label>
                           <Input
                             value={formState.firstName}
@@ -368,7 +373,7 @@ function ContactForm() {
                                 firstName: e.target.value,
                               })
                             }
-                            placeholder="Votre prénom"
+                            placeholder={t("firstNamePlaceholder")}
                             required
                             disabled={status === "loading"}
                             className="h-12"
@@ -386,7 +391,7 @@ function ContactForm() {
                           onChange={(e) =>
                             setFormState({ ...formState, email: e.target.value })
                           }
-                          placeholder="votre@email.com"
+                          placeholder={t("emailPlaceholder")}
                           required
                           disabled={status === "loading"}
                           className="h-12"
@@ -395,7 +400,7 @@ function ContactForm() {
 
                       <div>
                         <label className="block text-sm font-medium mb-2">
-                          Sujet
+                          {t("subject")}
                         </label>
                         <select
                           value={formState.subject}
@@ -406,10 +411,10 @@ function ContactForm() {
                           required
                           disabled={status === "loading"}
                         >
-                          <option value="">Sélectionnez un sujet</option>
+                          <option value="">{t("selectSubject")}</option>
                           {subjects.map((subject) => (
-                            <option key={subject} value={subject}>
-                              {subject}
+                            <option key={subject.key} value={subject.label}>
+                              {subject.label}
                             </option>
                           ))}
                         </select>
@@ -417,14 +422,14 @@ function ContactForm() {
 
                       <div>
                         <label className="block text-sm font-medium mb-2">
-                          Message
+                          {t("message")}
                         </label>
                         <textarea
                           value={formState.message}
                           onChange={(e) =>
                             setFormState({ ...formState, message: e.target.value })
                           }
-                          placeholder="Votre message..."
+                          placeholder={t("messagePlaceholder")}
                           rows={5}
                           className="w-full px-3 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                           required
@@ -441,12 +446,12 @@ function ContactForm() {
                         {status === "loading" ? (
                           <>
                             <Loader2 className="h-5 w-5 animate-spin" />
-                            Envoi en cours...
+                            {t("sending")}
                           </>
                         ) : (
                           <>
                             <Send className="h-5 w-5" />
-                            Envoyer le message
+                            {t("sendButton")}
                           </>
                         )}
                       </Button>
@@ -484,18 +489,17 @@ function ContactForm() {
 
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Vous avez une question fréquente ?
+                {t("faqCta.title")}
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-                Consultez notre FAQ pour trouver rapidement une réponse à vos
-                questions les plus courantes.
+                {t("faqCta.description")}
               </p>
               <Button
                 size="lg"
                 asChild
                 className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8"
               >
-                <a href="/faq">Voir la FAQ</a>
+                <a href="/faq">{t("faqCta.button")}</a>
               </Button>
             </div>
           </motion.div>

@@ -3,8 +3,11 @@
 import { motion } from "motion/react";
 import { Globe } from "lucide-react";
 import { countriesData, formattedKpis } from "@/data/kpis";
+import { useTranslations } from "next-intl";
 
 export function CountriesSection() {
+  const t = useTranslations();
+
   return (
     <section className="py-20 lg:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,13 +20,13 @@ export function CountriesSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Notre couverture
+            {t("countries.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Présent dans <span className="text-primary">15 pays</span>
+            {t("countries.title.prefix")} <span className="text-primary">{t("countries.title.highlight")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            UPJUNOO PRO est disponible partout dans le monde.
+            {t("countries.subtitle")}
           </p>
         </motion.div>
 
@@ -54,10 +57,10 @@ export function CountriesSection() {
           className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center"
         >
           {[
-            { value: formattedKpis.pays, label: "Pays actifs" },
-            { value: formattedKpis.villes, label: "Villes couvertes" },
-            { value: formattedKpis.utilisateurs, label: "Utilisateurs" },
-            { value: formattedKpis.support, label: "Support" },
+            { value: formattedKpis.pays, label: t("countries.stats.countries") },
+            { value: formattedKpis.villes, label: t("countries.stats.cities") },
+            { value: formattedKpis.utilisateurs, label: t("countries.stats.users") },
+            { value: formattedKpis.support, label: t("countries.stats.support") },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
@@ -77,7 +80,7 @@ export function CountriesSection() {
           className="mt-12 text-center"
         >
           <p className="text-muted-foreground mb-4">
-            Votre région n'est pas encore couverte ?
+            {t("countries.cta.question")}
           </p>
           <motion.a
             href="/offres-partenaires/franchises"
@@ -86,7 +89,7 @@ export function CountriesSection() {
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
           >
             <Globe className="h-4 w-4" />
-            Devenez franchise et lancez UPJUNOO PRO dans votre région
+            {t("countries.cta.link")}
             <span>→</span>
           </motion.a>
         </motion.div>

@@ -4,38 +4,40 @@ import { motion } from "motion/react";
 import { Users, Wallet, Clock, Headphones, TrendingUp, CheckCircle, ArrowRight, Award } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-const features = [
-  {
-    icon: Wallet,
-    title: "Revenus attractifs",
-    description: "Gagnez jusqu'à 80% de chaque course effectuée.",
-  },
-  {
-    icon: Clock,
-    title: "Horaires flexibles",
-    description: "Travaillez quand vous voulez, à votre rythme.",
-  },
-  {
-    icon: Headphones,
-    title: "Support 24/7",
-    description: "Une équipe dédiée pour vous accompagner.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Formation gratuite",
-    description: "Apprenez à optimiser vos revenus avec nous.",
-  },
-];
-
-const advantages = [
-  "Paiements hebdomadaires garantis",
-  "Application intuitive et fiable",
-  "Bonus et primes réguliers",
-  "Communauté de partenaires active",
-];
+import { useTranslations } from "next-intl";
 
 export function ServicePartenaireSection() {
+  const t = useTranslations();
+
+  const features = [
+    {
+      icon: Wallet,
+      title: t("servicePartenaire.features.attractiveRevenue.title"),
+      description: t("servicePartenaire.features.attractiveRevenue.description"),
+    },
+    {
+      icon: Clock,
+      title: t("servicePartenaire.features.flexibleHours.title"),
+      description: t("servicePartenaire.features.flexibleHours.description"),
+    },
+    {
+      icon: Headphones,
+      title: t("servicePartenaire.features.support247.title"),
+      description: t("servicePartenaire.features.support247.description"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("servicePartenaire.features.freeTraining.title"),
+      description: t("servicePartenaire.features.freeTraining.description"),
+    },
+  ];
+
+  const advantages = [
+    t("servicePartenaire.advantages.weeklyPayments"),
+    t("servicePartenaire.advantages.intuitiveApp"),
+    t("servicePartenaire.advantages.bonuses"),
+    t("servicePartenaire.advantages.community"),
+  ];
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -71,7 +73,7 @@ export function ServicePartenaireSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-500 text-sm font-semibold mb-6"
             >
               <Users className="h-4 w-4" />
-              Devenir Partenaire
+              {t("servicePartenaire.badge")}
             </motion.div>
 
             <motion.h2
@@ -81,10 +83,10 @@ export function ServicePartenaireSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Rejoignez{" "}
-              <span className="text-emerald-500">l'aventure</span><br />
+              {t("servicePartenaire.title.part1")}{" "}
+              <span className="text-emerald-500">{t("servicePartenaire.title.highlight")}</span><br />
               <span className="relative inline-block">
-                UPJUNOO PRO
+                {t("servicePartenaire.title.part2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -102,9 +104,7 @@ export function ServicePartenaireSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Devenez chauffeur ou livreur partenaire et profitez d'une opportunité
-              unique de revenus avec une flexibilité totale. Que vous soyez indépendant
-              ou membre d'une coopérative, nous avons une place pour vous.
+              {t("servicePartenaire.description")}
             </motion.p>
 
             {/* Advantages list */}
@@ -141,7 +141,7 @@ export function ServicePartenaireSection() {
             >
               <Link href="/devenir-chauffeur">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-emerald-500 hover:bg-emerald-600 shadow-lg shadow-emerald-500/25">
-                  Devenir partenaire
+                  {t("servicePartenaire.cta")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
@@ -202,7 +202,7 @@ export function ServicePartenaireSection() {
             >
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-border/50 shadow-sm">
                 <Award className="h-5 w-5 text-emerald-500" />
-                <span className="text-sm font-medium">Plus de 5 000 partenaires actifs</span>
+                <span className="text-sm font-medium">{t("servicePartenaire.partnersBadge")}</span>
               </div>
             </motion.div>
           </motion.div>

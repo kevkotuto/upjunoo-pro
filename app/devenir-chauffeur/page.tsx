@@ -27,111 +27,112 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import { trackDriverApplication, trackExternalLink } from "@/lib/analytics";
-
-const structuredProcess = [
-  {
-    icon: UserCheck,
-    text: "Valide votre profil et vos documents",
-  },
-  {
-    icon: Car,
-    text: "Met à votre disposition un véhicule conforme",
-  },
-  {
-    icon: Shield,
-    text: "Vous inscrivez sur la plateforme via un accès sécurisé",
-  },
-  {
-    icon: TrendingUp,
-    text: "Suit votre évolution et vous aide à progresser",
-  },
-];
-
-const driverAdvantages = [
-  {
-    icon: CreditCard,
-    title: "Revenus journaliers ou hebdomadaires",
-    description: "Via Mobile Money",
-  },
-  {
-    icon: Award,
-    title: "Prime de performance",
-    description: "Qualité de service, ponctualité",
-  },
-  {
-    icon: Clock,
-    title: "Horaires flexibles",
-    description: "Selon disponibilité de la flotte",
-  },
-  {
-    icon: Smartphone,
-    title: "Application simple et intuitive",
-    description: "Avec support technique local",
-  },
-  {
-    icon: MapPin,
-    title: "Couverture territoriale",
-    description: "Plus de clients, moins de temps d'attente",
-  },
-  {
-    icon: Shield,
-    title: "Protection et sécurité",
-    description: "Assurance et support en cas d'incident",
-  },
-];
-
-const validationConditions = [
-  "Permis de conduire (cat. B ou plus) en cours de validité",
-  "Pièce d'identité nationale ou CEDEAO",
-  "Bonne présentation et sens du service",
-  "Maîtrise de la conduite urbaine",
-  "Capacité à utiliser un smartphone Android/iOS",
-];
-
-const trainingTopics = [
-  {
-    icon: Smartphone,
-    text: "L'utilisation de l'application mobile",
-  },
-  {
-    icon: Users,
-    text: "Les bonnes pratiques de service client",
-  },
-  {
-    icon: Shield,
-    text: "Les règles de sécurité et de conduite professionnelle",
-  },
-  {
-    icon: Headphones,
-    text: "La gestion des imprévus et des conflits",
-  },
-];
-
-const howItWorks = [
-  "Contactez un partenaire gestionnaire de flotte agréé UPJUNOO PRO",
-  "Préparez vos documents",
-  "Passez un court entretien avec le partenaire",
-  "Accédez à l'application après inscription",
-  "Recevez une courte formation",
-  "Commencez à effectuer vos courses selon un planning défini ou libre",
-];
-
-const testimonials = [
-  {
-    quote:
-      "Grâce à mon partenaire UPJUNOO PRO, j'ai repris une activité stable, je suis accompagné et mes revenus sont réguliers.",
-    author: "Moussa",
-    role: "Chauffeur à Yamoussoukro",
-  },
-  {
-    quote:
-      "Je n'avais pas de voiture, mais le gestionnaire m'a intégré dans sa flotte. Aujourd'hui mes revenus sont stables et satisfaisants.",
-    author: "Sery",
-    role: "Chauffeur à Abidjan",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function ChauffeurPage() {
+  const t = useTranslations("devenirChauffeurPage");
+
+  const structuredProcess = [
+    {
+      icon: UserCheck,
+      text: t("structuredProcess.step1"),
+    },
+    {
+      icon: Car,
+      text: t("structuredProcess.step2"),
+    },
+    {
+      icon: Shield,
+      text: t("structuredProcess.step3"),
+    },
+    {
+      icon: TrendingUp,
+      text: t("structuredProcess.step4"),
+    },
+  ];
+
+  const driverAdvantages = [
+    {
+      icon: CreditCard,
+      title: t("advantages.income.title"),
+      description: t("advantages.income.description"),
+    },
+    {
+      icon: Award,
+      title: t("advantages.bonus.title"),
+      description: t("advantages.bonus.description"),
+    },
+    {
+      icon: Clock,
+      title: t("advantages.flexible.title"),
+      description: t("advantages.flexible.description"),
+    },
+    {
+      icon: Smartphone,
+      title: t("advantages.app.title"),
+      description: t("advantages.app.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("advantages.coverage.title"),
+      description: t("advantages.coverage.description"),
+    },
+    {
+      icon: Shield,
+      title: t("advantages.protection.title"),
+      description: t("advantages.protection.description"),
+    },
+  ];
+
+  const validationConditions = t.raw("conditions.items") as string[];
+
+  const trainingTopics = [
+    {
+      icon: Smartphone,
+      text: t("training.app"),
+    },
+    {
+      icon: Users,
+      text: t("training.service"),
+    },
+    {
+      icon: Shield,
+      text: t("training.safety"),
+    },
+    {
+      icon: Headphones,
+      text: t("training.conflicts"),
+    },
+  ];
+
+  const howItWorks = t.raw("process.steps") as string[];
+
+  const testimonials = [
+    {
+      quote: t("testimonials.testimonial1.quote"),
+      author: t("testimonials.testimonial1.author"),
+      role: t("testimonials.testimonial1.role"),
+    },
+    {
+      quote: t("testimonials.testimonial2.quote"),
+      author: t("testimonials.testimonial2.author"),
+      role: t("testimonials.testimonial2.role"),
+    },
+  ];
+
+  const screenshots = [
+    {
+      src: "/images/screenshots/chauffeur-app.jpeg",
+      title: t("driverApp.interface.title"),
+      description: t("driverApp.interface.description"),
+    },
+    {
+      src: "/images/screenshots/chauffeur-finalisation.jpeg",
+      title: t("driverApp.finalization.title"),
+      description: t("driverApp.finalization.description"),
+    },
+  ];
+
   // Track page view for driver application
   useEffect(() => {
     trackDriverApplication('page_view');
@@ -140,10 +141,10 @@ export default function ChauffeurPage() {
   return (
     <>
       <PageHero
-        badge="Rejoignez-nous"
-        title="Devenez chauffeur"
-        highlight="UPJUNOO PRO"
-        description="Roulez librement. Gagnez dignement. Intégrez un réseau structuré et sécurisé."
+        badge={t("badge")}
+        title={t("title")}
+        highlight={t("highlight")}
+        description={t("description")}
         backgroundImage="/images/banniere/main-volant-upjunoo-1-1.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -155,7 +156,7 @@ export default function ChauffeurPage() {
           >
             <Link href="#contact">
               <UserCheck className="h-5 w-5" />
-              S'inscrire maintenant
+              {t("signUp")}
             </Link>
           </Button>
           <Button
@@ -165,7 +166,7 @@ export default function ChauffeurPage() {
             className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
           >
             <Link href="#benefits">
-              Voir les avantages
+              {t("seeBenefits")}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
@@ -182,10 +183,10 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Rejoindre UPJUNOO PRO
+              {t("whyJoin.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Pourquoi rejoindre <span className="text-primary">UPJUNOO PRO</span> ?
+              {t("whyJoin.title")} <span className="text-primary">{t("whyJoin.highlight")}</span> ?
             </h2>
           </motion.div>
 
@@ -198,22 +199,15 @@ export default function ChauffeurPage() {
             >
               <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-300 rounded-full opacity-20 blur-2xl" />
               <p className="text-lg text-center mb-6">
-                <span className="font-semibold text-primary">UPJUNOO PRO</span> est
-                une plateforme VTC internationale qui vous permet de devenir
-                chauffeur professionnel agréé, avec l'appui d'un
-                partenaire gestionnaire de flotte reconnu.
+                <span className="font-semibold text-primary">UPJUNOO PRO</span> {t("whyJoin.intro")}
               </p>
               <p className="text-muted-foreground text-center mb-6">
-                En tant que chauffeur UPJUNOO PRO, vous intégrez une équipe
-                sérieuse, structurée, et appuyée par une technologie moderne.
-                Vous travaillez dans un cadre clair, formel et équitable, avec
-                des revenus garantis et une progression possible.
+                {t("whyJoin.description")}
               </p>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <p className="text-center font-semibold text-primary">
-                  Objectif : Vous accompagner vers une activité stable, respectée
-                  et rentable.
+                  {t("whyJoin.objective")}
                 </p>
               </div>
             </motion.div>
@@ -231,14 +225,13 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Accompagnement
+              {t("structuredProcess.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Un processus <span className="text-primary">structuré</span>
+              {t("structuredProcess.title")} <span className="text-primary">{t("structuredProcess.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Chez UPJUNOO PRO, vous ne travaillez pas seul. Vous êtes encadré par
-              un partenaire local agréé, qui :
+              {t("structuredProcess.description")}
             </p>
           </motion.div>
 
@@ -280,10 +273,10 @@ export default function ChauffeurPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Vos avantages
+              {t("advantages.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Pourquoi devenir chauffeur <span className="text-primary">UPJUNOO PRO</span> ?
+              {t("advantages.title")} <span className="text-primary">{t("advantages.highlight")}</span> ?
             </h2>
           </motion.div>
 
@@ -325,10 +318,10 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Conditions requises
+              {t("conditions.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Conditions de <span className="text-primary">validation</span>
+              {t("conditions.title")} <span className="text-primary">{t("conditions.highlight")}</span>
             </h2>
           </motion.div>
 
@@ -368,13 +361,13 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Formation
+              {t("training.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Formation & <span className="text-primary">Suivi</span>
+              {t("training.title")} <span className="text-primary">{t("training.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              UPJUNOO PRO et ses partenaires forment chaque nouveau chauffeur sur :
+              {t("training.description")}
             </p>
           </motion.div>
 
@@ -416,8 +409,7 @@ export default function ChauffeurPage() {
                   <BookOpen className="h-8 w-8 text-white" />
                 </motion.div>
                 <p className="font-medium text-lg">
-                  Un Partenaire ou gestionnaire de flotte assure un suivi
-                  continu de vos performances.
+                  {t("training.followUp")}
                 </p>
               </CardContent>
             </Card>
@@ -435,29 +427,18 @@ export default function ChauffeurPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Votre outil de travail
+              {t("driverApp.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              L'application <span className="text-primary">chauffeur</span>
+              {t("driverApp.title")} <span className="text-primary">{t("driverApp.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une application intuitive pour gérer vos courses et maximiser vos revenus.
+              {t("driverApp.description")}
             </p>
           </motion.div>
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
-            {[
-              {
-                src: "/images/screenshots/chauffeur-app.jpeg",
-                title: "Interface chauffeur",
-                description: "Acceptez les courses en un clic",
-              },
-              {
-                src: "/images/screenshots/chauffeur-finalisation.jpeg",
-                title: "Finalisation",
-                description: "Terminez vos courses facilement",
-              },
-            ].map((screenshot, index) => (
+            {screenshots.map((screenshot, index) => (
               <motion.div
                 key={screenshot.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -498,10 +479,10 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Processus
+              {t("process.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Comment ça <span className="text-primary">fonctionne</span> ?
+              {t("process.title")} <span className="text-primary">{t("process.highlight")}</span> ?
             </h2>
           </motion.div>
 
@@ -545,10 +526,10 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Témoignages
+              {t("testimonials.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Ce que disent nos <span className="text-primary">chauffeurs</span>
+              {t("testimonials.title")} <span className="text-primary">{t("testimonials.highlight")}</span>
             </h2>
           </motion.div>
 
@@ -596,16 +577,16 @@ export default function ChauffeurPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              UPJUNOO PRO en chiffres
+              {t("stats.title")}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: "+1 200", label: "Chauffeurs actifs via partenaires" },
-              { value: "+50 000", label: "Trajets mensuels" },
-              { value: "4.7/5", label: "Note moyenne chauffeur" },
-              { value: "Variable", label: "Prime mensuelle moyenne" },
+              { value: "+1 200", label: t("stats.drivers") },
+              { value: "+50 000", label: t("stats.trips") },
+              { value: "4.7/5", label: t("stats.rating") },
+              { value: "Variable", label: t("stats.bonus") },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -663,11 +644,10 @@ export default function ChauffeurPage() {
                 <Car className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                Contact & Inscription
+                {t("cta.title")}
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-                Rejoignez notre équipe de chauffeurs professionnels dès
-                aujourd'hui.
+                {t("cta.description")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -692,17 +672,15 @@ export default function ChauffeurPage() {
               </div>
 
               <p className="text-sm text-white/60 mb-4">
-                Ou passez directement par un partenaire agréé proche de vous
+                {t("cta.orPartner")}
               </p>
 
               <div className="mt-8 pt-8 border-t border-white/20">
                 <p className="text-lg font-semibold italic mb-2">
-                  &ldquo;Vous êtes bien plus qu'un chauffeur, vous êtes un
-                  professionnel.&rdquo;
+                  &ldquo;{t("cta.quote1")}&rdquo;
                 </p>
                 <p className="text-sm text-white/70">
-                  Votre sérieux, notre technologie, et l'appui d'un
-                  partenaire solide : voilà le trio gagnant.
+                  {t("cta.quote2")}
                 </p>
               </div>
             </div>

@@ -6,92 +6,110 @@ import {
   Package,
   MapPin,
   Shield,
-  Clock,
   Headphones,
   CheckCircle,
   ArrowRight,
   Download,
   Scale,
   Calendar,
-  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
-
-const features = [
-  {
-    icon: Truck,
-    title: "Véhicules adaptés",
-    description:
-      "Pick-up, camionnettes et camions légers pour tous vos besoins de transport.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi GPS en direct",
-    description:
-      "Suivez votre marchandise en temps réel tout au long du trajet.",
-  },
-  {
-    icon: Shield,
-    title: "Marchandises assurées",
-    description:
-      "Vos biens sont protégés par une assurance complète durant le transport.",
-  },
-  {
-    icon: Scale,
-    title: "Charges lourdes",
-    description:
-      "Capacité de transport jusqu'à plusieurs tonnes selon le véhicule choisi.",
-  },
-  {
-    icon: Headphones,
-    title: "Support dédié",
-    description:
-      "Une équipe spécialisée pour accompagner vos envois volumineux.",
-  },
-  {
-    icon: Calendar,
-    title: "Planification flexible",
-    description:
-      "Programmez vos livraisons à l'avance selon vos disponibilités.",
-  },
-];
-
-const vehicleTypes = [
-  {
-    title: "Pick-up",
-    capacity: "500 kg",
-    description: "Idéal pour les petits déménagements et livraisons moyennes",
-    icon: Truck,
-    popular: false,
-  },
-  {
-    title: "Camionnette",
-    capacity: "1.5 tonnes",
-    description: "Parfait pour les envois volumineux et équipements",
-    icon: Truck,
-    popular: true,
-  },
-  {
-    title: "Camion leger",
-    capacity: "3.5 tonnes",
-    description: "Pour vos besoins professionnels et gros volumes",
-    icon: Truck,
-    popular: false,
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function FretUrbainPage() {
+  const t = useTranslations("fretUrbainPage");
+
+  const features = [
+    {
+      icon: Truck,
+      title: t("features.vehicles.title"),
+      description: t("features.vehicles.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("features.gps.title"),
+      description: t("features.gps.description"),
+    },
+    {
+      icon: Shield,
+      title: t("features.insured.title"),
+      description: t("features.insured.description"),
+    },
+    {
+      icon: Scale,
+      title: t("features.heavy.title"),
+      description: t("features.heavy.description"),
+    },
+    {
+      icon: Headphones,
+      title: t("features.support.title"),
+      description: t("features.support.description"),
+    },
+    {
+      icon: Calendar,
+      title: t("features.flexible.title"),
+      description: t("features.flexible.description"),
+    },
+  ];
+
+  const vehicleTypes = [
+    {
+      title: t("fleet.pickup.title"),
+      capacity: t("fleet.pickup.capacity"),
+      description: t("fleet.pickup.description"),
+      icon: Truck,
+      popular: false,
+    },
+    {
+      title: t("fleet.van.title"),
+      capacity: t("fleet.van.capacity"),
+      description: t("fleet.van.description"),
+      icon: Truck,
+      popular: true,
+    },
+    {
+      title: t("fleet.truck.title"),
+      capacity: t("fleet.truck.capacity"),
+      description: t("fleet.truck.description"),
+      icon: Truck,
+      popular: false,
+    },
+  ];
+
+  const howItWorksSteps = [
+    {
+      step: "1",
+      title: t("howItWorks.step1.title"),
+      desc: t("howItWorks.step1.description"),
+    },
+    {
+      step: "2",
+      title: t("howItWorks.step2.title"),
+      desc: t("howItWorks.step2.description"),
+    },
+    {
+      step: "3",
+      title: t("howItWorks.step3.title"),
+      desc: t("howItWorks.step3.description"),
+    },
+    {
+      step: "4",
+      title: t("howItWorks.step4.title"),
+      desc: t("howItWorks.step4.description"),
+    },
+  ];
+
   return (
     <>
       <PageHero
-        badge="Service Fret Urbain"
-        title="Transportez vos marchandises"
-        highlight="en toute sécurité"
-        description="Un service de fret urbain professionnel pour le transport de vos marchandises volumineuses avec pick-up, camionnettes et camions légers."
+        badge={t("badge")}
+        title={t("title")}
+        highlight={t("highlight")}
+        description={t("description")}
         backgroundImage="/images/banniere/camion-fret-urbain-format-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -101,8 +119,8 @@ export default function FretUrbainPage() {
             className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
           >
             <Link href="/#download">
-              <FileText className="h-5 w-5" />
-              Demander un devis
+              <Download className="h-5 w-5" />
+              {t("requestQuote")}
             </Link>
           </Button>
           <Button
@@ -112,7 +130,7 @@ export default function FretUrbainPage() {
             className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
           >
             <Link href="#vehicules">
-              Voir les véhicules
+              {t("seeVehicles")}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
@@ -129,13 +147,13 @@ export default function FretUrbainPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Notre flotte
+              {t("fleet.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Choisissez votre <span className="text-primary">véhicule</span>
+              {t("fleet.title")} <span className="text-primary">{t("fleet.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des véhicules adaptés à chaque type de marchandise et volume à transporter.
+              {t("fleet.description")}
             </p>
           </motion.div>
 
@@ -155,7 +173,7 @@ export default function FretUrbainPage() {
                 >
                   {vehicle.popular && (
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-xl">
-                      Recommandé
+                      {t("fleet.recommended")}
                     </div>
                   )}
                   <CardContent className="p-6 text-center">
@@ -173,7 +191,7 @@ export default function FretUrbainPage() {
                     </motion.div>
                     <h3 className="font-bold text-xl mb-1">{vehicle.title}</h3>
                     <p className="text-primary font-semibold text-lg mb-3">
-                      Jusqu'à {vehicle.capacity}
+                      {t("fleet.upTo")} {vehicle.capacity}
                     </p>
                     <p className="text-muted-foreground text-sm">
                       {vehicle.description}
@@ -196,14 +214,13 @@ export default function FretUrbainPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos avantages
+              {t("features.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Un service de fret <span className="text-primary">professionnel</span>
+              {t("features.title")} <span className="text-primary">{t("features.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tout ce dont vous avez besoin pour transporter vos marchandises en
-              toute confiance.
+              {t("features.description")}
             </p>
           </motion.div>
 
@@ -243,35 +260,14 @@ export default function FretUrbainPage() {
               viewport={{ once: true }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Simple et rapide
+                {t("howItWorks.badge")}
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Comment commander <span className="text-primary">un transport</span> ?
+                {t("howItWorks.title")} <span className="text-primary">{t("howItWorks.highlight")}</span> ?
               </h2>
 
               <div className="space-y-6">
-                {[
-                  {
-                    step: "1",
-                    title: "Décrivez votre marchandise",
-                    desc: "Indiquez le type, les dimensions et le poids de vos biens.",
-                  },
-                  {
-                    step: "2",
-                    title: "Choisissez le véhicule",
-                    desc: "Sélectionnez le véhicule adapté à votre chargement.",
-                  },
-                  {
-                    step: "3",
-                    title: "Définissez les adresses",
-                    desc: "Entrez les lieux d'enlèvement et de livraison.",
-                  },
-                  {
-                    step: "4",
-                    title: "Suivez votre transport",
-                    desc: "Recevez des notifications en temps réel sur votre livraison.",
-                  },
-                ].map((item, index) => (
+                {howItWorksSteps.map((item, index) => (
                   <motion.div
                     key={item.step}
                     initial={{ opacity: 0, x: -20 }}
@@ -376,11 +372,10 @@ export default function FretUrbainPage() {
                 <Truck className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-                Besoin de transporter des marchandises ?
+                {t("cta.title")}
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Demandez un devis gratuit et bénéficiez de notre service de fret urbain
-                professionnel.
+                {t("cta.description")}
               </p>
               <Button
                 size="lg"
@@ -389,7 +384,7 @@ export default function FretUrbainPage() {
               >
                 <Link href="/#download">
                   <Download className="h-5 w-5" />
-                  Télécharger l'application
+                  {t("cta.button")}
                 </Link>
               </Button>
             </div>

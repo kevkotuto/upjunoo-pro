@@ -237,5 +237,982 @@
     "french": "Français",
     "english": "English",
     "arabic": "العربية"
+  },
+  "cguPage": {
+    "metadata": {
+      "title": "Terms of Use",
+      "description": "Review the terms of use for the UPJUNOO PRO platform."
+    },
+    "hero": {
+      "badge": "Legal",
+      "title": "Terms of",
+      "highlight": "Use",
+      "description": "Using the UPJUNOO PRO platform implies full acceptance of these terms and conditions."
+    },
+    "intro": {
+      "text": "These Terms of Use govern access to and use of the UPJUNOO PRO platform, accessible via the mobile application and website. By using our services, you accept these terms in their entirety."
+    },
+    "access": {
+      "title": "Access to Services",
+      "description": "UPJUNOO PRO enables:",
+      "services": {
+        "vtc": "Booking VTC / Taxi rides",
+        "delivery": "Package and goods delivery",
+        "rental": "Vehicle rental",
+        "freight": "Urban and suburban freight"
+      },
+      "note": "Some services may require registration, identity verification, or compliance with specific conditions depending on the country."
+    },
+    "responsibilities": {
+      "title": "Responsibilities",
+      "items": {
+        "platform": "UPJUNOO PRO acts as a technological intermediation platform.",
+        "partners": "Drivers, couriers, and partners are responsible for service execution.",
+        "user": "Users agree to provide accurate information and use the platform in compliance with applicable laws."
+      }
+    },
+    "obligations": {
+      "title": "User Obligations",
+      "items": {
+        "accurate": "Provide accurate information during registration",
+        "legal": "Not use the platform for illegal purposes",
+        "respect": "Respect drivers, couriers, and other users",
+        "report": "Report any inappropriate behavior or incidents",
+        "security": "Not attempt to bypass security systems"
+      }
+    },
+    "payments": {
+      "title": "Payments",
+      "description": "Payments can be made via:",
+      "methods": {
+        "mobileMoney": "Mobile Money (Orange Money, MTN Money, Wave, etc.)",
+        "cash": "Cash (depending on region)",
+        "wallet": "UPJUNOO PRO electronic wallet"
+      },
+      "note": "Amounts are displayed transparently before order confirmation."
+    },
+    "suspension": {
+      "title": "Suspension and Termination",
+      "description": "UPJUNOO PRO reserves the right to suspend or terminate an account in case of:",
+      "reasons": {
+        "fraud": "Fraud or attempted fraud",
+        "violation": "Violation of these terms",
+        "abuse": "Misuse of the platform",
+        "behavior": "Inappropriate behavior towards partners or users"
+      }
+    },
+    "evolution": {
+      "title": "Service Evolution",
+      "text": "Services, features, and conditions may evolve to improve quality, security, and regulatory compliance. Users will be informed of significant changes."
+    },
+    "related": {
+      "title": "Related Documents",
+      "description": "Also consult our other legal documents.",
+      "links": {
+        "privacy": "Privacy Policy",
+        "faq": "FAQ",
+        "contact": "Contact Us"
+      }
+    }
+  },
+  "privacyPage": {
+    "metadata": {
+      "title": "Privacy Policy",
+      "description": "Learn how UPJUNOO PRO protects your personal data."
+    },
+    "hero": {
+      "badge": "Legal",
+      "title": "Privacy",
+      "highlight": "Policy",
+      "description": "UPJUNOO PRO attaches great importance to protecting the personal data of its users, partners, drivers, and businesses."
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "text": "Protecting your personal data is at the heart of our concerns. This privacy policy explains how we collect, use, and protect your information when you use the UPJUNOO PRO platform."
+    },
+    "dataCollected": {
+      "title": "Data Collected",
+      "description": "As part of using the platform, we may collect the following data:",
+      "categories": {
+        "identification": {
+          "title": "Identification Data",
+          "items": {
+            "name": "First and last name",
+            "phone": "Phone number",
+            "email": "Email address"
+          }
+        },
+        "location": {
+          "title": "Location Data",
+          "items": {
+            "trips": "Completed trips",
+            "addresses": "Delivery addresses",
+            "history": "Travel history"
+          }
+        },
+        "professional": {
+          "title": "Professional Data",
+          "items": {
+            "drivers": "Driver information",
+            "fleet": "Fleet data",
+            "partners": "Partner company information"
+          }
+        },
+        "payment": {
+          "title": "Payment Data",
+          "items": {
+            "transactions": "Transactions via secure providers",
+            "history": "Payment history"
+          }
+        },
+        "technical": {
+          "title": "Technical Data",
+          "items": {
+            "cookies": "Cookies and trackers",
+            "logs": "Connection logs",
+            "device": "Device information"
+          }
+        }
+      }
+    },
+    "dataUsage": {
+      "title": "Data Usage",
+      "description": "Data is used to:",
+      "items": {
+        "improve": "Provide and improve mobility and logistics services",
+        "security": "Ensure user and transaction security",
+        "payments": "Manage payments, billing, and customer support",
+        "statistics": "Produce anonymized statistics to improve our services",
+        "updates": "Inform you of updates and news"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "The UPJUNOO PRO website uses cookies to:",
+      "usage": {
+        "experience": "Improve user experience",
+        "analytics": "Measure audience and performance",
+        "security": "Secure sessions",
+        "preferences": "Remember your preferences"
+      },
+      "note": "Users can configure or refuse cookies at any time via their browser settings."
+    },
+    "security": {
+      "title": "Security and Privacy",
+      "description": "UPJUNOO PRO applies strict technical and organizational measures to ensure data confidentiality and integrity:",
+      "measures": {
+        "kyc": "Identity verification (KYC/KYB)",
+        "encryption": "Encryption of sensitive data",
+        "access": "Controlled access and enhanced authentication",
+        "monitoring": "Continuous system monitoring",
+        "backup": "Regular data backup"
+      }
+    },
+    "rights": {
+      "title": "Your Rights",
+      "description": "In accordance with applicable regulations, you have the following rights regarding your personal data:",
+      "access": {
+        "title": "Right of Access",
+        "description": "You can request access to your personal data."
+      },
+      "rectification": {
+        "title": "Right of Rectification",
+        "description": "You can request correction of inaccurate data."
+      },
+      "deletion": {
+        "title": "Right to Erasure",
+        "description": "You can request deletion of your data under certain conditions."
+      },
+      "opposition": {
+        "title": "Right to Object",
+        "description": "You can object to the processing of your data."
+      }
+    },
+    "contact": {
+      "title": "Have a Question?",
+      "description": "For any questions regarding data protection or to exercise your rights, contact us.",
+      "links": {
+        "cgu": "View Terms of Use"
+      }
+    }
+  },
+  "supportPage": {
+    "metadata": {
+      "title": "Support",
+      "description": "Need help? Our support team is available 24/7 to assist you."
+    },
+    "hero": {
+      "badge": "Help",
+      "title": "Support",
+      "highlight": "Center",
+      "description": "Our team is available 24/7 to help you. Choose the channel that suits you best."
+    },
+    "features": {
+      "available": {
+        "title": "Available 24/7",
+        "description": "Our team is here to help you at any time."
+      },
+      "fast": {
+        "title": "Fast Response",
+        "description": "We commit to responding within 24 hours maximum."
+      },
+      "multilingual": {
+        "title": "Multilingual Support",
+        "description": "Assistance available in French and English."
+      }
+    },
+    "channelsSection": {
+      "title": "How to Contact Us",
+      "description": "Choose the communication channel that suits you best."
+    },
+    "channels": {
+      "email": {
+        "title": "Email",
+        "description": "Send us an email, we respond within 24 hours."
+      },
+      "chat": {
+        "title": "In-app Chat",
+        "description": "Chat with our team directly in the application.",
+        "action": "Download the app"
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Check our FAQ for quick answers.",
+        "action": "View FAQ"
+      }
+    },
+    "issuesSection": {
+      "title": "Common Issues",
+      "description": "Select the type of problem you are experiencing to get appropriate help."
+    },
+    "issues": {
+      "ride": {
+        "title": "Ride Problem",
+        "description": "Late driver, incorrect route, inappropriate behavior..."
+      },
+      "payment": {
+        "title": "Payment Problem",
+        "description": "Payment declined, double billing, refund..."
+      },
+      "delivery": {
+        "title": "Delivery Problem",
+        "description": "Undelivered package, damaged package, delivery delay..."
+      },
+      "rental": {
+        "title": "Rental Problem",
+        "description": "Reservation, vehicle, documents..."
+      },
+      "incident": {
+        "title": "Report an Incident",
+        "description": "Safety, accident, lost item..."
+      },
+      "invoice": {
+        "title": "Invoice Request",
+        "description": "Invoice, receipt, payment proof..."
+      }
+    },
+    "cta": {
+      "title": "Need Personalized Help?",
+      "description": "Our team is ready to help you. Send us a message and we will respond as soon as possible.",
+      "contactButton": "Contact Us",
+      "emailButton": "Send an Email"
+    }
+  },
+  "faqPage": {
+    "metadata": {
+      "title": "FAQ",
+      "description": "Quickly find answers to your questions about UPJUNOO PRO."
+    },
+    "hero": {
+      "badge": "Help",
+      "title": "Frequently Asked",
+      "highlight": "Questions",
+      "description": "Quickly find answers to your most common questions about UPJUNOO PRO."
+    },
+    "categories": {
+      "application": {
+        "title": "Application",
+        "faqs": {
+          "download": {
+            "question": "How do I download the UPJUNOO PRO app?",
+            "answer": "The UPJUNOO PRO app is available for free on the App Store for iOS and Google Play for Android. Search for 'UPJUNOO PRO' and download the app in seconds."
+          },
+          "free": {
+            "question": "Is the app free?",
+            "answer": "Yes, the UPJUNOO PRO app is completely free to download and use. You only pay for the services you use (rides, deliveries, rentals)."
+          },
+          "account": {
+            "question": "How do I create an account?",
+            "answer": "Download the app, then follow the registration steps by entering your phone number and personal information. An SMS verification will be sent to confirm your account."
+          }
+        }
+      },
+      "payment": {
+        "title": "Payment",
+        "faqs": {
+          "methods": {
+            "question": "What payment methods are accepted?",
+            "answer": "We accept several payment methods: Mobile Money (Orange Money, MTN Money, Wave, etc.), cash payment depending on the region, and the UPJUNOO PRO electronic wallet. You can configure your preferred payment method in the app."
+          },
+          "calculation": {
+            "question": "How are rides calculated?",
+            "answer": "UPJUNOO PRO rides are calculated based on distance and travel time. You always see an estimate before confirming your ride. No surprises, everything is transparent."
+          },
+          "invoice": {
+            "question": "Can I get an invoice?",
+            "answer": "Yes, a receipt is automatically generated after each ride or service. You can find it in your trip history in the app."
+          }
+        }
+      },
+      "rides": {
+        "title": "VTC / Taxi Rides",
+        "faqs": {
+          "book": {
+            "question": "How do I book a ride?",
+            "answer": "Open the app, enter your destination, choose the type of vehicle you want and confirm. A driver will be assigned to you in moments and you can track their arrival in real time."
+          },
+          "cancel": {
+            "question": "Can I cancel a ride?",
+            "answer": "Yes, you can cancel a ride at any time before the driver arrives. Cancellation fees may apply if the driver has already been en route for some time."
+          },
+          "rate": {
+            "question": "How do I rate my driver?",
+            "answer": "At the end of each ride, you are invited to rate your driver from 1 to 5 stars and leave a comment. This helps us maintain service quality."
+          }
+        }
+      },
+      "delivery": {
+        "title": "Delivery",
+        "faqs": {
+          "how": {
+            "question": "How does the delivery service work?",
+            "answer": "The UPJUNOO PRO delivery service allows you to send and receive packages in real time. Simply enter the pickup and delivery addresses, and a courier takes care of the rest. You can track your package live."
+          },
+          "types": {
+            "question": "What types of packages can I send?",
+            "answer": "You can send documents, small and medium-sized packages, groceries, and more. Dangerous, illegal, or perishable items are excluded from the service."
+          },
+          "track": {
+            "question": "How do I track my delivery?",
+            "answer": "Once your delivery is confirmed, you can track the courier's position in real time on the map in the app. You also receive notifications at each step."
+          }
+        }
+      },
+      "rental": {
+        "title": "Vehicle Rental",
+        "faqs": {
+          "how": {
+            "question": "How do I rent a vehicle?",
+            "answer": "Download the UPJUNOO PRO app, select 'Rental', choose your vehicle, dates, and pickup point. Confirm your reservation and pay online. It's that simple!"
+          },
+          "documents": {
+            "question": "What documents are required to rent?",
+            "answer": "To rent a vehicle, you must present a valid ID (national ID or passport) and a valid driver's license. A deposit may be required depending on the vehicle type."
+          },
+          "modify": {
+            "question": "Can I modify or cancel my reservation?",
+            "answer": "Yes, you can modify or cancel your reservation up to 24 hours before the pickup date at no charge. Beyond that, cancellation fees may apply."
+          }
+        }
+      },
+      "availability": {
+        "title": "Availability",
+        "faqs": {
+          "city": {
+            "question": "Is UPJUNOO PRO available in my city?",
+            "answer": "UPJUNOO PRO is present in several cities around the world. Check our 'Our Locations' page to verify availability in your region."
+          },
+          "check": {
+            "question": "How do I know if the service is available where I am?",
+            "answer": "Download the app and enter your address. If drivers are available in your area, you can order a service immediately."
+          }
+        }
+      },
+      "partners": {
+        "title": "Partners",
+        "faqs": {
+          "driver": {
+            "question": "How do I become an UPJUNOO PRO driver?",
+            "answer": "To become an UPJUNOO PRO driver, go to the 'Become a Driver' page and contact an approved fleet manager who will assist you through the process."
+          },
+          "franchise": {
+            "question": "How do I become an UPJUNOO PRO franchise?",
+            "answer": "To become a franchise, go to the 'Partner Offers > Franchises' page. There you will find all the information about the desired profile, benefits, and conditions. Contact our team to discuss your project."
+          }
+        }
+      },
+      "support": {
+        "title": "Support",
+        "faqs": {
+          "contact": {
+            "question": "How do I contact customer support?",
+            "answer": "Our support team is available 24/7. You can contact us via the app, by email at contact@upjunoopro.com, or via our Contact page. We are committed to responding as quickly as possible."
+          },
+          "problem": {
+            "question": "I have a problem with a ride, what should I do?",
+            "answer": "Go to your trip history in the app, select the ride in question and click 'Report a Problem'. You can also contact us directly through support."
+          }
+        }
+      }
+    },
+    "needHelp": {
+      "title": "Didn't find your answer?",
+      "description": "Our support team is available to help you.",
+      "supportButton": "Contact Support",
+      "contactButton": "Write to Us"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Terms and Conditions",
+      "description": "Review our terms of use, privacy policy, and cookie information."
+    },
+    "hero": {
+      "badge": "Legal",
+      "title": "Terms and",
+      "highlight": "Privacy",
+      "description": "Review our terms of use, privacy policy, and cookie information."
+    },
+    "toc": {
+      "title": "Table of Contents"
+    },
+    "sections": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "intro": "UPJUNOO PRO attaches great importance to protecting the personal data of its users, partners, drivers, and businesses.",
+        "dataTitle": "Data Collected",
+        "dataDescription": "As part of using the platform, we may collect:",
+        "data": {
+          "identification": "Identification data (name, phone, email)",
+          "location": "Location data (trips, deliveries)",
+          "professional": "Professional data (drivers, fleets, businesses)",
+          "payment": "Payment data (via secure providers)",
+          "technical": "Technical data (cookies, connection logs)"
+        },
+        "usageTitle": "Data Usage",
+        "usageDescription": "Data is used to:",
+        "usage": {
+          "improve": "Provide and improve mobility and logistics services",
+          "security": "Ensure user and transaction security",
+          "payments": "Manage payments, billing, and customer support",
+          "statistics": "Produce anonymized statistics"
+        }
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description": "The UPJUNOO PRO website uses cookies to:",
+        "items": {
+          "experience": "Improve user experience",
+          "analytics": "Measure audience and performance",
+          "security": "Secure sessions"
+        },
+        "note": "Users can configure or refuse cookies at any time via their browser."
+      },
+      "security": {
+        "title": "Security and Privacy",
+        "text": "UPJUNOO PRO applies strict technical and organizational measures (KYC/KYB, encryption, controlled access) to ensure data confidentiality and integrity."
+      },
+      "conditions": {
+        "title": "Terms of Use",
+        "intro": "Using the UPJUNOO PRO platform implies full acceptance of these terms and conditions.",
+        "accessTitle": "Access to Services",
+        "accessDescription": "UPJUNOO PRO enables:",
+        "services": {
+          "vtc": "Booking VTC / Taxi rides",
+          "delivery": "Package and goods delivery",
+          "rental": "Vehicle rental",
+          "freight": "Urban and suburban freight"
+        },
+        "note": "Some services may require registration, identity verification, or compliance with specific conditions depending on the country."
+      },
+      "responsibilities": {
+        "title": "Responsibilities",
+        "items": {
+          "platform": "UPJUNOO PRO acts as a technological intermediation platform.",
+          "partners": "Drivers, couriers, and partners are responsible for service execution.",
+          "user": "Users agree to provide accurate information and use the platform in compliance with applicable laws."
+        }
+      },
+      "payments": {
+        "title": "Payments",
+        "text": "Payments can be made via Mobile Money, cash, or UPJUNOO PRO electronic wallet. Amounts are displayed transparently before confirmation."
+      },
+      "suspension": {
+        "title": "Suspension and Termination",
+        "text": "UPJUNOO PRO reserves the right to suspend or terminate an account in case of fraud, rule violation, or platform misuse."
+      },
+      "evolution": {
+        "title": "Service Evolution",
+        "text": "Services, features, and conditions may evolve to improve quality, security, and regulatory compliance."
+      }
+    },
+    "contact": {
+      "title": "Have a Question?",
+      "description": "For any questions regarding our terms or data protection, contact us."
+    }
+  },
+  "offresPartenairesPage": {
+    "metadata": {
+      "title": "Partner Offers",
+      "description": "Discover the different ways to collaborate with UPJUNOO PRO and participate in the mobility revolution."
+    },
+    "hero": {
+      "badge": "Join Us",
+      "title": "Our partner",
+      "highlight": "offers",
+      "description": "Discover the different ways to collaborate with UPJUNOO PRO and participate in the mobility revolution."
+    },
+    "offres": {
+      "franchises": {
+        "title": "Franchises",
+        "description": "Launch UPJUNOO PRO in your region and develop your own mobility network.",
+        "features": {
+          "exclusivity": "Geographic exclusivity",
+          "training": "Complete training",
+          "support": "24/7 operational support",
+          "tools": "Advanced management tools"
+        }
+      },
+      "partenaires": {
+        "title": "Partners",
+        "description": "Become a commercial partner and benefit from our growing ecosystem.",
+        "features": {
+          "enterprise": "Enterprise partnerships",
+          "b2b": "B2B solutions",
+          "api": "API integrations",
+          "loyalty": "Loyalty programs"
+        }
+      },
+      "chauffeurs": {
+        "title": "Drivers",
+        "description": "Join our team of drivers and enjoy total flexibility.",
+        "features": {
+          "revenue": "Attractive earnings",
+          "flexible": "Flexible hours",
+          "app": "Intuitive app",
+          "support": "Continuous support"
+        }
+      }
+    },
+    "stats": {
+      "franchises": "Active franchises",
+      "drivers": "Partner drivers",
+      "countries": "Countries covered",
+      "satisfaction": "Partner satisfaction"
+    },
+    "learnMore": "Learn more",
+    "cta": {
+      "title": "Have questions?",
+      "description": "Our team is available to answer all your questions and support you in your project.",
+      "button": "Contact us"
+    }
+  },
+  "chauffeursPage": {
+    "metadata": {
+      "title": "Become a Partner Driver",
+      "description": "Join UPJUNOO PRO and become a professional driver. Flexible hours and attractive earnings."
+    },
+    "hero": {
+      "badge": "Join Us",
+      "title": "Become a driver",
+      "highlight": "UPJUNOO PRO",
+      "description": "Drive freely. Earn with dignity. Join a structured and secure network."
+    },
+    "buttons": {
+      "register": "Register now",
+      "seeAdvantages": "See benefits"
+    },
+    "structuredProcess": {
+      "validateProfile": "Validates your profile and documents",
+      "provideVehicle": "Provides you with a compliant vehicle",
+      "secureAccess": "Registers you on the platform via secure access",
+      "trackProgress": "Tracks your progress and helps you improve"
+    },
+    "advantages": {
+      "revenue": {
+        "title": "Daily or weekly earnings",
+        "description": "Regular and secure payments"
+      },
+      "bonus": {
+        "title": "Performance bonus",
+        "description": "Quality of service, punctuality"
+      },
+      "flexible": {
+        "title": "Flexible hours",
+        "description": "Based on fleet availability"
+      },
+      "app": {
+        "title": "Simple and intuitive app",
+        "description": "With local technical support"
+      },
+      "coverage": {
+        "title": "Territorial coverage",
+        "description": "More customers, less waiting time"
+      }
+    },
+    "conditions": {
+      "license": "Valid driver's license (cat. B or higher)",
+      "id": "Valid national ID",
+      "presentation": "Good presentation and sense of service",
+      "driving": "Urban driving proficiency",
+      "smartphone": "Ability to use an Android/iOS smartphone"
+    },
+    "training": {
+      "app": "Using the mobile application",
+      "service": "Customer service best practices",
+      "safety": "Safety and professional driving rules",
+      "conflicts": "Managing unexpected situations and conflicts"
+    },
+    "howItWorks": {
+      "step1": "Contact an UPJUNOO PRO approved fleet manager partner",
+      "step2": "Prepare your documents",
+      "step3": "Have a short interview with the partner",
+      "step4": "Access the application after registration",
+      "step5": "Receive a short training",
+      "step6": "Start making rides according to a defined or free schedule"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "quote": "Thanks to my UPJUNOO PRO partner, I have resumed a stable activity, I am supported and my income is regular.",
+        "author": "Thomas M.",
+        "role": "Driver since 2023"
+      },
+      "testimonial2": {
+        "quote": "I didn't have a car, but the manager integrated me into his fleet. Today I have stable income.",
+        "author": "Laurent D.",
+        "role": "UPJUNOO PRO Driver"
+      }
+    },
+    "stats": {
+      "activeDrivers": "Active drivers via partners",
+      "monthlyTrips": "Monthly trips",
+      "averageRating": "Average driver rating",
+      "variableValue": "Variable",
+      "monthlyBonus": "Average monthly bonus"
+    },
+    "sections": {
+      "whyJoin": {
+        "badge": "Join UPJUNOO PRO",
+        "title": "Why join UPJUNOO PRO?",
+        "intro": "is an international VTC platform that allows you to become a certified professional driver, with the support of a recognized fleet manager partner.",
+        "description": "As an UPJUNOO PRO driver, you join a serious, structured team supported by modern technology. You work in a clear, formal and fair framework, with guaranteed income and potential for growth.",
+        "objective": "Objective: Support you towards a stable, respected and profitable activity."
+      },
+      "process": {
+        "badge": "Support",
+        "title": "A structured process, personalized support",
+        "description": "At UPJUNOO PRO, you don't work alone. You are supervised by an approved local partner who:"
+      },
+      "advantages": {
+        "badge": "Your benefits",
+        "title": "Your benefits as an UPJUNOO PRO driver"
+      },
+      "conditions": {
+        "badge": "Requirements",
+        "title": "Requirements to be validated by a partner"
+      },
+      "training": {
+        "badge": "Training",
+        "title": "Training & Follow-up",
+        "description": "UPJUNOO PRO and its partners train each new driver on:",
+        "followUp": "A Partner or fleet manager ensures continuous monitoring of your performance."
+      },
+      "howItWorks": {
+        "badge": "Process",
+        "title": "How does it work?"
+      },
+      "testimonials": {
+        "badge": "Testimonials",
+        "title": "What our drivers say"
+      },
+      "stats": {
+        "title": "UPJUNOO PRO in numbers"
+      },
+      "contact": {
+        "title": "Contact & Registration",
+        "description": "Join our team of professional drivers today.",
+        "orPartner": "Or go directly through an approved partner near you",
+        "quote": "You are much more than a driver, you are a professional.",
+        "quoteDescription": "Your seriousness, our technology, and the support of a solid partner: that's the winning trio."
+      }
+    }
+  },
+  "franchisesPage": {
+    "metadata": {
+      "title": "Become an UPJUNOO PRO Franchise",
+      "description": "An exclusive opportunity to invest in a rapidly growing international sector."
+    },
+    "hero": {
+      "badge": "Exclusive opportunity",
+      "title": "Become a franchisee of",
+      "highlight": "tomorrow's urban mobility",
+      "description": "An exclusive opportunity to invest in a rapidly growing international sector."
+    },
+    "buttons": {
+      "becomeFranchise": "Become a franchise",
+      "learnMore": "Learn more"
+    },
+    "marketPotential": {
+      "growth": "Rapid growth in urban mobility demand in major cities",
+      "demand": "Increasing demand for reliable and digitized services",
+      "opportunity": "Unique opportunity to position yourself as a pioneer"
+    },
+    "profile": {
+      "entrepreneur": "An entrepreneur or investor with the ability to mobilize personal capital",
+      "fleetOwner": "Owner of a fleet of vehicles, motorcycles or logistics equipment",
+      "manager": "A good manager, rigorous and organized",
+      "teamManager": "Comfortable with team management (field agents, sales)",
+      "network": "With a good network of relationships in your country",
+      "quality": "Sensitive to quality of service and customer satisfaction"
+    },
+    "offers": {
+      "turnkey": {
+        "title": "A turnkey model",
+        "item1": "Complete mobile application (passenger, driver, partner and fleet manager)",
+        "item2": "Local administration interface with reporting tools",
+        "item3": "Dynamic pricing structure adapted to your market"
+      },
+      "brand": {
+        "title": "A strong and structured brand",
+        "item1": "Professional and consistent visual identity",
+        "item2": "Growing awareness on social media and press",
+        "item3": "Network of technical and institutional partners"
+      },
+      "support": {
+        "title": "Continuous operational support",
+        "item1": "Initial training (tools, methods, management)",
+        "item2": "Monthly coaching and performance review",
+        "item3": "24/7 support (technical, communication, administrative)",
+        "item4": "Access to a franchise network to share best practices"
+      },
+      "contract": {
+        "title": "A secure contractual framework",
+        "item1": "Geographic exclusivity on your city or region",
+        "item2": "Renewable contract with clear performance indicators",
+        "item3": "Motivating revenue sharing: commission on all rides, deliveries and rentals generated"
+      }
+    },
+    "responsibilities": {
+      "recruit": "Recruit and train drivers",
+      "vehicles": "Ensure vehicle compliance (maintenance, branding, insurance)",
+      "operations": "Manage operations (service activation, customer service, punctuality)",
+      "marketing": "Deploy local communication and promotion campaigns",
+      "partnerships": "Develop partnerships with businesses, institutions and events"
+    },
+    "accessConditions": {
+      "contract": "Signing a 3-year renewable contract",
+      "charter": "Commitment to respect the UPJUNOO PRO charter (quality, image, management)",
+      "training": "Mandatory training and local business plan validation",
+      "reporting": "Regular reporting (revenues, incidents, performance)"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "quote": "Since I launched UPJUNOO PRO in Abidjan, we have created more than 30 jobs and offer quality service to thousands of customers. The technical and commercial support is remarkable.",
+        "author": "Kouame A.",
+        "role": "Franchise Abidjan, Ivory Coast"
+      },
+      "testimonial2": {
+        "quote": "UPJUNOO PRO allowed me to structure my transport business and scale up. The management tools are intuitive and support is always responsive.",
+        "author": "Amadou D.",
+        "role": "Franchise Dakar, Senegal"
+      }
+    },
+    "investment": {
+      "headers": {
+        "position": "Item",
+        "detail": "Detail"
+      },
+      "contribution": {
+        "label": "Recommended personal contribution",
+        "value": "Contact us"
+      },
+      "license": {
+        "label": "Initial license fee",
+        "value": "Variable depending on territory size"
+      },
+      "starterPack": {
+        "label": "Starter pack",
+        "value": "Tools, training, vehicle branding"
+      },
+      "profitability": {
+        "label": "Average profitability",
+        "value": "Contact us"
+      },
+      "revenue": {
+        "label": "Potential monthly revenue",
+        "value": "Variable depending on territory"
+      }
+    },
+    "sections": {
+      "whyBecome": {
+        "badge": "The UPJUNOO PRO franchise",
+        "title": "Why become an UPJUNOO PRO franchisee?",
+        "intro": "is an international smart transport platform that transforms urban mobility through a mobile application integrating taxi, delivery, and vehicle rental services.",
+        "description": "The franchise model allows you to operate the UPJUNOO PRO brand in your city, while benefiting from strategic, technical and operational support to ensure your success.",
+        "marketTitle": "High potential market"
+      },
+      "profile": {
+        "badge": "Desired profile",
+        "title": "Franchisee profile",
+        "description": "We are looking for committed local actors who are results-oriented.",
+        "youAre": "You are:"
+      },
+      "offers": {
+        "badge": "Our commitments",
+        "title": "What UPJUNOO PRO offers you"
+      },
+      "responsibilities": {
+        "badge": "Your missions",
+        "title": "Your local responsibilities",
+        "description": "As a franchisee, you are the official UPJUNOO PRO representative in your territory.",
+        "mainMissions": "Your main missions:"
+      },
+      "investment": {
+        "badge": "Investment",
+        "title": "Investment & profitability"
+      },
+      "conditions": {
+        "badge": "Conditions",
+        "title": "Franchise access conditions"
+      },
+      "testimonials": {
+        "badge": "Testimonials",
+        "title": "Franchise testimonials"
+      },
+      "contact": {
+        "title": "Ready to take the leap?",
+        "description": "Contact our franchise development team to discuss your project and get all the information.",
+        "availability": "Franchise available in several regions (excluding areas already under contract)",
+        "quote": "Together, let's build a reliable, profitable and sustainable international mobility network."
+      }
+    }
+  },
+  "partenairesPage": {
+    "metadata": {
+      "title": "Become an UPJUNOO PRO Partner",
+      "description": "Integrate our mobility and logistics solutions into your business and offer more value to your customers."
+    },
+    "hero": {
+      "badge": "B2B Partnership",
+      "title": "Become a partner",
+      "highlight": "UPJUNOO PRO",
+      "description": "Integrate our mobility and logistics solutions into your business and offer more value to your customers."
+    },
+    "buttons": {
+      "becomePartner": "Become a partner",
+      "seeOffers": "See offers"
+    },
+    "partnerTypes": {
+      "enterprises": {
+        "title": "Enterprises",
+        "description": "Mobility and logistics solutions for your employees and operations.",
+        "benefits": {
+          "rates": "Negotiated rates",
+          "billing": "Centralized billing",
+          "reporting": "Detailed reporting",
+          "manager": "Manager account"
+        }
+      },
+      "commerce": {
+        "title": "Shops & Restaurants",
+        "description": "Integrate our delivery service into your business.",
+        "benefits": {
+          "integration": "Easy integration",
+          "delivery": "On-demand delivery",
+          "tracking": "Real-time tracking",
+          "commission": "Competitive commission"
+        }
+      },
+      "hotels": {
+        "title": "Hotels & Tourism",
+        "description": "Offer your guests a premium transportation service.",
+        "benefits": {
+          "vip": "VIP service",
+          "booking": "Advance booking",
+          "drivers": "Professional drivers",
+          "languages": "Multi-language"
+        }
+      },
+      "events": {
+        "title": "Events",
+        "description": "Manage the mobility of your events with ease.",
+        "benefits": {
+          "fleet": "Fleet management",
+          "coordination": "Centralized coordination",
+          "rates": "Group rates",
+          "support": "Dedicated support"
+        }
+      }
+    },
+    "advantages": {
+      "growth": {
+        "title": "Mutual growth",
+        "description": "Develop your business through our expanding ecosystem."
+      },
+      "reliability": {
+        "title": "Guaranteed reliability",
+        "description": "Verified drivers and controlled vehicles for quality service."
+      },
+      "integration": {
+        "title": "Simple integration",
+        "description": "API and integration tools for quick and efficient setup."
+      },
+      "support": {
+        "title": "Dedicated support",
+        "description": "A dedicated account manager to support you daily."
+      }
+    },
+    "steps": {
+      "contact": {
+        "title": "Initial contact",
+        "description": "Discuss your needs with our sales team."
+      },
+      "study": {
+        "title": "Personalized study",
+        "description": "We analyze your needs and propose a tailored solution."
+      },
+      "setup": {
+        "title": "Implementation",
+        "description": "Technical integration and team training."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Partnership activation and ongoing support."
+      }
+    },
+    "stats": {
+      "partners": {
+        "value": "200+",
+        "label": "Active partners"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Customer satisfaction"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Support available"
+      }
+    },
+    "sections": {
+      "partnerTypes": {
+        "badge": "Partnership types",
+        "title": "Solutions tailored to each sector",
+        "description": "Whatever your field of activity, we have an offer that meets your needs."
+      },
+      "advantages": {
+        "badge": "Benefits",
+        "title": "Why become a partner?"
+      },
+      "process": {
+        "badge": "Process",
+        "title": "How to become a partner?"
+      },
+      "contact": {
+        "title": "Ready to collaborate?",
+        "description": "Contact our sales team to discuss your project and discover how we can work together.",
+        "contactForm": "Contact form"
+      }
+    }
   }
 }

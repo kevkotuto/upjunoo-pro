@@ -5,38 +5,40 @@ import { Package, Zap, MapPin, Clock, Bell, CheckCircle, ArrowRight, Timer } fro
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-const features = [
-  {
-    icon: Zap,
-    title: "Livraison express",
-    description: "Vos colis livrés en moins de 2 heures en ville.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi en temps réel",
-    description: "Localisez votre colis à chaque étape de la livraison.",
-  },
-  {
-    icon: Bell,
-    title: "Notifications",
-    description: "Soyez informé de l'avancement de votre livraison.",
-  },
-  {
-    icon: Clock,
-    title: "Livraison planifiée",
-    description: "Programmez vos envois à l'heure qui vous convient.",
-  },
-];
-
-const benefits = [
-  "Livraison le jour même",
-  "Photo de preuve à la livraison",
-  "Assurance colis incluse",
-  "Livreurs professionnels",
-];
+import { useTranslations } from "next-intl";
 
 export function ServiceLivraisonSection() {
+  const t = useTranslations();
+
+  const features = [
+    {
+      icon: Zap,
+      title: t("serviceLivraison.features.expressDelivery.title"),
+      description: t("serviceLivraison.features.expressDelivery.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("serviceLivraison.features.realTimeTracking.title"),
+      description: t("serviceLivraison.features.realTimeTracking.description"),
+    },
+    {
+      icon: Bell,
+      title: t("serviceLivraison.features.notifications.title"),
+      description: t("serviceLivraison.features.notifications.description"),
+    },
+    {
+      icon: Clock,
+      title: t("serviceLivraison.features.scheduledDelivery.title"),
+      description: t("serviceLivraison.features.scheduledDelivery.description"),
+    },
+  ];
+
+  const benefits = [
+    t("serviceLivraison.benefits.sameDay"),
+    t("serviceLivraison.benefits.proofPhoto"),
+    t("serviceLivraison.benefits.insurance"),
+    t("serviceLivraison.benefits.professionalDrivers"),
+  ];
   return (
     <section className="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
       {/* Background decorations */}
@@ -123,7 +125,7 @@ export function ServiceLivraisonSection() {
             >
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-border/50 shadow-sm">
                 <Timer className="h-5 w-5 text-orange-500" />
-                <span className="text-sm font-medium">Temps moyen de livraison : 45 min</span>
+                <span className="text-sm font-medium">{t("serviceLivraison.speedBadge")}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -143,7 +145,7 @@ export function ServiceLivraisonSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 text-orange-500 text-sm font-semibold mb-6"
             >
               <Package className="h-4 w-4" />
-              Livraisons Express
+              {t("serviceLivraison.badge")}
             </motion.div>
 
             <motion.h2
@@ -153,10 +155,10 @@ export function ServiceLivraisonSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Vos colis livrés{" "}
-              <span className="text-orange-500">rapidement</span><br />
+              {t("serviceLivraison.title.part1")}{" "}
+              <span className="text-orange-500">{t("serviceLivraison.title.highlight")}</span><br />
               <span className="relative inline-block">
-                et en sécurité
+                {t("serviceLivraison.title.part2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -174,9 +176,7 @@ export function ServiceLivraisonSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Envoyez et recevez vos colis en un temps record. Notre réseau de livreurs
-              professionnels assure une prise en charge rapide et une livraison soignée
-              de tous vos envois.
+              {t("serviceLivraison.description")}
             </motion.p>
 
             {/* Benefits list */}
@@ -213,7 +213,7 @@ export function ServiceLivraisonSection() {
             >
               <Link href="/livraison">
                 <Button size="lg" className="rounded-full px-8 gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/25">
-                  Envoyer un colis
+                  {t("serviceLivraison.cta")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>

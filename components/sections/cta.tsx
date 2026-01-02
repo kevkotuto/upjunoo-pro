@@ -5,8 +5,25 @@ import { ArrowRight, Users, Building2, CheckCircle, Car, Truck, Sparkles } from 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function CTASection() {
+  const t = useTranslations();
+
+  const driverBenefits = [
+    t("cta.driver.benefits.flexible"),
+    t("cta.driver.benefits.revenue"),
+    t("cta.driver.benefits.support"),
+    t("cta.driver.benefits.insurance"),
+  ];
+
+  const franchiseBenefits = [
+    t("cta.franchise.benefits.brand"),
+    t("cta.franchise.benefits.training"),
+    t("cta.franchise.benefits.technology"),
+    t("cta.franchise.benefits.marketing"),
+  ];
+
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
@@ -27,14 +44,14 @@ export function CTASection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
           >
             <Sparkles className="h-4 w-4" />
-            Opportunités
+            {t("cta.badge")}
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Rejoignez l'aventure{" "}
+            {t("cta.title")}{" "}
             <span className="text-primary">UPJUNOO PRO</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Que vous soyez chauffeur, livreur ou entrepreneur, nous avons une opportunité pour vous.
+            {t("cta.subtitle")}
           </p>
         </motion.div>
 
@@ -88,20 +105,14 @@ export function CTASection() {
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                Devenez chauffeur ou livreur
+                {t("cta.driver.title")}
               </h3>
               <p className="text-white/80 mb-8 max-w-md text-lg">
-                Rejoignez notre équipe et profitez d'horaires flexibles, de
-                revenus attractifs et d'une liberté totale.
+                {t("cta.driver.description")}
               </p>
 
               <ul className="space-y-4 mb-8">
-                {[
-                  "Horaires de travail 100% flexibles",
-                  "Revenus attractifs à la commission",
-                  "Support et assistance 24/7",
-                  "Assurance incluse",
-                ].map((item, index) => (
+                {driverBenefits.map((item, index) => (
                   <motion.li
                     key={item}
                     initial={{ opacity: 0, x: -20 }}
@@ -124,7 +135,7 @@ export function CTASection() {
                 className="gap-2 h-14 px-8 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold shadow-xl hover:scale-105 transition-all"
               >
                 <Link href="/devenir-chauffeur">
-                  Rejoindre l'équipe
+                  {t("cta.driver.button")}
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
@@ -168,25 +179,19 @@ export function CTASection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full backdrop-blur-sm"
                 >
-                  <span className="text-primary text-sm font-semibold">Franchise</span>
+                  <span className="text-primary text-sm font-semibold">{t("cta.franchise.badge")}</span>
                 </motion.div>
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                Devenez franchisé UPJUNOO PRO
+                {t("cta.franchise.title")}
               </h3>
               <p className="text-gray-400 mb-8 max-w-md text-lg">
-                Lancez votre propre activité avec la marque UPJUNOO PRO. Bénéficiez
-                de notre expertise et de notre technologie.
+                {t("cta.franchise.description")}
               </p>
 
               <ul className="space-y-4 mb-8">
-                {[
-                  "Marque reconnue à l'international",
-                  "Formation et accompagnement complet",
-                  "Technologie clé en main",
-                  "Support marketing inclus",
-                ].map((item, index) => (
+                {franchiseBenefits.map((item, index) => (
                   <motion.li
                     key={item}
                     initial={{ opacity: 0, x: -20 }}
@@ -209,7 +214,7 @@ export function CTASection() {
                 className="gap-2 h-14 px-8 bg-primary hover:bg-primary/90 text-white font-bold shadow-xl shadow-primary/25 hover:scale-105 transition-all"
               >
                 <Link href="/offres-partenaires/franchises">
-                  Devenir franchise
+                  {t("cta.franchise.button")}
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>

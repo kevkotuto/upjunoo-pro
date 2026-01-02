@@ -18,78 +18,98 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/page-hero";
 import Link from "next/link";
 import Image from "next/image";
-
-const features = [
-  {
-    icon: Zap,
-    title: "Livraison express",
-    description:
-      "Vos colis livrés en un temps record grâce à notre réseau de livreurs réactifs.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi en temps réel",
-    description:
-      "Suivez votre colis à chaque étape de la livraison directement sur l'app.",
-  },
-  {
-    icon: Shield,
-    title: "Colis sécurisés",
-    description:
-      "Vos envois sont protégés et manipulés avec soin par nos livreurs professionnels.",
-  },
-  {
-    icon: Clock,
-    title: "Disponible 24/7",
-    description:
-      "Envoyez vos colis à tout moment, notre service est disponible jour et nuit.",
-  },
-  {
-    icon: Headphones,
-    title: "Support dédié",
-    description:
-      "Une équipe à votre écoute pour répondre à toutes vos questions.",
-  },
-  {
-    icon: Truck,
-    title: "Tous types de colis",
-    description:
-      "Documents, paquets, courses... Nous livrons tout ce dont vous avez besoin.",
-  },
-];
-
-const deliveryTypes = [
-  {
-    title: "Express",
-    time: "30 min - 1h",
-    description: "Pour vos livraisons urgentes en ville",
-    icon: Zap,
-    popular: true,
-  },
-  {
-    title: "Standard",
-    time: "2h - 4h",
-    description: "Le meilleur rapport qualité-prix",
-    icon: Package,
-    popular: false,
-  },
-  {
-    title: "Programmée",
-    time: "À votre convenance",
-    description: "Planifiez votre livraison à l'avance",
-    icon: Clock,
-    popular: false,
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function LivraisonPage() {
+  const t = useTranslations("livraisonPage");
+
+  const features = [
+    {
+      icon: Zap,
+      title: t("features.express.title"),
+      description: t("features.express.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("features.tracking.title"),
+      description: t("features.tracking.description"),
+    },
+    {
+      icon: Shield,
+      title: t("features.secure.title"),
+      description: t("features.secure.description"),
+    },
+    {
+      icon: Clock,
+      title: t("features.available.title"),
+      description: t("features.available.description"),
+    },
+    {
+      icon: Headphones,
+      title: t("features.support.title"),
+      description: t("features.support.description"),
+    },
+    {
+      icon: Truck,
+      title: t("features.allTypes.title"),
+      description: t("features.allTypes.description"),
+    },
+  ];
+
+  const deliveryTypes = [
+    {
+      title: t("deliveryTypes.express.title"),
+      time: t("deliveryTypes.express.time"),
+      description: t("deliveryTypes.express.description"),
+      icon: Zap,
+      popular: true,
+    },
+    {
+      title: t("deliveryTypes.standard.title"),
+      time: t("deliveryTypes.standard.time"),
+      description: t("deliveryTypes.standard.description"),
+      icon: Package,
+      popular: false,
+    },
+    {
+      title: t("deliveryTypes.scheduled.title"),
+      time: t("deliveryTypes.scheduled.time"),
+      description: t("deliveryTypes.scheduled.description"),
+      icon: Clock,
+      popular: false,
+    },
+  ];
+
+  const howItWorksSteps = [
+    {
+      step: "1",
+      title: t("howItWorks.step1.title"),
+      desc: t("howItWorks.step1.description"),
+    },
+    {
+      step: "2",
+      title: t("howItWorks.step2.title"),
+      desc: t("howItWorks.step2.description"),
+    },
+    {
+      step: "3",
+      title: t("howItWorks.step3.title"),
+      desc: t("howItWorks.step3.description"),
+    },
+    {
+      step: "4",
+      title: t("howItWorks.step4.title"),
+      desc: t("howItWorks.step4.description"),
+    },
+  ];
+
   return (
     <>
       <PageHero
-        badge="Service Livraison"
-        title="Envoyez vos colis"
-        highlight="en temps record"
-        description="Un service de livraison rapide, fiable et sécurisé pour tous vos envois, des documents aux colis volumineux."
+        badge={t("badge")}
+        title={t("title")}
+        highlight={t("highlight")}
+        description={t("description")}
         backgroundImage="/images/banniere/coursier-moto-colis-16-9.jpg"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,7 +120,7 @@ export default function LivraisonPage() {
           >
             <Link href="/#download">
               <Download className="h-5 w-5" />
-              Envoyer un colis
+              {t("sendPackage")}
             </Link>
           </Button>
           <Button
@@ -110,7 +130,7 @@ export default function LivraisonPage() {
             className="gap-2 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold"
           >
             <Link href="#types">
-              Voir les options
+              {t("seeOptions")}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
@@ -127,10 +147,10 @@ export default function LivraisonPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Options de livraison
+              {t("deliveryTypes.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Choisissez votre <span className="text-primary">mode de livraison</span>
+              {t("deliveryTypes.title")} <span className="text-primary">{t("deliveryTypes.highlight")}</span>
             </h2>
           </motion.div>
 
@@ -150,7 +170,7 @@ export default function LivraisonPage() {
                 >
                   {type.popular && (
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-xl">
-                      Populaire
+                      {t("deliveryTypes.popular")}
                     </div>
                   )}
                   <CardContent className="p-6 text-center">
@@ -189,14 +209,13 @@ export default function LivraisonPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos avantages
+              {t("features.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Un service de livraison <span className="text-primary">complet</span>
+              {t("features.title")} <span className="text-primary">{t("features.highlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tout ce dont vous avez besoin pour envoyer et recevoir vos colis en
-              toute confiance.
+              {t("features.description")}
             </p>
           </motion.div>
 
@@ -236,35 +255,14 @@ export default function LivraisonPage() {
               viewport={{ once: true }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Simple et rapide
+                {t("howItWorks.badge")}
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Comment envoyer <span className="text-primary">un colis</span> ?
+                {t("howItWorks.title")} <span className="text-primary">{t("howItWorks.highlight")}</span> ?
               </h2>
 
               <div className="space-y-6">
-                {[
-                  {
-                    step: "1",
-                    title: "Décrivez votre colis",
-                    desc: "Indiquez le type, la taille et le poids de votre envoi.",
-                  },
-                  {
-                    step: "2",
-                    title: "Définissez les adresses",
-                    desc: "Entrez les adresses d'enlèvement et de livraison.",
-                  },
-                  {
-                    step: "3",
-                    title: "Choisissez le mode",
-                    desc: "Sélectionnez entre express, standard ou programmé.",
-                  },
-                  {
-                    step: "4",
-                    title: "Suivez votre colis",
-                    desc: "Recevez des notifications à chaque étape de la livraison.",
-                  },
-                ].map((item, index) => (
+                {howItWorksSteps.map((item, index) => (
                   <motion.div
                     key={item.step}
                     initial={{ opacity: 0, x: -20 }}
@@ -299,7 +297,7 @@ export default function LivraisonPage() {
                 <div className="absolute inset-4 rounded-2xl overflow-hidden">
                   <Image
                     src="/images/voiture.png"
-                    alt="Véhicule de livraison Upjunoo"
+                    alt="Vehicule de livraison Upjunoo"
                     fill
                     className="object-contain"
                   />
@@ -369,11 +367,10 @@ export default function LivraisonPage() {
                 <Package className="h-10 w-10 text-gray-900" />
               </motion.div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-                Prêt à envoyer votre premier colis ?
+                {t("cta.title")}
               </h2>
               <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-                Téléchargez l'application et bénéficiez d'une première livraison à
-                tarif réduit.
+                {t("cta.description")}
               </p>
               <Button
                 size="lg"
@@ -382,7 +379,7 @@ export default function LivraisonPage() {
               >
                 <Link href="/#download">
                   <Download className="h-5 w-5" />
-                  Commencer maintenant
+                  {t("cta.button")}
                 </Link>
               </Button>
             </div>

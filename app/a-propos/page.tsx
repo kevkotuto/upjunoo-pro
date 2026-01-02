@@ -1,388 +1,119 @@
-"use client";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { AProposContent } from "./a-propos-content";
 
-import { motion } from "motion/react";
-import {
-  Car,
-  Package,
-  Key,
-  Truck,
-  Globe,
-  Users,
-  Shield,
-  Smartphone,
-  CreditCard,
-  BarChart3,
-  MapPin,
-  CheckCircle,
-  Download,
-  Target,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { PageHero } from "@/components/sections/page-hero";
-import Link from "next/link";
-import { formattedKpis } from "@/data/kpis";
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("about");
 
-const services = [
-  {
-    icon: Car,
-    title: "VTC / Taxi",
-    description: "Réservez un chauffeur privé pour tous vos déplacements.",
-  },
-  {
-    icon: Package,
-    title: "Livraison express",
-    description: "Envoyez et recevez vos colis en temps record.",
-  },
-  {
-    icon: Key,
-    title: "Location de véhicules",
-    description: "Louez le véhicule adapté à vos besoins.",
-  },
-  {
-    icon: Truck,
-    title: "Fret urbain",
-    description: "Solutions logistiques pour vos marchandises.",
-  },
-];
+  return {
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+    openGraph: {
+      title: t("metadata.title"),
+      description: t("metadata.description"),
+    },
+  };
+}
 
-const features = [
-  {
-    icon: MapPin,
-    title: "Suivi GPS en temps réel",
-    description: "Suivez vos trajets et livraisons en direct.",
-  },
-  {
-    icon: Shield,
-    title: "Preuve de service",
-    description: "Documentation complète de chaque prestation.",
-  },
-  {
-    icon: CreditCard,
-    title: "Paiement flexible",
-    description: "Mobile Money, espèces, portefeuille électronique.",
-  },
-  {
-    icon: BarChart3,
-    title: "Outils de pilotage",
-    description: "Tableaux de bord dédiés aux entreprises.",
-  },
-];
+export default async function AProposPage() {
+  const t = await getTranslations("about");
 
-const values = [
-  {
-    icon: Users,
-    title: "Modèle inclusif",
-    description:
-      "Création de valeur partagée entre chauffeurs, gestionnaires de flotte, franchises et utilisateurs.",
-  },
-  {
-    icon: Globe,
-    title: "Présence internationale",
-    description:
-      "Modernisation de la mobilité urbaine dans plusieurs pays à travers le monde.",
-  },
-  {
-    icon: Smartphone,
-    title: "Expérience fluide",
-    description:
-      "Une application unique regroupant tous les services de mobilité et logistique.",
-  },
-];
+  const translations = {
+    hero: {
+      badge: t("hero.badge"),
+      title: t("hero.title"),
+      highlight: t("hero.highlight"),
+      description: t("hero.description"),
+    },
+    intro: {
+      badge: t("intro.badge"),
+      title: t("intro.title"),
+      titleHighlight: t("intro.titleHighlight"),
+      paragraph1: t("intro.paragraph1"),
+      paragraph1Highlight: t("intro.paragraph1Highlight"),
+      paragraph2: t("intro.paragraph2"),
+      paragraph3: t("intro.paragraph3"),
+    },
+    services: {
+      badge: t("services.badge"),
+      title: t("services.title"),
+      titleHighlight: t("services.titleHighlight"),
+      description: t("services.description"),
+      items: {
+        vtc: {
+          title: t("services.items.vtc.title"),
+          description: t("services.items.vtc.description"),
+        },
+        delivery: {
+          title: t("services.items.delivery.title"),
+          description: t("services.items.delivery.description"),
+        },
+        rental: {
+          title: t("services.items.rental.title"),
+          description: t("services.items.rental.description"),
+        },
+        freight: {
+          title: t("services.items.freight.title"),
+          description: t("services.items.freight.description"),
+        },
+      },
+    },
+    features: {
+      badge: t("features.badge"),
+      title: t("features.title"),
+      titleHighlight: t("features.titleHighlight"),
+      description: t("features.description"),
+      items: {
+        gps: {
+          title: t("features.items.gps.title"),
+          description: t("features.items.gps.description"),
+        },
+        proof: {
+          title: t("features.items.proof.title"),
+          description: t("features.items.proof.description"),
+        },
+        payment: {
+          title: t("features.items.payment.title"),
+          description: t("features.items.payment.description"),
+        },
+        dashboard: {
+          title: t("features.items.dashboard.title"),
+          description: t("features.items.dashboard.description"),
+        },
+      },
+    },
+    values: {
+      badge: t("values.badge"),
+      title: t("values.title"),
+      titleHighlight: t("values.titleHighlight"),
+      items: {
+        inclusive: {
+          title: t("values.items.inclusive.title"),
+          description: t("values.items.inclusive.description"),
+        },
+        international: {
+          title: t("values.items.international.title"),
+          description: t("values.items.international.description"),
+        },
+        experience: {
+          title: t("values.items.experience.title"),
+          description: t("values.items.experience.description"),
+        },
+      },
+    },
+    mission: {
+      title: t("mission.title"),
+      description: t("mission.description"),
+      descriptionHighlight: t("mission.descriptionHighlight"),
+      cta: t("mission.cta"),
+      stats: {
+        countries: t("mission.stats.countries"),
+        users: t("mission.stats.users"),
+        ridesPerDay: t("mission.stats.ridesPerDay"),
+        satisfaction: t("mission.stats.satisfaction"),
+      },
+    },
+  };
 
-export default function AProposPage() {
-  return (
-    <>
-      <PageHero
-        badge="À propos"
-        title="Découvrez"
-        highlight="UPJUNOO PRO"
-        description="La plateforme numérique de mobilité et de logistique intelligente qui transforme vos déplacements."
-        backgroundImage="/images/banniere/personne-sourriante-16-9.jpg"
-      />
-
-      {/* Introduction */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Notre histoire
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Qui sommes-<span className="text-primary">nous</span> ?
-            </h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-muted-foreground mb-6"
-            >
-              <span className="font-semibold text-foreground">UPJUNOO PRO</span>{" "}
-              est une plateforme numérique de mobilité et de logistique
-              intelligente, réunissant au sein d'une application unique les
-              services de VTC / Taxi, livraison express, location de véhicules
-              et fret urbain.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-muted-foreground mb-6"
-            >
-              Conçue pour simplifier les déplacements et les échanges
-              logistiques, UPJUNOO PRO offre une expérience fluide, sécurisée et
-              transparente pour les particuliers, les entreprises et les
-              professionnels du transport.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-lg text-muted-foreground"
-            >
-              La plateforme favorise un modèle économique inclusif, créant de la
-              valeur partagée entre chauffeurs, gestionnaires de flotte,
-              franchises locales et utilisateurs finaux.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-muted/30 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos services
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Une application, <span className="text-primary">quatre services</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tous vos besoins de mobilité et logistique réunis en un seul
-              endroit.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full border-border/50 hover:border-primary/30 transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mx-auto mb-4"
-                    >
-                      <service.icon className="h-8 w-8 text-white" />
-                    </motion.div>
-                    <h3 className="font-semibold text-lg mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Fonctionnalités
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Des outils <span className="text-primary">avancés</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des fonctionnalités pensées pour une expérience optimale.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full border-border/50 hover:border-primary/30 transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 group-hover:from-primary group-hover:to-primary/80 transition-all">
-                      <feature.icon className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-muted/30 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Nos valeurs
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Ce qui nous <span className="text-primary">anime</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full border-border/50 hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="p-8 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mx-auto mb-6"
-                    >
-                      <value.icon className="h-10 w-10 text-white" />
-                    </motion.div>
-                    <h3 className="font-semibold text-xl mb-3">{value.title}</h3>
-                    <p className="text-muted-foreground">{value.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-[#046d7a] p-8 lg:p-16 overflow-hidden"
-          >
-            {/* Background decorations */}
-            <div className="absolute inset-0 overflow-hidden">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-1/2 -right-1/2 w-full h-full border border-white/10 rounded-full"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute -bottom-1/2 -left-1/2 w-full h-full border border-white/10 rounded-full"
-              />
-            </div>
-
-            <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                  className="w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center mb-6"
-                >
-                  <Target className="h-10 w-10 text-gray-900" />
-                </motion.div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Notre mission
-                </h2>
-                <p className="text-white/80 text-lg mb-8">
-                  Grâce à des fonctionnalités avancées telles que le suivi GPS
-                  en temps réel, la preuve de service, des moyens de paiement
-                  flexibles et des outils de pilotage dédiés aux entreprises,{" "}
-                  <span className="font-semibold text-yellow-400">
-                    UPJUNOO PRO
-                  </span>{" "}
-                  contribue à moderniser la mobilité urbaine et à soutenir
-                  l'économie locale dans plusieurs pays à travers le monde.
-                </p>
-                <Button
-                  size="lg"
-                  asChild
-                  className="gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold"
-                >
-                  <Link href="/#download">
-                    <Download className="h-5 w-5" />
-                    Télécharger l'app
-                  </Link>
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: formattedKpis.pays, label: "Pays actifs" },
-                  { value: formattedKpis.utilisateurs, label: "Utilisateurs" },
-                  { value: formattedKpis.coursesParJour, label: "Courses/jour" },
-                  { value: formattedKpis.satisfactionPourcentage, label: "Satisfaction" },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center"
-                  >
-                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-white/70 text-sm">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>
-  );
+  return <AProposContent translations={translations} />;
 }

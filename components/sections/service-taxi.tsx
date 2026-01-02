@@ -6,38 +6,40 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { formattedKpis, kpis } from "@/data/kpis";
-
-const features = [
-  {
-    icon: Clock,
-    title: "Disponible 24/7",
-    description: "Réservez à tout moment, de jour comme de nuit.",
-  },
-  {
-    icon: MapPin,
-    title: "Suivi GPS en direct",
-    description: "Suivez votre chauffeur en temps réel sur la carte.",
-  },
-  {
-    icon: Shield,
-    title: "Chauffeurs vérifiés",
-    description: "Tous nos chauffeurs sont formés et certifiés.",
-  },
-  {
-    icon: CreditCard,
-    title: "Paiement flexible",
-    description: "Espèces, mobile money ou carte bancaire.",
-  },
-];
-
-const benefits = [
-  "Estimation du prix avant la course",
-  "Partage de trajet avec vos proches",
-  "Historique de vos courses",
-  "Notes et avis sur les chauffeurs",
-];
+import { useTranslations } from "next-intl";
 
 export function ServiceTaxiSection() {
+  const t = useTranslations();
+
+  const features = [
+    {
+      icon: Clock,
+      title: t("serviceTaxi.features.available247.title"),
+      description: t("serviceTaxi.features.available247.description"),
+    },
+    {
+      icon: MapPin,
+      title: t("serviceTaxi.features.gpsTracking.title"),
+      description: t("serviceTaxi.features.gpsTracking.description"),
+    },
+    {
+      icon: Shield,
+      title: t("serviceTaxi.features.verifiedDrivers.title"),
+      description: t("serviceTaxi.features.verifiedDrivers.description"),
+    },
+    {
+      icon: CreditCard,
+      title: t("serviceTaxi.features.flexiblePayment.title"),
+      description: t("serviceTaxi.features.flexiblePayment.description"),
+    },
+  ];
+
+  const benefits = [
+    t("serviceTaxi.benefits.priceEstimate"),
+    t("serviceTaxi.benefits.tripSharing"),
+    t("serviceTaxi.benefits.tripHistory"),
+    t("serviceTaxi.benefits.driverRatings"),
+  ];
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -73,7 +75,7 @@ export function ServiceTaxiSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
             >
               <Car className="h-4 w-4" />
-              Taxi & VTC
+              {t("serviceTaxi.badge")}
             </motion.div>
 
             <motion.h2
@@ -83,10 +85,10 @@ export function ServiceTaxiSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
             >
-              Vos trajets{" "}
-              <span className="text-primary">simplifiés</span>,<br />
+              {t("serviceTaxi.title.part1")}{" "}
+              <span className="text-primary">{t("serviceTaxi.title.highlight")}</span>,<br />
               <span className="relative inline-block">
-                partout
+                {t("serviceTaxi.title.part2")}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -95,7 +97,7 @@ export function ServiceTaxiSection() {
                   className="absolute -bottom-1 left-0 right-0 h-3 bg-primary/20 -z-10 origin-left"
                 />
               </span>{" "}
-              dans le monde
+              {t("serviceTaxi.title.part3")}
             </motion.h2>
 
             <motion.p
@@ -105,8 +107,7 @@ export function ServiceTaxiSection() {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg mb-8 leading-relaxed"
             >
-              Commandez un taxi ou VTC en quelques secondes. Nos chauffeurs professionnels
-              vous conduisent en toute sécurité, avec un service de qualité et des tarifs transparents.
+              {t("serviceTaxi.description")}
             </motion.p>
 
             {/* Benefits list */}
@@ -143,7 +144,7 @@ export function ServiceTaxiSection() {
             >
               <Link href="/passager">
                 <Button size="lg" className="rounded-full px-8 gap-2 shadow-lg shadow-primary/25">
-                  Réserver un trajet
+                  {t("serviceTaxi.cta")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
@@ -217,7 +218,7 @@ export function ServiceTaxiSection() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm font-medium">{formattedKpis.satisfaction} - Plus de {kpis.coursesParJour.value.toLocaleString('fr-FR')} courses/jour</span>
+                <span className="text-sm font-medium">{t("serviceTaxi.ratingBadge", { satisfaction: formattedKpis.satisfaction, coursesPerDay: kpis.coursesParJour.value.toLocaleString('fr-FR') })}</span>
               </div>
             </motion.div>
           </motion.div>

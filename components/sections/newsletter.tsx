@@ -6,8 +6,10 @@ import { Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { trackNewsletterSignup } from "@/lib/analytics";
+import { useTranslations } from "next-intl";
 
 export function NewsletterSection() {
+  const t = useTranslations();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -59,14 +61,13 @@ export function NewsletterSection() {
           className="max-w-2xl mx-auto text-center"
         >
           <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Newsletter
+            {t("newsletter.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
-            Restez informé
+            {t("newsletter.title")}
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Inscrivez-vous à notre newsletter pour recevoir nos actualités,
-            offres spéciales et nouveautés.
+            {t("newsletter.description")}
           </p>
 
           <motion.form
@@ -80,7 +81,7 @@ export function NewsletterSection() {
             <div className="flex-1 relative">
               <Input
                 type="email"
-                placeholder="Votre adresse email"
+                placeholder={t("newsletter.placeholder")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={status !== "idle"}
@@ -99,7 +100,7 @@ export function NewsletterSection() {
               {status === "success" && <CheckCircle className="h-4 w-4" />}
               {status === "error" && <AlertCircle className="h-4 w-4" />}
               {status === "idle" && <Send className="h-4 w-4" />}
-              {status === "success" ? "Inscrit!" : status === "error" ? "Erreur" : "S'inscrire"}
+              {status === "success" ? t("newsletter.success") : status === "error" ? t("newsletter.error") : t("newsletter.submit")}
             </Button>
           </motion.form>
 
@@ -110,9 +111,9 @@ export function NewsletterSection() {
             transition={{ delay: 0.3 }}
             className="mt-4 text-sm text-muted-foreground"
           >
-            En vous inscrivant, vous acceptez notre{" "}
+            {t("newsletter.privacy.text")}{" "}
             <a href="/confidentialite" className="text-primary hover:underline">
-              politique de confidentialité
+              {t("newsletter.privacy.link")}
             </a>
           </motion.p>
         </motion.div>
