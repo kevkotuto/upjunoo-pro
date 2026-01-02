@@ -82,6 +82,42 @@
     "becomePartner": {
       "title": "كن شريكاً",
       "description": "انضم إلى فريقنا واستمتع بساعات عمل مرنة وأرباح جذابة."
+    },
+    "serviceTaxi": {
+      "badge": "خدمة التاكسي",
+      "title": {
+        "part1": "رحلتك،",
+        "highlight": "مصممة لك",
+        "part2": "، متاحة",
+        "part3": "فوراً"
+      },
+      "description": "استمتع بخدمة نقل موثوقة ومريحة. سائقون محترفون يرافقونك في كل مكان بأمان.",
+      "features": {
+        "available247": {
+          "title": "متاح 24/7",
+          "description": "خدمة متاحة في أي وقت، ليلاً ونهاراً."
+        },
+        "gpsTracking": {
+          "title": "تتبع GPS",
+          "description": "شاهد رحلتك واقتراب السائق في الوقت الفعلي."
+        },
+        "verifiedDrivers": {
+          "title": "سائقون معتمدون",
+          "description": "محترفون تم التحقق منهم لسلامتك وراحتك."
+        },
+        "flexiblePayment": {
+          "title": "دفع سهل",
+          "description": "ادفع رحلاتك نقداً أو بالبطاقة أو عبر الهاتف."
+        }
+      },
+      "benefits": {
+        "priceEstimate": "تقدير السعر",
+        "tripSharing": "مشاركة الرحلة",
+        "tripHistory": "سجل الرحلات",
+        "driverRatings": "تقييم السائقين"
+      },
+      "cta": "اطلب تاكسي",
+      "ratingBadge": "{satisfaction} رضا • +{coursesPerDay} رحلة/يوم"
     }
   },
   "partnerOffers": {

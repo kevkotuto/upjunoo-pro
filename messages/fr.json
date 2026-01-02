@@ -82,6 +82,42 @@
     "becomePartner": {
       "title": "Devenir Partenaire",
       "description": "Rejoignez notre équipe et bénéficiez d'horaires flexibles et de revenus attractifs."
+    },
+    "serviceTaxi": {
+      "badge": "Service Taxi & VTC",
+      "title": {
+        "part1": "Votre transport",
+        "highlight": "sur mesure",
+        "part2": ", disponible",
+        "part3": "immédiatement"
+      },
+      "description": "Profitez d'un service de transport fiable et confortable. Nos chauffeurs professionnels vous accompagnent partout, en toute sécurité.",
+      "features": {
+        "available247": {
+          "title": "Disponible 24/7",
+          "description": "Un service accessible à tout moment, jour et nuit."
+        },
+        "gpsTracking": {
+          "title": "Suivi GPS",
+          "description": "Visualisez votre trajet et l'approche du chauffeur en temps réel."
+        },
+        "verifiedDrivers": {
+          "title": "Chauffeurs certifiés",
+          "description": "Des professionnels vérifiés pour votre sécurité et confort."
+        },
+        "flexiblePayment": {
+          "title": "Paiement facile",
+          "description": "Réglez vos courses en espèces, carte ou mobile money."
+        }
+      },
+      "benefits": {
+        "priceEstimate": "Estimation du prix",
+        "tripSharing": "Partage de trajet",
+        "tripHistory": "Historique des courses",
+        "driverRatings": "Notation des chauffeurs"
+      },
+      "cta": "Commander un taxi",
+      "ratingBadge": "{satisfaction} de satisfaction • +{coursesPerDay} courses/jour"
     }
   },
   "partnerOffers": {

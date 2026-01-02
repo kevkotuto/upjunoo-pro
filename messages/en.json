@@ -82,6 +82,42 @@
     "becomePartner": {
       "title": "Become a Partner",
       "description": "Join our team and enjoy flexible hours and attractive earnings."
+    },
+    "serviceTaxi": {
+      "badge": "Taxi & Ride Service",
+      "title": {
+        "part1": "Your ride,",
+        "highlight": "tailored",
+        "part2": ", available",
+        "part3": "immediately"
+      },
+      "description": "Enjoy a reliable and comfortable transport service. Our professional drivers take you everywhere, safely.",
+      "features": {
+        "available247": {
+          "title": "Available 24/7",
+          "description": "Service accessible anytime, day or night."
+        },
+        "gpsTracking": {
+          "title": "GPS Tracking",
+          "description": "View your trip and driver approach in real-time."
+        },
+        "verifiedDrivers": {
+          "title": "Certified Drivers",
+          "description": "Verified professionals for your safety and comfort."
+        },
+        "flexiblePayment": {
+          "title": "Easy Payment",
+          "description": "Pay for your rides with cash, card, or mobile money."
+        }
+      },
+      "benefits": {
+        "priceEstimate": "Price Estimate",
+        "tripSharing": "Trip Sharing",
+        "tripHistory": "Trip History",
+        "driverRatings": "Driver Ratings"
+      },
+      "cta": "Order a Taxi",
+      "ratingBadge": "{satisfaction} satisfaction • +{coursesPerDay} rides/day"
     }
   },
   "partnerOffers": {
