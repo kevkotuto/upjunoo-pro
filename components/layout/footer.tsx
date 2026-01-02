@@ -4,33 +4,36 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
 import { socialLinks } from "@/data/social-links";
 
-const footerLinks = {
+const footerLinksConfig = {
   services: [
-    { title: "Passager", href: "/passager" },
-    { title: "Livraison", href: "/livraison" },
-    { title: "Fret Urbain", href: "/fret-urbain" },
-    { title: "Location", href: "/location" },
-    { title: "Chauffeurs", href: "/devenir-chauffeur" },
+    { key: "passenger", href: "/passager" },
+    { key: "delivery", href: "/livraison" },
+    { key: "freight", href: "/fret-urbain" },
+    { key: "rental", href: "/location" },
+    { key: "drivers", href: "/devenir-chauffeur" },
   ],
   company: [
-    { title: "Accueil", href: "/" },
-    { title: "Nos Implantations", href: "/nos-implantations" },
-    { title: "Actualités", href: "/actualites" },
-    { title: "Offres Partenaires", href: "/offres-partenaires" },
+    { key: "home", href: "/" },
+    { key: "locations", href: "/nos-implantations" },
+    { key: "news", href: "/actualites" },
+    { key: "partnerOffers", href: "/offres-partenaires" },
   ],
   legal: [
-    { title: "Conditions d'utilisation", href: "/cgu" },
-    { title: "Politique de confidentialité", href: "/confidentialite" },
-    { title: "FAQ", href: "/faq" },
-    { title: "Support", href: "/support" },
+    { key: "terms", href: "/cgu" },
+    { key: "privacy", href: "/confidentialite" },
+    { key: "faq", href: "/faq" },
+    { key: "support", href: "/support" },
   ],
 };
 
 
 export function Footer() {
+  const t = useTranslations();
+
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,9 +53,7 @@ export function Footer() {
                 />
               </Link>
               <p className="text-background/70 text-sm leading-relaxed mb-6 max-w-sm">
-                UPJUNOO PRO est une plateforme qui vous permet de commander des
-                taxis, envoyer des colis et louer des véhicules en toute
-                simplicité.
+                {t("footer.description")}
               </p>
 
               {/* Contact Info */}
@@ -64,31 +65,22 @@ export function Footer() {
                   <Mail className="h-4 w-4" />
                   contact@upjunoopro.com
                 </a>
-                {/* TODO: Décommenter quand le numéro sera disponible
-                <a
-                  href="tel:+22500000000"
-                  className="flex items-center gap-3 text-sm text-background/70 hover:text-primary transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  +225 00 00 00 00 00
-                </a>
-                */}
               </div>
             </div>
 
             {/* Services */}
             <div>
               <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">
-                Services
+                {t("footer.sections.services")}
               </h3>
               <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.title}>
+                {footerLinksConfig.services.map((link) => (
+                  <li key={link.key}>
                     <Link
                       href={link.href}
                       className="text-sm text-background/70 hover:text-primary transition-colors"
                     >
-                      {link.title}
+                      {t(`services.${link.key}.title`)}
                     </Link>
                   </li>
                 ))}
@@ -98,16 +90,16 @@ export function Footer() {
             {/* Company */}
             <div>
               <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">
-                Entreprise
+                {t("footer.sections.company")}
               </h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.title}>
+                {footerLinksConfig.company.map((link) => (
+                  <li key={link.key}>
                     <Link
                       href={link.href}
                       className="text-sm text-background/70 hover:text-primary transition-colors"
                     >
-                      {link.title}
+                      {t(`footer.links.${link.key}`)}
                     </Link>
                   </li>
                 ))}
@@ -117,16 +109,16 @@ export function Footer() {
             {/* Legal */}
             <div>
               <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">
-                Informations
+                {t("footer.sections.legal")}
               </h3>
               <ul className="space-y-3">
-                {footerLinks.legal.map((link) => (
-                  <li key={link.title}>
+                {footerLinksConfig.legal.map((link) => (
+                  <li key={link.key}>
                     <Link
                       href={link.href}
                       className="text-sm text-background/70 hover:text-primary transition-colors"
                     >
-                      {link.title}
+                      {t(`footer.links.${link.key}`)}
                     </Link>
                   </li>
                 ))}
@@ -140,7 +132,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/60">
-            &copy; {new Date().getFullYear()} UPJUNOO PRO. Tous droits réservés.
+            &copy; {new Date().getFullYear()} UPJUNOO PRO. {t("common.allRightsReserved")}
           </p>
 
           {/* Social Links */}

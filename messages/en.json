@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "title": "UPJUNOO PRO | Mobility & Logistics - Taxi, Delivery, Rental, Freight",
+    "titleTemplate": "{title} | UPJUNOO PRO",
+    "description": "Smart, simple and inclusive mobility. VTC/Taxi, express delivery, vehicle rental and urban freight combined in a single platform. International solution available in multiple countries.",
+    "ogTitle": "UPJUNOO PRO | Smart International Mobility & Logistics",
+    "ogDescription": "Smart, simple and inclusive mobility. VTC/Taxi, express delivery, rental and urban freight on a single platform. International solution.",
+    "twitterTitle": "UPJUNOO PRO | Smart Mobility & Logistics",
+    "twitterDescription": "VTC/Taxi, express delivery, rental and urban freight combined in a single platform. International solution."
+  },
+  "common": {
+    "download": "Download",
+    "downloadApp": "Download the app",
+    "downloadFree": "Download for free",
+    "learnMore": "Learn more",
+    "discover": "Discover",
+    "contact": "Contact",
+    "contactUs": "Contact us",
+    "close": "Close",
+    "menu": "Menu",
+    "send": "Send",
+    "sending": "Sending...",
+    "free": "Free",
+    "secure": "Secure",
+    "noAds": "Ad-free",
+    "comingSoon": "Coming soon",
+    "available": "Available",
+    "availableOn": "Available on",
+    "comingOn": "Coming soon on",
+    "allRightsReserved": "All rights reserved.",
+    "scanWithPhone": "Scan with your phone",
+    "clickToEnlarge": "Click on a QR code to enlarge",
+    "downloads": "downloads",
+    "apkDownloads": "APK downloads"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "partnerOffers": "Partner Offers",
+    "locations": "Our Locations",
+    "news": "News",
+    "contact": "Contact",
+    "navigation": "Navigation"
+  },
+  "services": {
+    "passenger": {
+      "title": "Passenger",
+      "description": "Order a taxi in a few clicks"
+    },
+    "delivery": {
+      "title": "Delivery",
+      "description": "Send and receive your packages"
+    },
+    "freight": {
+      "title": "Urban Freight",
+      "description": "Bulky goods transportation"
+    },
+    "rental": {
+      "title": "Rental",
+      "description": "Rent a vehicle freely"
+    },
+    "drivers": {
+      "title": "Drivers",
+      "description": "Join our team"
+    },
+    "taxi": {
+      "title": "Taxi & VTC",
+      "description": "Order a taxi in a few clicks and travel with peace of mind across the city."
+    },
+    "expressDelivery": {
+      "title": "Express Delivery",
+      "description": "Send and receive your packages in record time with our network of professional couriers."
+    },
+    "vehicleRental": {
+      "title": "Vehicle Rental",
+      "description": "Rent a vehicle suited to your needs, whenever you want, with complete freedom."
+    },
+    "urbanFreight": {
+      "title": "Urban Freight",
+      "description": "Organize your bulky shipments with pick-ups, vans or light trucks. Planning and tracking guaranteed."
+    },
+    "becomePartner": {
+      "title": "Become a Partner",
+      "description": "Join our team and enjoy flexible hours and attractive earnings."
+    }
+  },
+  "partnerOffers": {
+    "franchises": {
+      "title": "Franchises",
+      "description": "Launch UPJUNOO PRO in your region"
+    },
+    "partners": {
+      "title": "Partners",
+      "description": "Become a business partner"
+    },
+    "drivers": {
+      "title": "Drivers",
+      "description": "Join our team of drivers"
+    }
+  },
+  "hero": {
+    "badge": "Available in {count} countries",
+    "title": "Mobility",
+    "highlight": "reinvented",
+    "subtitle": "for international",
+    "description": "Taxi, express delivery, vehicle rental and freight - one app for all your transportation needs.",
+    "downloads": "{count} downloads",
+    "cities": "{count} cities",
+    "deliveryLabel": "Delivery",
+    "deliveryStatus": "In progress...",
+    "driverLabel": "Driver",
+    "driverStatus": "2 min away"
+  },
+  "servicesSection": {
+    "badge": "Our Services",
+    "title": "A solution for",
+    "titleHighlight": "every need",
+    "description": "Discover our complete range of mobility services, designed to simplify your daily life anywhere in the world."
+  },
+  "download": {
+    "badge": "Mobile App",
+    "title": "Download",
+    "titleHighlight": "UPJUNOO PRO",
+    "description": "Available on all platforms. Download now and start enjoying our mobility services.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "apkDirect": "Direct APK",
+    "riderApp": "Upjunoo (Passenger)",
+    "driverApp": "Upjunoo Pro (Driver)",
+    "forUsers": "For users",
+    "forDrivers": "For drivers",
+    "passengerApp": "Passenger App",
+    "driverAppFull": "Driver App",
+    "scanToDownload": "Scan to download",
+    "appRating": "App Rating",
+    "ios": "iOS"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently",
+    "titleHighlight": "Asked Questions",
+    "description": "Quickly find answers to your most common questions about UPJUNOO PRO.",
+    "notFound": "Didn't find the answer to your question?",
+    "contactSupport": "Contact our support team",
+    "items": [
+      {
+        "question": "How do I download the UPJUNOO PRO app?",
+        "answer": "The UPJUNOO PRO app is available for free on the App Store for iOS and Google Play for Android. Search for 'UPJUNOO PRO' and download the app in seconds."
+      },
+      {
+        "question": "What payment methods are accepted?",
+        "answer": "We accept several payment methods: credit card, mobile payment, e-wallet and cash payment depending on the region. You can set your preferred payment method in the app."
+      },
+      {
+        "question": "How do I become an UPJUNOO PRO driver?",
+        "answer": "To become an UPJUNOO PRO driver, go to the 'Partner Offers > Drivers' page and fill out the registration form. You will be contacted by an approved fleet manager who will assist you through the process."
+      },
+      {
+        "question": "Is UPJUNOO PRO available in my city?",
+        "answer": "UPJUNOO PRO is present in over 100 cities worldwide. Check our 'Our Locations' page to verify availability in your region. If we're not there yet, you can become a franchise!"
+      },
+      {
+        "question": "How does the delivery service work?",
+        "answer": "The UPJUNOO PRO delivery service allows you to send and receive packages in real time. Simply enter the pickup and delivery addresses, and a courier takes care of the rest. You can track your package live."
+      },
+      {
+        "question": "How do I contact customer support?",
+        "answer": "Our support team is available 24/7. You can contact us via the app, by email at contact@upjunoopro.com, or via our Contact page. We are committed to responding as quickly as possible."
+      },
+      {
+        "question": "How do I become an UPJUNOO PRO franchise?",
+        "answer": "To become a franchise, go to the 'Partner Offers > Franchises' page. There you will find all the information about the desired profile, benefits and conditions. Contact our team to discuss your project."
+      },
+      {
+        "question": "How are rides calculated?",
+        "answer": "UPJUNOO PRO rides are calculated based on distance and travel time. You always see an estimate before confirming your ride. No surprises, everything is transparent."
+      }
+    ]
+  },
+  "footer": {
+    "description": "UPJUNOO PRO is a platform that allows you to order taxis, send packages and rent vehicles with ease.",
+    "sections": {
+      "services": "Services",
+      "company": "Company",
+      "legal": "Information"
+    },
+    "links": {
+      "home": "Home",
+      "locations": "Our Locations",
+      "news": "News",
+      "partnerOffers": "Partner Offers",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy",
+      "faq": "FAQ",
+      "support": "Support"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Our team is here to help",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "firstNamePlaceholder": "Your first name",
+      "lastNamePlaceholder": "Your last name",
+      "emailPlaceholder": "your@email.com",
+      "messagePlaceholder": "Your message...",
+      "selectSubject": "Select a subject",
+      "submit": "Send message"
+    },
+    "subjects": {
+      "general": "General question",
+      "partnership": "Partnership",
+      "franchise": "Franchise",
+      "driver": "Become a driver",
+      "support": "Technical support",
+      "billing": "Billing",
+      "complaint": "Complaint",
+      "suggestion": "Suggestion",
+      "press": "Press",
+      "other": "Other"
+    },
+    "success": {
+      "title": "Message sent!",
+      "description": "We will respond to you as soon as possible."
+    },
+    "error": {
+      "title": "Sending error",
+      "description": "An error occurred. Please try again."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "french": "Français",
+    "english": "English",
+    "arabic": "العربية"
+  }
+}

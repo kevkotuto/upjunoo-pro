@@ -1,13 +1,16 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Download, ArrowRight, Play, MapPin, Star } from "lucide-react";
+import { Download, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { formattedKpis, kpis } from "@/data/kpis";
 
 export function HeroSection() {
+  const t = useTranslations();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 bg-gradient-to-br from-primary via-primary to-[#046d7a]">
       {/* Animated background shapes */}
@@ -74,7 +77,7 @@ export function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400" />
               </span>
-              <span>Disponible dans {kpis.pays.value} pays</span>
+              <span>{t("hero.badge", { count: kpis.pays.value })}</span>
               <div className="flex -space-x-1">
                 <span className="text-lg">🇨🇮</span>
                 <span className="text-lg">🇸🇳</span>
@@ -88,10 +91,10 @@ export function HeroSection() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] sm:leading-[1.1] mb-6 text-white"
             >
-              La mobilité
+              {t("hero.title")}
               <br />
               <span className="relative inline-block pb-2 sm:pb-3">
-                <span className="text-yellow-400">réinventée</span>
+                <span className="text-yellow-400">{t("hero.highlight")}</span>
                 <motion.svg
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -111,7 +114,7 @@ export function HeroSection() {
                 </motion.svg>
               </span>
               <br />
-              pour l'international
+              {t("hero.subtitle")}
             </motion.h1>
 
             <motion.p
@@ -120,7 +123,7 @@ export function HeroSection() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-lg sm:text-xl text-white/80 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Taxi, livraison express, location de véhicules et fret - une seule application pour tous vos besoins de transport.
+              {t("hero.description")}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -137,22 +140,9 @@ export function HeroSection() {
               >
                 <Link href="#download">
                   <Download className="h-5 w-5" />
-                  Télécharger gratuitement
+                  {t("common.downloadFree")}
                 </Link>
               </Button>
-              {/* Bouton demo - à réactiver quand la démo sera prête
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="gap-2 h-14 px-8 bg-transparent border-2 border-white/40 text-white hover:bg-white hover:text-primary font-semibold text-base transition-all"
-              >
-                <Link href="#services">
-                  <Play className="h-4 w-4" />
-                  Voir la démo
-                </Link>
-              </Button>
-              */}
             </motion.div>
 
             {/* Trust indicators */}
@@ -173,12 +163,12 @@ export function HeroSection() {
               <div className="h-5 w-px bg-white/30" />
               <div className="flex items-center gap-2 text-white/90">
                 <Download className="h-4 w-4" />
-                <span className="text-sm font-medium">{formattedKpis.telechargements} téléchargements</span>
+                <span className="text-sm font-medium">{t("hero.downloads", { count: formattedKpis.telechargements })}</span>
               </div>
               <div className="h-5 w-px bg-white/30 hidden sm:block" />
               <div className="flex items-center gap-2 text-white/90">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm font-medium">{formattedKpis.villes} villes</span>
+                <span className="text-sm font-medium">{t("hero.cities", { count: formattedKpis.villes })}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -307,8 +297,8 @@ export function HeroSection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Livraison</p>
-                    <p className="text-sm font-semibold text-gray-900">En cours...</p>
+                    <p className="text-xs text-gray-500">{t("hero.deliveryLabel")}</p>
+                    <p className="text-sm font-semibold text-gray-900">{t("hero.deliveryStatus")}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -328,8 +318,8 @@ export function HeroSection() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Chauffeur</p>
-                    <p className="text-sm font-semibold text-gray-900">À 2 min</p>
+                    <p className="text-xs text-gray-500">{t("hero.driverLabel")}</p>
+                    <p className="text-sm font-semibold text-gray-900">{t("hero.driverStatus")}</p>
                   </div>
                 </motion.div>
               </motion.div>

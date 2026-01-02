@@ -269,3 +269,96 @@ html {
   background-color: hsl(var(--primary) / 0.2);
   color: hsl(var(--primary));
 }
+
+/* ===========================================
+   RTL (Right-to-Left) Support for Arabic
+   =========================================== */
+
+/* Arabic font stack */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Geist', system-ui, -apple-system, sans-serif;
+}
+
+/* Flip horizontal animations for RTL */
+[dir="rtl"] .animate-float {
+  animation: float-rtl 6s ease-in-out infinite;
+}
+
+@keyframes float-rtl {
+  0%, 100% { transform: translateY(0px) scaleX(-1); }
+  50% { transform: translateY(-20px) scaleX(-1); }
+}
+
+/* Adjust spacing and alignment for RTL */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Flip icons that have directional meaning */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Adjust flex direction for RTL layouts */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Keep certain elements LTR (like phone numbers, code) */
+[dir="rtl"] .ltr-preserve {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Adjust margins and paddings that use left/right */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Adjust scroll behavior */
+[dir="rtl"] {
+  scroll-behavior: smooth;
+}
+
+/* Adjust the wave decoration for RTL */
+[dir="rtl"] svg[viewBox="0 0 1440 120"] {
+  transform: scaleX(-1);
+}
+
+/* Ensure proper text rendering for Arabic */
+[dir="rtl"] * {
+  font-feature-settings: "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Adjust letter spacing for Arabic (usually tighter) */
+[dir="rtl"] {
+  letter-spacing: 0;
+}
+
+/* Fix gradient directions for RTL */
+[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+[dir="rtl"] .bg-gradient-to-l {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* Adjust positioning for floating elements */
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}

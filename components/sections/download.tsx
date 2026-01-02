@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
+import { useTranslations } from "next-intl";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,23 +29,22 @@ const QR_URLS = {
   android_driver: "https://play.google.com/store/apps/details?id=com.upjunoo.driver",
   android_rider: "https://play.google.com/store/apps/details?id=com.upjunoo.rider",
   apk: "https://upjunoo.pro/apk/app-client.apk",
-  // Page de choix pour le QR code unique
   choice: "https://upjunoo.pro/download-app",
 };
 
-const handleAppStoreClick = (e: React.MouseEvent) => {
-  e.preventDefault();
-  trackDownloadClick('client', 'appstore');
-  toast.info("Bientôt disponible", {
-    description: "L'application sera bientôt disponible sur l'App Store",
-  });
-};
-
-
 export function DownloadSection() {
+  const t = useTranslations();
   const [downloadCount, setDownloadCount] = useState<DownloadData | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [selectedQR, setSelectedQR] = useState<QRCodeType>(null);
+
+  const handleAppStoreClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    trackDownloadClick('client', 'appstore');
+    toast.info(t("common.comingSoon"), {
+      description: t("common.comingSoon"),
+    });
+  };
 
   useEffect(() => {
     const checkDesktop = () => {
@@ -83,11 +83,11 @@ export function DownloadSection() {
   };
 
   const qrLabels = {
-    ios: { icon: Apple, label: "App Store" },
-    android_driver: { icon: Play, label: "Chauffeur (Play Store)" },
-    android_rider: { icon: Play, label: "Passager (Play Store)" },
-    apk: { icon: Download, label: "APK Direct" },
-    choice: { icon: Play, label: "Google Play" },
+    ios: { icon: Apple, label: t("download.appStore") },
+    android_driver: { icon: Play, label: t("download.driverApp") },
+    android_rider: { icon: Play, label: t("download.riderApp") },
+    apk: { icon: Download, label: t("download.apkDirect") },
+    choice: { icon: Play, label: t("download.googlePlay") },
   };
 
   return (
@@ -173,7 +173,7 @@ export function DownloadSection() {
                     <span className="font-semibold text-lg">{qrLabels[selectedQR].label}</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">
-                    Scannez avec votre téléphone
+                    {t("common.scanWithPhone")}
                   </p>
                 </motion.div>
 
@@ -260,7 +260,7 @@ export function DownloadSection() {
                       <Smartphone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="text-xs text-muted-foreground">App Rating</div>
+                      <div className="text-xs text-muted-foreground">{t("download.appRating")}</div>
                       <div className="font-semibold flex items-center gap-1">
                         {formattedKpis.satisfaction} <span className="text-yellow-500">★</span>
                       </div>
@@ -280,15 +280,14 @@ export function DownloadSection() {
             className="order-1 lg:order-2 text-center lg:text-left"
           >
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
-              Application Mobile
+              {t("download.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-6">
-              Téléchargez{" "}
-              <span className="text-primary">UPJUNOO PRO</span>
+              {t("download.title")}{" "}
+              <span className="text-primary">{t("download.titleHighlight")}</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto lg:mx-0">
-              Disponible sur toutes les plateformes. Téléchargez maintenant et
-              commencez à profiter de nos services de mobilité.
+              {t("download.description")}
             </p>
 
             {/* Download buttons */}
@@ -304,8 +303,8 @@ export function DownloadSection() {
               >
                 <Apple className="h-7 w-7" />
                 <div className="text-left">
-                  <div className="text-xs opacity-80">Bientôt sur</div>
-                  <div className="font-semibold">App Store</div>
+                  <div className="text-xs opacity-80">{t("common.comingOn")}</div>
+                  <div className="font-semibold">{t("download.appStore")}</div>
                 </div>
               </motion.button>
 
@@ -323,8 +322,8 @@ export function DownloadSection() {
                   >
                     <Play className="h-7 w-7" />
                     <div className="text-left">
-                      <div className="text-xs opacity-80">Disponible sur</div>
-                      <div className="font-semibold">Google Play</div>
+                      <div className="text-xs opacity-80">{t("common.availableOn")}</div>
+                      <div className="font-semibold">{t("download.googlePlay")}</div>
                     </div>
                   </motion.button>
                 </DropdownMenuTrigger>
@@ -333,9 +332,9 @@ export function DownloadSection() {
                     <div className="flex items-center gap-2">
                       <Smartphone className="h-4 w-4" />
                       <div>
-                        <div className="font-medium">Upjunoo (Passager)</div>
+                        <div className="font-medium">{t("download.riderApp")}</div>
                         <div className="text-xs text-muted-foreground">
-                          Bientôt disponible
+                          {t("common.comingSoon")}
                         </div>
                       </div>
                     </div>
@@ -350,9 +349,9 @@ export function DownloadSection() {
                     >
                       <Smartphone className="h-4 w-4" />
                       <div>
-                        <div className="font-medium">Upjunoo Pro (Chauffeur)</div>
+                        <div className="font-medium">{t("download.driverApp")}</div>
                         <div className="text-xs text-muted-foreground">
-                          Pour les conducteurs
+                          {t("download.forDrivers")}
                         </div>
                       </div>
                     </a>
@@ -374,8 +373,8 @@ export function DownloadSection() {
                   >
                     <Download className="h-7 w-7" />
                     <div className="text-left">
-                      <div className="text-xs opacity-80">Télécharger</div>
-                      <div className="font-semibold">APK Direct</div>
+                      <div className="text-xs opacity-80">{t("common.download")}</div>
+                      <div className="font-semibold">{t("download.apkDirect")}</div>
                     </div>
                   </motion.button>
                 </DropdownMenuTrigger>
@@ -389,9 +388,9 @@ export function DownloadSection() {
                     >
                       <Smartphone className="h-4 w-4" />
                       <div>
-                        <div className="font-medium">Application Passager</div>
+                        <div className="font-medium">{t("download.passengerApp")}</div>
                         <div className="text-xs text-muted-foreground">
-                          Pour les utilisateurs
+                          {t("download.forUsers")}
                         </div>
                       </div>
                     </a>
@@ -405,9 +404,9 @@ export function DownloadSection() {
                     >
                       <Smartphone className="h-4 w-4" />
                       <div>
-                        <div className="font-medium">Application Chauffeur</div>
+                        <div className="font-medium">{t("download.driverAppFull")}</div>
                         <div className="text-xs text-muted-foreground">
-                          Pour les conducteurs
+                          {t("download.forDrivers")}
                         </div>
                       </div>
                     </a>
@@ -430,7 +429,7 @@ export function DownloadSection() {
                   <span className="font-semibold text-foreground">
                     {formatNumber(downloadCount.total)}
                   </span>{" "}
-                  téléchargements APK
+                  {t("common.apkDownloads")}
                 </span>
               </motion.div>
             )}
@@ -444,13 +443,13 @@ export function DownloadSection() {
               className="mt-6 flex items-center gap-6 justify-center lg:justify-start text-sm text-muted-foreground"
             >
               <span className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Gratuit
+                <span className="text-green-500">✓</span> {t("common.free")}
               </span>
               <span className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Sécurisé
+                <span className="text-green-500">✓</span> {t("common.secure")}
               </span>
               <span className="flex items-center gap-2">
-                <span className="text-green-500">✓</span> Sans pub
+                <span className="text-green-500">✓</span> {t("common.noAds")}
               </span>
             </motion.div>
 
@@ -464,7 +463,7 @@ export function DownloadSection() {
                 className="mt-10 p-6 bg-card rounded-2xl border border-border"
               >
                 <h3 className="text-lg font-semibold mb-4 text-center lg:text-left">
-                  Scannez pour télécharger
+                  {t("download.scanToDownload")}
                 </h3>
                 <div className="flex gap-6 justify-center lg:justify-start flex-wrap">
                   {/* iOS QR Code - Disabled */}
@@ -472,12 +471,12 @@ export function DownloadSection() {
                     <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
                       <QRCodeSVG value={QR_URLS.ios} size={80} level="M" includeMargin={false} className="opacity-50" />
                       <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
-                        <span className="text-xs font-medium text-muted-foreground">Bientôt</span>
+                        <span className="text-xs font-medium text-muted-foreground">{t("common.comingSoon")}</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Apple className="h-4 w-4" />
-                      <span className="text-sm font-medium">iOS</span>
+                      <span className="text-sm font-medium">{t("download.ios")}</span>
                     </div>
                   </div>
 
@@ -496,7 +495,7 @@ export function DownloadSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Play className="h-4 w-4" />
-                      <span className="text-sm font-medium">Google Play</span>
+                      <span className="text-sm font-medium">{t("download.googlePlay")}</span>
                     </div>
                   </motion.button>
 
@@ -515,12 +514,12 @@ export function DownloadSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Download className="h-4 w-4" />
-                      <span className="text-sm font-medium">APK Direct</span>
+                      <span className="text-sm font-medium">{t("download.apkDirect")}</span>
                     </div>
                   </motion.button>
                 </div>
                 <p className="text-xs text-muted-foreground mt-4 text-center lg:text-left">
-                  Cliquez sur un QR code pour l&apos;agrandir
+                  {t("common.clickToEnlarge")}
                 </p>
               </motion.div>
             )}

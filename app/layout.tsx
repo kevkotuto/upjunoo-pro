@@ -4,6 +4,9 @@ import "./globals.css";
 import { Header, Footer } from "@/components/layout";
 import { Toaster } from "sonner";
 import GoogleAnalytics, { GTMNoScript } from "@/components/GoogleAnalytics";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { isRtlLocale, type Locale } from "@/lib/i18n/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,24 +92,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale() as Locale;
+  const messages = await getMessages();
+  const isRtl = isRtlLocale(locale);
+
   return (
-    <html lang="fr">
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
       <head>
         <GoogleAnalytics />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <GTMNoScript />
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <Toaster position="top-center" richColors />
+        <NextIntlClientProvider messages={messages}>
+          <GTMNoScript />
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <Toaster position="top-center" richColors />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

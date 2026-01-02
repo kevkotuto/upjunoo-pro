@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "title": "UPJUNOO PRO | التنقل والخدمات اللوجستية - تاكسي، توصيل، تأجير، شحن",
+    "titleTemplate": "{title} | UPJUNOO PRO",
+    "description": "تنقل ذكي وبسيط وشامل. تاكسي، توصيل سريع، تأجير سيارات وشحن حضري في منصة واحدة. حل دولي متاح في عدة دول.",
+    "ogTitle": "UPJUNOO PRO | التنقل الذكي والخدمات اللوجستية الدولية",
+    "ogDescription": "تنقل ذكي وبسيط وشامل. تاكسي، توصيل سريع، تأجير وشحن حضري في منصة واحدة. حل دولي.",
+    "twitterTitle": "UPJUNOO PRO | التنقل الذكي والخدمات اللوجستية",
+    "twitterDescription": "تاكسي، توصيل سريع، تأجير وشحن حضري في منصة واحدة. حل دولي."
+  },
+  "common": {
+    "download": "تحميل",
+    "downloadApp": "تحميل التطبيق",
+    "downloadFree": "تحميل مجاني",
+    "learnMore": "معرفة المزيد",
+    "discover": "اكتشف",
+    "contact": "اتصل بنا",
+    "contactUs": "تواصل معنا",
+    "close": "إغلاق",
+    "menu": "القائمة",
+    "send": "إرسال",
+    "sending": "جاري الإرسال...",
+    "free": "مجاني",
+    "secure": "آمن",
+    "noAds": "بدون إعلانات",
+    "comingSoon": "قريباً",
+    "available": "متاح",
+    "availableOn": "متاح على",
+    "comingOn": "قريباً على",
+    "allRightsReserved": "جميع الحقوق محفوظة.",
+    "scanWithPhone": "امسح بهاتفك",
+    "clickToEnlarge": "انقر على رمز QR للتكبير",
+    "downloads": "تحميل",
+    "apkDownloads": "تحميلات APK"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "partnerOffers": "عروض الشركاء",
+    "locations": "مواقعنا",
+    "news": "الأخبار",
+    "contact": "اتصل بنا",
+    "navigation": "التنقل"
+  },
+  "services": {
+    "passenger": {
+      "title": "راكب",
+      "description": "اطلب تاكسي بنقرات قليلة"
+    },
+    "delivery": {
+      "title": "توصيل",
+      "description": "أرسل واستلم طرودك"
+    },
+    "freight": {
+      "title": "شحن حضري",
+      "description": "نقل البضائع الضخمة"
+    },
+    "rental": {
+      "title": "تأجير",
+      "description": "استأجر سيارة بحرية"
+    },
+    "drivers": {
+      "title": "سائقون",
+      "description": "انضم إلى فريقنا"
+    },
+    "taxi": {
+      "title": "تاكسي و VTC",
+      "description": "اطلب تاكسي بنقرات قليلة وتنقل براحة بال في جميع أنحاء المدينة."
+    },
+    "expressDelivery": {
+      "title": "توصيل سريع",
+      "description": "أرسل واستلم طرودك في وقت قياسي مع شبكتنا من المندوبين المحترفين."
+    },
+    "vehicleRental": {
+      "title": "تأجير السيارات",
+      "description": "استأجر سيارة تناسب احتياجاتك، متى شئت، بحرية تامة."
+    },
+    "urbanFreight": {
+      "title": "شحن حضري",
+      "description": "نظم شحناتك الضخمة مع شاحنات صغيرة أو متوسطة. التخطيط والتتبع مضمونان."
+    },
+    "becomePartner": {
+      "title": "كن شريكاً",
+      "description": "انضم إلى فريقنا واستمتع بساعات عمل مرنة وأرباح جذابة."
+    }
+  },
+  "partnerOffers": {
+    "franchises": {
+      "title": "الامتياز",
+      "description": "أطلق UPJUNOO PRO في منطقتك"
+    },
+    "partners": {
+      "title": "الشركاء",
+      "description": "كن شريكاً تجارياً"
+    },
+    "drivers": {
+      "title": "السائقون",
+      "description": "انضم إلى فريق السائقين"
+    }
+  },
+  "hero": {
+    "badge": "متاح في {count} دولة",
+    "title": "التنقل",
+    "highlight": "المُعاد ابتكاره",
+    "subtitle": "على المستوى الدولي",
+    "description": "تاكسي، توصيل سريع، تأجير سيارات وشحن - تطبيق واحد لجميع احتياجات النقل الخاصة بك.",
+    "downloads": "{count} تحميل",
+    "cities": "{count} مدينة",
+    "deliveryLabel": "توصيل",
+    "deliveryStatus": "قيد التنفيذ...",
+    "driverLabel": "سائق",
+    "driverStatus": "على بعد دقيقتين"
+  },
+  "servicesSection": {
+    "badge": "خدماتنا",
+    "title": "حل لكل",
+    "titleHighlight": "احتياج",
+    "description": "اكتشف مجموعتنا الكاملة من خدمات التنقل، المصممة لتبسيط حياتك اليومية في أي مكان في العالم."
+  },
+  "download": {
+    "badge": "تطبيق الهاتف",
+    "title": "حمّل",
+    "titleHighlight": "UPJUNOO PRO",
+    "description": "متاح على جميع المنصات. حمّل الآن وابدأ بالاستفادة من خدمات التنقل لدينا.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "apkDirect": "APK مباشر",
+    "riderApp": "Upjunoo (راكب)",
+    "driverApp": "Upjunoo Pro (سائق)",
+    "forUsers": "للمستخدمين",
+    "forDrivers": "للسائقين",
+    "passengerApp": "تطبيق الراكب",
+    "driverAppFull": "تطبيق السائق",
+    "scanToDownload": "امسح للتحميل",
+    "appRating": "تقييم التطبيق",
+    "ios": "iOS"
+  },
+  "faq": {
+    "badge": "الأسئلة الشائعة",
+    "title": "الأسئلة",
+    "titleHighlight": "المتكررة",
+    "description": "اعثر بسرعة على إجابات أسئلتك الأكثر شيوعاً حول UPJUNOO PRO.",
+    "notFound": "لم تجد إجابة سؤالك؟",
+    "contactSupport": "تواصل مع فريق الدعم",
+    "items": [
+      {
+        "question": "كيف أحمّل تطبيق UPJUNOO PRO؟",
+        "answer": "تطبيق UPJUNOO PRO متاح مجاناً على App Store لنظام iOS و Google Play لنظام Android. ابحث عن 'UPJUNOO PRO' وحمّل التطبيق في ثوانٍ."
+      },
+      {
+        "question": "ما هي طرق الدفع المقبولة؟",
+        "answer": "نقبل عدة طرق دفع: البطاقة المصرفية، الدفع عبر الهاتف، المحفظة الإلكترونية والدفع النقدي حسب المنطقة. يمكنك تعيين طريقة الدفع المفضلة في التطبيق."
+      },
+      {
+        "question": "كيف أصبح سائقاً في UPJUNOO PRO؟",
+        "answer": "لتصبح سائقاً في UPJUNOO PRO، اذهب إلى صفحة 'عروض الشركاء > السائقون' واملأ نموذج التسجيل. سيتم التواصل معك من قبل مدير أسطول معتمد سيساعدك في الإجراءات."
+      },
+      {
+        "question": "هل UPJUNOO PRO متاح في مدينتي؟",
+        "answer": "UPJUNOO PRO موجود في أكثر من 100 مدينة حول العالم. تحقق من صفحة 'مواقعنا' للتأكد من التوفر في منطقتك. إذا لم نكن موجودين بعد، يمكنك أن تصبح صاحب امتياز!"
+      },
+      {
+        "question": "كيف تعمل خدمة التوصيل؟",
+        "answer": "تتيح لك خدمة التوصيل من UPJUNOO PRO إرسال واستلام الطرود في الوقت الفعلي. فقط أدخل عناوين الاستلام والتوصيل، ويتكفل المندوب بالباقي. يمكنك تتبع طردك مباشرة."
+      },
+      {
+        "question": "كيف أتواصل مع خدمة العملاء؟",
+        "answer": "فريق الدعم متاح على مدار الساعة. يمكنك التواصل معنا عبر التطبيق، بالبريد الإلكتروني على contact@upjunoopro.com، أو عبر صفحة الاتصال. نلتزم بالرد في أسرع وقت ممكن."
+      },
+      {
+        "question": "كيف أصبح صاحب امتياز UPJUNOO PRO؟",
+        "answer": "لتصبح صاحب امتياز، اذهب إلى صفحة 'عروض الشركاء > الامتياز'. ستجد هناك جميع المعلومات حول الملف المطلوب والمزايا والشروط. تواصل مع فريقنا لمناقشة مشروعك."
+      },
+      {
+        "question": "كيف يتم حساب الرحلات؟",
+        "answer": "يتم حساب رحلات UPJUNOO PRO بناءً على المسافة ووقت الرحلة. ترى دائماً تقديراً قبل تأكيد رحلتك. لا مفاجآت، كل شيء شفاف."
+      }
+    ]
+  },
+  "footer": {
+    "description": "UPJUNOO PRO هي منصة تتيح لك طلب سيارات الأجرة وإرسال الطرود واستئجار السيارات بسهولة.",
+    "sections": {
+      "services": "الخدمات",
+      "company": "الشركة",
+      "legal": "معلومات"
+    },
+    "links": {
+      "home": "الرئيسية",
+      "locations": "مواقعنا",
+      "news": "الأخبار",
+      "partnerOffers": "عروض الشركاء",
+      "terms": "شروط الاستخدام",
+      "privacy": "سياسة الخصوصية",
+      "faq": "الأسئلة الشائعة",
+      "support": "الدعم"
+    }
+  },
+  "contact": {
+    "title": "تواصل معنا",
+    "description": "فريقنا هنا لمساعدتك",
+    "form": {
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "subject": "الموضوع",
+      "message": "الرسالة",
+      "firstNamePlaceholder": "اسمك الأول",
+      "lastNamePlaceholder": "اسم عائلتك",
+      "emailPlaceholder": "بريدك@الإلكتروني.com",
+      "messagePlaceholder": "رسالتك...",
+      "selectSubject": "اختر موضوعاً",
+      "submit": "إرسال الرسالة"
+    },
+    "subjects": {
+      "general": "سؤال عام",
+      "partnership": "شراكة",
+      "franchise": "امتياز",
+      "driver": "أن تصبح سائقاً",
+      "support": "دعم تقني",
+      "billing": "الفواتير",
+      "complaint": "شكوى",
+      "suggestion": "اقتراح",
+      "press": "الصحافة",
+      "other": "آخر"
+    },
+    "success": {
+      "title": "تم إرسال الرسالة!",
+      "description": "سنرد عليك في أقرب وقت ممكن."
+    },
+    "error": {
+      "title": "خطأ في الإرسال",
+      "description": "حدث خطأ. يرجى المحاولة مرة أخرى."
+    }
+  },
+  "languageSwitcher": {
+    "label": "اللغة",
+    "french": "Français",
+    "english": "English",
+    "arabic": "العربية"
+  }
+}

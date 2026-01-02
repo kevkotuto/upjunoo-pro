@@ -4,12 +4,11 @@ import { motion } from "motion/react";
 import { Car, Package, CarFront, Users, Truck, ArrowRight, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const services = [
+const servicesConfig = [
   {
-    title: "Taxi & VTC",
-    description:
-      "Commandez un taxi en quelques clics et déplacez-vous en toute sérénité à travers la ville.",
+    key: "taxi",
     icon: Car,
     href: "/passager",
     color: "bg-primary",
@@ -17,9 +16,7 @@ const services = [
     iconBg: "bg-primary/10",
   },
   {
-    title: "Livraisons Express",
-    description:
-      "Envoyez et recevez vos colis en temps record avec notre réseau de livreurs professionnels.",
+    key: "expressDelivery",
     icon: Package,
     href: "/livraison",
     color: "bg-orange-500",
@@ -27,9 +24,7 @@ const services = [
     iconBg: "bg-orange-500/10",
   },
   {
-    title: "Location Véhicules",
-    description:
-      "Louez un véhicule adapté à vos besoins, quand vous le souhaitez, en toute liberté.",
+    key: "vehicleRental",
     icon: CarFront,
     href: "/location",
     color: "bg-violet-500",
@@ -37,9 +32,7 @@ const services = [
     iconBg: "bg-violet-500/10",
   },
   {
-    title: "Fret Urbain",
-    description:
-      "Organisez vos envois volumineux avec pick-up, camionnettes ou camions légers. Planification et suivi garantis.",
+    key: "urbanFreight",
     icon: Truck,
     href: "/fret-urbain",
     color: "bg-amber-500",
@@ -47,9 +40,7 @@ const services = [
     iconBg: "bg-amber-500/10",
   },
   {
-    title: "Devenir Partenaire",
-    description:
-      "Rejoignez notre équipe et bénéficiez d'horaires flexibles et de revenus attractifs.",
+    key: "becomePartner",
     icon: Users,
     href: "/devenir-chauffeur",
     color: "bg-emerald-500",
@@ -59,6 +50,8 @@ const services = [
 ];
 
 export function ServicesSection() {
+  const t = useTranslations();
+
   return (
     <section id="services" className="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
       {/* Background decorations */}
@@ -91,28 +84,27 @@ export function ServicesSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
           >
             <Sparkles className="h-4 w-4" />
-            Nos Services
+            {t("servicesSection.badge")}
           </motion.div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Une solution pour{" "}
+            {t("servicesSection.title")}{" "}
             <span className="text-primary relative">
-              chaque besoin
+              {t("servicesSection.titleHighlight")}
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4 Q 50 8, 100 4 T 200 4" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.3" />
               </svg>
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Découvrez notre gamme complète de services de mobilité, conçus pour
-            simplifier votre quotidien partout dans le monde.
+            {t("servicesSection.description")}
           </p>
         </motion.div>
 
         {/* Services Grid - Bento style */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {servicesConfig.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={service.key}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -140,15 +132,15 @@ export function ServicesSection() {
 
                       {/* Content */}
                       <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                        {service.title}
+                        {t(`services.${service.key}.title`)}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                        {service.description}
+                        {t(`services.${service.key}.description`)}
                       </p>
 
                       {/* CTA */}
                       <div className="flex items-center text-primary font-semibold text-sm">
-                        <span>Découvrir</span>
+                        <span>{t("common.discover")}</span>
                         <motion.div
                           className="ml-2"
                           animate={{ x: [0, 5, 0] }}
@@ -177,7 +169,7 @@ export function ServicesSection() {
             href="#download"
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
           >
-            <span>Télécharger l'application</span>
+            <span>{t("common.downloadApp")}</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
         </motion.div>

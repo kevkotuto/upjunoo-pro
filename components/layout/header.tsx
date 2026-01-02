@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   Menu,
   X,
@@ -33,65 +34,73 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
-const services = [
-  {
-    title: "Passager",
-    href: "/passager",
-    description: "Commandez un taxi en quelques clics",
-    icon: Car,
-  },
-  {
-    title: "Livraison",
-    href: "/livraison",
-    description: "Envoyez et recevez vos colis",
-    icon: Package,
-  },
-  {
-    title: "Fret Urbain",
-    href: "/fret-urbain",
-    description: "Transport de marchandises volumineuses",
-    icon: Truck,
-  },
-  {
-    title: "Location",
-    href: "/location",
-    description: "Louez un véhicule en toute liberté",
-    icon: CarFront,
-  },
-  {
-    title: "Chauffeurs",
-    href: "/devenir-chauffeur",
-    description: "Rejoignez notre équipe",
-    icon: Users,
-  },
-];
+const serviceIcons = {
+  passenger: Car,
+  delivery: Package,
+  freight: Truck,
+  rental: CarFront,
+  drivers: Users,
+};
 
-const offresPartenaires = [
-  {
-    title: "Franchises",
-    href: "/offres-partenaires/franchises",
-    description: "Lancez UPJUNOO PRO dans votre région",
-    icon: Store,
-  },
-  {
-    title: "Partenaires",
-    href: "/offres-partenaires/partenaires",
-    description: "Devenez partenaire commercial",
-    icon: Handshake,
-  },
-  {
-    title: "Chauffeurs",
-    href: "/offres-partenaires/chauffeurs",
-    description: "Rejoignez notre équipe de chauffeurs",
-    icon: UserCheck,
-  },
-];
+const partnerIcons = {
+  franchises: Store,
+  partners: Handshake,
+  drivers: UserCheck,
+};
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations();
+
+  const services = [
+    {
+      key: "passenger",
+      href: "/passager",
+      icon: serviceIcons.passenger,
+    },
+    {
+      key: "delivery",
+      href: "/livraison",
+      icon: serviceIcons.delivery,
+    },
+    {
+      key: "freight",
+      href: "/fret-urbain",
+      icon: serviceIcons.freight,
+    },
+    {
+      key: "rental",
+      href: "/location",
+      icon: serviceIcons.rental,
+    },
+    {
+      key: "drivers",
+      href: "/devenir-chauffeur",
+      icon: serviceIcons.drivers,
+    },
+  ];
+
+  const offresPartenaires = [
+    {
+      key: "franchises",
+      href: "/offres-partenaires/franchises",
+      icon: partnerIcons.franchises,
+    },
+    {
+      key: "partners",
+      href: "/offres-partenaires/partenaires",
+      icon: partnerIcons.partners,
+    },
+    {
+      key: "drivers",
+      href: "/offres-partenaires/chauffeurs",
+      icon: partnerIcons.drivers,
+    },
+  ];
 
   // Vérifie si un lien est actif (page courante)
   const isActive = (href: string) => {
@@ -157,7 +166,7 @@ export function Header() {
                       isActive("/") ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Accueil
+                    {t("nav.home")}
                   </Link>
                 </NavigationMenuItem>
 
@@ -168,12 +177,12 @@ export function Header() {
                       isInSection(services) ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Services
+                    {t("nav.services")}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                       {services.map((service) => (
-                        <li key={service.title}>
+                        <li key={service.key}>
                           <Link
                             href={service.href}
                             className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -181,11 +190,11 @@ export function Header() {
                             <div className="flex items-center gap-2">
                               <service.icon className="h-4 w-4 text-primary" />
                               <div className="text-sm font-medium leading-none">
-                                {service.title}
+                                {t(`services.${service.key}.title`)}
                               </div>
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                              {service.description}
+                              {t(`services.${service.key}.description`)}
                             </p>
                           </Link>
                         </li>
@@ -201,12 +210,12 @@ export function Header() {
                       isInSection(offresPartenaires) ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Offres Partenaires
+                    {t("nav.partnerOffers")}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4">
                       {offresPartenaires.map((offre) => (
-                        <li key={offre.title}>
+                        <li key={offre.key}>
                           <Link
                             href={offre.href}
                             className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -214,11 +223,11 @@ export function Header() {
                             <div className="flex items-center gap-2">
                               <offre.icon className="h-4 w-4 text-primary" />
                               <div className="text-sm font-medium leading-none">
-                                {offre.title}
+                                {t(`partnerOffers.${offre.key}.title`)}
                               </div>
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                              {offre.description}
+                              {t(`partnerOffers.${offre.key}.description`)}
                             </p>
                           </Link>
                         </li>
@@ -235,7 +244,7 @@ export function Header() {
                       isActive("/nos-implantations") ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Nos Implantations
+                    {t("nav.locations")}
                   </Link>
                 </NavigationMenuItem>
 
@@ -247,7 +256,7 @@ export function Header() {
                       isActive("/actualites") ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Actualités
+                    {t("nav.news")}
                   </Link>
                 </NavigationMenuItem>
 
@@ -259,19 +268,20 @@ export function Header() {
                       isActive("/contact") ? "bg-primary-foreground/10" : ""
                     }`}
                   >
-                    Contact
+                    {t("nav.contact")}
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button + Language Switcher */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-semibold">
               <Link href="/#download" className="gap-2">
                 <Download className="h-4 w-4" />
-                Télécharger
+                {t("common.download")}
               </Link>
             </Button>
           </div>
@@ -281,7 +291,7 @@ export function Header() {
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon" className="h-10 w-10 text-primary-foreground hover:bg-primary-foreground/10">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Menu</span>
+                <span className="sr-only">{t("common.menu")}</span>
               </Button>
             </SheetTrigger>
             <SheetContent
@@ -304,7 +314,7 @@ export function Header() {
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon" className="h-10 w-10">
                       <X className="h-6 w-6" />
-                      <span className="sr-only">Fermer</span>
+                      <span className="sr-only">{t("common.close")}</span>
                     </Button>
                   </SheetClose>
                 </div>
@@ -324,7 +334,7 @@ export function Header() {
                             isActive("/") ? "bg-accent" : ""
                           }`}
                         >
-                          Accueil
+                          {t("nav.home")}
                         </Link>
                       </SheetClose>
                     </motion.div>
@@ -332,13 +342,13 @@ export function Header() {
                     {/* Services */}
                     <div className="pt-4 pb-2">
                       <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        Services
+                        {t("nav.services")}
                       </p>
                     </div>
 
                     {services.map((service, index) => (
                       <motion.div
-                        key={service.title}
+                        key={service.key}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: (1 + index) * 0.05 }}
@@ -353,10 +363,10 @@ export function Header() {
                             <service.icon className="h-5 w-5 text-primary flex-shrink-0" />
                             <div className="min-w-0">
                               <div className="text-base font-medium">
-                                {service.title}
+                                {t(`services.${service.key}.title`)}
                               </div>
                               <div className="text-sm text-muted-foreground truncate">
-                                {service.description}
+                                {t(`services.${service.key}.description`)}
                               </div>
                             </div>
                           </Link>
@@ -367,13 +377,13 @@ export function Header() {
                     {/* Offres Partenaires */}
                     <div className="pt-4 pb-2">
                       <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        Offres Partenaires
+                        {t("nav.partnerOffers")}
                       </p>
                     </div>
 
                     {offresPartenaires.map((offre, index) => (
                       <motion.div
-                        key={offre.title}
+                        key={offre.key}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: (1 + services.length + index) * 0.05 }}
@@ -388,10 +398,10 @@ export function Header() {
                             <offre.icon className="h-5 w-5 text-primary flex-shrink-0" />
                             <div className="min-w-0">
                               <div className="text-base font-medium">
-                                {offre.title}
+                                {t(`partnerOffers.${offre.key}.title`)}
                               </div>
                               <div className="text-sm text-muted-foreground truncate">
-                                {offre.description}
+                                {t(`partnerOffers.${offre.key}.description`)}
                               </div>
                             </div>
                           </Link>
@@ -402,17 +412,17 @@ export function Header() {
                     {/* Autres liens */}
                     <div className="pt-4 pb-2">
                       <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        Navigation
+                        {t("nav.navigation")}
                       </p>
                     </div>
 
                     {[
-                      { title: "Nos Implantations", href: "/nos-implantations" },
-                      { title: "Actualités", href: "/actualites" },
-                      { title: "Contact", href: "/contact" },
+                      { key: "locations", href: "/nos-implantations" },
+                      { key: "news", href: "/actualites" },
+                      { key: "contact", href: "/contact" },
                     ].map((link, index) => (
                       <motion.div
-                        key={link.title}
+                        key={link.key}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: (1 + services.length + offresPartenaires.length + index) * 0.05 }}
@@ -424,11 +434,21 @@ export function Header() {
                               isActive(link.href) ? "bg-accent" : ""
                             }`}
                           >
-                            {link.title}
+                            {t(`nav.${link.key}`)}
                           </Link>
                         </SheetClose>
                       </motion.div>
                     ))}
+
+                    {/* Language Switcher Mobile */}
+                    <div className="pt-4 pb-2">
+                      <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        {t("languageSwitcher.label")}
+                      </p>
+                    </div>
+                    <div className="px-3">
+                      <LanguageSwitcher variant="mobile" />
+                    </div>
                   </div>
                 </nav>
 
@@ -437,7 +457,7 @@ export function Header() {
                     <Button asChild className="w-full gap-2">
                       <Link href="/#download">
                         <Download className="h-4 w-4" />
-                        Télécharger l'application
+                        {t("common.downloadApp")}
                       </Link>
                     </Button>
                   </SheetClose>
