@@ -2493,5 +2493,64 @@
         "contactForm": "Formulaire de contact"
       }
     }
+  },
+  "countries": {
+    "badge": "Notre couverture",
+    "title": {
+      "prefix": "Présent dans",
+      "highlight": "15 pays"
+    },
+    "subtitle": "UPJUNOO PRO est disponible partout dans le monde.",
+    "stats": {
+      "countries": "Pays actifs",
+      "cities": "Villes couvertes",
+      "users": "Utilisateurs",
+      "support": "Support"
+    },
+    "cta": {
+      "question": "Votre région n'est pas encore couverte ?",
+      "link": "Devenez franchise et lancez UPJUNOO PRO dans votre région"
+    }
+  },
+  "cta": {
+    "badge": "Opportunités",
+    "title": "Rejoignez l'aventure",
+    "subtitle": "Que vous soyez chauffeur, livreur ou entrepreneur, nous avons une opportunité pour vous.",
+    "driver": {
+      "title": "Devenez chauffeur ou livreur",
+      "description": "Rejoignez notre équipe et profitez d'horaires flexibles, de revenus attractifs et d'une liberté totale.",
+      "button": "Rejoindre l'équipe",
+      "benefits": {
+        "flexible": "Horaires de travail 100% flexibles",
+        "revenue": "Revenus attractifs à la commission",
+        "support": "Support et assistance 24/7",
+        "insurance": "Assurance incluse"
+      }
+    },
+    "franchise": {
+      "badge": "Franchise",
+      "title": "Devenez franchisé UPJUNOO PRO",
+      "description": "Lancez votre propre activité avec la marque UPJUNOO PRO. Bénéficiez de notre expertise et de notre technologie.",
+      "button": "Devenir franchise",
+      "benefits": {
+        "brand": "Marque reconnue à l'international",
+        "training": "Formation et accompagnement complet",
+        "technology": "Technologie clé en main",
+        "marketing": "Support marketing inclus"
+      }
+    }
+  },
+  "newsletter": {
+    "badge": "Newsletter",
+    "title": "Restez informé",
+    "description": "Inscrivez-vous à notre newsletter pour recevoir nos actualités, offres spéciales et nouveautés.",
+    "placeholder": "Votre adresse email",
+    "submit": "S'inscrire",
+    "success": "Inscrit!",
+    "error": "Erreur",
+    "privacy": {
+      "text": "En vous inscrivant, vous acceptez notre",
+      "link": "politique de confidentialité"
+    }
   }
 }

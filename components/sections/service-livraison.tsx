@@ -80,8 +80,8 @@ export function ServiceLivraisonSection() {
               className="relative"
             >
               <Image
-                src="/images/vehicule/voiture-noel-2025-livraison.png"
-                alt="Voiture Livraison UPJUNOO PRO - Edition Noel"
+                src="/images/voiture.png"
+                alt="Voiture UPJUNOO PRO"
                 width={600}
                 height={338}
                 className="w-full h-auto drop-shadow-2xl"

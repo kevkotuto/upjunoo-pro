@@ -1709,5 +1709,64 @@
         "contactForm": "Contact form"
       }
     }
+  },
+  "countries": {
+    "badge": "Our coverage",
+    "title": {
+      "prefix": "Present in",
+      "highlight": "15 countries"
+    },
+    "subtitle": "UPJUNOO PRO is available worldwide.",
+    "stats": {
+      "countries": "Active countries",
+      "cities": "Cities covered",
+      "users": "Users",
+      "support": "Support"
+    },
+    "cta": {
+      "question": "Your region is not yet covered?",
+      "link": "Become a franchise and launch UPJUNOO PRO in your region"
+    }
+  },
+  "cta": {
+    "badge": "Opportunities",
+    "title": "Join the adventure",
+    "subtitle": "Whether you're a driver, delivery person or entrepreneur, we have an opportunity for you.",
+    "driver": {
+      "title": "Become a driver or delivery person",
+      "description": "Join our team and enjoy flexible hours, attractive income and total freedom.",
+      "button": "Join the team",
+      "benefits": {
+        "flexible": "100% flexible working hours",
+        "revenue": "Attractive commission-based income",
+        "support": "24/7 support and assistance",
+        "insurance": "Insurance included"
+      }
+    },
+    "franchise": {
+      "badge": "Franchise",
+      "title": "Become an UPJUNOO PRO franchisee",
+      "description": "Launch your own business with the UPJUNOO PRO brand. Benefit from our expertise and technology.",
+      "button": "Become a franchise",
+      "benefits": {
+        "brand": "Internationally recognized brand",
+        "training": "Complete training and support",
+        "technology": "Turnkey technology",
+        "marketing": "Marketing support included"
+      }
+    }
+  },
+  "newsletter": {
+    "badge": "Newsletter",
+    "title": "Stay informed",
+    "description": "Subscribe to our newsletter to receive our news, special offers and updates.",
+    "placeholder": "Your email address",
+    "submit": "Subscribe",
+    "success": "Subscribed!",
+    "error": "Error",
+    "privacy": {
+      "text": "By subscribing, you accept our",
+      "link": "privacy policy"
+    }
   }
 }

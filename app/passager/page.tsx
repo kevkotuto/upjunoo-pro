@@ -200,7 +200,7 @@ export default function PassagerPage() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Image
-                  src="/images/vehicule/voiture-noel-2025-04.png"
+                  src="/images/voiture.png"
                   alt="Voiture UPJUNOO PRO"
                   width={600}
                   height={338}
