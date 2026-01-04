@@ -83,7 +83,7 @@ function ContactForm() {
       icon: WhatsAppIcon,
       title: t("whatsapp"),
       value: t("whatsappValue"),
-      href: "https://wa.me/message/JGZMG3P6H4U7G1",
+      href: "https://wa.me/message/HCFWIVL3KPBRE1",
     },
     {
       icon: MapPin,

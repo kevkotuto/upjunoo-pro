@@ -140,7 +140,7 @@ Ce message a été envoyé depuis le formulaire de contact du site upjunoopro.co
 
                 <div style="text-align: center; margin-bottom: 25px;">
                   <p style="color: #666; margin: 0 0 15px 0;">Une question urgente ?</p>
-                  <a href="https://wa.me/message/JGZMG3P6H4U7G1" style="display: inline-block; background: #25D366; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+                  <a href="https://wa.me/message/HCFWIVL3KPBRE1" style="display: inline-block; background: #25D366; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;">
                     Contactez-nous sur WhatsApp
                   </a>
                 </div>
@@ -181,7 +181,7 @@ DÉLAI DE RÉPONSE
 ----------------
 Notre équipe s'engage à vous répondre dans un délai de 24 heures ouvrées.
 
-Une question urgente ? Contactez-nous sur WhatsApp : https://wa.me/message/JGZMG3P6H4U7G1
+Une question urgente ? Contactez-nous sur WhatsApp : https://wa.me/message/HCFWIVL3KPBRE1
 
 ---
 L'équipe UPJUNOO PRO
