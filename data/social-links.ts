@@ -1,5 +1,5 @@
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
-import { FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { FaTiktok, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
 export const socialLinks = [
   {
@@ -28,9 +28,9 @@ export const socialLinks = [
   },
   {
     name: "X",
-    icon: Twitter,
+    icon: FaXTwitter,
     href: "https://x.com/upjunoopro",
-    label: "X (Twitter)",
+    label: "X",
   },
   {
     name: "YouTube",
