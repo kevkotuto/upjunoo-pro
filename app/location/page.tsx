@@ -68,19 +68,19 @@ export default function LocationPage() {
     {
       name: t("fleet.economique.name"),
       description: t("fleet.economique.description"),
-      image: "/images/vehicule/normal.jpg",
+      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&auto=format&fit=crop&q=80",
       features: t.raw("fleet.economique.features") as string[],
     },
     {
       name: t("fleet.confort.name"),
       description: t("fleet.confort.description"),
-      image: "/images/vehicule/confor.jpg",
+      image: "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=800&auto=format&fit=crop&q=80",
       features: t.raw("fleet.confort.features") as string[],
     },
     {
       name: t("fleet.suv.name"),
       description: t("fleet.suv.description"),
-      image: "/images/vehicule/suv.jpg",
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80",
       features: t.raw("fleet.suv.features") as string[],
     },
   ];

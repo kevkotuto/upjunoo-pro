@@ -650,25 +650,15 @@ export default function ChauffeurPage() {
                 {t("cta.description")}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a
-                  href="mailto:contact@upjunoopro.com"
-                  onClick={() => trackExternalLink('mailto:contact@upjunoopro.com', 'email')}
+              <div className="flex justify-center mb-8">
+                <Link
+                  href="/contact"
+                  onClick={() => trackExternalLink('/contact', 'contact_page')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  contact@upjunoopro.com
-                </a>
-                <a
-                  href="https://www.upjunoo.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackExternalLink('https://www.upjunoo.com', 'website')}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-colors border border-white/20"
-                >
-                  <Globe className="h-5 w-5" />
-                  www.upjunoo.com
-                </a>
+                  Nous contacter
+                </Link>
               </div>
 
               <p className="text-sm text-white/60 mb-4">

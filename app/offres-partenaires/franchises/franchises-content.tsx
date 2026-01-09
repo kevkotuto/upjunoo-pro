@@ -577,7 +577,7 @@ export function FranchisesContent({
                 {translations.sections.contact.description}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <div className="flex justify-center mb-8">
                 <a
                   href="mailto:contact@upjunoopro.com"
                   onClick={() => {
@@ -588,19 +588,6 @@ export function FranchisesContent({
                 >
                   <Mail className="h-5 w-5" />
                   contact@upjunoopro.com
-                </a>
-                <a
-                  href="https://www.upjunoo.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    trackFranchiseLead('website_click');
-                    trackExternalLink('https://www.upjunoo.com', 'website');
-                  }}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground/10 text-primary-foreground font-medium hover:bg-primary-foreground/20 transition-colors"
-                >
-                  <Globe className="h-5 w-5" />
-                  www.upjunoo.com
                 </a>
               </div>
 
