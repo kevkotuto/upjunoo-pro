@@ -20,6 +20,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
+
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PageHero } from "@/components/sections/page-hero";
@@ -192,6 +193,7 @@ export default function LocationPage() {
                             <CheckCircle className="h-3.5 w-3.5 text-green-500" />
                           </div>
                           {feature}
+
                         </li>
                       ))}
                     </ul>
