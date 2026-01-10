@@ -1592,5 +1592,39 @@
       "text": "بالاشتراك، أنت توافق على",
       "link": "سياسة الخصوصية"
     }
+  },
+  "downloadApp": {
+    "metadata": {
+      "title": "تحميل التطبيق",
+      "description": "حمّل تطبيق UPJUNOO PRO للركاب أو السائقين من App Store و Play Store."
+    },
+    "title": "اختر تطبيقك",
+    "subtitle": "حدد التطبيق المناسب لاحتياجاتك",
+    "apps": {
+      "rider": {
+        "name": "Upjunoo Pro",
+        "subtitle": "تطبيق الراكب",
+        "description": "اطلب رحلات وتوصيلات وتأجير بنقرات قليلة",
+        "features": {
+          "taxi": "طلب تاكسي/VTC",
+          "delivery": "توصيل سريع",
+          "rental": "تأجير السيارات"
+        }
+      },
+      "driver": {
+        "name": "Upjunoo Pro",
+        "subtitle": "تطبيق السائق",
+        "description": "كن سائقاً شريكاً وزد من أرباحك",
+        "features": {
+          "rides": "استقبال طلبات الرحلات",
+          "earnings": "إدارة أرباحك",
+          "dashboard": "لوحة تحكم كاملة"
+        }
+      }
+    },
+    "comingSoon": "قريباً",
+    "downloadPlayStore": "تحميل من Play Store",
+    "downloadAppStore": "تحميل من App Store",
+    "footer": "متوفر على App Store و Google Play Store"
   }
 }

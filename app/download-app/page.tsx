@@ -45,6 +45,7 @@ export default async function DownloadAppPage() {
     },
     comingSoon: t("comingSoon"),
     downloadPlayStore: t("downloadPlayStore"),
+    downloadAppStore: t("downloadAppStore"),
     footer: t("footer"),
   };
 

@@ -1377,7 +1377,8 @@
     },
     "comingSoon": "Bientot disponible",
     "downloadPlayStore": "Telecharger sur Play Store",
-    "footer": "Disponible sur Google Play Store"
+    "downloadAppStore": "Telecharger sur App Store",
+    "footer": "Disponible sur App Store et Google Play Store"
   },
   "devenirChauffeurPage": {
     "metadata": {

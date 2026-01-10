@@ -1768,5 +1768,39 @@
       "text": "By subscribing, you accept our",
       "link": "privacy policy"
     }
+  },
+  "downloadApp": {
+    "metadata": {
+      "title": "Download the app",
+      "description": "Download the UPJUNOO PRO app for passengers or drivers on the App Store and Play Store."
+    },
+    "title": "Choose your app",
+    "subtitle": "Select the app that fits your needs",
+    "apps": {
+      "rider": {
+        "name": "Upjunoo Pro",
+        "subtitle": "Passenger App",
+        "description": "Order rides, deliveries and rentals in a few clicks",
+        "features": {
+          "taxi": "Order a taxi/VTC",
+          "delivery": "Express delivery",
+          "rental": "Vehicle rental"
+        }
+      },
+      "driver": {
+        "name": "Upjunoo Pro",
+        "subtitle": "Driver App",
+        "description": "Become a partner driver and increase your earnings",
+        "features": {
+          "rides": "Receive ride requests",
+          "earnings": "Manage your earnings",
+          "dashboard": "Complete dashboard"
+        }
+      }
+    },
+    "comingSoon": "Coming soon",
+    "downloadPlayStore": "Download on Play Store",
+    "downloadAppStore": "Download on App Store",
+    "footer": "Available on App Store and Google Play Store"
   }
 }

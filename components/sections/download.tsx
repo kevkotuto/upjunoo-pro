@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { Download, Smartphone, Apple, Play, Users, X } from "lucide-react";
-import { toast } from "sonner";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
@@ -22,10 +21,11 @@ interface DownloadData {
   driver: number;
 }
 
-type QRCodeType = "ios" | "android_driver" | "android_rider" | "apk" | "choice" | null;
+type QRCodeType = "ios_rider" | "ios_driver" | "android_driver" | "android_rider" | "apk" | "choice" | null;
 
 const QR_URLS = {
-  ios: "https://apps.apple.com/app/upjunoo-pro/id123456789",
+  ios_rider: "https://apps.apple.com/fr/app/upjunoo/id6737838257",
+  ios_driver: "https://apps.apple.com/fr/app/upjunoo-pro/id6737838816",
   android_driver: "https://play.google.com/store/apps/details?id=com.upjunoo.driver",
   android_rider: "https://play.google.com/store/apps/details?id=com.upjunoo.rider",
   apk: "https://upjunoo.pro/apk/app-client.apk",
@@ -38,13 +38,6 @@ export function DownloadSection() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [selectedQR, setSelectedQR] = useState<QRCodeType>(null);
 
-  const handleAppStoreClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    trackDownloadClick('client', 'appstore');
-    toast.info(t("common.comingSoon"), {
-      description: t("common.comingSoon"),
-    });
-  };
 
   useEffect(() => {
     const checkDesktop = () => {
@@ -83,7 +76,8 @@ export function DownloadSection() {
   };
 
   const qrLabels = {
-    ios: { icon: Apple, label: t("download.appStore") },
+    ios_rider: { icon: Apple, label: t("download.riderApp") },
+    ios_driver: { icon: Apple, label: t("download.driverApp") },
     android_driver: { icon: Play, label: t("download.driverApp") },
     android_rider: { icon: Play, label: t("download.riderApp") },
     apk: { icon: Download, label: t("download.apkDirect") },
@@ -292,21 +286,62 @@ export function DownloadSection() {
 
             {/* Download buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {/* App Store Button - Disabled */}
-              <motion.button
-                onClick={handleAppStoreClick}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0 }}
-                className="flex items-center gap-3 px-5 py-3 bg-muted text-muted-foreground rounded-xl cursor-not-allowed opacity-60"
-              >
-                <Apple className="h-7 w-7" />
-                <div className="text-left">
-                  <div className="text-xs opacity-80">{t("common.comingOn")}</div>
-                  <div className="font-semibold">{t("download.appStore")}</div>
-                </div>
-              </motion.button>
+              {/* App Store Button - Dropdown avec 2 apps */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-3 px-5 py-3 bg-foreground text-background rounded-xl hover:bg-foreground/90 transition-colors"
+                  >
+                    <Apple className="h-7 w-7" />
+                    <div className="text-left">
+                      <div className="text-xs opacity-80">{t("common.availableOn")}</div>
+                      <div className="font-semibold">{t("download.appStore")}</div>
+                    </div>
+                  </motion.button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={QR_URLS.ios_rider}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => trackDownloadClick('client', 'appstore')}
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">{t("download.riderApp")}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {t("download.forUsers")}
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={QR_URLS.ios_driver}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => trackDownloadClick('driver', 'appstore')}
+                    >
+                      <Smartphone className="h-4 w-4" />
+                      <div>
+                        <div className="font-medium">{t("download.driverApp")}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {t("download.forDrivers")}
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               {/* Google Play Button - Dropdown avec 2 apps */}
               <DropdownMenu>
@@ -466,19 +501,43 @@ export function DownloadSection() {
                   {t("download.scanToDownload")}
                 </h3>
                 <div className="flex gap-6 justify-center lg:justify-start flex-wrap">
-                  {/* iOS QR Code - Disabled */}
-                  <div className="flex flex-col items-center gap-3 opacity-40 cursor-not-allowed">
-                    <div className="w-24 h-24 bg-gray-200 rounded-xl p-2 flex items-center justify-center relative">
-                      <QRCodeSVG value={QR_URLS.ios} size={80} level="M" includeMargin={false} className="opacity-50" />
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/60 rounded-xl">
-                        <span className="text-xs font-medium text-muted-foreground">{t("common.comingSoon")}</span>
-                      </div>
+                  {/* iOS Rider QR Code */}
+                  <motion.button
+                    onClick={() => {
+                      trackQRCodeView('client');
+                      setSelectedQR("ios_rider");
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex flex-col items-center gap-3 cursor-pointer"
+                  >
+                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                      <QRCodeSVG value={QR_URLS.ios_rider} size={80} level="M" includeMargin={false} />
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-2">
                       <Apple className="h-4 w-4" />
-                      <span className="text-sm font-medium">{t("download.ios")}</span>
+                      <span className="text-sm font-medium">{t("download.riderApp")}</span>
                     </div>
-                  </div>
+                  </motion.button>
+
+                  {/* iOS Driver QR Code */}
+                  <motion.button
+                    onClick={() => {
+                      trackQRCodeView('driver');
+                      setSelectedQR("ios_driver");
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex flex-col items-center gap-3 cursor-pointer"
+                  >
+                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
+                      <QRCodeSVG value={QR_URLS.ios_driver} size={80} level="M" includeMargin={false} />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Apple className="h-4 w-4" />
+                      <span className="text-sm font-medium">{t("download.driverApp")}</span>
+                    </div>
+                  </motion.button>
 
                   {/* Android QR Code - Active (page de choix) */}
                   <motion.button
