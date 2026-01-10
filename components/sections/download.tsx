@@ -21,15 +21,16 @@ interface DownloadData {
   driver: number;
 }
 
-type QRCodeType = "ios_rider" | "ios_driver" | "android_driver" | "android_rider" | "apk" | "choice" | null;
+type QRCodeType = "ios_rider" | "ios_driver" | "ios_choice" | "android_driver" | "android_rider" | "android_choice" | "apk" | null;
 
 const QR_URLS = {
   ios_rider: "https://apps.apple.com/fr/app/upjunoo/id6737838257",
   ios_driver: "https://apps.apple.com/fr/app/upjunoo-pro/id6737838816",
+  ios_choice: "https://upjunoo.pro/download-app",
   android_driver: "https://play.google.com/store/apps/details?id=com.upjunoo.driver",
   android_rider: "https://play.google.com/store/apps/details?id=com.upjunoo.rider",
+  android_choice: "https://upjunoo.pro/download-app",
   apk: "https://upjunoo.pro/apk/app-client.apk",
-  choice: "https://upjunoo.pro/download-app",
 };
 
 export function DownloadSection() {
@@ -78,10 +79,11 @@ export function DownloadSection() {
   const qrLabels = {
     ios_rider: { icon: Apple, label: t("download.riderApp") },
     ios_driver: { icon: Apple, label: t("download.driverApp") },
+    ios_choice: { icon: Apple, label: t("download.appStore") },
     android_driver: { icon: Play, label: t("download.driverApp") },
     android_rider: { icon: Play, label: t("download.riderApp") },
+    android_choice: { icon: Play, label: t("download.googlePlay") },
     apk: { icon: Download, label: t("download.apkDirect") },
-    choice: { icon: Play, label: t("download.googlePlay") },
   };
 
   return (
@@ -501,56 +503,37 @@ export function DownloadSection() {
                   {t("download.scanToDownload")}
                 </h3>
                 <div className="flex gap-6 justify-center lg:justify-start flex-wrap">
-                  {/* iOS Rider QR Code */}
+                  {/* App Store QR Code (page de choix) */}
                   <motion.button
                     onClick={() => {
                       trackQRCodeView('client');
-                      setSelectedQR("ios_rider");
+                      setSelectedQR("ios_choice");
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex flex-col items-center gap-3 cursor-pointer"
                   >
                     <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                      <QRCodeSVG value={QR_URLS.ios_rider} size={80} level="M" includeMargin={false} />
+                      <QRCodeSVG value={QR_URLS.ios_choice} size={80} level="M" includeMargin={false} />
                     </div>
                     <div className="flex items-center gap-2">
                       <Apple className="h-4 w-4" />
-                      <span className="text-sm font-medium">{t("download.riderApp")}</span>
+                      <span className="text-sm font-medium">{t("download.appStore")}</span>
                     </div>
                   </motion.button>
 
-                  {/* iOS Driver QR Code */}
-                  <motion.button
-                    onClick={() => {
-                      trackQRCodeView('driver');
-                      setSelectedQR("ios_driver");
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center gap-3 cursor-pointer"
-                  >
-                    <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                      <QRCodeSVG value={QR_URLS.ios_driver} size={80} level="M" includeMargin={false} />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Apple className="h-4 w-4" />
-                      <span className="text-sm font-medium">{t("download.driverApp")}</span>
-                    </div>
-                  </motion.button>
-
-                  {/* Android QR Code - Active (page de choix) */}
+                  {/* Google Play QR Code (page de choix) */}
                   <motion.button
                     onClick={() => {
                       trackQRCodeView('client');
-                      setSelectedQR("choice");
+                      setSelectedQR("android_choice");
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex flex-col items-center gap-3 cursor-pointer"
                   >
                     <div className="w-24 h-24 bg-white rounded-xl p-2 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                      <QRCodeSVG value={QR_URLS.choice} size={80} level="M" includeMargin={false} />
+                      <QRCodeSVG value={QR_URLS.android_choice} size={80} level="M" includeMargin={false} />
                     </div>
                     <div className="flex items-center gap-2">
                       <Play className="h-4 w-4" />
