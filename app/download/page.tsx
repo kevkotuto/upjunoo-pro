@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function DownloadPage() {
-  const headersList = headers();
+  const headersList = await headers();
   const userAgent = headersList.get('user-agent') || '';
   const platformInfo = detectPlatform(userAgent);
 
