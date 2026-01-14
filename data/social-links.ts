@@ -11,7 +11,7 @@ export const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://www.instagram.com/upjunoo.pro/",
+    href: "https://www.instagram.com/upjunoo.pro_officiel/",
     label: "Instagram",
   },
   {
@@ -23,7 +23,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://www.linkedin.com/company/upjunoo-pro-côte-d-ivoire/about/?viewAsMember=true",
+    href: "https://www.linkedin.com/company/upjunoo-pro-côte-d-ivoire/posts/?feedView=all&viewAsMember=true",
     label: "LinkedIn",
   },
   {
