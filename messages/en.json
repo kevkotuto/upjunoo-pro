@@ -628,7 +628,20 @@
     "driverAppFull": "Driver App",
     "scanToDownload": "Scan to download",
     "appRating": "App Rating",
-    "ios": "iOS"
+    "ios": "iOS",
+    "universalQR": "Universal QR Code",
+    "chooseYourApp": "Choose your app",
+    "selectApp": "Select the app that fits your needs",
+    "platformDetected": "Platform detected: {platform}",
+    "notYourPlatform": "Not your platform?",
+    "changePlatform": "Change platform",
+    "downloadNow": "Download now",
+    "scanQRCode": "Scan the QR code with your phone",
+    "orDownloadDirectly": "Or download directly:",
+    "chooseStore": "Choose your store",
+    "comingSoonAndroid": "Coming soon on Android",
+    "downloadPageTitle": "Download UPJUNOO PRO",
+    "downloadPageSubtitle": "Choose your app and start your journey"
   },
   "faq": {
     "badge": "FAQ",

@@ -628,7 +628,20 @@
     "driverAppFull": "تطبيق السائق",
     "scanToDownload": "امسح للتحميل",
     "appRating": "تقييم التطبيق",
-    "ios": "iOS"
+    "ios": "iOS",
+    "universalQR": "رمز QR العالمي",
+    "chooseYourApp": "اختر تطبيقك",
+    "selectApp": "اختر التطبيق الذي يناسب احتياجاتك",
+    "platformDetected": "المنصة المكتشفة: {platform}",
+    "notYourPlatform": "ليست منصتك؟",
+    "changePlatform": "تغيير المنصة",
+    "downloadNow": "حمّل الآن",
+    "scanQRCode": "امسح رمز QR بهاتفك",
+    "orDownloadDirectly": "أو حمّل مباشرة:",
+    "chooseStore": "اختر المتجر",
+    "comingSoonAndroid": "قريباً على Android",
+    "downloadPageTitle": "تحميل UPJUNOO PRO",
+    "downloadPageSubtitle": "اختر تطبيقك وابدأ رحلتك"
   },
   "faq": {
     "badge": "الأسئلة الشائعة",

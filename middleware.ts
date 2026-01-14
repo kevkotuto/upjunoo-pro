@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { locales, defaultLocale, type Locale } from '@/lib/i18n/config';
 
 export function middleware(request: NextRequest) {
+  // Redirection: /download-app → /download
+  if (request.nextUrl.pathname === '/download-app') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/download';
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
   // Ignorer les routes API et les fichiers statiques
   if (
     request.nextUrl.pathname.startsWith('/api') ||

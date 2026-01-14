@@ -628,7 +628,20 @@
     "driverAppFull": "Application Chauffeur",
     "scanToDownload": "Scannez pour télécharger",
     "appRating": "App Rating",
-    "ios": "iOS"
+    "ios": "iOS",
+    "universalQR": "QR Code Universel",
+    "chooseYourApp": "Choisissez votre application",
+    "selectApp": "Sélectionnez l'application qui correspond à votre besoin",
+    "platformDetected": "Plateforme détectée : {platform}",
+    "notYourPlatform": "Pas la bonne plateforme ?",
+    "changePlatform": "Changer de plateforme",
+    "downloadNow": "Télécharger maintenant",
+    "scanQRCode": "Scannez le QR code avec votre téléphone",
+    "orDownloadDirectly": "Ou téléchargez directement :",
+    "chooseStore": "Choisissez votre store",
+    "comingSoonAndroid": "Bientôt disponible sur Android",
+    "downloadPageTitle": "Télécharger UPJUNOO PRO",
+    "downloadPageSubtitle": "Choisissez votre application et commencez votre voyage"
   },
   "faq": {
     "badge": "FAQ",

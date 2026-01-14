@@ -69,12 +69,68 @@ export const trackDownloadClick = (
   });
 };
 
-export const trackQRCodeView = (appType: 'client' | 'driver') => {
+export const trackQRCodeView = (appType: 'client' | 'driver' | 'universal') => {
   event({
     action: 'qr_code_view',
     category: 'Download',
     label: appType,
     app_type: appType,
+  });
+};
+
+// Platform detection tracking
+export const trackPlatformDetection = (
+  detected: 'ios' | 'android' | 'desktop' | 'unknown',
+  isMobile: boolean
+) => {
+  event({
+    action: 'platform_detection',
+    category: 'Download',
+    label: detected,
+    platform: detected,
+    is_mobile: isMobile,
+  });
+};
+
+// App selection tracking
+export const trackAppSelection = (
+  appType: 'rider' | 'driver',
+  platform: 'ios' | 'android' | 'desktop'
+) => {
+  event({
+    action: 'app_selection',
+    category: 'Download',
+    label: `${appType}_${platform}`,
+    app_type: appType,
+    platform: platform,
+  });
+};
+
+// Auto redirect tracking
+export const trackAutoRedirect = (
+  appType: 'rider' | 'driver',
+  platform: 'ios' | 'android'
+) => {
+  event({
+    action: 'auto_redirect',
+    category: 'Download',
+    label: `${appType}_${platform}`,
+    app_type: appType,
+    platform: platform,
+  });
+};
+
+// Platform toggle tracking
+export const trackPlatformToggle = (
+  from: string,
+  to: string
+) => {
+  event({
+    action: 'platform_toggle',
+    category: 'Download',
+    label: `${from}_to_${to}`,
+    from_platform: from,
+    to_platform: to,
   });
 };
 
