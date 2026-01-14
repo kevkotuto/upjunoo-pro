@@ -24,7 +24,5 @@ export default async function DownloadPage() {
   const userAgent = headersList.get('user-agent') || '';
   const platformInfo = detectPlatform(userAgent);
 
-  const t = await getTranslations();
-
-  return <DownloadContent platformInfo={platformInfo} translations={t} />;
+  return <DownloadContent platformInfo={platformInfo} />;
 }

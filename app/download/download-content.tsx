@@ -5,13 +5,13 @@ import { Smartphone, Car, Apple, Play, Monitor } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
+import { useTranslations } from "next-intl";
 import { type PlatformInfo } from "@/lib/platform-detection";
 import { trackPlatformDetection, trackAppSelection, trackAutoRedirect, trackPlatformToggle } from "@/lib/analytics";
 import { useToast } from "@/hooks/use-toast";
 
 interface DownloadContentProps {
   platformInfo: PlatformInfo;
-  translations: any;
 }
 
 type AppType = "rider" | "driver";
@@ -27,7 +27,8 @@ const APP_URLS = {
   },
 };
 
-export function DownloadContent({ platformInfo, translations: t }: DownloadContentProps) {
+export function DownloadContent({ platformInfo }: DownloadContentProps) {
+  const t = useTranslations();
   const [selectedPlatform, setSelectedPlatform] = useState<'ios' | 'android'>(
     platformInfo.platform === 'android' ? 'android' : 'ios'
   );
