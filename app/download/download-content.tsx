@@ -19,7 +19,7 @@ type AppType = "rider" | "driver";
 const APP_URLS = {
   rider: {
     ios: "https://apps.apple.com/fr/app/upjunoo/id6737838257",
-    android: "", // Coming Soon
+    android: "https://play.google.com/store/apps/details?id=com.upjunoo.rider",
   },
   driver: {
     ios: "https://apps.apple.com/fr/app/upjunoo-pro/id6737838816",
