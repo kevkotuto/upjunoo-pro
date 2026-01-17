@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UPJUNOO PRO
 
-## Getting Started
+Site web officiel de UPJUNOO PRO - Plateforme de mobilite urbaine en Afrique.
 
-First, run the development server:
+## A propos
+
+UPJUNOO PRO est une plateforme multi-services qui permet de:
+- Commander des taxis
+- Effectuer des livraisons
+- Louer des vehicules
+- Devenir chauffeur ou livreur
+
+## Applications Mobiles
+
+### Application Client (Passagers)
+La version client est disponible sur Google Play:
+[Telecharger sur Google Play](https://play.google.com/store/apps/details?id=com.upjunoo.rider)
+
+### Application Chauffeur
+L'application pour les chauffeurs et livreurs UPJUNOO PRO est disponible apres inscription et validation.
+
+## Presence Geographique
+
+UPJUNOO PRO est present dans 15 pays africains:
+Burkina Faso, Benin, Congo-Brazzaville, Cote d'Ivoire, Cameroun, Gabon, Ghana, Guinee, Mali, Niger, Congo RDC, Senegal, Tchad, Togo, Guinee equatoriale.
+
+## Stack Technique
+
+- **Framework**: Next.js 16 + React 19
+- **Styling**: Tailwind CSS v4 + shadcn/ui
+- **Animations**: Motion (framer-motion)
+- **Icons**: Lucide React
+- **TypeScript**: Strict mode
+- **Internationalisation**: next-intl (FR/EN)
+
+## Developpement
+
+### Installation
+
+```bash
+npm install
+# ou
+pnpm install
+```
+
+### Serveur de developpement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
+# ou
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Generer l'image OG
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run generate-og
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure du Projet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/app` - Pages et routes Next.js
+- `/components` - Composants React reutilisables
+- `/lib` - Utilitaires et helpers
+- `/public` - Assets statiques
+- `/messages` - Fichiers de traduction (i18n)
+- `/hooks` - Hooks React personnalises
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Email**: info@upjunoo.pro
+- **Telephone**: +225 00 00 00 00 00
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licence
+
+Copyright 2025 UPJUNOO PRO. Tous droits reserves.

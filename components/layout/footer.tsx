@@ -28,6 +28,11 @@ const footerLinksConfig = {
     { key: "faq", href: "/faq" },
     { key: "support", href: "/support" },
   ],
+  download: [
+    { key: "playStore", href: "https://play.google.com/store/apps/details?id=com.upjunoo.rider", external: true },
+    { key: "appStore", href: "https://apps.apple.com/fr/app/upjunoo/id6737838257", external: true },
+    { key: "directApk", href: "/download-app", external: false },
+  ],
 };
 
 
@@ -39,7 +44,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
         <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-4">
@@ -120,6 +125,36 @@ export function Footer() {
                     >
                       {t(`footer.links.${link.key}`)}
                     </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Download */}
+            <div>
+              <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">
+                {t("footer.sections.download")}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinksConfig.download.map((link) => (
+                  <li key={link.key}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-background/70 hover:text-primary transition-colors"
+                      >
+                        {t(`footer.links.${link.key}`)}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-background/70 hover:text-primary transition-colors"
+                      >
+                        {t(`footer.links.${link.key}`)}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -690,7 +690,8 @@
     "sections": {
       "services": "الخدمات",
       "company": "الشركة",
-      "legal": "معلومات"
+      "legal": "معلومات",
+      "download": "التحميل"
     },
     "links": {
       "home": "الرئيسية",
@@ -700,7 +701,10 @@
       "terms": "شروط الاستخدام",
       "privacy": "سياسة الخصوصية",
       "faq": "الأسئلة الشائعة",
-      "support": "الدعم"
+      "support": "الدعم",
+      "playStore": "Google Play",
+      "appStore": "App Store",
+      "directApk": "تحميل مباشر"
     }
   },
   "contact": {

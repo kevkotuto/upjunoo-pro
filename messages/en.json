@@ -690,7 +690,8 @@
     "sections": {
       "services": "Services",
       "company": "Company",
-      "legal": "Information"
+      "legal": "Information",
+      "download": "Download"
     },
     "links": {
       "home": "Home",
@@ -700,7 +701,10 @@
       "terms": "Terms of Use",
       "privacy": "Privacy Policy",
       "faq": "FAQ",
-      "support": "Support"
+      "support": "Support",
+      "playStore": "Google Play",
+      "appStore": "App Store",
+      "directApk": "Direct Download"
     }
   },
   "contact": {

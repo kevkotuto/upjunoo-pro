@@ -42,3 +42,6 @@ next-env.d.ts
 
 # APK files (stored on server, too large for git)
 /public/apk/*.apk
+
+# PM2 logs
+/logs
